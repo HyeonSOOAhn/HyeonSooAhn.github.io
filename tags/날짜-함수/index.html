@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: 날짜 함수 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/%EB%82%A0%EC%A7%9C-%ED%95%A8%EC%88%98/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2019.%20%EB%82%A0%EC%A7%9C%20%ED%95%A8%EC%88%98/"
+                            aria-label=": Oracle Database 19. 날짜 함수"
+                        >
+                            Oracle Database 19. 날짜 함수
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:53+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="날짜-함수"><a href="#날짜-함수" class="headerlink" title="날짜 함수"></a>날짜 함수</h1><ul>
+<li>오라클을 날짜데이터를 제어할 수 있는 함수들을 제공하고 있다.</li>
+<li>sysdate : 현재 날짜와 시간을 반환한다.</li>
+<li>months_between : 두 날짜간의 개월 수를 구한다.</li>
+<li>add_months : 주어진 개월 수 만큼 더한다.</li>
+<li>next_day : 돌아오는 지정된 요일의 날짜를 반환한다.</li>
+<li>last_day : 지정된 달에 마지막 날을 반환한다.</li>
+<li>round : 지정된 기준으로 반올림한다.</li>
+<li>trunc : 지정된 기준으로 버린다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 현재 날짜 구하기
+select sysdate
+from dual;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 날짜 데이터 연산(10000일빼기, 10000일더하기)
+select sysdate -10000, sysdate+10000
+from dual;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원이 입사한 날짜로 부터 1000일 후가 되는 날짜를 가져온다.
+select hiredate+1000
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 SALESMAN인 사원의 입사일 100일전 날짜를 가져온다.
+select hiredate-100
+from emp
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 전 사원의 근무 일을 가져온다.
+select trunc(sysdate-hiredate)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 반올림(버림은 trunc를 사용하면된다.)
+select round(sysdate, &#39;CC&#39;) as &quot;년도두자리&quot;
+, round(sysdate, &#39;YYYY&#39;) as &quot;월기준&quot;
+, round(sysdate, &#39;ddd&#39;) as &quot;시기준&quot;
+, round(sysdate, &#39;HH&#39;) as &quot;분기준&quot;
+, round(sysdate, &#39;MM&#39;) as &quot;일기준&quot;
+, round(sysdate, &#39;DAY&#39;) as &quot;주기준&quot;
+, round(sysdate, &#39;MI&#39;) as &quot;초기준&quot;
+from dual;
+</code></pre>
+<p>결과값 : 01/01/01, 21/01/01, 21/03/23, 21/03/22, 21/04/01, 21/03/21, 21/03/22</p>
+<p>ex)</p>
+<pre><code>-- 각 사원의 입사일을 월 기준으로 반올림한다.
+select round(hiredate, &#39;yyyy&#39;)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 1981년에 입사한 사원들의 사원번호, 사원이름, 급여, 입사일을가져온다.
+select empno, ename, sal, hiredate
+from emp
+where hiredate &gt;=&#39;1981/01/01&#39; and hiredate &lt;= &#39;1981/12/31&#39;;
+
+select empno, ename, sal, hiredate
+from emp
+where hiredate between &#39;1981/01/01&#39; and &#39;1981/12/31&#39;;
+
+select empno, ename, sal, hiredate
+from emp
+where trunc(hiredate, &#39;yyyy&#39;) = &#39;1981/01/01&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 두 날짜 사이의 일수를 구한다.
+select sysdate - hiredate
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 모든 사원이 근무한 개월 수를 구한다.
+select trunc(months_between(sysdate, hiredate))
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 개월수를 더한다.(오늘날짜로부터 100개월 후)
+select add_months(sysdate, 100)
+from dual;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원들의 입사일 후 100개월 되는 날짜를 구한다.
+select add_months(hiredate, 100)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 지정된 날짜를 기준으로 지정된 다음 요일이 몇일인지 구한다.
+select next_day(sysdate, &#39;월요일&#39;)
+from dual;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 지정된 날짜의 월 마지막 날짜를 구한다.
+select sysdate, last_day(sysdate)
+from dual;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- to_char : 날자데이터를 문자형으로 반환한다.
+주로 오라클에서 다른 프로그램으로 출력할 때 사용한다.
+select to_char(sysdate, &#39;YYYY-MM-DD HH:MI:SS AM&#39;)
+from dual;
+</code></pre>
+<p>날자 형식에는 한글이 들어갈 수 없다.</p>
+<p>ex)</p>
+<pre><code>-- to_date : 프로그램 -&gt; 오라클
+select to_date(&#39;2018-03-20 01:58:20 오후&#39;, &#39;YYYY-MM-DD HH:MI:SS AM&#39;)
+from dual;
+</code></pre>
+<p>각자리에 해당하는 데이터를 날자형식으로 반환하여 출력한다.</p>
+<p>ex)</p>
+<pre><code>-- 사원들의 입사일을 다음과 같은 양식으로 가져온다.
+-- 1900-10-10
+select to_char(hiredate, &#39;YYYY-MM-DD&#39;)
+from emp;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2019.%20%EB%82%A0%EC%A7%9C%20%ED%95%A8%EC%88%98/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

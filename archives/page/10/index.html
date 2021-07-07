@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Archives - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/archives/page/10/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/"
+                            aria-label=": Oracle Database 06. 행 수정 &amp; 삭제"
+                        >
+                            Oracle Database 06. 행 수정 &amp; 삭제
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-19T17:24:25+09:00">
+	
+		    Jan 19, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="행-수정-amp-삭제"><a href="#행-수정-amp-삭제" class="headerlink" title="행 수정 &amp; 삭제"></a>행 수정 &amp; 삭제</h1><h2 id="행-수정"><a href="#행-수정" class="headerlink" title="행 수정"></a>행 수정</h2><dl><dt><img src="https://user-images.githubusercontent.com/77277946/105009008-4e89d600-5a7d-11eb-90ef-3eef49c10650.jpg" alt="행 수정"><br>UPDATE topic<br>: topic 테이블을 수정한다.<br>SET<br>description = ‘MSSQL is …’<br>: description 행을 ‘MSSQL is …’으로 수정한다.<br>WHERE<br>: 어디에(수정 또는 삭제를 할 때 WHERE문이 없다면 모든 행열에 해당하므로 특별한 경우를 제외하고는 무조건 있어야 한다.)<br>id = 1;</dt><dd>id가 1인 행에</dd></dl><h2 id="행-삭제"><a href="#행-삭제" class="headerlink" title="행 삭제"></a>행 삭제</h2><pre><code>DELETE FROM topic WHERE id = 1;
+1행을 삭제합니다.
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/18/Oracle%20Database/Oracle%20Database%2005.%20Select%EB%AC%B8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D/"
+                            aria-label=": Oracle Database 05. Select문의 기본 형식"
+                        >
+                            Oracle Database 05. Select문의 기본 형식
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-18T18:55:03+09:00">
+	
+		    Jan 18, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Select문의-기본-형식"><a href="#Select문의-기본-형식" class="headerlink" title="Select문의 기본 형식"></a>Select문의 기본 형식</h1><h2 id="행-읽기"><a href="#행-읽기" class="headerlink" title="행 읽기"></a>행 읽기</h2><p>SELECT * FROM topic;: topic테이블의 모든 행열을 가져옵니다.<br><img src="https://user-images.githubusercontent.com/77277946/104901118-4a4bb300-59c0-11eb-872e-d4fdf9dddc70.jpg" alt="토픽의 모든 행을 불러오기"></p>
+<h2 id="행과-칼럼-제외하기"><a href="#행과-칼럼-제외하기" class="headerlink" title="행과 칼럼 제외하기"></a>행과 칼럼 제외하기</h2><pre><code>SELECT id, title, created FROM topic;
+: topic테이블에서 id, title, created행만 보기
+SELECT * FROM topic WHERE id = 1;
+: topic테이블에서 id가 1인 행만보기
+SELECT * FROM topic WHERE id &gt; 1;
+: topic테이블에서 id가 1보다 큰 행만보기
+SELECT id, title, created FROM topic WHERE id = 1;
+: topic테이블에서 id가 1인 id, title, created행만 보기
+</code></pre>
+<h2 id="정렬과-페이징"><a href="#정렬과-페이징" class="headerlink" title="정렬과 페이징"></a>정렬과 페이징</h2><h3 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h3><pre><code>SELECT * FROM topic ORDER BY id DESC;
+: topic테이블에서 id가 큰 순서대로 정렬
+SELECT * FROM topic ORDER BY title ASD;
+: topic테이블에서 tile이 abc순으로 정렬
+</code></pre>
+<h3 id="페이징"><a href="#페이징" class="headerlink" title="페이징"></a>페이징</h3><pre><code>SELECT * FROM topic
+: topic테이블에서 모든 행을 불러온다.
+OFFSET 1 ROWS
+: 0번째 부터시작하여 1이후의 행을 불러온다.
+FETCH NEXT 2 ROWS ONLY;
+: OFFSET 1 ROWS 이후 2번째 까지의 행을 불러온다.
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/18/Oracle%20Database/Oracle%20Database%2005.%20Select%EB%AC%B8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/17/Oracle%20Database/Oracle%20Database%2004.%20SQL%EC%9D%B4%EB%9E%80/"
+                            aria-label=": Oracle Database 04. SQL이란"
+                        >
+                            Oracle Database 04. SQL이란
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-17T16:23:41+09:00">
+	
+		    Jan 17, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="SQL-Structuerd-Query-Language"><a href="#SQL-Structuerd-Query-Language" class="headerlink" title="SQL(Structuerd Query Language)"></a>SQL(Structuerd Query Language)</h1><p>SQL은 액셀에 쓰는 것보다 어렵다.<br>그럼에도 불구하고 DB를 사용하는 이유는 그만한 가치가 있기 때문이다.</p>
+<ol>
+<li>액셀은 행을 추가하는 수가 한계가 있다. 그러나 DB는 저장장치의 한계가 없다면 무한하게 가능하다.</li>
+<li>데이터를 꺼내올 수 있느 속도가 압도적으로 빠르다.</li>
+<li>명령어를 통해서 DB를 제어할 수 있기 떄문에<br>자동화를 할 수 있다.</li>
+</ol>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/17/Oracle%20Database/Oracle%20Database%2004.%20SQL%EC%9D%B4%EB%9E%80/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/17/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80%20Database%2001/"
+                            aria-label=": 개발일지 Database 01"
+                        >
+                            개발일지 Database 01
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-17T15:46:25+09:00">
+	
+		    Jan 17, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/">개발일지</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="테이블-이름-확인시-문제-발생"><a href="#테이블-이름-확인시-문제-발생" class="headerlink" title="테이블 이름 확인시 문제 발생"></a>테이블 이름 확인시 문제 발생</h2><p>테이블을 만들고 테이블확인을 하려하자 이런 오류가 나왔다.<br><img src= https://user-images.githubusercontent.com/77277946/104833471-2d3db400-58dc-11eb-98b4-49561422ae44.jpg></p>
+<p>구글 검색 결과 COMMIT을 해보라고 하여 해봤지만 같은 오류가 나왔다.<br>유저네임이 문제인가 싶어 유저네임을 알 수 있는 명령어를 입력하였다.<br>SELECT * FROM DBA_USERS<br><img src="https://user-images.githubusercontent.com/77277946/104833670-b86b7980-58dd-11eb-9864-cf770f1a9766.jpg" alt="개발일지1"></p>
+<p>유저네임이 소문자로 CREATE했음에도 불구하고 대문자로 적혀있는 것을 학인 후 다시 입력하였다.<br><img src="https://user-images.githubusercontent.com/77277946/104833701-11d3a880-58de-11eb-9c6f-65dcb08a23f1.jpg" alt="2"></p>
+<p>오라클 데이터베이스 에서는 대문자가 디폴트이다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/17/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80%20Database%2001/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/17/Oracle%20Database/Oracle%20Database%2003.%ED%85%8C%EC%9D%B4%EB%B8%94/"
+                            aria-label=": Oracle Database 03. 테이블"
+                        >
+                            Oracle Database 03. 테이블
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-17T14:46:54+09:00">
+	
+		    Jan 17, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="테이블"><a href="#테이블" class="headerlink" title="테이블"></a>테이블</h1><h2 id="테이블생성"><a href="#테이블생성" class="headerlink" title="테이블생성"></a>테이블생성</h2><pre><code>CREATE TABLE topic (
+id NUMBER NOT NULL,
+title VARCHAR2(50) NOT NULL,
+description VARCHAR2(4000) NULL,
+created DATE NOT NULL
+);
+</code></pre>
+<p>CREATE TABLE topic (: 테이블을 생성한다. 테이블 이름은 topic이다.<br>id NUMBER NOT NULL,: id행에는 숫자만올 수 있고, 공백으로 둘 수 없다.<br>title VARCHAR2(50) NOT NULL,: title행에는 50글자까지 쓸 수 있고, 공백으로 둘 수 없다.<br>description VARCHAR2(4000) NULL,: description행에는 4000글자 까지 쓸 수 있고, 공백으로 둘 수 있다.<br>created DATE NOT NULL: created행에는 날짜만 쓸 수 있고, 공백으로 둘 수 있다.<br>);</p>
+<h2 id="생성된-테이블-확인"><a href="#생성된-테이블-확인" class="headerlink" title="생성된 테이블 확인"></a>생성된 테이블 확인</h2><p>SELECT table_name FROM all_tables WHERE OWNER =’’;: 선택된 유저의 테이블 이름 확인.<br><img src= https://user-images.githubusercontent.com/77277946/104833237-886ea700-58da-11eb-9531-b3694a40bb0b.jpg></p>
+<h2 id="행추가"><a href="#행추가" class="headerlink" title="행추가"></a>행추가</h2><dl><dt><img src="https://user-images.githubusercontent.com/77277946/104834491-09ca3780-58e3-11eb-8b01-b46c235a1f87.jpg" alt="테이블"><br>INSERT INTO topic<br>: topic테이블에 넣는다.<br>(id,title,description,created)<br>VALUES<br>: 값을<br>(1,’ORACLE’,’ORACLE is …’,SYSDATE);</dt><dd>각각의 값입력</dd></dl>
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/17/Oracle%20Database/Oracle%20Database%2003.%ED%85%8C%EC%9D%B4%EB%B8%94/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                            aria-label=": Oracle Database 02. 사용자와 스키마"
+                        >
+                            Oracle Database 02. 사용자와 스키마
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-16T10:24:42+09:00">
+	
+		    Jan 16, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Oracle-Database"><a href="#Oracle-Database" class="headerlink" title="Oracle Database"></a>Oracle Database</h1><ul>
+<li>Oracle Database는 관계형 데이터베이스이다. </li>
+<li>핵심은 표이다.<h2 id="사용자와-스키마"><a href="#사용자와-스키마" class="headerlink" title="사용자와 스키마"></a>사용자와 스키마</h2>스키마는 서로연관된 표들을 그룹핑하는 디렉토리같은 것이다.<br>사용자를 생성하면 그 사용자의 해당되는 디렉토리가 생성된다.<br>스키마의 본질적인 정의는 그 스키마가 속하는 표들을 정의하는 정보이다.<center>
+<img src= https://user-images.githubusercontent.com/77277946/104798598-8a1d6980-580b-11eb-9225-39040fd81792.jpg width="800" height="400">
+</center></li>
+</ul>
+<h2 id="Create-user"><a href="#Create-user" class="headerlink" title="Create user"></a>Create user</h2><p>유저를 생성하는 방법의 로드맵이다.<br>동그라미는 내가 자유롭게 결정하는 것이고, 네모는 고정된 선택지이다.</p>
+<center>
+<img src= https://user-images.githubusercontent.com/77277946/104798672-ff893a00-580b-11eb-830f-002dff9d9604.jpg width="500" height="500">
+</center>
+
+<br>
+
+<p>실제 CMD에서 Create user구동.</p>
+<center>
+<img src= https://user-images.githubusercontent.com/77277946/104798744-88a07100-580c-11eb-9a43-576c4b978c00.jpg width="1000" height="400">
+</center>
+
+<ol>
+<li>SQLPLUS</li>
+<li>sys AS SYSDBA: 관리자권한으로 로그인</li>
+<li>CREATED USER asd IDENTIFIED BY 123;: 사용자 생성</li>
+<li>ALTER SESSION SET “_ORACLESCRIPT=TRUE”: 세션권한부여</li>
+</ol>
+<h2 id="사용자-권한부여"><a href="#사용자-권한부여" class="headerlink" title="사용자 권한부여"></a>사용자 권한부여</h2><p>이 상태로는 로그인 권한이 없기 때문에 접속이 되지 않는다.<br>일단 모든 권한을 준다.</p>
+<center>
+<img src= https://user-images.githubusercontent.com/77277946/104799058-4593cd00-580f-11eb-8f92-0aa03116ec85.jpg width="1000" height="400">
+</center>
+
+<ol>
+<li>GRANT DBA TO asd;:asd에게 모든 권한을 준다.</li>
+<li>SQLPLUS에 재접속을 한다.</li>
+<li>접속 확인을 한다. </li>
+</ol>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/16/Oracle%20Database/Oracle%20Database%2001.%20%EA%B8%B0%EC%B4%88%EA%B0%9C%EB%85%90%20%EC%9D%B4%ED%95%B4/"
+                            aria-label=": Oracle Database 01. 기초개념 이해"
+                        >
+                            Oracle Database 01. 기초개념 이해
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-16T05:37:00+09:00">
+	
+		    Jan 16, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="DATABASE"><a href="#DATABASE" class="headerlink" title="DATABASE"></a>DATABASE</h1><h2 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h2><p>여러 사람이 공유하고 사용할 목적으로 통합 관리되는 정보의 집합이다. 논리적으로 연관된 하나 이상의 자료의 모음으로 그 내용을 고도로 구조화함으로써 검색과 갱신의 효율화를 꾀한 것이다. 즉, 몇개의 자료 파일을 조직적으로 통합하여 자료 항목의 중복을 없애고 자료를 구조화하여 기억시켜 놓은 자료의 집합체라고 할 수 있다.</p>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><p>CRUD는 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능인 Create(생성), Read(읽기), Update(수정), Delete(삭제)를 묶어서 일겉는 말이다. 사용자 인터페이스가 갖추어야 할 기능을 가리키는 용어로서도 사용된다.</p>
+<p>CRUD는 여러 응용 프로그램의 사용자 인터페이스에도 들어맞는다. 예를 들어, 주소록이나 전화번호부 소프트웨어를 생각해볼 수 있다. 여기서 기본적인 기록 단위는 각 개인의 연락처이다. 다음과 같은 기능들은 가장 간단한 것이면서도 필수적이다.</p>
+<ul>
+<li>새로운 연락처 정보를 추가할 수 있다.</li>
+<li>기존의 연락처 정보를 검색할 수 있다.</li>
+<li>기존의 연락처 정보를 편집할 수 있다.</li>
+<li>기존의 연락처 정보를 삭제할 수 있다.</li>
+</ul>
+<br>
+
+<p>데이터베이스는 데이터를 어떻게 입력하고 어떻게 출력하는가를 따져보는 것이 중요하다.</p>
+<center><img src= https://user-images.githubusercontent.com/77277946/104788957-fcc02200-57d6-11eb-88a9-b5824835bb3e.jpg width="800" height="400">
+</center>
+create, update, delete는 입력, read는 출력이다.
+이것을 crud라고 부른다. 이것이 데이터베이스의 가장 큰 작업이고, 그 외의 작업은 이 crud를 보좌하는 기능에 불과하다.  
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/16/Oracle%20Database/Oracle%20Database%2001.%20%EA%B8%B0%EC%B4%88%EA%B0%9C%EB%85%90%20%EC%9D%B4%ED%95%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/11/Markdown%20%EB%AC%B8%EB%B2%95/"
+                            aria-label=": Markdown 문법"
+                        >
+                            Markdown 문법
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-11T21:19:59+09:00">
+	
+		    Jan 11, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Markdown/">Markdown</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="문법-Syntex"><a href="#문법-Syntex" class="headerlink" title="문법(Syntex)"></a>문법(Syntex)</h1><h2 id="제목-Header"><a href="#제목-Header" class="headerlink" title="제목(Header)"></a>제목(Header)</h2><p>제목은 1~6 크기로 제목을 표현할 수 있다.<br>&#60;h1&#62; ~ &#60;h6&#62;으로도 변환이 가능하다. </p>
+<pre><code># 제목 1
+## 제목 2
+### 제목 3
+#### 제목 4
+##### 제목 5
+###### 제목 6
+</code></pre>
+<h1 id="제목-1"><a href="#제목-1" class="headerlink" title="제목 1"></a>제목 1</h1><h2 id="제목-2"><a href="#제목-2" class="headerlink" title="제목 2"></a>제목 2</h2><h3 id="제목-3"><a href="#제목-3" class="headerlink" title="제목 3"></a>제목 3</h3><h4 id="제목-4"><a href="#제목-4" class="headerlink" title="제목 4"></a>제목 4</h4><h5 id="제목-5"><a href="#제목-5" class="headerlink" title="제목 5"></a>제목 5</h5><h6 id="제목-6"><a href="#제목-6" class="headerlink" title="제목 6"></a>제목 6</h6><h2 id="강조-Emphasis"><a href="#강조-Emphasis" class="headerlink" title="강조(Emphasis)"></a>강조(Emphasis)</h2><p>각각 이텔릭체, 두껍게, 밑줄은 &#60;em&#62;, &#60;strong&#62;, &#60;del&#62; 태그로 변환된다.</p>
+<pre><code>이텔릭체는 *(내용)* 또는 _(내용)_
+두껍게는  **(내용)** 또는 __(내용)__
+취소선은 ~~(내용)~~
+밑줄은 &lt;u&gt;(내용)&lt;/u&gt;를 사용하여 나타낼 수 있다.
+</code></pre>
+<p>이텔릭체는 <em>(내용)</em> 또는 <em>(내용)</em><br>두껍게는  <strong>(내용)</strong> 또는 <strong>(내용)</strong><br>취소선은 <del>(내용)</del><br>밑줄은 <u>(내용)</u>를 사용하여 나타낼 수 있다.</p>
+<h2 id="목록"><a href="#목록" class="headerlink" title="목록"></a>목록<List></h2><p>&#60;ol&#62;, &#60;ul&#62; 목록 태그로 변환된다.</p>
+<pre><code>1. 순서가 필요한 목록
+1. 순서가 필요한 목록
+    - 순서가 필요하지 않은 목록
+    - 순서가 필요하지 않은 목록
+1. 순서가 필요한 목록
+    1. 순서가 필요한 목록
+    1. 순서가 필요한 목록
+- 순서가 필요하지 않은 목록에 사용 가능한 기호
+    - 대쉬
+    * 별표
+    + 더하기
+</code></pre>
+<ol>
+<li>순서가 필요한 목록</li>
+<li>순서가 필요한 목록<ul>
+<li>순서가 필요하지 않은 목록</li>
+<li>순서가 필요하지 않은 목록</li>
+</ul>
+</li>
+<li>순서가 필요한 목록<ol>
+<li>순서가 필요한 목록</li>
+<li>순서가 필요한 목록</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>순서가 필요하지 않은 목록에 사용 가능한 기호<ul>
+<li>대쉬</li>
+</ul>
+<ul>
+<li>별표</li>
+</ul>
+<ul>
+<li>더하기</li>
+</ul>
+</li>
+</ul>
+<h2 id="링크-Link"><a href="#링크-Link" class="headerlink" title="링크(Link)"></a>링크(Link)</h2><p>&#60;a&#62;로 변환된다.</p>
+<pre><code>[GOOGLE](http://www.google.com)
+[NAVER](http://www.google.com)
+[Dribbble][Dribbble link]
+[Github][1]
+문서 안에서 [참조링크]를 그대로 사용할 수도 있다.
+다음과 같이 문서 내 일반 URL이나 꺾쇠괄호 안의 URL은 자동으로 링크를 사용한다.
+구글 홈페이지: http://google.com
+네이버 홈페이지: &lt;http://naver.com&gt;
+
+[Dribbblle link]: http://dribbble.com
+[1]: http://github.com
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.google.com/">GOOGLE</a><br><a target="_blank" rel="noopener" href="http://www.google.com/">NAVER</a><br><a target="_blank" rel="noopener" href="http://dribbble.com/">Dribbble</a><br><a target="_blank" rel="noopener" href="http://github.com/">Github</a><br>문서 안에서 [참조링크]를 그대로 사용할 수도 있다.<br>다음과 같이 문서 내 일반 URL이나 꺾쇠괄호 안의 URL은 자동으로 링크를 사용한다.<br>구글 홈페이지: <a target="_blank" rel="noopener" href="http://google.com/">http://google.com</a><br>네이버 홈페이지: <a target="_blank" rel="noopener" href="http://naver.com/">http://naver.com</a></p>
+<h2 id="이미지-Images"><a href="#이미지-Images" class="headerlink" title="이미지(Images)"></a>이미지(Images)</h2><p>&#60;img&#62;로 변환된다.<br>링크와 비슷하지만 앞에 !가 붙는다.</p>
+<pre><code>![Bodybuilding](https://user-images.githubusercontent.com/77277946/104524897-6d820580-5642-11eb-8732-aaa94658c596.jpeg)
+
+![dyno][link]
+
+[link]: https://user-images.githubusercontent.com/77277946/104525051-b9cd4580-5642-11eb-99de-d8fd8252457a.jpeg
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/77277946/104524897-6d820580-5642-11eb-8732-aaa94658c596.jpeg" alt="Bodybuilding"></p>
+<p><img src="https://user-images.githubusercontent.com/77277946/104525051-b9cd4580-5642-11eb-99de-d8fd8252457a.jpeg" alt="dyno"></p>
+<h2 id="이미지에-링크"><a href="#이미지에-링크" class="headerlink" title="이미지에 링크"></a>이미지에 링크</h2><pre><code>[![vue](https://user-images.githubusercontent.com/77277946/104649206-b5af2f80-56f7-11eb-8cc8-8743d093be86.png)](http://kr.vuejs.org/)
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://kr.vuejs.org/"><img src="https://user-images.githubusercontent.com/77277946/104649206-b5af2f80-56f7-11eb-8cc8-8743d093be86.png" alt="vue"></a></p>
+<h2 id="인라인코드-Code-강조"><a href="#인라인코드-Code-강조" class="headerlink" title="인라인코드(Code) 강조"></a>인라인코드(Code) 강조</h2><p>&#60;pre&#62;, &#60;code&#62;로 변환된다.<br>숫자 1번 키 왼쪽에 있는 `(Grave)로 감싼다.</p>
+<pre><code>안녕하세요. 여기는 `안현수 블로그` 입니다.
+</code></pre>
+<p>안녕하세요. 여기는 <code>안현수 블로그</code> 입니다.</p>
+<h2 id="블록-block-코드-강조"><a href="#블록-block-코드-강조" class="headerlink" title="블록(block)코드 강조"></a>블록(block)코드 강조</h2><p>`를 3번 이상 입력하고 코드를 적는다.</p>
+<h2 id="표-Table"><a href="#표-Table" class="headerlink" title="표(Table)"></a>표(Table)</h2><p>&#60;table&#62; 태그로 변환된다.<br>헤더 셀을 구분할 때 3개이상 -기호가 있어야하고,<br>헤더셀을 구분하면서 : 기호로 셀안에 내용을 정렬할 수 있다.<br>가장 좌측과 가장 우축에 있는 | 기호는 생략가능하다.</p>
+<pre><code>| 값 | 의미 | 기본값 |
+|---|:---:|---:|
+| `static` | 유형(기준) 없음 / 배치 불가능 | `static` |
+| `relative` | 요소 자신을 기준으로 배치 |  |
+| `absolute` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
+| `fixed` | 브라우저 창을 기준으로 배치 |  |
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>값</th>
+<th align="center">의미</th>
+<th align="right">기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>static</code></td>
+<td align="center">유형(기준) 없음 / 배치 불가능</td>
+<td align="right"><code>static</code></td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td align="center">요소 자신을 기준으로 배치</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td><code>absolute</code></td>
+<td align="center">위치 상 부모(조상)요소를 기준으로 배치</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td><code>fixed</code></td>
+<td align="center">브라우저 창을 기준으로 배치</td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<h2 id="인용문-BlockQuote"><a href="#인용문-BlockQuote" class="headerlink" title="인용문(BlockQuote)"></a>인용문(BlockQuote)</h2><p>&#60;blockquote&#62; 태그로 변환된다.</p>
+<pre><code>인용문
+&gt; 남의말이나 글에서 직접 또는 간접적으로 따온 문장.
+&gt; _(네이버국어사전)_
+
+BREAK!
+
+&gt; 인용문을 작성하세요!
+&gt;&gt; 중첩된 인용문을 만들 수 있다.
+&gt;&gt;&gt; 중첩 인용문1
+&gt;&gt;&gt;&gt; 중첩 인용문2
+&gt;&gt;&gt;&gt; 중첩 인용문2&#39;
+</code></pre>
+<p>인용문</p>
+<blockquote>
+<p>남의말이나 글에서 직접 또는 간접적으로 따온 문장.<br><em>(네이버국어사전)</em></p>
+</blockquote>
+<p>BREAK!</p>
+<blockquote>
+<p>인용문을 작성하세요!</p>
+<blockquote>
+<p>중첩된 인용문을 만들 수 있다.</p>
+<blockquote>
+<p>중첩 인용문1</p>
+<blockquote>
+<p>중첩 인용문2<br>중첩 인용문2’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="수평선-Horizontal-Rule"><a href="#수평선-Horizontal-Rule" class="headerlink" title="수평선(Horizontal Rule)"></a>수평선(Horizontal Rule)</h2><p>각 기호를 3개 이상 입력한다.</p>
+<pre><code>---
+안녕하세요
+***
+안녕하세요
+___
+안녕하세요
+</code></pre>
+<hr>
+<p>안녕하세요</p>
+<hr>
+<p>안녕하세요</p>
+<hr>
+<p>안녕하세요</p>
+<h2 id="줄바꿈-Line-Breaks"><a href="#줄바꿈-Line-Breaks" class="headerlink" title="줄바꿈(Line Breaks)"></a>줄바꿈(Line Breaks)</h2><p>일반줄바꿈이 동작하지 않는 환경의 경우, 두번의 띄어쓰기나 &#60;br&#62;을 사용할 수 있다. </p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/11/Markdown%20%EB%AC%B8%EB%B2%95/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+          <li class="pagination-prev">
+            <a
+                class="btn btn--default btn--small"
+                href="/archives/page/9/"
+                aria-label="NEWER POSTS"
+            >
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+        <li class="pagination-number">page 10 of 10</li>
+    </ul>
+</div>
+
+</section>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

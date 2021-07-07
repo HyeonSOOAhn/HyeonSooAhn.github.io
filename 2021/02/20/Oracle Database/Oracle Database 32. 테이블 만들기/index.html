@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Oracle Database 32. 테이블 만들기 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"테이블 만들기\ncreate table 테이블 명(  컬럼명 자료형 제약조건,  컬럼명 자료형 제약조건)\n\n컬럼의 자료형\nchar(size) : 고정길이 문자열 타입\nvarchar2(size) : 가변 길이 문자열 타입\nnumber : 최고 40자리까지 저장할 수 있는 숫자 타입\nchar는 고정된 메모리를 할당 받는다.varchar2는 가변길이의 메모리를 할당 받는다.\ndate : 날짜\nlong : 가변길이 문자열 타입, 최대 2Gbyte\n\nex)\n-- 다음과 같은 정보를 저장하기 위한 테이블을 만든다.\n-- 학생번호, 학생이름, 학생나이, 학생국어점수, 영어점수, 수학점수\n\ncreate table stu_table(\nstu_idx number,\nstu_name char(10),\nstu_age number,\nstu_kor number,\nstu_eng number,\nstu_math number\n);\n\nex)\ncreate table number_table(\nnumber1 number,\nnumber2 number(3),\nnumber3 number(5, 2)\n);\n\ninsert into number_table(number1)\nvalues (10000);\n\nselect * from number_table;\n\ninsert into number_table(number2)\nvalues(100);\n-- number2는 3자리까지만 가능하다.\n\ninsert into number_table(number3)\nvalues (100.111111);\n\n-- number3은 총5자리를 저장하나 소수점 2자리 까지만 저장한다.\n\nex)\n-- emp테이블을 복제한 emp01테이블을 만드시오\n\ncreate table emp01\nas\nselect * from emp;\n\nex)\n-- emp테이블에서 사원의 번호, 이름, 급여 정보를 가지고 있는 테이블을 생성하시오\n\ncreate table emp02\nas\nselect empno, ename, sal\nfrom emp;\n\nex)\n-- 30번 부서에 근무하고 있는 사원들의 사원번호, 이름, 근무부서이름을 가지고 있는 테이블을 생성한다.\n\ncreate table emp03\nas\nselect a1.empno, a1.ename, a2.dname \nfrom emp a1, dept a2\nwhere a1.deptno = a2.deptno and a1.deptno = 30;\n\nex)\n-- 각 부서별 급여 총합, 평균 최고액, 최저액, 사원수를 가지고 있는 테이블을 생성하시오\n\ncreate table emp04\nas\nselect sum(sal) as sum, trunc(avg(sal)) as avg, max(sal) as max,\n    min(sal) as min, count(sal) as count\nfrom emp\ngroup by deptno;\n\n","dateCreated":"2021-02-20T16:54:05+09:00","dateModified":"2021-03-27T19:24:58+09:00","datePublished":"2021-02-20T16:54:05+09:00","description":"","headline":"Oracle Database 32. 테이블 만들기","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/","keywords":"Oracle, SQLPLUS, Database, create"}</script>
+    <meta name="description" content="테이블 만들기 create table 테이블 명(  컬럼명 자료형 제약조건,  컬럼명 자료형 제약조건)  컬럼의 자료형 char(size) : 고정길이 문자열 타입 varchar2(size) : 가변 길이 문자열 타입 number : 최고 40자리까지 저장할 수 있는 숫자 타입 char는 고정된 메모리를 할당 받는다.varchar2는 가변길이의 메모리를 할">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Oracle Database 32. 테이블 만들기">
+<meta property="og:url" content="http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="테이블 만들기 create table 테이블 명(  컬럼명 자료형 제약조건,  컬럼명 자료형 제약조건)  컬럼의 자료형 char(size) : 고정길이 문자열 타입 varchar2(size) : 가변 길이 문자열 타입 number : 최고 40자리까지 저장할 수 있는 숫자 타입 char는 고정된 메모리를 할당 받는다.varchar2는 가변길이의 메모리를 할">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-20T07:54:05.000Z">
+<meta property="article:modified_time" content="2021-03-27T10:24:58.573Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="SQLPLUS">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="create">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Oracle Database 32. 테이블 만들기
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-20T16:54:05+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="테이블-만들기"><a href="#테이블-만들기" class="headerlink" title="테이블 만들기"></a>테이블 만들기</h1><ul>
+<li>create table 테이블 명(<br>  컬럼명 자료형 제약조건,<br>  컬럼명 자료형 제약조건<br>)</li>
+</ul>
+<h2 id="컬럼의-자료형"><a href="#컬럼의-자료형" class="headerlink" title="컬럼의 자료형"></a>컬럼의 자료형</h2><ul>
+<li>char(size) : 고정길이 문자열 타입</li>
+<li>varchar2(size) : 가변 길이 문자열 타입</li>
+<li>number : 최고 40자리까지 저장할 수 있는 숫자 타입</li>
+<li>char는 고정된 메모리를 할당 받는다.<br>varchar2는 가변길이의 메모리를 할당 받는다.</li>
+<li>date : 날짜</li>
+<li>long : 가변길이 문자열 타입, 최대 2Gbyte</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 다음과 같은 정보를 저장하기 위한 테이블을 만든다.
+-- 학생번호, 학생이름, 학생나이, 학생국어점수, 영어점수, 수학점수
+
+create table stu_table(
+stu_idx number,
+stu_name char(10),
+stu_age number,
+stu_kor number,
+stu_eng number,
+stu_math number
+);
+</code></pre>
+<p>ex)</p>
+<pre><code>create table number_table(
+number1 number,
+number2 number(3),
+number3 number(5, 2)
+);
+
+insert into number_table(number1)
+values (10000);
+
+select * from number_table;
+
+insert into number_table(number2)
+values(100);
+-- number2는 3자리까지만 가능하다.
+
+insert into number_table(number3)
+values (100.111111);
+
+-- number3은 총5자리를 저장하나 소수점 2자리 까지만 저장한다.
+</code></pre>
+<p>ex)</p>
+<pre><code>-- emp테이블을 복제한 emp01테이블을 만드시오
+
+create table emp01
+as
+select * from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- emp테이블에서 사원의 번호, 이름, 급여 정보를 가지고 있는 테이블을 생성하시오
+
+create table emp02
+as
+select empno, ename, sal
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 30번 부서에 근무하고 있는 사원들의 사원번호, 이름, 근무부서이름을 가지고 있는 테이블을 생성한다.
+
+create table emp03
+as
+select a1.empno, a1.ename, a2.dname 
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.deptno = 30;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 총합, 평균 최고액, 최저액, 사원수를 가지고 있는 테이블을 생성하시오
+
+create table emp04
+as
+select sum(sal) as sum, trunc(avg(sal)) as avg, max(sal) as max,
+    min(sal) as min, count(sal) as count
+from emp
+group by deptno;
+</code></pre>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Database/" rel="tag">Database</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Oracle/" rel="tag">Oracle</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/SQLPLUS/" rel="tag">SQLPLUS</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/create/" rel="tag">create</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2033.%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/"
+                    data-tooltip="Oracle Database 33. 제약조건"
+                    aria-label="PREVIOUS: Oracle Database 33. 제약조건"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2031.%20delete/"
+                    data-tooltip="Oracle Database 31. delete"
+                    aria-label="NEXT: Oracle Database 31. delete"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2033.%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/"
+                    data-tooltip="Oracle Database 33. 제약조건"
+                    aria-label="PREVIOUS: Oracle Database 33. 제약조건"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2031.%20delete/"
+                    data-tooltip="Oracle Database 31. delete"
+                    aria-label="NEXT: Oracle Database 31. delete"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2032.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

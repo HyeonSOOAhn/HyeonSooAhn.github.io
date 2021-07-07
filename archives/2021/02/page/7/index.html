@@ -1,0 +1,1182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Archives: 2021/2 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/archives/2021/02/page/7/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/"
+                            aria-label=": Java 28. 메모리(RAM)"
+                        >
+                            Java 28. 메모리(RAM)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:32+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="메모리-RAM"><a href="#메모리-RAM" class="headerlink" title="메모리(RAM)"></a>메모리(RAM)</h1><p>프로그램이 실행하게 되면 OS는 메모리(RAM)에 공간을 할당해 준다.<br>할당해주는 메모리 공간은 4가지(Code, Data, Stack, Heap)가 있다.</p>
+<h2 id="코드-Code-영역"><a href="#코드-Code-영역" class="headerlink" title="코드(Code) 영역"></a>코드(Code) 영역</h2><p>우리가 작성한 소스코드가 들어가는 부분.<br>즉, 실행할 프로그램의 코드가 저장되는 영역으로 텍스트영역이라고도 부른다.<br>코그영역은 실행 파일을 구성하는 명령어들이 올라가는 메모리 영역으로 함수, 제어문, 상수 등이 여기에 저장된다.</p>
+<h2 id="데이터-Data-영역"><a href="#데이터-Data-영역" class="headerlink" title="데이터(Data) 영역"></a>데이터(Data) 영역</h2><p>전역변수와 Static변수가 할당되는 영역<br>프로그램의 시작과 동시에 할당되고, 프로그램이 종료되어야 메모리가 소멸되는 영역.</p>
+<h2 id="스택-Stack-영역"><a href="#스택-Stack-영역" class="headerlink" title="스택(Stack) 영역"></a>스택(Stack) 영역</h2><p>프로그램이 자동으로 사용하는 임시 메모리 영역.<br>함수 호출 시 생성되는 지역 변수와 매개변수가 저장되는 영역이고,<br>함수 호출이 완료되면 사라진다.</p>
+<h2 id="힙-Heap-영역"><a href="#힙-Heap-영역" class="headerlink" title="힙(Heap) 영역"></a>힙(Heap) 영역</h2><p>프로그래머가 할당/해체하는 메모리 공간이다.<br>Java에서는 가비지 컬렉터가 자동으로 해제한다.<br>이 공간에 메모리 할당하는 것을 동적 할당이라고도 부른다.</p>
+<p>Heap과 Stack영역은 같은 공간을 공유한다. 그래서 Heap이 메모리 위쪽 주소부터 할당되고 Stack은 아래쪽 부터 할당된다. 각 영역이 상대 공간을 침범하는 일이 발생할 수 있는데 이를 각각 Heap Overflow, Stack Overflow라고 칭한다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                            aria-label=": Java 27. 상속과 위임"
+                        >
+                            Java 27. 상속과 위임
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:31+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="클래스의-상속"><a href="#클래스의-상속" class="headerlink" title="클래스의 상속"></a>클래스의 상속</h1><pre><code>class Person &#123;
+
+    protected int age;
+    
+    protected String name;
+    
+    public Persion(int age, String name) &#123;
+        this.age = age;
+        this.name = name;
+    &#125;
+    
+    public int getAge() &#123;
+        return this.age;
+    &#125;
+    
+    public String getName() &#123;
+        return this.name;
+    &#125;
+&#125;
+</code></pre>
+<p>age와 name이라는 멤버 변수를 가지고 있는 Person 클래스를 생각해보자. 이 클래스를 상속 받는 Student 클래스는 다음과 같이 정의할 수 있다.</p>
+<pre><code>class Student extends Person &#123;
+    
+    protected String studentNumber;
+    
+    public Student(int age, String name, String studentNumber) &#123;
+        
+        super(age, name);
+        this.studentNumber = studentNumber;
+    &#125;
+    
+    public String getStudentNumber() &#123;
+    
+        return this.studentNumber;
+    &#125;
+&#125;
+</code></pre>
+<p>‘extends’라는 키워드를 이용해서 Person 클래스를 상속받아 확장하여 Student 클래스를 정의했다. Student 클래스 정의에는 직접적으로 나와있지 않지만 부모 클래스인 Person 클래스의 메소드인 getAge()와 getName() 메소드를 호출 할 수 있다.</p>
+<p>일반적으로 두 클래스 간의 관계가 ‘IS-A’ 관계이면 상속을 사용한다. Student is a person이므로 상속을 통해서 클래스를 정의하는게 자연스럽다.</p>
+<h1 id="클래스의-위임"><a href="#클래스의-위임" class="headerlink" title="클래스의 위임"></a>클래스의 위임</h1><p>상속과 다르게 위임은 다른 클래스의 객체를 멤버로 갖는 형태의 클래스 정의다.</p>
+<pre><code>class Employee &#123;
+    
+    private Department department;
+    
+    private String name;
+    
+    publiv Employee(String name, Department department) &#123;
+        
+        this.name = name;
+        this.department = department;
+    &#125;
+    
+    public String getDepartmentName() &#123;
+    
+        return this.department.getName();
+    &#125;
+&#125;
+</code></pre>
+<p>이 경우 특정 메소드 호출을 멤버 클래스의 메소드에 포워드(Forward)하는 식으로 구현하게 된다.</p>
+<p>Employee 클래스와 Department 클래스 사이의 관계를 살펴보면 ‘IS-A’ 관계는 아니다. (Employee is a Department는 어색하다.) 따라서 멤버 변수로 Department 클래스를 포함하는 Delegation 형태로 구현을 했다.</p>
+<h1 id="상속과-위임"><a href="#상속과-위임" class="headerlink" title="상속과 위임"></a>상속과 위임</h1><ul>
+<li>두 클래스의 관계가 ‘IS-A’ 관계이면 상속(Inheritance)을 써야한다.</li>
+<li>기존에 존재하는 API에 넘겨줘야 하는 경우 상속(Inheritance)을 써야한다.</li>
+<li>final 클래스를 확장하고 싶은 경우 위임(Delegation)을 써야한다.</li>
+</ul>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2026.%20implements%EC%99%80%20extends%EC%9D%98%20%EC%B0%A8%EC%9D%B4/"
+                            aria-label=": Java 26. implements와 extends의 차이"
+                        >
+                            Java 26. implements와 extends의 차이
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:30+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="implements와-extends의-차이"><a href="#implements와-extends의-차이" class="headerlink" title="implements와 extends의 차이"></a>implements와 extends의 차이</h1><ul>
+<li>extends는 일반 클래스와 abstract 클래스 상속에 사용되고, implement는 interface 상속에 사용된다.</li>
+<li>class가 class를 상속받을 땐 extends를 사용하고, interface가 interface를 상속 받을 땐 extends를 사용한다.</li>
+<li>class가 interface를 사용할 땐 implements를 써야하고<br>interface가 class를 사용할 땐 implements를 쓸수 없다.</li>
+<li>extends는 클래스 한 개만 상속 받을 수 있다.</li>
+<li>extends 자신 클래스는 부모 클래스의 기능을 사용한다.</li>
+<li>implements는 여러개 사용 가능하다.</li>
+<li>implements는 설계 목적으로 구현 가능하다.</li>
+<li>implements한 클래스는 implements의 내용을 다 사용해야 한다.</li>
+</ul>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2026.%20implements%EC%99%80%20extends%EC%9D%98%20%EC%B0%A8%EC%9D%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2025.%20Interface/"
+                            aria-label=": Java 25. Interface"
+                        >
+                            Java 25. Interface
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:29+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h1><p>하나의 시스템을 구성하는 2개의 구성요소(하드웨어, 소프트웨어) 또는 2개의 시스템이 상호작용할 수 있도록 접속되는 경계(boundary), 이 경계에서 상호 접속하기 위한 하드웨어, 소프트웨어, 조건, 규약 등을 포괄적으로 가리키는 말</p>
+<p>자바에서 인터페이스는 여러가지 역할로 사용한다.</p>
+<ul>
+<li>개발자 사이의 코드 규약을 정한다.</li>
+<li>여러 구현체에서 공통적인 부분을 추상화한다.(다형성)</li>
+</ul>
+<p>자바 인터페이스는 기본적으로 추상 메소드의 모음이다. 추상메소드는 아래와 같이 구현부가 없는 메소드를 말한다.</p>
+<pre><code>public interface Walkable &#123;
+void walk();
+&#125;
+</code></pre>
+<p>구현부가 없으므로 인터페이스를 만든다면 반드시 구현하는 클래스를 만들어야 하며, 인터페이스를 구현하기로 한 클래스는 반드시 인터페이스에 명시되어 있는 추상메소드들을 모두 구현해야 한다. 만약 이를 구현하지 않으면 컴파일 에러가 발생한다.</p>
+<pre><code>public class Dog implements Walkable &#123;
+// ...
+@Override
+public void walk() &#123;
+    // ...
+    &#125;
+&#125;
+</code></pre>
+<p>인터페이스는 구현과 상속을 모두 할 수 있다.</p>
+<ul>
+<li>인터페이스를 사용하는 구체 클래스는 해당인터페이스를 구현해야한다.</li>
+<li>인터페이스 사이에는 상속을 할 수 있다.</li>
+</ul>
+<p>인터페이스를 사용하면 다중 상속이 가능하다. 인터페이스 사이에서도, 구체 클래스에서도 여러 인터페이스를 구현 및 상속할 수 있다.</p>
+<pre><code>public interface Walkable &#123;
+void walk();
+&#125;
+
+public interface Flyable &#123;
+void fly();
+&#125;
+
+public interface Moveable extends Walkable, Flyable &#123;
+&#125;
+    public class Bat implements Moveable &#123;
+@Override
+public void walk() &#123;
+    // ...
+&#125;
+
+@Override
+public void fly() &#123;
+    // ...
+&#125;
+&#125;
+</code></pre>
+<p>인터페이스는 클래스와 달리 기본 접근제어자는 public이다.<br>인터페이스에 필드 변수를 선언하면 public static final로 선언해야 하며, 이 것도 기본 설정되어 있다.</p>
+<h2 id="인터페이스를-사용하는-이유"><a href="#인터페이스를-사용하는-이유" class="headerlink" title="인터페이스를 사용하는 이유"></a>인터페이스를 사용하는 이유</h2><p>인터페이스를 사용하는 주된 이유는 다형성을 위해서이다. 다형성은 상속받은 클래스 또는 인터페이스의 메소드를 재정의하여 서로 다른 행동을 만들 수 있다. 상속을 통해 상위 클래스의 타입으로 통일한 후 하위 클래스들을 하나의 타입으로 관리할 수 있다. 이를 사용해서 변경에 유연한 코드를 만들 수 있다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2025.%20Interface/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2024.%20super%20&%20super()/"
+                            aria-label=": Java 24. super &amp; super()"
+                        >
+                            Java 24. super &amp; super()
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:28+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="super"><a href="#super" class="headerlink" title="super"></a>super</h1><p>super는 자식 클래스가 부모 클래스로 부터 상속받은 멤버를 참조할 때 사용하는 참조 변수이다. 클래스 내의 멤버변수와 지역변수의 이름이 같은 경우 구분을 위해 this를 사용하듯 부모 클래스와 자식 클래스의 멤버의 이름이 같을 경우 super를 사용한다. this와 super는 인스턴스의 주소값을 저장하는데 static메소드(클래스 메소드)와는 무관하게 사용된다.</p>
+<pre><code>class JavaApp &#123;
+    public static void main(String[] args) &#123;
+        Child child = new Child();
+        child.childMethod();
+    &#125;
+&#125;
+
+class Parent &#123;
+    int x = 10;
+&#125;
+
+class Child extends Parent &#123;
+    int x = 20;
+
+    void childMethod() &#123;
+        System.out.println(&quot;x=&quot; + x);
+        System.out.println(&quot;this.x=&quot; + this.x);
+        System.out.println(&quot;super.x=&quot; + super.x);
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>x=20
+this.x=20
+super.x=10
+</code></pre>
+<h1 id="super-1"><a href="#super-1" class="headerlink" title="super()"></a>super()</h1><p>super()는 부모 클래스의 생성자를 호출하는 메서드이다. 상속받은 자식 클래스가 부모 클래스의 멤버를 사용할 경우가 있을 수도 있으므로 부모 클래스를 우선적으로 초기화해줘야 한다. 부모 클래스의 생성자는 자식 클래스의 생성자 첫줄에서 호출해준다. 이러한 부모 클래스에 대한 생성자 호출은 상속관계에 따라 Object 클래스까지 올라가서 마무리된다.</p>
+<p>정리하면, Object 클래스를 제외한 모든 클래스의 생성자의 첫줄에는 반드시 자신의 클래스의 또다른 생성자, this() 또는 부모 클래스의 생성자, super()를 호출해줘야 한다. 이렇게 하지 않으면 컴파일러가 자동으로 super()를 생성자의 첫줄에 호출한다.</p>
+<pre><code>class JavaApp &#123;
+    public static void main(String[] args) &#123;
+        Point3D point3d = new Point3D();    // Point3D() 생성자로 초기화 및 인스턴스 생성
+        System.out.println(&quot;point3d.x=&quot; + point3d.x);
+        System.out.println(&quot;point3d.y=&quot; + point3d.y);
+        System.out.println(&quot;point3d.z=&quot; + point3d.z);
+    &#125;
+&#125;
+
+class Point &#123;
+    int x = 10;
+    int y = 20;
+
+    Point(int x, int y) &#123;
+        // 생성자의 첫줄에 다른 생성자를 호출하지 않았기 때문에,
+        // 컴파일러가 이 부분에 super()를 호출한다.
+        // 부모 클래스이므로 Object 클래스의 super()가 호출된다.
+        this.x = x;
+        this.y = y;
+    &#125;
+&#125;
+
+class Point3D extends Point &#123;
+    int z = 30;
+
+    Point3D() &#123;
+        this(100, 200, 300);    // 자신의 클래스의 또다른 생성자 호출
+    &#125;
+
+    Point3D(int x, int y, int z) &#123;
+        super(x, y);    // 부모 클래스 생성자 호출
+        this.z = z;
+    &#125;  
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>point3d.x=100
+point3d.y=200
+point3d.z=300
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2024.%20super%20&%20super()/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2023.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/"
+                            aria-label=": Java 23. 상속과 오버라이딩"
+                        >
+                            Java 23. 상속과 오버라이딩
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:24+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="상속과-오버라이딩"><a href="#상속과-오버라이딩" class="headerlink" title="상속과 오버라이딩"></a>상속과 오버라이딩</h1><h2 id="상속-extends-inheritance"><a href="#상속-extends-inheritance" class="headerlink" title="상속(extends, inheritance)"></a>상속(extends, inheritance)</h2><p>상속이란 자식 클래스(서브 클래스)에서 부모클래스(슈퍼 클래스)의 필드와 메소드를 참조하여 쓸 수 있게 해준다. 기본적으로 하나의 클래스에 하나의 슈퍼 클래스 밖에 상속 할 수 없다.</p>
+<pre><code>Class Vehicle &#123;
+
+    public int speed;
+    
+    public int getSpeed() &#123;
+        return speed;
+    &#125;
+    public void setSpeed(int speed) &#123;
+        this.speed = speed;
+    &#125;
+    
+&#125;
+
+class Car extends Vehicle &#123;
+
+&#125;
+
+public class Test &#123;
+
+    public static void main(String[] args) &#123;
+
+        Car A = new Car();
+        A.getSpeed();
+    &#125;
+&#125;
+</code></pre>
+<p>Car클래스에는 getSpeed메소드가 없지만 상속된 Vehicle에 getspeed메소드가 있기 때문에 사용 가능하다.</p>
+<p>상속의 특징은 다음과 같다.<br>상속(부모-&gt;자식)</p>
+<ol>
+<li>부모꺼는 내꺼다.</li>
+<li>private 선언한 것은 상속이 안된다.</li>
+<li>protected 선언한것은 상속이 된다.</li>
+<li>자식꺼는 자식꺼다.</li>
+<li>부모도가지고있고 나도 같은 객체를 가지고 있으면 내꺼쓴다.</li>
+</ol>
+<h2 id="오버-라이딩-Override"><a href="#오버-라이딩-Override" class="headerlink" title="오버 라이딩(Override)"></a>오버 라이딩(Override)</h2><p>슈퍼 클래스에 존재하는 필드나 메소드를 서브 클래스에서 재정의하여 사용할 수 있다.</p>
+<p>오버 라이딩을 통한 슈퍼 클래스를 생성할 때는 super 키워드를 사용한다.</p>
+<p>오버라이딩을 위해 필드나 메소드를 정의할 때 바로 위 상단에 @Override 문구를 넣어주면 오타를 방지할 수 있다. (슈퍼 클래스에 존재하지 않은 메소드를 오버라이드 하려고하면 컴파일 과정에서 에러 발생)</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2023.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2022.%20Call%20by%20value%EC%99%80%20Call%20by%20reference/"
+                            aria-label=": Java 22. Call by value와 Call by reference"
+                        >
+                            Java 22. Call by value와 Call by reference
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:22+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Call-by-value"><a href="#Call-by-value" class="headerlink" title="Call by value"></a>Call by value</h1><p>값에 의한 호출.</p>
+<pre><code>Class CallByValue&#123;
+
+public static void swap(int x, int y) &#123;
+
+int temp = x;
+
+x = y;
+y = temp;
+
+&#125;
+
+public static void main(String[] args) &#123;
+
+int a = 10;
+int b = 20;
+
+System.out.println(&quot;swap() 호출 전 : a = &quot; + a + &quot;, b = &quot; + b);
+
+swap(a, b);
+
+System.out.println(&quot;swap() 호출 후 : a = &quot; + a + &quot;, b = &quot; + b);
+     &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>swap() 호출 전 : a = 10, b = 20
+
+swap() 호출 후 : a = 10, b = 20
+</code></pre>
+<p> 할당 된 메모리 변수에는 각각 10과 20의 값이 저장된다. 이후,<br>swap() 메서드 호출 시에 사용한 인자 a와 b는 할당 된 메모리<br>주소가 아닌 메모리에 담겨져 있던 값만이 복사되어 swap() 메서드<br>내부의 매개변수 x와 y의 메모리 주소에 담겨지게 된다.<br>당연하게도 swap() 메서드가 수행하는 동안 사용되는 변수들은 main<br>()에 존재하는 a와 b가 아닌 swap() 내부에 새로 생성 된 x와<br>y이기 때문에 메서드 수행 후에도 결과 값에 변화가 없습니다.</p>
+<p>Call by value는 메서드 호출 시에 사용되는 인자의 메모리에 저장되어 있는 값(value)을 복사하여 보낸다.</p>
+<h1 id="Call-by-reference"><a href="#Call-by-reference" class="headerlink" title="Call by reference"></a>Call by reference</h1><p>참조에 의한 호출.</p>
+<pre><code>Class CallByReference&#123;
+int value;
+
+CallByReference(int value) &#123;
+this.value = value;
+&#125;
+
+public static void swap(CallByReference x, CallByReference y) &#123;
+
+int temp = x.value;
+
+x.value = y.value;
+y.value = temp;
+
+&#125;
+public static void main(String[] args) &#123;
+
+CallByReference a = new CallByReference(10);
+CallByReference b = new CallByReference(20);
+
+System.out.println(&quot;swap() 호출 전 : a = &quot; + a.value + &quot;, b = &quot; + b.value);
+
+swap(a, b);
+
+System.out.println(&quot;swap() 호출 전 : a = &quot; + a.value + &quot;, b = &quot; + b.value);
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>swap() 호출 전 : a = 10, b = 20
+
+swap() 호출 후 : a = 20, b = 10
+</code></pre>
+<p>main()에서 선언 된 CallByReference 타입의 변수 a와 b는 각각 객체를 생성하여 10과 20의 주소 값을 저장하게 된다. 이후, swap() 메서드 호출 시에 인자 a와 b는 메모리에 저장 된 주소 값을 복사하여 매개변수 x와 y의 메모리에 저장합니다. 결국 swap() 메서드는 10과 20이 저장 된 주소를 참조하여 연산하기 때문에, 연산 결과에 따라 원본 데이터가 변하게 된다.</p>
+<p>Call by reference는 메서드 호출 시 사용되는 인자 값의 메모리에 저장되어있는 주소(Address)를 복사하여 보낸다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2022.%20Call%20by%20value%EC%99%80%20Call%20by%20reference/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/08/Java/Java%2021.%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EA%B3%BC%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/"
+                            aria-label=": Java 21. 오버로딩과 오버라이딩"
+                        >
+                            Java 21. 오버로딩과 오버라이딩
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-08T23:37:22+09:00">
+	
+		    Feb 08, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="오버로딩과-오버라이딩"><a href="#오버로딩과-오버라이딩" class="headerlink" title="오버로딩과 오버라이딩"></a>오버로딩과 오버라이딩</h1><p>오버로딩(Overloading) : 같은 이름의 메소드를 여러 개 가지면서 매개변수의 유형과 개수가 다르도록하는 기술<br>오버라이딩(Overriding) : 상위 클래스가 가지고 있는 메소드를 하위 클래스가 재정의 해서 강요한다.</p>
+<h2 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h2><p>오버로딩은 메소드 오버로딩과 생성자 오버로딩이 있다. 하지만 둘다 같은 개념이다. 같은 이름의 함수를 여러 개 정의하고, 매개변수의 유형과 개수를 다르게 하여 다양한 유형의 호출에 응답하게 한다.<br><img src="https://user-images.githubusercontent.com/77277946/107236440-1157a900-6a69-11eb-83f3-818dbb1f7a8e.jpg" alt="오버로딩"></p>
+<h2 id="오버라이딩"><a href="#오버라이딩" class="headerlink" title="오버라이딩"></a>오버라이딩</h2><p>상위 클래스가 가지고 있는 멤버변수가 하위 클래스로 상속되는 것처럼 상위 클래스가 가지고 있는 메소드도 하위 클래스로 상속되어 하위 클래스에서 사용할 수 있다. 하위 클래스에서 메소드를 재정의해서 사용할 수 있다.</p>
+<p>상속 관계에 있는 클래스 간에 같은 이름의 메소드를 정의하는 기술을 오버라이딩 이라고 한다.<br><img src="https://user-images.githubusercontent.com/77277946/107236428-0ef54f00-6a69-11eb-9e85-0efddbd86841.jpg" alt="오버라이딩"><br>@Overriding을 쓰면 Overriding의 특성을 가져오며 컴파일 과정에서 에러를 표시해줄 수 있다.<br>오버라이딩은 자신에게 메소드가 있으면 자신의 메소드를 사용하고, 자신의 메소드가 없으면 분모의 메소드를 사용한다.<br>자신의 메소드를 사용하더라도 분모의 메모리에 저장한다.</p>
+<h2 id="오버로딩과-오버라이딩-생성조건"><a href="#오버로딩과-오버라이딩-생성조건" class="headerlink" title="오버로딩과 오버라이딩 생성조건"></a>오버로딩과 오버라이딩 생성조건</h2><table>
+<thead>
+<tr>
+<th></th>
+<th align="center">오버로딩</th>
+<th align="center">오버라이딩</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>메소드 이름</td>
+<td align="center">동일</td>
+<td align="center">동일</td>
+</tr>
+<tr>
+<td>매개변수, 타입</td>
+<td align="center">다름</td>
+<td align="center">동일</td>
+</tr>
+<tr>
+<td>리턴 타입</td>
+<td align="center">상관없음</td>
+<td align="center">동일</td>
+</tr>
+</tbody></table>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/08/Java/Java%2021.%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EA%B3%BC%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/07/Java/Java%2020.%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80%20%EC%9D%B8%EC%9E%90/"
+                            aria-label=": Java 20. 매개변수와 인자"
+                        >
+                            Java 20. 매개변수와 인자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-07T23:37:22+09:00">
+	
+		    Feb 07, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="매개변수"><a href="#매개변수" class="headerlink" title="매개변수"></a>매개변수</h1><p>매개 : 둘 사이에서 양편의 관계를 맺어 줌<br>변수 : 어떤 상황의 가변적 요인, 어떤 관계나 범위 안에서 여러 가지 값으로 변할 수 있는 수<br>즉, 매개변수란 둘 사이에서 양편의 관계를 맺어주면서, 어떤 관계나 범위 안에서 여러가지 값으로 변할 수 있는 가변적 요소이다.</p>
+<h1 id="인자"><a href="#인자" class="headerlink" title="인자"></a>인자</h1><p>어떤 사물의 원인이 되는 낱낱의 요소나 물질.<br>인수는 함수가 호출 될 때 함수에 전달되는 값이다. 프로그램 실행 중에 함수가 호풀 될 때마다 함수와 함께 일부 값이 전달된다. 이러한 값을 인수라고 한다. 함수와 함께 전달 될 때 인수는 함수 정의 중에 사용 된 변수로 대체되고 함수는 이 값으로 실행된다.</p>
+<h1 id="매개변수와-인수"><a href="#매개변수와-인수" class="headerlink" title="매개변수와 인수"></a>매개변수와 인수</h1><p>매개변수는 메소드, 또는 생성자를 선언할 때, 괄호 안에 적으며, 어떤 입력 값이 들어올지 값의 형태를 정의해준다.<br>인자는 메소드, 또는 생성자를 호출할 때, 괄호 안에 적으며, 미리 선언해 두었던 매개변수에 값을 대입해 준다.</p>
+<p>매개변수는 실제로 값이 존재하지는 않고, 어떤 형태로 입력값이 들어올 것인지를 정의해 준다.<br>인자는 매개변수에 대입되는 실제로 메모리에 할당되어 있는 변수이다.<br>즉, 매개변수와 인자의 차이는 실제로 메모리에 할당되어 있느냐, 없느냐의 차이이다.</p>
+<p>숫자 두 개를 입력받아, 두 숫자의 합을 리턴하는 메소드를 만든다고 생각해보자.</p>
+<pre><code>public int sum(int a, int b) &#123;
+
+return a+b;
+
+&#125;
+</code></pre>
+<p>이렇게 메소드를 선언할때 int형 변수 두 개를 받겠다고 괄호 안에 적은 int a와 int b가 매개변수이다.<br>그럼, 이 메소드를 호출해서 숫자 3과 숫자 5를 더해보자.<br>sum(3, 5)<br>이렇게 메소드를 호출하여, 매개변수에 각각의 값을 대입했다.<br>이 3과 5가 바로 인자이다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/07/Java/Java%2020.%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80%20%EC%9D%B8%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/06/Java/Java%2019.%20%EC%83%9D%EC%84%B1%EC%9E%90%EC%99%80%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20this/"
+                            aria-label=": Java 19. 생성자와 오버로딩 그리고 this"
+                        >
+                            Java 19. 생성자와 오버로딩 그리고 this
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-06T22:52:24+09:00">
+	
+		    Feb 06, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="생성자와-오버로딩-그리고-this"><a href="#생성자와-오버로딩-그리고-this" class="headerlink" title="생성자와 오버로딩 그리고 this"></a>생성자와 오버로딩 그리고 this</h1><h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><p>객체가 생성될 ‘때마다’ 호출되는 것</p>
+<pre><code>클래스이름() &#123;&#125;
+</code></pre>
+<p>클래스에 아무런 생성자가 없다면 컴파일러가 기본 생성자는 넣어준다.<br>기본 생성자는 매개 변수도 없고, 구현부에서 아무런 일도 하지 않는다.</p>
+<pre><code>클래스이름(자료형 매개변수) &#123;
+    this.멤버변수 = 매개변수
+&#125;
+</code></pre>
+<p>명시적 생성자가 하는 일은 Field Initialization(필드 초기화). 명시적 생성자가 있으면 컴파일러에서 디폴트 생성자를 제공하지 않는다. 디폴트 생성자를 사용하려면 개발자가 디폴트 생성자를 추가로 직접 구현해야 한다.</p>
+<h2 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h2><p>매개변수가 다른 생성자를 두 개 이상 구현하거나, 매개변수의 개수 또는 타입이 다른 같은 이름을 가진 메소드를 정의하는 것.</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>자신의 메모리를 가리킨다.<br>생성자에서 다른 생성자를 호출할 수 있다.<br>인스턴스 자신의 주소를 반환한다.<br>this를 사용하면, 메서드의 인수나 변수에 필드와 같은 이름을 붙여도 그것들을 구분하여 사용할 수 있다.<br>this는 주로 생성자와 메소드의 매개변수 이름이 필드와 동일한 경우, 인스턴스 멤버인 필드임을 명시하고자 할때 사용된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/06/Java/Java%2019.%20%EC%83%9D%EC%84%B1%EC%9E%90%EC%99%80%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20this/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+          <li class="pagination-prev">
+            <a
+                class="btn btn--default btn--small"
+                href="/archives/2021/02/page/6/"
+                aria-label="NEWER POSTS"
+            >
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a
+                class="btn btn--default btn--small"
+                href="/archives/2021/02/page/8/"
+                aria-label="OLDER POSTS"
+            >
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+        <li class="pagination-number">page 7 of 8</li>
+    </ul>
+</div>
+
+</section>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

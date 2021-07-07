@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 32. String, StringBuffer, StringBuilder - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"String VS StringBuffer/StringBuilderString과 StrungBuffer/StrungBuilder 클래스의 가장 큰 차이점은 String은 불변의 속성을 갖는다는 점이다.그렇기 때문에 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용해 주면 좋은 성능을 기대할 수 있다. 그러나 문자열 추가, 수정, 삭제 등의 연산이 빈번하게 발생하는 알고리즘에 String클래스를 사용하면 힙메모리에 많은 가비지가 생성되어 힙메모리 부족으로 어플리케이션 성능에 치명적인 영향을 끼치게 된다.\n이를 해결하기 위해 가변성을 가지는 StringBuffer/StringBuilder클래스를 도입했다.\nStringBuffer VS StringBuilder이 두클래스의 큰 차이점은 동기화의 유무이다. StringBuffer는 동기화 키워드를 지원하여 멀티쓰레드 환경에서 안전하다는 점이다. 참고로 String도 불변성을 가지기 때문에 마찬가지로 멀티쓰레드 환경에서의 안정성을 가지고 있다.\n반대로 StringBuilder는 동기화를 지원하지 않기 때문에 멀티쓰레드 환경에서 사용하는 것은 적합하지 않지만 동기화를 고려하지 않는 만큼 단일쓰레드에서의 성능은 StringBuffer보다 뛰어나다.\n","dateCreated":"2021-02-09T23:37:36+09:00","dateModified":"2021-03-04T17:51:02+09:00","datePublished":"2021-02-09T23:37:36+09:00","description":"","headline":"Java 32. String, StringBuffer, StringBuilder","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/","keywords":"Java, Eclipse, String, StringBuffer, StringBuilder"}</script>
+    <meta name="description" content="String VS StringBuffer&#x2F;StringBuilderString과 StrungBuffer&#x2F;StrungBuilder 클래스의 가장 큰 차이점은 String은 불변의 속성을 갖는다는 점이다.그렇기 때문에 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용해 주면 좋은 성능을 기대할 수 있다. 그러나 문자열 추가, 수정, 삭제 등의 연산이">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 32. String, StringBuffer, StringBuilder">
+<meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="String VS StringBuffer&#x2F;StringBuilderString과 StrungBuffer&#x2F;StrungBuilder 클래스의 가장 큰 차이점은 String은 불변의 속성을 갖는다는 점이다.그렇기 때문에 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용해 주면 좋은 성능을 기대할 수 있다. 그러나 문자열 추가, 수정, 삭제 등의 연산이">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-09T14:37:36.000Z">
+<meta property="article:modified_time" content="2021-03-04T08:51:02.220Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="String">
+<meta property="article:tag" content="StringBuffer">
+<meta property="article:tag" content="StringBuilder">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 32. String, StringBuffer, StringBuilder
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-09T23:37:36+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="String-VS-StringBuffer-StringBuilder"><a href="#String-VS-StringBuffer-StringBuilder" class="headerlink" title="String VS StringBuffer/StringBuilder"></a>String VS StringBuffer/StringBuilder</h1><p>String과 StrungBuffer/StrungBuilder 클래스의 가장 큰 차이점은 String은 불변의 속성을 갖는다는 점이다.<br>그렇기 때문에 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용해 주면 좋은 성능을 기대할 수 있다. 그러나 문자열 추가, 수정, 삭제 등의 연산이 빈번하게 발생하는 알고리즘에 String클래스를 사용하면 힙메모리에 많은 가비지가 생성되어 힙메모리 부족으로 어플리케이션 성능에 치명적인 영향을 끼치게 된다.</p>
+<p>이를 해결하기 위해 가변성을 가지는 StringBuffer/StringBuilder클래스를 도입했다.</p>
+<h1 id="StringBuffer-VS-StringBuilder"><a href="#StringBuffer-VS-StringBuilder" class="headerlink" title="StringBuffer VS StringBuilder"></a>StringBuffer VS StringBuilder</h1><p>이 두클래스의 큰 차이점은 동기화의 유무이다. StringBuffer는 동기화 키워드를 지원하여 멀티쓰레드 환경에서 안전하다는 점이다. 참고로 String도 불변성을 가지기 때문에 마찬가지로 멀티쓰레드 환경에서의 안정성을 가지고 있다.</p>
+<p>반대로 StringBuilder는 동기화를 지원하지 않기 때문에 멀티쓰레드 환경에서 사용하는 것은 적합하지 않지만 동기화를 고려하지 않는 만큼 단일쓰레드에서의 성능은 StringBuffer보다 뛰어나다.</p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/String/" rel="tag">String</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/StringBuffer/" rel="tag">StringBuffer</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/StringBuilder/" rel="tag">StringBuilder</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2033.%20indexof/"
+                    data-tooltip="Java 33. indexof"
+                    aria-label="PREVIOUS: Java 33. indexof"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    data-tooltip="Java 31. StringBuffer Class"
+                    aria-label="NEXT: Java 31. StringBuffer Class"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2033.%20indexof/"
+                    data-tooltip="Java 33. indexof"
+                    aria-label="PREVIOUS: Java 33. indexof"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    data-tooltip="Java 31. StringBuffer Class"
+                    aria-label="NEXT: Java 31. StringBuffer Class"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

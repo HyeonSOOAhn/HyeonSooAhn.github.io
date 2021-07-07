@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: 조건절 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/%EC%A1%B0%EA%B1%B4%EC%A0%88/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2012.%20%EC%A1%B0%EA%B1%B4%EC%A0%88/"
+                            aria-label=": Oracle Database 12. 조건절"
+                        >
+                            Oracle Database 12. 조건절
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:47+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="조건절"><a href="#조건절" class="headerlink" title="조건절"></a>조건절</h1><ul>
+<li>SQL문은 테이블내의 모든 로우에 대해 적용을 하게 된다.</li>
+<li>이 때 어떤 조건에 맞는 로우에 대해서만 작업을 하고 싶을 때 조건절을 사용한다.</li>
+</ul>
+<h2 id="select의-조건절"><a href="#select의-조건절" class="headerlink" title="select의 조건절"></a>select의 조건절</h2><ul>
+<li>select 컬럼명 from 테이블명<br>where 조건절</li>
+<li>select ~ from 까지를 통해 모든 로우를 가져오고 각 로우를 조건절과 비교하여 참인 로우만 남겨주고 거짓인 로우는 제거한다.</li>
+</ul>
+<h2 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h2><pre><code>&lt; : 작은가
+&gt; : 큰가
+&lt;= : 작거나 같은가
+&gt;= : 크거나 같은가
+= : 같은가
+&lt;&gt;, !=, ^= : 다른가
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 근무 부서가 10번인 사원들의 사원번호, 이름 근무 부서를 가져온다.
+select empno, ename, deptno
+from emp
+where deptno = 10;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 근무 부서 번호가 10번이 아닌 사원들의 사원번호, 이름, 근무 부서 번호를 가져온다.
+select empno,ename, deptno
+from emp
+where deptno &lt;&gt; 10;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여가 1500이상인 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno,ename,sal
+from emp
+where sal &gt;=1500;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 이름이 SCOTT 사원의 사원번호, 이름, 직무, 급여를 가져온다.
+select empno, ename, job, sal
+from emp
+where ename = &#39;SCOTT&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 SALESMAN인 사원의 사원번호, 이름, 직무를 가져온다.
+select empno,ename,job
+from emp
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 CLERK이 아닌 사원의 사원번호, 이름, 직무를 가져온다.
+select empno,ename,job
+from emp
+where job &lt;&gt; &#39;CLERK&#39;;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2012.%20%EC%A1%B0%EA%B1%B4%EC%A0%88/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

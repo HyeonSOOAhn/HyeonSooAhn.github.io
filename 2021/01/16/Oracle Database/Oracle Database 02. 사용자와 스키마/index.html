@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Oracle Database 02. 사용자와 스키마 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Oracle Database\nOracle Database는 관계형 데이터베이스이다. \n핵심은 표이다.사용자와 스키마스키마는 서로연관된 표들을 그룹핑하는 디렉토리같은 것이다.사용자를 생성하면 그 사용자의 해당되는 디렉토리가 생성된다.스키마의 본질적인 정의는 그 스키마가 속하는 표들을 정의하는 정보이다.\n\n\n\nCreate user유저를 생성하는 방법의 로드맵이다.동그라미는 내가 자유롭게 결정하는 것이고, 네모는 고정된 선택지이다.\n\n\n\n\n\n\n실제 CMD에서 Create user구동.\n\n\n\n\n\nSQLPLUS\nsys AS SYSDBA: 관리자권한으로 로그인\nCREATED USER asd IDENTIFIED BY 123;: 사용자 생성\nALTER SESSION SET “_ORACLESCRIPT=TRUE”: 세션권한부여\n\n사용자 권한부여이 상태로는 로그인 권한이 없기 때문에 접속이 되지 않는다.일단 모든 권한을 준다.\n\n\n\n\n\nGRANT DBA TO asd;:asd에게 모든 권한을 준다.\nSQLPLUS에 재접속을 한다.\n접속 확인을 한다. \n\n","dateCreated":"2021-01-16T10:24:42+09:00","dateModified":"2021-04-02T16:35:17+09:00","datePublished":"2021-01-16T10:24:42+09:00","description":"","headline":"Oracle Database 02. 사용자와 스키마","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/","keywords":"Oracle, SQLPLUS, Database, 사용자와 스키마"}</script>
+    <meta name="description" content="Oracle Database Oracle Database는 관계형 데이터베이스이다.  핵심은 표이다.사용자와 스키마스키마는 서로연관된 표들을 그룹핑하는 디렉토리같은 것이다.사용자를 생성하면 그 사용자의 해당되는 디렉토리가 생성된다.스키마의 본질적인 정의는 그 스키마가 속하는 표들을 정의하는 정보이다.    Create user유저를 생성하는 방법의 로드맵이">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Oracle Database 02. 사용자와 스키마">
+<meta property="og:url" content="http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="Oracle Database Oracle Database는 관계형 데이터베이스이다.  핵심은 표이다.사용자와 스키마스키마는 서로연관된 표들을 그룹핑하는 디렉토리같은 것이다.사용자를 생성하면 그 사용자의 해당되는 디렉토리가 생성된다.스키마의 본질적인 정의는 그 스키마가 속하는 표들을 정의하는 정보이다.    Create user유저를 생성하는 방법의 로드맵이">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-16T01:24:42.000Z">
+<meta property="article:modified_time" content="2021-04-02T07:35:17.669Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="SQLPLUS">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="사용자와 스키마">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Oracle Database 02. 사용자와 스키마
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-01-16T10:24:42+09:00">
+	
+		    Jan 16, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="Oracle-Database"><a href="#Oracle-Database" class="headerlink" title="Oracle Database"></a>Oracle Database</h1><ul>
+<li>Oracle Database는 관계형 데이터베이스이다. </li>
+<li>핵심은 표이다.<h2 id="사용자와-스키마"><a href="#사용자와-스키마" class="headerlink" title="사용자와 스키마"></a>사용자와 스키마</h2>스키마는 서로연관된 표들을 그룹핑하는 디렉토리같은 것이다.<br>사용자를 생성하면 그 사용자의 해당되는 디렉토리가 생성된다.<br>스키마의 본질적인 정의는 그 스키마가 속하는 표들을 정의하는 정보이다.<center>
+<img src= https://user-images.githubusercontent.com/77277946/104798598-8a1d6980-580b-11eb-9225-39040fd81792.jpg width="800" height="400">
+</center></li>
+</ul>
+<h2 id="Create-user"><a href="#Create-user" class="headerlink" title="Create user"></a>Create user</h2><p>유저를 생성하는 방법의 로드맵이다.<br>동그라미는 내가 자유롭게 결정하는 것이고, 네모는 고정된 선택지이다.</p>
+<center>
+<img src= https://user-images.githubusercontent.com/77277946/104798672-ff893a00-580b-11eb-830f-002dff9d9604.jpg width="500" height="500">
+</center>
+
+<br>
+
+<p>실제 CMD에서 Create user구동.</p>
+<center>
+<img src= https://user-images.githubusercontent.com/77277946/104798744-88a07100-580c-11eb-9a43-576c4b978c00.jpg width="1000" height="400">
+</center>
+
+<ol>
+<li>SQLPLUS</li>
+<li>sys AS SYSDBA: 관리자권한으로 로그인</li>
+<li>CREATED USER asd IDENTIFIED BY 123;: 사용자 생성</li>
+<li>ALTER SESSION SET “_ORACLESCRIPT=TRUE”: 세션권한부여</li>
+</ol>
+<h2 id="사용자-권한부여"><a href="#사용자-권한부여" class="headerlink" title="사용자 권한부여"></a>사용자 권한부여</h2><p>이 상태로는 로그인 권한이 없기 때문에 접속이 되지 않는다.<br>일단 모든 권한을 준다.</p>
+<center>
+<img src= https://user-images.githubusercontent.com/77277946/104799058-4593cd00-580f-11eb-8f92-0aa03116ec85.jpg width="1000" height="400">
+</center>
+
+<ol>
+<li>GRANT DBA TO asd;:asd에게 모든 권한을 준다.</li>
+<li>SQLPLUS에 재접속을 한다.</li>
+<li>접속 확인을 한다. </li>
+</ol>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Database/" rel="tag">Database</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Oracle/" rel="tag">Oracle</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/SQLPLUS/" rel="tag">SQLPLUS</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80-%EC%8A%A4%ED%82%A4%EB%A7%88/" rel="tag">사용자와 스키마</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/17/Oracle%20Database/Oracle%20Database%2003.%ED%85%8C%EC%9D%B4%EB%B8%94/"
+                    data-tooltip="Oracle Database 03. 테이블"
+                    aria-label="PREVIOUS: Oracle Database 03. 테이블"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/16/Oracle%20Database/Oracle%20Database%2001.%20%EA%B8%B0%EC%B4%88%EA%B0%9C%EB%85%90%20%EC%9D%B4%ED%95%B4/"
+                    data-tooltip="Oracle Database 01. 기초개념 이해"
+                    aria-label="NEXT: Oracle Database 01. 기초개념 이해"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/17/Oracle%20Database/Oracle%20Database%2003.%ED%85%8C%EC%9D%B4%EB%B8%94/"
+                    data-tooltip="Oracle Database 03. 테이블"
+                    aria-label="PREVIOUS: Oracle Database 03. 테이블"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/16/Oracle%20Database/Oracle%20Database%2001.%20%EA%B8%B0%EC%B4%88%EA%B0%9C%EB%85%90%20%EC%9D%B4%ED%95%B4/"
+                    data-tooltip="Oracle Database 01. 기초개념 이해"
+                    aria-label="NEXT: Oracle Database 01. 기초개념 이해"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/01/16/Oracle%20Database/Oracle%20Database%2002.%20%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80%20%EC%8A%A4%ED%82%A4%EB%A7%88/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: Java - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/Java/page/3/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2034.%20startswith,%20endswith/"
+                            aria-label=": Java 34. startswith, endswith"
+                        >
+                            Java 34. startswith, endswith
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:38+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="startswith"><a href="#startswith" class="headerlink" title="startswith()"></a>startswith()</h1><p>startsWith() 함수는 대상 문자열이 특정 문자 또는 문자열로 시작하는지 체크하는 함수이다. 해당 문자열로 시작되는지 여부를 확인하고 boolean 에 맞춰 true/false 값을 리턴한다.</p>
+<pre><code>public class StartsWithTest&#123;
+
+    public static void main(String[] args)&#123;
+
+        String startsWithT = &quot;자바 코딩 테스트 &quot;;
+
+        System.out.println( startsWithT.startsWith(&quot;자바&quot;) );  // true
+        System.out.println( startsWithT.startsWith(&quot;자바 &quot;) );// true
+        System.out.println( startsWithT.startsWith(&quot;자&quot;) );// true
+        System.out.println( startsWithT.startsWith(&quot; 자&quot;) );// false
+    &#125;
+&#125;
+</code></pre>
+<p>Startswith()는 공백도 취급한다.</p>
+<h1 id="endswith"><a href="#endswith" class="headerlink" title="endswith()"></a>endswith()</h1><p>endsWith() 함수는 대상 문자열이 특정 문자 또는 문자열로 끝나는지 체크하는 함수이다. 해당 문자열로 끝나는 여부를 확인하고 boolean 에 맞춰 true/false 값을 리턴한다.</p>
+<pre><code>public class EndsWithTest&#123;
+
+    public static void main(String[] args)&#123;
+         String endsWithT = &quot;자바 코딩 테스트 &quot;;
+
+        System.out.println( endsWithT.endsWith(&quot;테스트&quot;) );  // false
+        System.out.println( endsWithT.endsWith(&quot;테스트 &quot;) );// true
+        System.out.println( endsWithT.endsWith(&quot;트 &quot;) );// true
+        System.out.println( endsWithT.endsWith(&quot; 테&quot;) );// false
+    &#125;
+&#125;
+</code></pre>
+<p>테스트 뒤에 공백이 있기 때문에 공백을 넣지 않으면 false가 나온다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2034.%20startswith,%20endswith/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2033.%20indexof/"
+                            aria-label=": Java 33. indexof"
+                        >
+                            Java 33. indexof
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:37+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="indexof"><a href="#indexof" class="headerlink" title="indexof"></a>indexof</h1><p>특정 문자나 문자열이 앞에서부터 쳐음 발견되는 인덱스를 반환하며 만약 찾지 못했을 경우”-1”을 반환한다.</p>
+<pre><code>public class IndexOfTest&#123;
+
+    public static void main(String[] args)&#123;
+
+        String indexOfTestOne = &quot;Hello world&quot;;
+
+        System.out.println( indexOfTestOne.indexOf(&quot;o&quot;) );  // 4
+        System.out.println( indexOfTestOne.indexOf(&quot;x&quot;) );  // -1
+        System.out.println( indexOfTestOne.indexOf(&quot;o&quot;,5) );  // 7
+    &#125;
+&#125;
+</code></pre>
+<p>.indexof(“찾을문자”,”시작할 위치”) 이런식으로 사용하면된다.<br>시작할위치는 생략 가능하며 생략할 경우 0번째 부터 찾기 시작한다.</p>
+<h2 id="lastindexof"><a href="#lastindexof" class="headerlink" title="lastindexof"></a>lastindexof</h2><p>lastindexOf()는 특정 문자나 문자열이 뒤에서부터 처음 발견되는 인덱스를 반환하며 만약 찾지 못했을 경우 “-1”을 반환합니다.</p>
+<pre><code>public class IndexOfTest&#123;
+
+    public static void main(String[] args)&#123;
+
+        String indexOfTestOne = &quot;Hello world&quot;;
+
+        System.out.println( indexOfTestOne.lastIndexOf(&quot;o&quot;) );  // 7
+        System.out.println( indexOfTestOne.lastIndexOf(&quot;x&quot;) );  // -1
+        System.out.println( indexOfTestOne.lastIndexOf(&quot;o&quot;,5) );  // 4
+    &#125;
+&#125;
+</code></pre>
+<p>사용법은 indexof와 같으며 뒤에서부터 찾기 시작한다.<br>오른쪽에서 몇번째 위치하는지를 반환하는게 아니라 말그대로 인덱스<br>즉, 왼쪽에서 몇번쨰 위치하는지를 인덱스로 반환한다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2033.%20indexof/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                            aria-label=": Java 32. String, StringBuffer, StringBuilder"
+                        >
+                            Java 32. String, StringBuffer, StringBuilder
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:36+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="String-VS-StringBuffer-StringBuilder"><a href="#String-VS-StringBuffer-StringBuilder" class="headerlink" title="String VS StringBuffer/StringBuilder"></a>String VS StringBuffer/StringBuilder</h1><p>String과 StrungBuffer/StrungBuilder 클래스의 가장 큰 차이점은 String은 불변의 속성을 갖는다는 점이다.<br>그렇기 때문에 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용해 주면 좋은 성능을 기대할 수 있다. 그러나 문자열 추가, 수정, 삭제 등의 연산이 빈번하게 발생하는 알고리즘에 String클래스를 사용하면 힙메모리에 많은 가비지가 생성되어 힙메모리 부족으로 어플리케이션 성능에 치명적인 영향을 끼치게 된다.</p>
+<p>이를 해결하기 위해 가변성을 가지는 StringBuffer/StringBuilder클래스를 도입했다.</p>
+<h1 id="StringBuffer-VS-StringBuilder"><a href="#StringBuffer-VS-StringBuilder" class="headerlink" title="StringBuffer VS StringBuilder"></a>StringBuffer VS StringBuilder</h1><p>이 두클래스의 큰 차이점은 동기화의 유무이다. StringBuffer는 동기화 키워드를 지원하여 멀티쓰레드 환경에서 안전하다는 점이다. 참고로 String도 불변성을 가지기 때문에 마찬가지로 멀티쓰레드 환경에서의 안정성을 가지고 있다.</p>
+<p>반대로 StringBuilder는 동기화를 지원하지 않기 때문에 멀티쓰레드 환경에서 사용하는 것은 적합하지 않지만 동기화를 고려하지 않는 만큼 단일쓰레드에서의 성능은 StringBuffer보다 뛰어나다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                            aria-label=": Java 31. StringBuffer Class"
+                        >
+                            Java 31. StringBuffer Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:35+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="StringBuffer-Class"><a href="#StringBuffer-Class" class="headerlink" title="StringBuffer Class"></a>StringBuffer Class</h1><p>StringBuffer Class는 변하는 문자열을 다룰 때 사용한다. 객체 생성시 크기를 정하지 않으면 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가진다.</p>
+<p>String클래스의 객체는 한 번생성이 되면 내용이 변하지 않는 반면에 StringBuffer클래스의 객체는 문자열의 내용을 변경할 수 있다. StringBuffer 클래스의 메소드는 문자열 처리 후의 결과를 원래의 StringBuffer 객체에 반영하고, 메소드 리턴 타입은 void 이다.</p>
+<h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><dl><dt>StringBuffer()</dt><dd>초기 문자열이 없고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. </dd></dl><dl><dt>StringBuffer(String str)</dt><dd>str의 초기 문자열을 가지고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다.</dd></dl><dl><dt>StringBuffer(int length)</dt><dd>초기 문자열이 없고 length개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. </dd></dl><h2 id="메소드"><a href="#메소드" class="headerlink" title="메소드"></a>메소드</h2><h3 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h3><p>append()메소드는 이수로 전달된 값을 문자열로 변한한 후, 해당 문자열의 마지막에 추가한다.<br>이 메소드는 String클래스의 concat() 메소드와 같은 결과를 반환하지만, 내부적인 처리 속도가 훨씬 빠르다.<br>예제</p>
+<pre><code>StringBuffer str = new StringBuffer(&quot;Java&quot;);
+System.out.println(&quot;원본 문자열 : &quot; + str);
+
+System.out.println(str.append(&quot;수업&quot;));
+System.out.println(&quot;append() 메소드 호출 후 원본 문자열 : &quot; + str);
+</code></pre>
+<p>결과</p>
+<pre><code>원본 문자열 : Java
+Java수업
+append() 메소드 호출 후 원본 문자열 : Java수업
+</code></pre>
+<h3 id="capacity"><a href="#capacity" class="headerlink" title="capacity()"></a>capacity()</h3><p>capacity()메소드는 StringBuffer 인스턴스의 현재 버퍼 크기를 반환한다.<br>예제</p>
+<pre><code>StringBuffer str01 = new StringBuffer();
+StringBuffer str02 = new StringBuffer(&quot;Java&quot;);
+
+System.out.println(str01.capacity());
+System.out.println(str02.capacity());
+</code></pre>
+<p>결과</p>
+<pre><code>16
+20
+</code></pre>
+<p>위의 예제처럼 길이가 4인 문자열로 StringBuffer 인스턴스를 생성하면, 기본적으로 생성되는 여유 버퍼 크기인 16에 문자의 길이인 4를 더한 총 20개의 문자를 저장할 수 있는 버퍼가 생성된다.</p>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete()"></a>delete()</h3><p>delete()메소드는 전달된 인덱스에 해당하는 부분 문자열을 해당 문자열에서 제거한다. 또한, deleteCharAt() 메소드를 사용하면 특정 위치의 문자 한 개만을 제거할 수도 있다.<br>예제</p>
+<pre><code>StringBuffer str = new StringBuffer(&quot;Java Oracle&quot;);
+System.out.println(&quot;원본 문자열 : &quot; + str);
+
+① System.out.println(str.delete(4, 8));
+System.out.println(str.deleteCharAt(1));
+System.out.println(&quot;deleteCharAt() 메소드 호출 후 원본 문자열 : &quot; + str);
+</code></pre>
+<p>결과</p>
+<pre><code>원본 문자열 : Java Oracle
+Javacle
+Jvacle
+deleteCharAt() 메소드 호출 후 원본 문자열 : Jvacle
+</code></pre>
+<p>위 예제의 ①번 라인에서는 delete() 메소드를 사용하여 해당 문자열에서 인덱스가 4인 위치의 문자부터 7인 위치의 문자까지를 삭제한다.</p>
+<p>이처럼 delete() 메소드는 첫 번째 매개변수로 전달된 인덱스부터 두 번째 매개변수로 전달된 인덱스 바로 앞의 문자까지를 삭제하는 메소드이다.</p>
+<h3 id="insert"><a href="#insert" class="headerlink" title="insert()"></a>insert()</h3><p>insert()메소드는 인수로 전달된 값을 문자로 변환한 후, 해당 문자열의 지정된 인덱스 위치에 추가한다. 이때 전달된 인덱스가 해당 문자열의 길이와 같으면, append()메소드와 같은 결과를 반환한다.<br>예제</p>
+<pre><code>StringBuffer str = new StringBuffer(&quot;Java 만세!!&quot;);
+System.out.println(&quot;원본 문자열 : &quot; + str);
+
+① System.out.println(str.insert(4, &quot;Script&quot;));
+System.out.println(&quot;insert() 메소드 호출 후 원본 문자열 : &quot; + str);
+</code></pre>
+<p>결과</p>
+<pre><code>원본 문자열 : Java 만세!!
+JavaScript 만세!!
+insert() 메소드 호출 후 원본 문자열 : JavaScript 만세!!
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2030.%20String%20Class/"
+                            aria-label=": Java 30. String Class"
+                        >
+                            Java 30. String Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:34+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h1><p>String 객체가 하나 생성되면, 그 값은 길어지거나 줄어들 수 없으며 그 문자들 중 어떤 것도 바뀔 수 없다.<br>그래서 String 객체는 변경불능이라고 한다.</p>
+<p>String클래스의 자주 사용하는 함수이다.<br>|함수|반환형|설명<br>|—|—|—<br>|CharAt(int index)|char|index로 지정된 첨자 위치에 있는 문자를 반환한다.<br>|compareTo(String str)|int|이 String이 String str보다 사전적 순서에서 앞서면 음수값, 같으면 0값, 뒤에 있으면 0값이다.<br>|Concat(String str)|String|이 String과 str을 접합하여 구성되는 새로운 String을 반환한다.<br>|equals(String str)|boolean|이 String이 str과 같은 문자열이면 (대소문자 구분) True, 그렇지 않으면 False 반환<br>|equalslgnoreCase(String str)|boolean|이 String이 str과 같은 문자열이면(대소문자 미 구분) True, 그렇지 않으면 False 반환<br>|length()|int|이 String의 문자 개수를 반환한다.<br>|replace(char oldChar, char newChar)|String|String에 나타나는 oldChar를 모두 new Char로 변경한다.<br>|substring(int offset, int endIndex)|String|이 String의 offset 위치에서부터 endIndex-1까지에 걸친 문자열을 반환한다.<br>|toLowerCase()|String|모든 대문자를 소문자로 변환한다.<br>|toUpperCase()|String|모든 소문자를 대문자로 변환한다. </p>
+<p>예제</p>
+<pre><code>public class StringClass &#123;
+    
+    public static void main(String[] args)&#123;
+        
+        String text = &quot;First String V&quot;;
+        String concat, upperCase, replace, subString;
+        
+        System.out.println(&quot;기본 String : &quot;+ text);
+        System.out.println(&quot;기본 String 길이 : &quot;+text.length());    // 문자열 길이 출력
+        
+        concat = text.concat(&quot;, Second String V&quot;);    // 문자열 연결
+        
+        upperCase = concat.toUpperCase();        // 문자열 대문자로 변환
+        
+        replace = upperCase.replace(&#39;V&#39;, &#39;K&#39;);    //  문자 V를 K로 변환
+        
+        subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기
+        
+        
+        System.out.println(&quot;Concat String : &quot; + concat);
+        System.out.println(&quot;upperCase String : &quot; + upperCase);
+        System.out.println(&quot;replace String : &quot; + replace);
+        System.out.println(&quot;subString String : &quot; + subString);
+        
+        
+    &#125;
+
+&#125;
+</code></pre>
+<p>System.out.println(“기본 String 길이 : “+text.length());    // 문자열 길이 출력</p>
+<p>text인 “First String V” 의 문자열 길이를 반환한다.</p>
+<p>-&gt; 14</p>
+<p>concat = text.concat(“, Second String V”);    // 문자열 연결</p>
+<p>text인 “First String V” 뒤에 concat 메소드로 “, Second String V” 를 연결했다.</p>
+<p>-&gt;  First String V, Second String V</p>
+<p>upperCase = concat.toUpperCase();        // 문자열 대문자로 변환</p>
+<p>concat인 “First String V, Second String V” 의 문자열을 대문자로 변환한다</p>
+<p>-&gt; FIRST STRING V, SECOND STRING V</p>
+<p>replace = upperCase.replace(‘V’, ‘K’);    //  문자 V를 K로 변환</p>
+<p>upperCase인 “FIRST STRING V, SECOND STRING V” 문자열 중 ‘V’ 문자를 ‘K’ 문자로 변환 한다.</p>
+<p>-&gt; FIRST STRING K, SECOND STRING K</p>
+<p>subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기</p>
+<p>replace 인 “FIRST STRING K, SECOND STRING K” 문자열의 3번째 부터 9번째 문자열까지 잘라낸다 (0부터 시작)</p>
+<p>-&gt; ST STRI</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2030.%20String%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/"
+                            aria-label=": Java 29. Garbage Collector"
+                        >
+                            Java 29. Garbage Collector
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:33+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="JVM과-메모리"><a href="#JVM과-메모리" class="headerlink" title="JVM과 메모리"></a>JVM과 메모리</h1><p>메모리는 OS가 관리하는데, 모든 프로그램들은 OS위에서 돌아간다.<br>프로그램이 돌아가려면 메모리가 있어야된다.<br>JVM도 메모리가 필요하면 OS에게 메모리 요청을 한다.<br>그런데 OS가 처음부터 자기가 가진 메모리를 전부 다 줘버리면, 다른 프로그램들에게 줄 메모리가 없게 된다.<br>때문에 각 프로그램에게 메모리의 일정부분만 빌려주는 방식으로 관리가 된다.</p>
+<p>JVM을 실행하다가 메모리가 부족하면 OS에게 메모리를  더 달라고 요청한다. 그러면 OS가 또 JVM에게 메모리를 더 빌려준다.<br>JVM은 OS로 부터 받은 메모리들 중, 어디에다가 저장할지 그 주소를 할당하야 한다.<br>이 때, JVM은 자기가 받은 메모리 안에서, 절대주소가 아니라 거기에 대한 상대주소를 할당한다. 이걸 offset주소라고 한다.</p>
+<h1 id="Garbage-Collector"><a href="#Garbage-Collector" class="headerlink" title="Garbage Collector"></a>Garbage Collector</h1><p>프로그램을 실행하다보면 가비지가 발생하게 된다.<br>가비지는 정리되지 않은 메모리, 유효하지 않은 메모리 주소를 말한다.<br>가비지 컬렉터는 메모리가 부족할 때 가비지를 정리해주는 프로그램을 말한다.<br>때문에 JVM의 가비지 컬렉터는 메모리를 다른 용도로 사용할 수 있게 ‘메모리 해제’를 시키는 프로그램이다.<br>참고로 가비지 컬렉터는 JVM이 OS에게 추가로 메모리를 더 요청할 때 실행된다.<br>또, 서버 프로그램인 경우에는 24시간 내내 돌아가는데, 이때에는 JVM이 한가할 때 가비지 컬렉터가 실행된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/"
+                            aria-label=": Java 28. 메모리(RAM)"
+                        >
+                            Java 28. 메모리(RAM)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:32+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="메모리-RAM"><a href="#메모리-RAM" class="headerlink" title="메모리(RAM)"></a>메모리(RAM)</h1><p>프로그램이 실행하게 되면 OS는 메모리(RAM)에 공간을 할당해 준다.<br>할당해주는 메모리 공간은 4가지(Code, Data, Stack, Heap)가 있다.</p>
+<h2 id="코드-Code-영역"><a href="#코드-Code-영역" class="headerlink" title="코드(Code) 영역"></a>코드(Code) 영역</h2><p>우리가 작성한 소스코드가 들어가는 부분.<br>즉, 실행할 프로그램의 코드가 저장되는 영역으로 텍스트영역이라고도 부른다.<br>코그영역은 실행 파일을 구성하는 명령어들이 올라가는 메모리 영역으로 함수, 제어문, 상수 등이 여기에 저장된다.</p>
+<h2 id="데이터-Data-영역"><a href="#데이터-Data-영역" class="headerlink" title="데이터(Data) 영역"></a>데이터(Data) 영역</h2><p>전역변수와 Static변수가 할당되는 영역<br>프로그램의 시작과 동시에 할당되고, 프로그램이 종료되어야 메모리가 소멸되는 영역.</p>
+<h2 id="스택-Stack-영역"><a href="#스택-Stack-영역" class="headerlink" title="스택(Stack) 영역"></a>스택(Stack) 영역</h2><p>프로그램이 자동으로 사용하는 임시 메모리 영역.<br>함수 호출 시 생성되는 지역 변수와 매개변수가 저장되는 영역이고,<br>함수 호출이 완료되면 사라진다.</p>
+<h2 id="힙-Heap-영역"><a href="#힙-Heap-영역" class="headerlink" title="힙(Heap) 영역"></a>힙(Heap) 영역</h2><p>프로그래머가 할당/해체하는 메모리 공간이다.<br>Java에서는 가비지 컬렉터가 자동으로 해제한다.<br>이 공간에 메모리 할당하는 것을 동적 할당이라고도 부른다.</p>
+<p>Heap과 Stack영역은 같은 공간을 공유한다. 그래서 Heap이 메모리 위쪽 주소부터 할당되고 Stack은 아래쪽 부터 할당된다. 각 영역이 상대 공간을 침범하는 일이 발생할 수 있는데 이를 각각 Heap Overflow, Stack Overflow라고 칭한다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                            aria-label=": Java 27. 상속과 위임"
+                        >
+                            Java 27. 상속과 위임
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:31+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="클래스의-상속"><a href="#클래스의-상속" class="headerlink" title="클래스의 상속"></a>클래스의 상속</h1><pre><code>class Person &#123;
+
+    protected int age;
+    
+    protected String name;
+    
+    public Persion(int age, String name) &#123;
+        this.age = age;
+        this.name = name;
+    &#125;
+    
+    public int getAge() &#123;
+        return this.age;
+    &#125;
+    
+    public String getName() &#123;
+        return this.name;
+    &#125;
+&#125;
+</code></pre>
+<p>age와 name이라는 멤버 변수를 가지고 있는 Person 클래스를 생각해보자. 이 클래스를 상속 받는 Student 클래스는 다음과 같이 정의할 수 있다.</p>
+<pre><code>class Student extends Person &#123;
+    
+    protected String studentNumber;
+    
+    public Student(int age, String name, String studentNumber) &#123;
+        
+        super(age, name);
+        this.studentNumber = studentNumber;
+    &#125;
+    
+    public String getStudentNumber() &#123;
+    
+        return this.studentNumber;
+    &#125;
+&#125;
+</code></pre>
+<p>‘extends’라는 키워드를 이용해서 Person 클래스를 상속받아 확장하여 Student 클래스를 정의했다. Student 클래스 정의에는 직접적으로 나와있지 않지만 부모 클래스인 Person 클래스의 메소드인 getAge()와 getName() 메소드를 호출 할 수 있다.</p>
+<p>일반적으로 두 클래스 간의 관계가 ‘IS-A’ 관계이면 상속을 사용한다. Student is a person이므로 상속을 통해서 클래스를 정의하는게 자연스럽다.</p>
+<h1 id="클래스의-위임"><a href="#클래스의-위임" class="headerlink" title="클래스의 위임"></a>클래스의 위임</h1><p>상속과 다르게 위임은 다른 클래스의 객체를 멤버로 갖는 형태의 클래스 정의다.</p>
+<pre><code>class Employee &#123;
+    
+    private Department department;
+    
+    private String name;
+    
+    publiv Employee(String name, Department department) &#123;
+        
+        this.name = name;
+        this.department = department;
+    &#125;
+    
+    public String getDepartmentName() &#123;
+    
+        return this.department.getName();
+    &#125;
+&#125;
+</code></pre>
+<p>이 경우 특정 메소드 호출을 멤버 클래스의 메소드에 포워드(Forward)하는 식으로 구현하게 된다.</p>
+<p>Employee 클래스와 Department 클래스 사이의 관계를 살펴보면 ‘IS-A’ 관계는 아니다. (Employee is a Department는 어색하다.) 따라서 멤버 변수로 Department 클래스를 포함하는 Delegation 형태로 구현을 했다.</p>
+<h1 id="상속과-위임"><a href="#상속과-위임" class="headerlink" title="상속과 위임"></a>상속과 위임</h1><ul>
+<li>두 클래스의 관계가 ‘IS-A’ 관계이면 상속(Inheritance)을 써야한다.</li>
+<li>기존에 존재하는 API에 넘겨줘야 하는 경우 상속(Inheritance)을 써야한다.</li>
+<li>final 클래스를 확장하고 싶은 경우 위임(Delegation)을 써야한다.</li>
+</ul>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2026.%20implements%EC%99%80%20extends%EC%9D%98%20%EC%B0%A8%EC%9D%B4/"
+                            aria-label=": Java 26. implements와 extends의 차이"
+                        >
+                            Java 26. implements와 extends의 차이
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:30+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="implements와-extends의-차이"><a href="#implements와-extends의-차이" class="headerlink" title="implements와 extends의 차이"></a>implements와 extends의 차이</h1><ul>
+<li>extends는 일반 클래스와 abstract 클래스 상속에 사용되고, implement는 interface 상속에 사용된다.</li>
+<li>class가 class를 상속받을 땐 extends를 사용하고, interface가 interface를 상속 받을 땐 extends를 사용한다.</li>
+<li>class가 interface를 사용할 땐 implements를 써야하고<br>interface가 class를 사용할 땐 implements를 쓸수 없다.</li>
+<li>extends는 클래스 한 개만 상속 받을 수 있다.</li>
+<li>extends 자신 클래스는 부모 클래스의 기능을 사용한다.</li>
+<li>implements는 여러개 사용 가능하다.</li>
+<li>implements는 설계 목적으로 구현 가능하다.</li>
+<li>implements한 클래스는 implements의 내용을 다 사용해야 한다.</li>
+</ul>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2026.%20implements%EC%99%80%20extends%EC%9D%98%20%EC%B0%A8%EC%9D%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2025.%20Interface/"
+                            aria-label=": Java 25. Interface"
+                        >
+                            Java 25. Interface
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:29+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h1><p>하나의 시스템을 구성하는 2개의 구성요소(하드웨어, 소프트웨어) 또는 2개의 시스템이 상호작용할 수 있도록 접속되는 경계(boundary), 이 경계에서 상호 접속하기 위한 하드웨어, 소프트웨어, 조건, 규약 등을 포괄적으로 가리키는 말</p>
+<p>자바에서 인터페이스는 여러가지 역할로 사용한다.</p>
+<ul>
+<li>개발자 사이의 코드 규약을 정한다.</li>
+<li>여러 구현체에서 공통적인 부분을 추상화한다.(다형성)</li>
+</ul>
+<p>자바 인터페이스는 기본적으로 추상 메소드의 모음이다. 추상메소드는 아래와 같이 구현부가 없는 메소드를 말한다.</p>
+<pre><code>public interface Walkable &#123;
+void walk();
+&#125;
+</code></pre>
+<p>구현부가 없으므로 인터페이스를 만든다면 반드시 구현하는 클래스를 만들어야 하며, 인터페이스를 구현하기로 한 클래스는 반드시 인터페이스에 명시되어 있는 추상메소드들을 모두 구현해야 한다. 만약 이를 구현하지 않으면 컴파일 에러가 발생한다.</p>
+<pre><code>public class Dog implements Walkable &#123;
+// ...
+@Override
+public void walk() &#123;
+    // ...
+    &#125;
+&#125;
+</code></pre>
+<p>인터페이스는 구현과 상속을 모두 할 수 있다.</p>
+<ul>
+<li>인터페이스를 사용하는 구체 클래스는 해당인터페이스를 구현해야한다.</li>
+<li>인터페이스 사이에는 상속을 할 수 있다.</li>
+</ul>
+<p>인터페이스를 사용하면 다중 상속이 가능하다. 인터페이스 사이에서도, 구체 클래스에서도 여러 인터페이스를 구현 및 상속할 수 있다.</p>
+<pre><code>public interface Walkable &#123;
+void walk();
+&#125;
+
+public interface Flyable &#123;
+void fly();
+&#125;
+
+public interface Moveable extends Walkable, Flyable &#123;
+&#125;
+    public class Bat implements Moveable &#123;
+@Override
+public void walk() &#123;
+    // ...
+&#125;
+
+@Override
+public void fly() &#123;
+    // ...
+&#125;
+&#125;
+</code></pre>
+<p>인터페이스는 클래스와 달리 기본 접근제어자는 public이다.<br>인터페이스에 필드 변수를 선언하면 public static final로 선언해야 하며, 이 것도 기본 설정되어 있다.</p>
+<h2 id="인터페이스를-사용하는-이유"><a href="#인터페이스를-사용하는-이유" class="headerlink" title="인터페이스를 사용하는 이유"></a>인터페이스를 사용하는 이유</h2><p>인터페이스를 사용하는 주된 이유는 다형성을 위해서이다. 다형성은 상속받은 클래스 또는 인터페이스의 메소드를 재정의하여 서로 다른 행동을 만들 수 있다. 상속을 통해 상위 클래스의 타입으로 통일한 후 하위 클래스들을 하나의 타입으로 관리할 수 있다. 이를 사용해서 변경에 유연한 코드를 만들 수 있다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2025.%20Interface/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+          <li class="pagination-prev">
+            <a
+                class="btn btn--default btn--small"
+                href="/tags/Java/page/2/"
+                aria-label="NEWER POSTS"
+            >
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a
+                class="btn btn--default btn--small"
+                href="/tags/Java/page/4/"
+                aria-label="OLDER POSTS"
+            >
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+        <li class="pagination-number">page 3 of 6</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

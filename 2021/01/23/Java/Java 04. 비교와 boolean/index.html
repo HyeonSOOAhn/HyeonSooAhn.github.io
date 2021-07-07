@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 04. 비교와 boolean - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"비교와 booleanBoolean불린은 참과 거짓을 의미하는 데이터 타입으로 bool이라고도 불린다. 불린은 정수나 문자와 같이 하나의 데이터 타입인데, 참을 의미하는 true와 거짓을 의미하는 false 두 가지의 값을 가지고 있다. \n비교 연산자==좌항과 우항을 비교해서 서로 값이 같다면 true 다르다면 false가 된다. ‘=’가 하나면 대입연산자 이지만 두개이면 비교 연산자가 된다.\n!=‘!’는 부정을 의미한다. !=의 결과는 ==과 정반대의 결과를 보여준다.\n&gt;좌항이 우항보다 크다면 참, 그렇지 않다면 거짓임을 알려주는 연산자이다. ‘&lt;”는 반대의 의미이다.\n&gt;=좌항이 우항보다 크거나 같다. 마찬가지로 ‘&lt;=”는 반대의 의미이다.\n.equals문자열을 비교할 떄 사용하는 메소드이다.String은 클래스 이므로 앞자리를 대문자로 써야된다..equals는 메소드이므로 뒤에 ()가 들어간다. \n","dateCreated":"2021-01-23T18:48:16+09:00","dateModified":"2021-06-04T09:33:53+09:00","datePublished":"2021-01-23T18:48:16+09:00","description":"","headline":"Java 04. 비교와 boolean","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/","keywords":"Java, Eclipse, 비교, boolean"}</script>
+    <meta name="description" content="비교와 booleanBoolean불린은 참과 거짓을 의미하는 데이터 타입으로 bool이라고도 불린다. 불린은 정수나 문자와 같이 하나의 데이터 타입인데, 참을 의미하는 true와 거짓을 의미하는 false 두 가지의 값을 가지고 있다.  비교 연산자&#x3D;&#x3D;좌항과 우항을 비교해서 서로 값이 같다면 true 다르다면 false가 된다. ‘&#x3D;’가 하나면 대입연산자">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 04. 비교와 boolean">
+<meta property="og:url" content="http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="비교와 booleanBoolean불린은 참과 거짓을 의미하는 데이터 타입으로 bool이라고도 불린다. 불린은 정수나 문자와 같이 하나의 데이터 타입인데, 참을 의미하는 true와 거짓을 의미하는 false 두 가지의 값을 가지고 있다.  비교 연산자&#x3D;&#x3D;좌항과 우항을 비교해서 서로 값이 같다면 true 다르다면 false가 된다. ‘&#x3D;’가 하나면 대입연산자">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/77277946/105575343-421fb900-5dae-11eb-9165-99fc7ced9b63.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/77277946/105575525-a2fbc100-5daf-11eb-94fa-cd2cc16564a8.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/77277946/105575590-16053780-5db0-11eb-8c60-e1cdb8c66300.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/77277946/105575628-5cf32d00-5db0-11eb-916a-4f38822cf5e9.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/77277946/105576523-99298c00-5db6-11eb-8f45-d0807ca96a20.jpg">
+<meta property="article:published_time" content="2021-01-23T09:48:16.000Z">
+<meta property="article:modified_time" content="2021-06-04T00:33:53.313Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="비교">
+<meta property="article:tag" content="boolean">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/77277946/105575343-421fb900-5dae-11eb-9165-99fc7ced9b63.jpg">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 04. 비교와 boolean
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-01-23T18:48:16+09:00">
+	
+		    Jan 23, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="비교와-boolean"><a href="#비교와-boolean" class="headerlink" title="비교와 boolean"></a>비교와 boolean</h1><h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p>불린은 참과 거짓을 의미하는 데이터 타입으로 bool이라고도 불린다. 불린은 정수나 문자와 같이 하나의 데이터 타입인데, 참을 의미하는 true와 거짓을 의미하는 false 두 가지의 값을 가지고 있다. </p>
+<h3 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h3><h3 id=""><a href="#" class="headerlink" title="=="></a>==</h3><p>좌항과 우항을 비교해서 서로 값이 같다면 true 다르다면 false가 된다. ‘=’가 하나면 대입연산자 이지만 두개이면 비교 연산자가 된다.<br><img src="https://user-images.githubusercontent.com/77277946/105575343-421fb900-5dae-11eb-9165-99fc7ced9b63.jpg" alt="비교연산자"></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="!="></a>!=</h3><p>‘!’는 부정을 의미한다. !=의 결과는 ==과 정반대의 결과를 보여준다.<br><img src="https://user-images.githubusercontent.com/77277946/105575525-a2fbc100-5daf-11eb-94fa-cd2cc16564a8.jpg" alt="비교연산자2"></p>
+<h3 id="gt"><a href="#gt" class="headerlink" title="&gt;"></a>&gt;</h3><p>좌항이 우항보다 크다면 참, 그렇지 않다면 거짓임을 알려주는 연산자이다. ‘&lt;”는 반대의 의미이다.<br><img src="https://user-images.githubusercontent.com/77277946/105575590-16053780-5db0-11eb-8c60-e1cdb8c66300.jpg" alt="비교연산자3"></p>
+<h3 id="gt-1"><a href="#gt-1" class="headerlink" title="&gt;="></a>&gt;=</h3><p>좌항이 우항보다 크거나 같다. 마찬가지로 ‘&lt;=”는 반대의 의미이다.<br><img src="https://user-images.githubusercontent.com/77277946/105575628-5cf32d00-5db0-11eb-916a-4f38822cf5e9.jpg" alt="비교연산자4"></p>
+<h3 id="equals"><a href="#equals" class="headerlink" title=".equals"></a>.equals</h3><p>문자열을 비교할 떄 사용하는 메소드이다.<br><img src="https://user-images.githubusercontent.com/77277946/105576523-99298c00-5db6-11eb-8f45-d0807ca96a20.jpg" alt="비교연산자5"><br>String은 클래스 이므로 앞자리를 대문자로 써야된다.<br>.equals는 메소드이므로 뒤에 ()가 들어간다. </p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/boolean/" rel="tag">boolean</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/%EB%B9%84%EA%B5%90/" rel="tag">비교</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/23/Java/Java%2005.%20%EC%A1%B0%EA%B1%B4%EB%AC%B8/"
+                    data-tooltip="Java 05. 조건문"
+                    aria-label="PREVIOUS: Java 05. 조건문"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/22/Java/Java%2003.%20%EC%9E%90%EB%A3%8C%ED%98%95/"
+                    data-tooltip="Java 03. 자료형"
+                    aria-label="NEXT: Java 03. 자료형"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/23/Java/Java%2005.%20%EC%A1%B0%EA%B1%B4%EB%AC%B8/"
+                    data-tooltip="Java 05. 조건문"
+                    aria-label="PREVIOUS: Java 05. 조건문"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/22/Java/Java%2003.%20%EC%9E%90%EB%A3%8C%ED%98%95/"
+                    data-tooltip="Java 03. 자료형"
+                    aria-label="NEXT: Java 03. 자료형"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

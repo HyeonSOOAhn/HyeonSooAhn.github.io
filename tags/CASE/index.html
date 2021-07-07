@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: CASE - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/CASE/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2020.%20DECODE,%20CASE/"
+                            aria-label=": Oracle Database 20. DECODE, CASE"
+                        >
+                            Oracle Database 20. DECODE, CASE
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:54+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h1><ul>
+<li>값에 따라 반환값이 결정되는 구문이다.</li>
+<li>decode(칼럼명, 값1, 반환값1,<pre><code>   칼럼명, 값2, 반환값2,
+          값3, 반환값3)
+</code></pre>
+</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 각 사원의 부서이름을 가져온다.
+-- 10 : 인사과, 20 : 개발부, 30 : 경영 지원팀
+-- 40 : 생산부
+select empno, ename,
+    decode(deptno, 10, &#39;인사과&#39;,
+                   20, &#39;개발부&#39;,
+                   30, &#39;경영지원팀&#39;,
+                   40, &#39;생산부&#39;)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직급에 따라 인상된 급여액을 가져온다.
+-- CLEAK : 10%
+-- SALESMAN : 15%
+-- PRESIDENT : 20%
+-- MANAGER : 5%
+-- ANALYST : 20%
+select empno, ename, job,
+    decode(job, &#39;CLEAK&#39;, sal *1.1,
+                &#39;SALESMAN&#39;, sal *1.15,
+                &#39;PRESIDENT&#39;, sal *1.2,
+                &#39;MANAGER&#39;, sal * 1.05,
+                &#39;ANALYST&#39;, sal * 1.2)
+from emp;
+</code></pre>
+<h1 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h1><ul>
+<li>조건에 따라 반환값이 결정되는 구문이다.</li>
+<li>case when 조건식1 then 반환값1<pre><code> when 조건식2 then 반환값2
+</code></pre>
+end</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 급여액별 등급을 가져온다.
+-- 1000미만 : C등급
+-- 1000이상 2000미만 : B등급
+-- 2000이상 : A등급
+select empno, ename,
+    case when sal &lt; 1000 then &#39;C등급&#39;
+            when sal &gt;= 1000 and sal &lt; 2000 then &#39;B등급&#39;
+            when sal &gt;= 2000 then &#39;A등급&#39;
+    end
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직원들의 급여를 다음과 같이 인상한다.
+-- 1000이하 : 100%
+-- 1000초과 2000미만 : 50%
+-- 2000이상 : 200%
+select empno, ename,
+    case when sal&lt;=1000 then sal*2
+            when sal&gt;1000 and sal&lt;2000 then sal *1.5
+            when sal&gt;=2000 then sal*3
+            end
+from emp;
+</code></pre>
+<p>DECODE를 사용하면 값에 따라 반환값을 결정할 수 있다.<br>CASE를 사용하면 조건에 따라 반환 값을 결정할 수 있다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2020.%20DECODE,%20CASE/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

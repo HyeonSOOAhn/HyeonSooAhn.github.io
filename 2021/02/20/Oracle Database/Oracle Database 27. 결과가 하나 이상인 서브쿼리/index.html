@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Oracle Database 27. 결과가 하나 이상인 서브 쿼리 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"결과가 하나 이상인 서브쿼리– 서브쿼리를 통해 가져온 결과가 하나이상인 경우 결과를 모두 만족하거나 결과 중 하나만 만족하거나 해야하는 경우가 있다.\n\n이때 다음과 같은 연산자를 사용하면 된다.\nIN : 서브쿼리의 결과 중 하나라도 일치하면 조건은 참이 된다.\nANY, SOME : 서브쿼리의 결과와 하나이상 일치하면 조건은 참이된다.IN과는 달리 조건을 자유롭게 줄 수 있다.\nALL : 서브쿼리의 결과와 모두 일치해야 조건은 참이된다.\n\nex)\n-- 3000이상의 급여를 받는 사원들과 같은 부서에 근무하고 있는 사원의 사원번호, 이름, 급여를 가져온다.\nselect empno, ename, sal\nfrom emp\nwhere deptno in (select deptno\n                from emp\n                where sal&gt;=3000);\n\nex)\n-- 직무가 CLERK인 사원과 동일한 부서에 근무하고 있는 사원들의 사원번호, 이름, 입사일을 가져온다.\nselect empno, ename, hiredate\nfrom emp\nwhere deptno in (select deptno\n                from emp\n                where job = &#39;CLERK&#39;);\n\nex)\n-- KING을 직속상관으로 가지고 있는 사원들이 근무하고 있는 근무 부서명, 지역을 가지고 온다.\nselect dname,loc\nfrom dept\nwhere deptno in (select deptno\n                from emp\n                where mgr = (select empno\n                            from emp\n                            where ename = &#39;KING&#39;));\n\nex)\n-- CLERK들의 직속상관의 사원번호, 이름, 급여를 가져온다.\nselect empno, ename, sal\nfrom emp\nwhere empno in (select mgr\n                from emp\n                where job = &#39;CLERK&#39;);\n\nex)\n-- 각 부서별 급여 평균보다 더 많이 받는 사원의 사원번호, 이름, 급여를 가져온다.\nselect empno, ename, sal\nfrom emp\nwhere sal &gt; all (select avg(sal)\n                from emp\n                group by deptno);\n\nselect empno, ename, sal\nfrom emp\nwhere sal &gt; (select max(avg(sal))\n            from emp\n            group by deptno);\n\nall을 사용하는 경우 대부분 max함수를 사용하여 대치가 가능하다.\nex)\n-- 각 부서별 급여 최저치보다 더 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.\nselect empno, ename, sal\nfrom emp\nwhere sal &gt; all (select min(sal)\n                from emp\n                group by deptno);\n\nselect empno, ename, sal\nfrom emp\nwhere sal &gt; (select max(min(sal))\n                from emp\n                group by deptno);\n\nex)\n-- SALESMAN보다 급여를 적게 받는 사원들의 사원번호, 이름, 급여를 가져온다.\nselect empno, ename, sal\nfrom emp\nwhere sal &lt; all (select sal\n                from emp\n                where job = &#39;SALESMAN&#39;);\n\nselect empno, ename, sal\nfrom emp\nwhere sal &lt;  (select min(sal)\n            from emp\n            where job = &#39;SALESMAN&#39;);\n\nex)\n-- 각 부서별 최저 급여 액수 보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.\nselect empno, ename, sal\nfrom emp\nwhere sal&gt; any (select min(sal)\n                from emp\n                group by deptno);\n\n","dateCreated":"2021-02-20T16:54:00+09:00","dateModified":"2021-03-27T00:40:42+09:00","datePublished":"2021-02-20T16:54:00+09:00","description":"","headline":"Oracle Database 27. 결과가 하나 이상인 서브 쿼리","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/","keywords":"Oracle, SQLPLUS, Database, 서브쿼리"}</script>
+    <meta name="description" content="결과가 하나 이상인 서브쿼리– 서브쿼리를 통해 가져온 결과가 하나이상인 경우 결과를 모두 만족하거나 결과 중 하나만 만족하거나 해야하는 경우가 있다.  이때 다음과 같은 연산자를 사용하면 된다. IN : 서브쿼리의 결과 중 하나라도 일치하면 조건은 참이 된다. ANY, SOME : 서브쿼리의 결과와 하나이상 일치하면 조건은 참이된다.IN과는 달리 조건을 자">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Oracle Database 27. 결과가 하나 이상인 서브 쿼리">
+<meta property="og:url" content="http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="결과가 하나 이상인 서브쿼리– 서브쿼리를 통해 가져온 결과가 하나이상인 경우 결과를 모두 만족하거나 결과 중 하나만 만족하거나 해야하는 경우가 있다.  이때 다음과 같은 연산자를 사용하면 된다. IN : 서브쿼리의 결과 중 하나라도 일치하면 조건은 참이 된다. ANY, SOME : 서브쿼리의 결과와 하나이상 일치하면 조건은 참이된다.IN과는 달리 조건을 자">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-20T07:54:00.000Z">
+<meta property="article:modified_time" content="2021-03-26T15:40:42.984Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="SQLPLUS">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="서브쿼리">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Oracle Database 27. 결과가 하나 이상인 서브 쿼리
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-20T16:54:00+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="결과가-하나-이상인-서브쿼리"><a href="#결과가-하나-이상인-서브쿼리" class="headerlink" title="결과가 하나 이상인 서브쿼리"></a>결과가 하나 이상인 서브쿼리</h1><p>– 서브쿼리를 통해 가져온 결과가 하나이상인 경우 결과를 모두 만족하거나 결과 중 하나만 만족하거나 해야하는 경우가 있다.</p>
+<ul>
+<li>이때 다음과 같은 연산자를 사용하면 된다.</li>
+<li>IN : 서브쿼리의 결과 중 하나라도 일치하면 조건은 참이 된다.</li>
+<li>ANY, SOME : 서브쿼리의 결과와 하나이상 일치하면 조건은 참이된다.<br>IN과는 달리 조건을 자유롭게 줄 수 있다.</li>
+<li>ALL : 서브쿼리의 결과와 모두 일치해야 조건은 참이된다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 3000이상의 급여를 받는 사원들과 같은 부서에 근무하고 있는 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where deptno in (select deptno
+                from emp
+                where sal&gt;=3000);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 CLERK인 사원과 동일한 부서에 근무하고 있는 사원들의 사원번호, 이름, 입사일을 가져온다.
+select empno, ename, hiredate
+from emp
+where deptno in (select deptno
+                from emp
+                where job = &#39;CLERK&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- KING을 직속상관으로 가지고 있는 사원들이 근무하고 있는 근무 부서명, 지역을 가지고 온다.
+select dname,loc
+from dept
+where deptno in (select deptno
+                from emp
+                where mgr = (select empno
+                            from emp
+                            where ename = &#39;KING&#39;));
+</code></pre>
+<p>ex)</p>
+<pre><code>-- CLERK들의 직속상관의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where empno in (select mgr
+                from emp
+                where job = &#39;CLERK&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 평균보다 더 많이 받는 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; all (select avg(sal)
+                from emp
+                group by deptno);
+
+select empno, ename, sal
+from emp
+where sal &gt; (select max(avg(sal))
+            from emp
+            group by deptno);
+</code></pre>
+<p>all을 사용하는 경우 대부분 max함수를 사용하여 대치가 가능하다.</p>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 최저치보다 더 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; all (select min(sal)
+                from emp
+                group by deptno);
+
+select empno, ename, sal
+from emp
+where sal &gt; (select max(min(sal))
+                from emp
+                group by deptno);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALESMAN보다 급여를 적게 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &lt; all (select sal
+                from emp
+                where job = &#39;SALESMAN&#39;);
+
+select empno, ename, sal
+from emp
+where sal &lt;  (select min(sal)
+            from emp
+            where job = &#39;SALESMAN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 최저 급여 액수 보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal&gt; any (select min(sal)
+                from emp
+                group by deptno);
+</code></pre>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Database/" rel="tag">Database</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Oracle/" rel="tag">Oracle</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/SQLPLUS/" rel="tag">SQLPLUS</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/" rel="tag">서브쿼리</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2028.%20Set/"
+                    data-tooltip="Oracle Database 28. Set"
+                    aria-label="PREVIOUS: Oracle Database 28. Set"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2026.%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    data-tooltip="Oracle Database 26. 서브쿼리"
+                    aria-label="NEXT: Oracle Database 26. 서브쿼리"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2028.%20Set/"
+                    data-tooltip="Oracle Database 28. Set"
+                    aria-label="PREVIOUS: Oracle Database 28. Set"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2026.%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    data-tooltip="Oracle Database 26. 서브쿼리"
+                    aria-label="NEXT: Oracle Database 26. 서브쿼리"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Oracle Database 07. Primary key - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Primary key예를 들어 학번 같이 중복이 되면 안되는 그런 데이터를 입력할 때즉, 고유의 번호를 부여할 때 쓰인다.값이 중복될 경우 입력이 되지 않고, 없다면 입력이 된다.Primary key를 지정한 것과 하지 않는 것의 속도차이는 어마어마하게 차이가 크다.그러므로 테이블을 만들 때 특별한 경우가 아니면 무조껀 하는 것이 좋다.CREATE TABLE topic(id NUMBER NOT NULL,title VARCHAR2(50) NOT NULL,describtion VARCHAR2(4000),created DATE NOT NULL,CONSTRAINT PK_TOPIC PRIMARY KEY(id));\n","dateCreated":"2021-01-20T16:52:41+09:00","dateModified":"2021-03-09T17:50:07+09:00","datePublished":"2021-01-20T16:52:41+09:00","description":"","headline":"Oracle Database 07. Primary key","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/","keywords":"Oracle, SQLPLUS, Database, Primary key"}</script>
+    <meta name="description" content="Primary key예를 들어 학번 같이 중복이 되면 안되는 그런 데이터를 입력할 때즉, 고유의 번호를 부여할 때 쓰인다.값이 중복될 경우 입력이 되지 않고, 없다면 입력이 된다.Primary key를 지정한 것과 하지 않는 것의 속도차이는 어마어마하게 차이가 크다.그러므로 테이블을 만들 때 특별한 경우가 아니면 무조껀 하는 것이 좋다.CREATE TABL">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Oracle Database 07. Primary key">
+<meta property="og:url" content="http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="Primary key예를 들어 학번 같이 중복이 되면 안되는 그런 데이터를 입력할 때즉, 고유의 번호를 부여할 때 쓰인다.값이 중복될 경우 입력이 되지 않고, 없다면 입력이 된다.Primary key를 지정한 것과 하지 않는 것의 속도차이는 어마어마하게 차이가 크다.그러므로 테이블을 만들 때 특별한 경우가 아니면 무조껀 하는 것이 좋다.CREATE TABL">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/77277946/105163825-bca2cb80-5b57-11eb-82d4-4575863992a6.jpg">
+<meta property="article:published_time" content="2021-01-20T07:52:41.000Z">
+<meta property="article:modified_time" content="2021-03-09T08:50:07.752Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="SQLPLUS">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="Primary key">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/77277946/105163825-bca2cb80-5b57-11eb-82d4-4575863992a6.jpg">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Oracle Database 07. Primary key
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-01-20T16:52:41+09:00">
+	
+		    Jan 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="Primary-key"><a href="#Primary-key" class="headerlink" title="Primary key"></a>Primary key</h1><p>예를 들어 학번 같이 중복이 되면 안되는 그런 데이터를 입력할 때<br>즉, 고유의 번호를 부여할 때 쓰인다.<br>값이 중복될 경우 입력이 되지 않고, 없다면 입력이 된다.<br>Primary key를 지정한 것과 하지 않는 것의 속도차이는 어마어마하게 차이가 크다.<br>그러므로 테이블을 만들 때 특별한 경우가 아니면 무조껀 하는 것이 좋다.<br><img src="https://user-images.githubusercontent.com/77277946/105163825-bca2cb80-5b57-11eb-82d4-4575863992a6.jpg" alt="프라이머리 키"><br>CREATE TABLE topic(<br>id NUMBER NOT NULL,<br>title VARCHAR2(50) NOT NULL,<br>describtion VARCHAR2(4000),<br>created DATE NOT NULL,<br>CONSTRAINT PK_TOPIC PRIMARY KEY(id)<br>);</p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Database/" rel="tag">Database</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Oracle/" rel="tag">Oracle</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Primary-key/" rel="tag">Primary key</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/SQLPLUS/" rel="tag">SQLPLUS</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/21/Java/Java%2001.%20Project/"
+                    data-tooltip="Java 01. Project"
+                    aria-label="PREVIOUS: Java 01. Project"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/"
+                    data-tooltip="Oracle Database 06. 행 수정 &amp; 삭제"
+                    aria-label="NEXT: Oracle Database 06. 행 수정 &amp; 삭제"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/21/Java/Java%2001.%20Project/"
+                    data-tooltip="Java 01. Project"
+                    aria-label="PREVIOUS: Java 01. Project"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/"
+                    data-tooltip="Oracle Database 06. 행 수정 &amp; 삭제"
+                    aria-label="NEXT: Oracle Database 06. 행 수정 &amp; 삭제"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

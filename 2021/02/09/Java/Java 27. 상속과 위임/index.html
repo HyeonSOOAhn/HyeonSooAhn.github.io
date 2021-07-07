@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 27. 상속과 위임 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"클래스의 상속class Person &#123;\n\n    protected int age;\n    \n    protected String name;\n    \n    public Persion(int age, String name) &#123;\n        this.age = age;\n        this.name = name;\n    &#125;\n    \n    public int getAge() &#123;\n        return this.age;\n    &#125;\n    \n    public String getName() &#123;\n        return this.name;\n    &#125;\n&#125;\n\nage와 name이라는 멤버 변수를 가지고 있는 Person 클래스를 생각해보자. 이 클래스를 상속 받는 Student 클래스는 다음과 같이 정의할 수 있다.\nclass Student extends Person &#123;\n    \n    protected String studentNumber;\n    \n    public Student(int age, String name, String studentNumber) &#123;\n        \n        super(age, name);\n        this.studentNumber = studentNumber;\n    &#125;\n    \n    public String getStudentNumber() &#123;\n    \n        return this.studentNumber;\n    &#125;\n&#125;\n\n‘extends’라는 키워드를 이용해서 Person 클래스를 상속받아 확장하여 Student 클래스를 정의했다. Student 클래스 정의에는 직접적으로 나와있지 않지만 부모 클래스인 Person 클래스의 메소드인 getAge()와 getName() 메소드를 호출 할 수 있다.\n일반적으로 두 클래스 간의 관계가 ‘IS-A’ 관계이면 상속을 사용한다. Student is a person이므로 상속을 통해서 클래스를 정의하는게 자연스럽다.\n클래스의 위임상속과 다르게 위임은 다른 클래스의 객체를 멤버로 갖는 형태의 클래스 정의다.\nclass Employee &#123;\n    \n    private Department department;\n    \n    private String name;\n    \n    publiv Employee(String name, Department department) &#123;\n        \n        this.name = name;\n        this.department = department;\n    &#125;\n    \n    public String getDepartmentName() &#123;\n    \n        return this.department.getName();\n    &#125;\n&#125;\n\n이 경우 특정 메소드 호출을 멤버 클래스의 메소드에 포워드(Forward)하는 식으로 구현하게 된다.\nEmployee 클래스와 Department 클래스 사이의 관계를 살펴보면 ‘IS-A’ 관계는 아니다. (Employee is a Department는 어색하다.) 따라서 멤버 변수로 Department 클래스를 포함하는 Delegation 형태로 구현을 했다.\n상속과 위임\n두 클래스의 관계가 ‘IS-A’ 관계이면 상속(Inheritance)을 써야한다.\n기존에 존재하는 API에 넘겨줘야 하는 경우 상속(Inheritance)을 써야한다.\nfinal 클래스를 확장하고 싶은 경우 위임(Delegation)을 써야한다.\n\n","dateCreated":"2021-02-09T23:37:31+09:00","dateModified":"2021-03-04T17:51:01+09:00","datePublished":"2021-02-09T23:37:31+09:00","description":"","headline":"Java 27. 상속과 위임","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/","keywords":"Java, Eclipse, implements, Employee"}</script>
+    <meta name="description" content="클래스의 상속class Person &amp;#123;      protected int age;          protected String name;          public Persion(int age, String name) &amp;#123;         this.age &#x3D; age;         this.name &#x3D; name;     &amp;#125;">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 27. 상속과 위임">
+<meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="클래스의 상속class Person &amp;#123;      protected int age;          protected String name;          public Persion(int age, String name) &amp;#123;         this.age &#x3D; age;         this.name &#x3D; name;     &amp;#125;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-09T14:37:31.000Z">
+<meta property="article:modified_time" content="2021-03-04T08:51:01.280Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="implements">
+<meta property="article:tag" content="Employee">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 27. 상속과 위임
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-09T23:37:31+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="클래스의-상속"><a href="#클래스의-상속" class="headerlink" title="클래스의 상속"></a>클래스의 상속</h1><pre><code>class Person &#123;
+
+    protected int age;
+    
+    protected String name;
+    
+    public Persion(int age, String name) &#123;
+        this.age = age;
+        this.name = name;
+    &#125;
+    
+    public int getAge() &#123;
+        return this.age;
+    &#125;
+    
+    public String getName() &#123;
+        return this.name;
+    &#125;
+&#125;
+</code></pre>
+<p>age와 name이라는 멤버 변수를 가지고 있는 Person 클래스를 생각해보자. 이 클래스를 상속 받는 Student 클래스는 다음과 같이 정의할 수 있다.</p>
+<pre><code>class Student extends Person &#123;
+    
+    protected String studentNumber;
+    
+    public Student(int age, String name, String studentNumber) &#123;
+        
+        super(age, name);
+        this.studentNumber = studentNumber;
+    &#125;
+    
+    public String getStudentNumber() &#123;
+    
+        return this.studentNumber;
+    &#125;
+&#125;
+</code></pre>
+<p>‘extends’라는 키워드를 이용해서 Person 클래스를 상속받아 확장하여 Student 클래스를 정의했다. Student 클래스 정의에는 직접적으로 나와있지 않지만 부모 클래스인 Person 클래스의 메소드인 getAge()와 getName() 메소드를 호출 할 수 있다.</p>
+<p>일반적으로 두 클래스 간의 관계가 ‘IS-A’ 관계이면 상속을 사용한다. Student is a person이므로 상속을 통해서 클래스를 정의하는게 자연스럽다.</p>
+<h1 id="클래스의-위임"><a href="#클래스의-위임" class="headerlink" title="클래스의 위임"></a>클래스의 위임</h1><p>상속과 다르게 위임은 다른 클래스의 객체를 멤버로 갖는 형태의 클래스 정의다.</p>
+<pre><code>class Employee &#123;
+    
+    private Department department;
+    
+    private String name;
+    
+    publiv Employee(String name, Department department) &#123;
+        
+        this.name = name;
+        this.department = department;
+    &#125;
+    
+    public String getDepartmentName() &#123;
+    
+        return this.department.getName();
+    &#125;
+&#125;
+</code></pre>
+<p>이 경우 특정 메소드 호출을 멤버 클래스의 메소드에 포워드(Forward)하는 식으로 구현하게 된다.</p>
+<p>Employee 클래스와 Department 클래스 사이의 관계를 살펴보면 ‘IS-A’ 관계는 아니다. (Employee is a Department는 어색하다.) 따라서 멤버 변수로 Department 클래스를 포함하는 Delegation 형태로 구현을 했다.</p>
+<h1 id="상속과-위임"><a href="#상속과-위임" class="headerlink" title="상속과 위임"></a>상속과 위임</h1><ul>
+<li>두 클래스의 관계가 ‘IS-A’ 관계이면 상속(Inheritance)을 써야한다.</li>
+<li>기존에 존재하는 API에 넘겨줘야 하는 경우 상속(Inheritance)을 써야한다.</li>
+<li>final 클래스를 확장하고 싶은 경우 위임(Delegation)을 써야한다.</li>
+</ul>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Employee/" rel="tag">Employee</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/implements/" rel="tag">implements</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/"
+                    data-tooltip="Java 28. 메모리(RAM)"
+                    aria-label="PREVIOUS: Java 28. 메모리(RAM)"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2026.%20implements%EC%99%80%20extends%EC%9D%98%20%EC%B0%A8%EC%9D%B4/"
+                    data-tooltip="Java 26. implements와 extends의 차이"
+                    aria-label="NEXT: Java 26. implements와 extends의 차이"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/"
+                    data-tooltip="Java 28. 메모리(RAM)"
+                    aria-label="PREVIOUS: Java 28. 메모리(RAM)"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2026.%20implements%EC%99%80%20extends%EC%9D%98%20%EC%B0%A8%EC%9D%B4/"
+                    data-tooltip="Java 26. implements와 extends의 차이"
+                    aria-label="NEXT: Java 26. implements와 extends의 차이"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2027.%20%EC%83%81%EC%86%8D%EA%B3%BC%20%EC%9C%84%EC%9E%84/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

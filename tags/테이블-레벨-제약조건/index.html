@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: 테이블 레벨 제약조건 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/%ED%85%8C%EC%9D%B4%EB%B8%94-%EB%A0%88%EB%B2%A8-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2034.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A0%88%EB%B2%A8%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/"
+                            aria-label=": Oracle Database 34. 테이블 레벨 제약조건"
+                        >
+                            Oracle Database 34. 테이블 레벨 제약조건
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:07+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="테이블-레벨-제약조건"><a href="#테이블-레벨-제약조건" class="headerlink" title="테이블 레벨 제약조건"></a>테이블 레벨 제약조건</h1><ul>
+<li>제약 조건을 설정할 때 각 컬럼 마다 지정할수도 있지만 하단부분에 몰아서 지정할 수도 있다.</li>
+<li>컬럼명 옆에 기술하는 것을 컬럼레벨, 하단에 몰아서 기술하는 것을 테이블 레벨 제약조건이라고 부른다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 컬럼레벨
+
+create table  test_table10(
+data1 number constraint TEST10_TABLE10_DATA1_PK primary key,
+data2 number not null constraint TEST_TABLE10_DATA2_UK unique,
+data3 number not null constraint TEST_TABLE10_DATA3_FK
+                    references emp(empno),
+data4 number not null constraint TEST_TABLE10_DATA4_CK
+                    check(data4 between 1 and 10),
+data5 number not null constraint TEST_TABLE10_DATA5_CK
+                    check(data5 in(10,20,30))
+);
+
+-- 테이블레벨 제약조건
+
+create table test_table11(
+data1 number,
+data2 number not null,
+data3 number not null,
+data4 number not null,
+data5 number not null,
+
+constraint TEST_TABLE11_DATA1_PK primary key(data1),
+constraint TEST_TABLE11_DATA2_UK unique(data2),
+constraint TEST_TABLE11_DATA3_FK foreign key(data3)
+                                references emp(empno),
+constraint TEST_TABLE11_DATA4_CK check(data4 between 1 and 10),
+constraint TEST_TABLE12_DATA5_CK check(data5 in(10,20,30))
+);
+</code></pre>
+<h1 id="복합키"><a href="#복합키" class="headerlink" title="복합키"></a>복합키</h1><ul>
+<li>테이블 레벨 제약조건을 설정할 때 하나이상의 컬럼을 하나의 primary key로 묶어서 사용할 수 있다.</li>
+<li>복합키의 경우 각 컬럼에 중복된 데이터가 허용이 되지만 한 로우의 모든 복합키 컬럼이 중복되는 것은 허용하지 않는다.</li>
+<li>복합키는 테이블레벨로만 설정이 가능하다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 복합키
+
+create table test_table12(
+data1 number,
+data2 number,
+constraint TEST_TABLE12_COMBO_PK primary key(data1, data2)
+);
+
+insert into test_table12 (data1, data2)
+values (100,200);
+
+insert into test_table12 (data1, data2)
+values (100,300);
+
+insert into test_table12 (data1, data2)
+values (400,200);
+
+select * from test_table12;
+
+insert into test_table12 (data1, data2)
+values (100,200);
+
+insert into test_table12 (data1, data2)
+values (null,null);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2034.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A0%88%EB%B2%A8%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

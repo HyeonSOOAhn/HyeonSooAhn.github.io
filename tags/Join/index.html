@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: Join - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/Join/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2025.%20Self%20Join,%20Outer%20Join/"
+                            aria-label=": Oracle Database 25. Self Join, Outer Join"
+                        >
+                            Oracle Database 25. Self Join, Outer Join
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:59+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Self-Join"><a href="#Self-Join" class="headerlink" title="Self Join"></a>Self Join</h1><ul>
+<li>같은 테이블을 두번 이상 조인하는 것을 의미한다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- SMITH 사원의 사원번호, 이름, 직속상관의 이름을 가져온다.
+select a1.empno, a1.ename, a2.ename
+from emp a1, emp a2
+where a1.mgr = a2.empno and a1.ename = &#39;SMITH&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- FORD사원 밑에서 일하는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a1.empno, a1.ename, a1.job
+from emp a1, emp a2
+where a1.mgr = a2.empno and a2.ename = &#39;FORD&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SMITH 사원의 직속상관과 동일한 직무를 가지고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a3.empno, a3.ename, a3.job
+from emp a1, emp a2, emp a3
+where a1.mgr = a2.empno and a2.job = a3.job and a1.ename = &#39;SMITH&#39;;
+</code></pre>
+<h1 id="Outer-join"><a href="#Outer-join" class="headerlink" title="Outer join"></a>Outer join</h1><ul>
+<li>조인 조건에 해당하지 않기 떄문에 결과에 포함되지 않는 로우까지 가져오는 조인이다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 각 사원의 이름, 사원번호, 직장상사 이름을 가져온다. 단 직속상관이 없는 사원도 가져온다.
+select a1.ename, a1.empno, a2.ename
+from emp a1, emp a2
+where a1.mgr = a2.empno(+);
+</code></pre>
+<p>null이 있는 쪽에 (+)한다.</p>
+<p>ex)</p>
+<pre><code>-- 모든 부서의 소속 사원의 근무부서명, 사원번호, 사원이름, 급여를 가져온다.
+select b.dname,a.ename,a.empno,a.sal
+from emp a, dept b
+where a.deptno(+) = b.deptno;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2025.%20Self%20Join,%20Outer%20Join/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                            aria-label=": Oracle Database 24. Join"
+                        >
+                            Oracle Database 24. Join
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:58+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h1><ul>
+<li>두개 이상의 테이블에 있는 컬럼의 값을 한번에 가져오기 위해 사용하는 것이 조인이다.</li>
+<li>select 컬럼명 from 테이블1, 테이블2;</li>
+<li>두개 이상의 테이블을 조인하게 되면 다 대 다의 관계로 가져오기 때문에 테이블1의 로우의수X테이블2의 로우의 수 만큼 로우를 가져오게 된다.</li>
+<li>두개 이상의 테이블에서 가져온 결과중에 정확한 결과만 가져오기 위해 공통 부분을 이용한 조건문이 반드시 필요하다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 사원테이블(emp)과 부서테이블(dept)을 join한다.
+select * from emp;
+-- 14행
+select * from dept;
+-- 4행
+
+select * from emp a1, dept a2
+-- 56행
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원의 사원번호, 이름, 근무부서 이름을 가져온다.
+select a1.empno, a1.ename, a2.dname
+from emp a1,dept a2
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원의 사원번호, 이름, 근무지역을 가져온다.
+select a1.empno, a1.ename, a2.loc
+from emp a1,dept a2
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- DALLAS에 근무하고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a1.empno, a1.ename, a1.job
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a2.loc = &#39;DALLAS&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하고 있는 사원들의 급여 평균을 가져온다.
+select avg(a1.sal)
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a2.dname = &#39;SALES&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 1982년 입사한 사원들의 사원번호, 이름, 입사일, 근무부서이름을 가져온다.
+select a1.empno, a1.ename, a1.hiredate, a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.hiredate between &#39;1982/01/01&#39; and &#39;1982/12/31&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원들의 사원번호, 이름, 급여, 급여등급을 가져온다.
+select a1.empno, a1.ename, a1.sal, a1.sal, a2.grade
+from emp a1, salgrade a2
+where a1.sal between a2.losal and a2.hisal;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하고 있는 사원의 사원번호, 이름, 급여등급을 가져온다.
+select a1.empno, a1.ename, a2.grade
+from emp a1, salgrade a2, dept a3
+where a1.sal between a2.losal and a2.hisal and a1.deptno = a3.deptno
+    and a3.dname = &#39;SALES&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 급여 등급별 급여의 총합과 평균, 사원의수, 최대급여, 최소급여를 가져온다.
+select sum(a1.sal), trunc(avg(a1.sal)), count(a1.sal), max(a1.sal), min(a1.sal)
+from emp a1, salgrade a2
+where a1.sal between a2.losal and a2.hisal
+group by a2.grade;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여등급이 4등급인 사원들의 사원번호, 이름, 급여, 근무부서이름, 근무지역을 가져온다.
+select a2.empno, a2.ename, a2.sal, a3.deptno, a3.loc
+from salgrade a1, emp a2, dept a3
+where a2.sal between a1.losal and a1.hisal and a2.deptno = a3.deptno and a1.grade = 4;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

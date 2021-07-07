@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: 서브쿼리 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                            aria-label=": Oracle Database 27. 결과가 하나 이상인 서브 쿼리"
+                        >
+                            Oracle Database 27. 결과가 하나 이상인 서브 쿼리
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:00+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="결과가-하나-이상인-서브쿼리"><a href="#결과가-하나-이상인-서브쿼리" class="headerlink" title="결과가 하나 이상인 서브쿼리"></a>결과가 하나 이상인 서브쿼리</h1><p>– 서브쿼리를 통해 가져온 결과가 하나이상인 경우 결과를 모두 만족하거나 결과 중 하나만 만족하거나 해야하는 경우가 있다.</p>
+<ul>
+<li>이때 다음과 같은 연산자를 사용하면 된다.</li>
+<li>IN : 서브쿼리의 결과 중 하나라도 일치하면 조건은 참이 된다.</li>
+<li>ANY, SOME : 서브쿼리의 결과와 하나이상 일치하면 조건은 참이된다.<br>IN과는 달리 조건을 자유롭게 줄 수 있다.</li>
+<li>ALL : 서브쿼리의 결과와 모두 일치해야 조건은 참이된다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 3000이상의 급여를 받는 사원들과 같은 부서에 근무하고 있는 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where deptno in (select deptno
+                from emp
+                where sal&gt;=3000);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 CLERK인 사원과 동일한 부서에 근무하고 있는 사원들의 사원번호, 이름, 입사일을 가져온다.
+select empno, ename, hiredate
+from emp
+where deptno in (select deptno
+                from emp
+                where job = &#39;CLERK&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- KING을 직속상관으로 가지고 있는 사원들이 근무하고 있는 근무 부서명, 지역을 가지고 온다.
+select dname,loc
+from dept
+where deptno in (select deptno
+                from emp
+                where mgr = (select empno
+                            from emp
+                            where ename = &#39;KING&#39;));
+</code></pre>
+<p>ex)</p>
+<pre><code>-- CLERK들의 직속상관의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where empno in (select mgr
+                from emp
+                where job = &#39;CLERK&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 평균보다 더 많이 받는 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; all (select avg(sal)
+                from emp
+                group by deptno);
+
+select empno, ename, sal
+from emp
+where sal &gt; (select max(avg(sal))
+            from emp
+            group by deptno);
+</code></pre>
+<p>all을 사용하는 경우 대부분 max함수를 사용하여 대치가 가능하다.</p>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 최저치보다 더 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; all (select min(sal)
+                from emp
+                group by deptno);
+
+select empno, ename, sal
+from emp
+where sal &gt; (select max(min(sal))
+                from emp
+                group by deptno);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALESMAN보다 급여를 적게 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &lt; all (select sal
+                from emp
+                where job = &#39;SALESMAN&#39;);
+
+select empno, ename, sal
+from emp
+where sal &lt;  (select min(sal)
+            from emp
+            where job = &#39;SALESMAN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 최저 급여 액수 보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal&gt; any (select min(sal)
+                from emp
+                group by deptno);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2026.%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                            aria-label=": Oracle Database 26. 서브쿼리"
+                        >
+                            Oracle Database 26. 서브쿼리
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:53:00+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="서브쿼리"><a href="#서브쿼리" class="headerlink" title="서브쿼리"></a>서브쿼리</h1><ul>
+<li>쿼리문 안에 들어가는 쿼리문을 서브쿼리라고 한다.</li>
+<li>쿼리문 작성시 사용되는 값을 다른 쿼리문을 통해 구해야 할 경우 사용한다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- SCOTT사원이 근무하고 있는 부서의 이름을 가져온다.
+select dname
+from dept
+where deptno = (select deptno
+                from emp
+                where ename = &#39;SCOTT&#39;);
+                
+-- join으로도 가능하다.
+select a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.ename = &#39;SCOTT&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SMITH와 같은 부서에 근무하고 있는 사원들의 사원번호, 이름, 급여액, 부서이름을 가져온다.
+select a1.empno, a1.ename, a1.sal, a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.deptno = (select deptno
+                                            from emp
+                                            where ename = &#39;SMITH&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- MARTIN과 같은 직무를 가지고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select empno, ename, job
+from emp
+where job = (select job
+            from emp
+            where ename = &#39;MARTIN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- ALLEN과 같은 직속상관을 가진 사원들의 사원번호, 이름, 직속상관이름을 가져온다.
+-- a : 사원의 정보
+-- b : 직속상관 정보
+select a.empno, a.ename, b.ename
+from emp a, emp b
+where a.mgr = b.empno and a.mgr = (select mgr
+                                from emp
+                                where ename = &#39;ALLEN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- WARD와 같은 부서에 근무하고 있는 사원들의 사원번호, 이름, 부서번호를 가져온다.
+select a.empno, a.ename, b.deptno
+from emp a, dept b
+where a.deptno = b.deptno and a.deptno = (select deptno
+                                        from emp
+                                        where ename = &#39;WARD&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALESMAN의 평균 급여보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; (select avg(sal)
+            from emp
+            where job = &#39;SALESMAN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- DALLAS 지역에 근무하는 사원들의 평균급여를 가져온다.
+select trunc(avg(sal))
+from emp a, dept b
+where a.deptno = b.deptno and b.loc = (select loc
+                                    from dept
+                                    where loc = &#39;DALLAS&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하는 사원들의 사원번호, 이름, 근무지역을 가져온다.
+select a1.empno, a1.ename, a2.loc
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.deptno = (select deptno
+                                            from dept
+                                            where dname = &#39;SALES&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- CHICAGO 지역에 근무하는 사원들 중 BLAKE가 직속상관인 사원들의 사원번호, 이름, 직무를 가져온다.
+select empno, ename, job
+from emp
+where deptno = (select deptno
+                from dept
+                where loc = &#39;CHICAGO&#39;)
+                and mgr = (select empno
+                        from emp
+                        where ename = &#39;BLAKE&#39;);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2026.%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: 제약조건 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2035.%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4%20%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/"
+                            aria-label=": Oracle Database 35. 제약조건 추가하기"
+                        >
+                            Oracle Database 35. 제약조건 추가하기
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:08+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="제약조건-추가하기"><a href="#제약조건-추가하기" class="headerlink" title="제약조건 추가하기"></a>제약조건 추가하기</h1><ul>
+<li>테이블을 생성한 후 제약 조건을 추가하거나 제거하고 싶다면 alter구문을 이용한다.</li>
+<li>alter table 테이블명<br>add 제약조건</li>
+<li>alter table 테이블명<br>drop 제약조건</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 제약조건 추가하기
+create table test_table20(
+data1 number,
+data2 number,
+data3 number,
+data4 number,
+data5 number,
+data6 number
+    );
+
+-- null 제약조건 추가
+alter table test_table20
+modify data1 not null;
+
+insert into test_table20 (data1)
+values (null);
+
+-- primary key 제약조건 추가
+alter table test_table20
+add constraint TEST_TABLE20_DATA2_PK primary key(data2);
+
+insert into test_table20 (data1, data2)
+values (1, 10);
+
+insert into test_table20 (data1, data2)
+values (2, 10);
+
+insert into test_table20 (data1, data2)
+values (3, null);
+
+-- 외래키 제약조건 추가
+alter table test_table20
+add constraint TEST_TABLE20_DATA3_FK foreign key(data3)
+    references emp(empno);
+    
+insert into test_table20 (data1, data2, data3)
+values (10, 100, 7369);
+
+insert into test_table20 (data1, data2, data3)
+values (11, 101, 100);
+
+-- unique 제약조건 추가
+alter table test_table20
+add constraint TEST_TABLE20_DATA4_UK unique(data4);
+
+insert into test_table20 (data1, data2, data4)
+values (12,102,100);
+
+insert into test_table20 (data1, data2, data4)
+values (13,103,100);
+
+-- check 제약조건
+alter table test_table20
+add constraint TEST_TABLE20_DATA5_CK check(data5 between 1 and 5);
+
+insert into test_table20 (data1, data2, data5)
+values (14, 104, 5);
+
+insert into test_table20 (data1, data2, data5)
+values (15, 105, 20);
+
+alter table test_table20
+add constraint TEST_TABLE20_DATA6_CK check(data6 in(10,20,30));
+
+insert into test_table20 (data1, data2, data6)
+values (16, 106, 20);
+
+insert into test_table20 (data1, data2, data6)
+values (17,107,50);
+
+select * from test_table20;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 제약조건 제거
+create table test_table30(
+data1 number not null,
+data2 number constraint TEST_TABLE30_DATA2_PK primary key,
+data3 number constraint TEST_TABLE30_DATA3_FK
+            references emp(empno),
+data4 number constraint TEST_TABLE30_DATA4_UK unique,
+data5 number constraint TEST_TABLE30_DATA5_CK
+            check (data5 between 1 and 10),
+data6 number constraint TEST_TABLE30_DATA6_CK
+            check (data6 in (10,20,30))
+);
+
+-- not null 제약조건 수정
+alter table test_table30
+modify data1 null;
+
+insert into test_table30 (data1,data2)
+values (null, 100);
+
+-- primary key 제약 조건 제거
+alter table test_table30
+drop constraint TEST_TABLE30_DATA2_PK;
+
+insert into test_table30 (data2)
+values (null);
+
+-- 외래키 제약조건 제거
+alter table test_table30
+drop constraint TEST_TABLE30_DATA3_FK;
+
+insert into test_table30 (data3)
+values (1000);
+
+-- unique 제약조건 제거
+alter table test_table30
+drop constraint TEST_TABLE30_DATA4_UK;
+
+
+insert into test_table30 (data4)
+values (100);
+
+insert into test_table30 (data4)
+values (100);
+
+-- check 제약조건 제거
+alter table test_table30
+drop constraint TEST_TABLE30_DATA5_CK;
+
+alter table test_table30
+drop constraint TEST_TABLE30_DATA6_CK;
+
+insert into test_table30 (data5, data6)
+values (20, 100);
+
+select * from test_table30;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 제약조건 활성/비활성
+create table test_table40(
+data1 number constraint TEST_TABLE40_DATA1_PK primary key
+);
+
+insert into test_table40 (data1)
+values (100);
+
+insert into test_table40 (data1)
+values (100);
+
+alter table test_table40
+disable constraint TEST_TABLE40_DATA1_PK;
+
+insert into test_table40 (data1)
+values (100);
+
+select * from test_table40;
+
+alter table test_table40
+enable constraint TEST_TABLE40_DATA1_PK;
+-- 활성화시 하나라도 제약조건에 위배되는 값이 있으면 에러가 뜬다.
+delete from test_table40;
+
+insert into test_table40 (data1)
+values (100);
+
+insert into test_table40 (data1)
+values (200);
+
+select * from test_table40;
+
+alter table test_table40
+enable constraint TEST_TABLE40_DATA1_PK;
+
+insert into test_table40 (data1)
+values (100);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2035.%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4%20%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2034.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A0%88%EB%B2%A8%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/"
+                            aria-label=": Oracle Database 34. 테이블 레벨 제약조건"
+                        >
+                            Oracle Database 34. 테이블 레벨 제약조건
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:07+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="테이블-레벨-제약조건"><a href="#테이블-레벨-제약조건" class="headerlink" title="테이블 레벨 제약조건"></a>테이블 레벨 제약조건</h1><ul>
+<li>제약 조건을 설정할 때 각 컬럼 마다 지정할수도 있지만 하단부분에 몰아서 지정할 수도 있다.</li>
+<li>컬럼명 옆에 기술하는 것을 컬럼레벨, 하단에 몰아서 기술하는 것을 테이블 레벨 제약조건이라고 부른다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 컬럼레벨
+
+create table  test_table10(
+data1 number constraint TEST10_TABLE10_DATA1_PK primary key,
+data2 number not null constraint TEST_TABLE10_DATA2_UK unique,
+data3 number not null constraint TEST_TABLE10_DATA3_FK
+                    references emp(empno),
+data4 number not null constraint TEST_TABLE10_DATA4_CK
+                    check(data4 between 1 and 10),
+data5 number not null constraint TEST_TABLE10_DATA5_CK
+                    check(data5 in(10,20,30))
+);
+
+-- 테이블레벨 제약조건
+
+create table test_table11(
+data1 number,
+data2 number not null,
+data3 number not null,
+data4 number not null,
+data5 number not null,
+
+constraint TEST_TABLE11_DATA1_PK primary key(data1),
+constraint TEST_TABLE11_DATA2_UK unique(data2),
+constraint TEST_TABLE11_DATA3_FK foreign key(data3)
+                                references emp(empno),
+constraint TEST_TABLE11_DATA4_CK check(data4 between 1 and 10),
+constraint TEST_TABLE12_DATA5_CK check(data5 in(10,20,30))
+);
+</code></pre>
+<h1 id="복합키"><a href="#복합키" class="headerlink" title="복합키"></a>복합키</h1><ul>
+<li>테이블 레벨 제약조건을 설정할 때 하나이상의 컬럼을 하나의 primary key로 묶어서 사용할 수 있다.</li>
+<li>복합키의 경우 각 컬럼에 중복된 데이터가 허용이 되지만 한 로우의 모든 복합키 컬럼이 중복되는 것은 허용하지 않는다.</li>
+<li>복합키는 테이블레벨로만 설정이 가능하다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 복합키
+
+create table test_table12(
+data1 number,
+data2 number,
+constraint TEST_TABLE12_COMBO_PK primary key(data1, data2)
+);
+
+insert into test_table12 (data1, data2)
+values (100,200);
+
+insert into test_table12 (data1, data2)
+values (100,300);
+
+insert into test_table12 (data1, data2)
+values (400,200);
+
+select * from test_table12;
+
+insert into test_table12 (data1, data2)
+values (100,200);
+
+insert into test_table12 (data1, data2)
+values (null,null);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2034.%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A0%88%EB%B2%A8%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2033.%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/"
+                            aria-label=": Oracle Database 33. 제약조건"
+                        >
+                            Oracle Database 33. 제약조건
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:06+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="제약조건"><a href="#제약조건" class="headerlink" title="제약조건"></a>제약조건</h1><ul>
+<li>테이블의 데이터를 저장 혹은 수정할 때 컬럼의 값에 대한 조건을 설정하는 것을 제약조건이라고 한다.</li>
+<li>설정된 조건에 위배되는 값을 컬럼에 저장할 수 없으며 데이터의 무결성을 위한 구문이다.</li>
+<li>not null : 컬럼에 null을 허용하지 않는다.</li>
+<li>unique : 중복된 값을 허용하지 않는다.<br>null을 무한대로 저장할 수 있다.</li>
+<li>primary key : 중복된 값을 허용하지 않으며 null값을 허용하지 않는다. 각 로우를 구분하기 위한 유일한 값을 저장하기 위해 사용한다.</li>
+<li>foreign key : 다른테이블 혹은 같은 테이블의 칼럼을 참조하는 제약조건이다. 참조하는 컬럼에 저장되어 있는 값만 컬럼에 저장할 수 있다. 일반적으로 primary ket 제약 조건이 설정된 컬럼을 참조한다.</li>
+<li>check : 조건에 만족할 경우 컬럼에 저장할 수 있도록 한다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- NOT NULL : 해당 컬럼에는 NULL을 저장할 수 없다.
+
+create table test_table1(
+data1 number,
+data2 number not null
+);
+
+insert into test_table1(data1, data2)
+values (100, 101);
+
+insert into test_table1 (data1)
+values (200);
+-- data2가 null값이므로 값이 입력이 되지 않는다.
+
+insert into test_table1(data2)
+values (201);
+-- data1은 not null 조건이 없으므로 입력이 된다.
+-- not null 제약조건은 오류메세지가 정확하게 나오기 때문에 명확히 알 수 있다.
+-- 그러나 다른 제약조건은 오류메세지가 랜덤하게 나오므로 오류메세지를 지정해 주어야한다.
+</code></pre>
+<p>ex)</p>
+<pre><code>-- nuique : 중복된 값을 허용하지 않고 null은 무한대로 허용한다.
+create table test_table2(
+data1 number,
+data2 number constraint TEST_TABLE2_DATA2_UK unique
+);
+
+insert into test_table2(data1, data2)
+values (100, 101);
+
+insert into test_table2(data1, data2)
+values (200,201);
+
+insert into test_table2(data1, data2)
+values (300, 201);
+
+insert into test_table2(data1, data2)
+values (200, null);
+
+insert into test_table2(data1)
+values (200);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- primary key : 중복된 값을 허용하지 않으며 null값을 허용하지 않는다.
+-- 각 로우를 구분하기 위한 유일한 값을 저장하기 위해 사용한다.
+
+create table test_table3(
+data1 number,
+data2 number constraint TEST_TABLE3_DATA2_PK primary key
+);
+
+insert into test_table3 (data1, data2)
+values (100,101);
+
+insert into test_table3 (data1, data2)
+values (100,101);
+
+insert into test_table3 (data1)
+values (100);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- foreign key : 다른테이블 혹은 같은 테이블의 컬럼을 참조하는 제약 조건이다.
+
+create table test_table4(
+data1 number constraint TEST_TABLE4_PK primary key,
+data2 number not null
+);
+
+insert into test_table4(data1, data2)
+values (100,101);
+
+insert into test_table4(data1, data2)
+values (200,201);
+
+create table test_table5(
+data3 number not null,
+data4 number constraint TEST_TABLE5_DATA4_PK
+            references test_table4(data1)
+);
+
+insert into test_table5 (data3, data4)
+values (1,100);
+
+insert into test_table5 (data3, data4)
+values (2,100);
+
+insert into test_table5 (data3, data4)
+values (3,200);
+
+insert into test_table5 (data3, data4)
+values (4,200);
+
+insert into test_table5 (data3, data4)
+values (5,null);
+
+insert into test_table5 (data3)
+values (6);
+
+insert into test_table4(data3, data4)
+values (7, 300);
+-- 부모키가 없으므로 에러다.
+</code></pre>
+<p>ex)</p>
+<pre><code>--check : 컬럼에 저장될 값을 지정한다.
+create table test_table6(
+data1 number constraint TEST_TABLE6_DATA_CK
+            check (data1 between 1 and 10),
+data2 number constraint TEST_TABLE6_DATA2_CK
+            check (data2 in(10, 20, 30))
+);
+
+insert into test_table6 (data1, data2)
+values (1,10);
+
+
+insert into test_table6 (data1, data2)
+values (2,20);
+
+select * from test_table6;
+
+insert into test_table6 (data1, data2)
+values (20,10);
+
+insert into test_table6 (data1,data2)
+values (5,100);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2033.%20%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

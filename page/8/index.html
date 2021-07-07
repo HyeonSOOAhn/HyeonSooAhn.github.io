@@ -1,0 +1,1076 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Website","@id":"http://example.com","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"name":"안현수","description":"","url":"http://example.com"}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/page/8/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                            aria-label=": Java 18. 생성자"
+                        >
+                            Java 18. 생성자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-05T22:58:51+09:00">
+	
+		    Feb 05, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h1><p>우리는 프로그램을 만들 때 변수를 선언하고 반드시 초기화를 해주어야 한다고 알고있다. 만약 초기화를 하지 않으면 해당 변수에는 쓰레기값이 들어가게 되고 심한 경우에는 초기화 오류가 발생하기 때문이다.</p>
+<p>이와같이 변수의 초기화를 진행하는 프로세스를 클래스에 대입한 개념으로, 객체를 호출할 때 클래스는 생성자를 통해 객체를 초기화 하게 되는데 구현 방법에 따라 기본생성자, 묵시적 생성자, 명시적 생성자로 나뉘게 된다.</p>
+<p>여기서 객체의 초기화란 클래스가 객체를 생성/호출하였을 때, 객체의 필드를 초기화 하거나 메소드를 호출해서 객체가 사용할 준비를 하는 것으로 일련의 준비단계라고 생각하면 쉽다.</p>
+<pre><code>생성자 : 클래스로부터 객체를 생성할 때 수행되어 객체의 초기화를 담당하는 것.
+</code></pre>
+<ol>
+<li>생성자는 리턴타입을 갖지 않는다.</li>
+<li>생성자는 클래스 이름과 동일해야 한다.</li>
+<li>모든 클래스는 생성자가 반드시 존재하며, 하나 이상을 가질 수 있다.</li>
+<li>클래스 내부에 생성자를 선언하지 않으면 자동으로 기본 생성자가 선언된다.</li>
+<li>클래스 내부에 파라미터가 없는 생성자를 선언하는 경우 이를 묵시적 생성자라 한다.</li>
+<li>클래스 내부에 파라미터가 있는 생성자를 선언하는 경우 이를 명시적 생성자라 한다.</li>
+</ol>
+<h2 id="기본-생성자"><a href="#기본-생성자" class="headerlink" title="기본 생성자"></a>기본 생성자</h2><pre><code>public class Sub1 &#123;
+// public Sub1() &#123;&#125;
+    public int iNum1 = 0; 
+
+// 생성자가 명시되어있지 않으므로 기본 생성자가 선언된다.
+&#125;
+</code></pre>
+<p>기본 생성자는 클래스 내부에 어떠한 생성자도 없을 시 객체 생성 과정에서 컴파일러가 자동으로 추가하는 생성자다.</p>
+<p>왜 굳이 의미도 없는 기본 생성자를 선언해주느냐 함은 클래스에서 생성자가 없으면 객체에 접근 자체를 하지 못한다.</p>
+<p>메모리 구조상 new 연산자가 생성자를 정상적으로 실행시키면 힙(heap)영역에 객체가 생성되고, 생성된 객체의 주소가 클래스 타입 변수에 리턴되어 객체에 접근할 수 있게 되는데 생성자가 실행되지 않으면 힙 영역에 객체가 생성되지 않으니 객체의 주소도 리턴받을 수 없다.</p>
+<p>따라서 객체를 사용하기 위해서는 반드시 생성자가 필요하고 생성자를 명시하지 않았을 때는 자동으로 기본생성자가 선언된다. </p>
+<h3 id="기본-생성자-메소드"><a href="#기본-생성자-메소드" class="headerlink" title="기본 생성자 + 메소드"></a>기본 생성자 + 메소드</h3><pre><code>public class Sub &#123;
+// public Sub()&#123;&#125; 
+    public int Sum(int iNum1, int iNum2)&#123;
+    // 생성자 없이 메소드만 구현되어 있으므로 기본 생성자로 선언된다.
+        int sum = iNum1 + iNum2;
+        return sum;
+&#125;
+&#125;
+</code></pre>
+<p>위와같이 생성자 없이 메소드만 구현되어있는 경우에도 컴파일러가 기본 생성자를 추가하므로 정상적인 프로그램 구동이 가능하다.</p>
+<h2 id="묵시적-생성자"><a href="#묵시적-생성자" class="headerlink" title="묵시적 생성자"></a>묵시적 생성자</h2><pre><code>public class Sub2 &#123;
+    public Sub2()&#123;
+    // 파라미터가 없는 묵시적 생성자
+        System.out.println(&quot;묵시적 생성자&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>묵시적 생성자는 파라미터를 갖지않는 생성자다. 기본 생성자와의 차이점은 보다 원하는 방식으로 초기화를 할 수 있다는 점이다.<br>하지만 파라미터를 받지 않으므로 초기화의 개념이 명시적 생성자 보다 상대적으로 떨어진다.</p>
+<h2 id="명시적-생성자"><a href="#명시적-생성자" class="headerlink" title="명시적 생성자"></a>명시적 생성자</h2><pre><code>public class Sub3 &#123;
+    public Sub3(String s)&#123;
+    // 파라미터 값을 받는다.
+        System.out.println(s);
+    &#125;
+&#125;
+</code></pre>
+<p>명시적 생성자는 객체 생성시 초기화를 위한 파라미터를 받으며 객체가 실행될 때 받은 값으로 초기화가 진행된다.</p>
+<pre><code>Sub3 sub3 = new Sub3(&quot;명시적 생성자&quot;); // 명시적 생성자
+
+//객체를 생성할 때 String 변수에 파라미터를 줌으로써 String s는 &quot;명시적 생성자&quot;로 초기화된다.
+</code></pre>
+<h3 id="명시적-생성자를-만드는-이유"><a href="#명시적-생성자를-만드는-이유" class="headerlink" title="명시적 생성자를 만드는 이유"></a>명시적 생성자를 만드는 이유</h3><p>생성자 내부에는 어떠한 작업을 하는 코드는 쓸 수 있다.<br>즉, 인스턴스가 만들어지는 그 순간에 생성자 내부에 작성한 어떠한 작업을 해줄 수 있는 것이다.<br>그래서 명시적으로 생성자를 만드는 이유는,<br>인스턴스 변수를 초기화 할때, 0,false,null이 아닌 값으로 설정하기 위해서 이거나<br>매개변수로 값을 넘겨받아 객체를 다양하게 초기화 하기 위해서 이거나<br>인스턴스가 생성될 때 수행되어야하는 작업이 있기 때문이다.<br>즉, 필드에 초기값을 저장 하거나 메소드를 호출하여 객체 사용 전에 필요한 준비를 한다고 보면 된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                            aria-label=": Java 17. 변수"
+                        >
+                            Java 17. 변수
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-04T21:37:53+09:00">
+	
+		    Feb 04, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h1><h2 id="데이터-타입에-따른-분류"><a href="#데이터-타입에-따른-분류" class="headerlink" title="데이터 타입에 따른 분류"></a>데이터 타입에 따른 분류</h2><p>기본형 변수와 참조변수로 나뉜다.<br>기본형변수는 자료의 실제값을 저장한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">종류</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>논리형</td>
+<td align="center">boolean</td>
+</tr>
+<tr>
+<td>문자형</td>
+<td align="center">char</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td align="center">byte, short, int, long</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td align="center">float, double</td>
+</tr>
+<tr>
+<td>참조변수는 값이 저장되어 있는 주소값을 값으로 갖는다.</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>기본형 변수를 제외한 나머지 타입이며, 대표적으로 String이 있다.</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="선언-위치에-따른-분류"><a href="#선언-위치에-따른-분류" class="headerlink" title="선언 위치에 따른 분류"></a>선언 위치에 따른 분류</h2><p>크게 멤버변수와 지역변수로 나뉘며<br>멤버변수는 클래스변수와 인스턴스변수를 통틀어서 부르는 용어이다.<br>클래스 영역에서 선언된 변수를 멤버변수, 그중 앞에 static이 붙은 변수를 클래스 변수라고 한다.</p>
+<h3 id="멤버변수"><a href="#멤버변수" class="headerlink" title="멤버변수"></a>멤버변수</h3><h4 id="인스턴스-변수"><a href="#인스턴스-변수" class="headerlink" title="인스턴스 변수"></a>인스턴스 변수</h4><p>클래스 영역에 선언되고 인스턴스 생성시 만들어 진다. 각각의 인스턴스마다 다른 값을 가질 수 있다. 그러므로 인스턴스 생성이 필수이며 각 인스턴스마다 다른 값을 가져야 할 때 사용된다.</p>
+<h4 id="클래스-변수"><a href="#클래스-변수" class="headerlink" title="클래스 변수"></a>클래스 변수</h4><p>인스턴스변수 앞에 static을 붙이기만 하면 된다. 인스턴스변수가 각각의 인스턴스마다 다른값을 가질 수 있는 것과는 달리 값을 공유하는 변수이다.<br>클래스이름.변수이름 이렇게 인스턴스 생성 필요없이 바로 쓸 수 있다.</p>
+<h3 id="지역변수"><a href="#지역변수" class="headerlink" title="지역변수"></a>지역변수</h3><p>메소드 내에 선언되며 메소드 호출시 생성되고 메소드가 종료되면 사라진다.</p>
+<h4 id="매개변수"><a href="#매개변수" class="headerlink" title="매개변수"></a>매개변수</h4><p>흔히 파라미터라고 불린다. 메소드에서 입력값을 받을 때가 있는데, 그때 사용되는 변수를 매개변수라고 한다.<br>매개변수도 매소드 내에 선언된 것으로 간주되므로 지역변수이다.</p>
+<pre><code>public class Variable &#123;
+    int a;
+    static String b;
+    void m(int c)&#123;
+        int d=c;
+    &#125;
+    public static void main(String args[]) &#123;
+        int e=0;
+        Variable v = new Variable();
+        v.m(e);
+    &#125;
+&#125;
+</code></pre>
+<p>2번줄     a는 기본형변수이면서 멤버변수의 인스턴스변수<br>3번줄     b는 참조변수이면서 멤버변수의 클래스변수<br>4번줄     c는 기본형변수이면서 매개변수 이면서 지역변수<br>5번줄     d는 기본형변수이면서 지역변수<br>7번줄     args는 참조변수이면서 매개변수 이면서 지역변수<br>8번줄     e는 기본형변수이면서 지역변수<br>9번줄     v는 참조변수이면서 지역변수<br>10번줄   e는 인자값으로 값0이 매개변수에 복사되어 넣어진다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/03/Java/Java%2016.%20%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%99%80%20%EA%B0%9D%EC%B2%B4/"
+                            aria-label=": Java 16. 인스턴스와 객체"
+                        >
+                            Java 16. 인스턴스와 객체
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-03T22:18:05+09:00">
+	
+		    Feb 03, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="인스턴스와-객체"><a href="#인스턴스와-객체" class="headerlink" title="인스턴스와 객체"></a>인스턴스와 객체</h1><h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 사람, 통장계좌, 자동차, 주문, 학생, 버튼 등 개별적으로 구분할 수 있는 실체를 의미한다.<br>객체는 자신의 고유의 이름과 상태와 행동을 갖는다.<br>객체의 상태를 표한혈 때 멤버변수라고 표현할 수 있으며, 객체의 행동을 메소드 혹은 멤버함수라고 표현한다.<br>클래스는 객체의 상태와 행동이 어떻게 만들지를 결정한 청사진이다.<br>즉, 클래스에서는 버튼이라는 객체가 클릭되어지면 다음화면으로 이동하는 행동을 정의하고 지금 버튼의 이름을 지정하는 상태 등이 동작할 수 있게끔 정의가 되어져 있는 설계도이다.</p>
+<h2 id="인스턴스"><a href="#인스턴스" class="headerlink" title="인스턴스"></a>인스턴스</h2><p>클래스가 메모리에 생성된 상태를 말한다. 클래스로부터 생성된 객체라고도 한다.<br>힙 메모리에 멤버 변수의 크기에 따라 메모리가 생성된다.<br>클래스를 기반으로 New 예약어를 통해 인스턴스를 생성한다.</p>
+<h2 id="객체와-인스턴스의-차이"><a href="#객체와-인스턴스의-차이" class="headerlink" title="객체와 인스턴스의 차이"></a>객체와 인스턴스의 차이</h2><p>객체는 소프트웨어 세계에 구현할 대상이고, 이를 구현하기 위한 청사진이 클래스 이며, 이청사진에 따라 생성된 실체가 인스턴스이다.</p>
+<p>즉 개념적으로 인스턴스는 객체에 포함된다고 할 수 있고 인스턴스라고 표현을 하는 것이 더 정확하지만 둘을 같다고 봐도 틀린말은 아니다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/03/Java/Java%2016.%20%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%99%80%20%EA%B0%9D%EC%B2%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/02/post-1/"
+                            aria-label=": "
+                        >
+                            (no title)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-02T21:48:37+09:00">
+	
+		    Feb 02, 2021
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>try catch, 데몬스레드, 조인 getpriority, isalive, 인터럽트, 싱크로나이즈</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/02/post-1/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/31/Java/Java%2015.%20Static/"
+                            aria-label=": Java 15. Static"
+                        >
+                            Java 15. Static
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-31T19:02:38+09:00">
+	
+		    Jan 31, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h1><p>staitc은 고정된이란 의미를 가지고 있다. static이라는 키워드를 사용하여 static변수와 static메소드를 만들 수 있는데 다른말로 정적필드와 정적 메소드라고도 하며 이 둘을 합쳐 정적 멤버라고 한다.(클래스 멤버라고도 한다.) 정적 필드와 정적 메소드는 객체에 소속된 멤버가 아니라 클래스에 고정된 멈버이다. 그렇기에 클래스 로더가 클래스를 로딩해서 메소드메모리 영역에 적재할 때 클래스 별로 관리된다. 따라서 클래스의 로딩이 끝나는 즉시 바로 사용할 수 있다.</p>
+<h2 id="정적-멤버-생성"><a href="#정적-멤버-생성" class="headerlink" title="정적 멤버 생성"></a>정적 멤버 생성</h2><p>static키워드를 통해 생성된 정적멤버들은 Heap영역이 아닌 Static영역에 할당된다. static영역에 할당된 메모리는 객체가 공유하여 하나의 멤버를 어디서든지 참조할 수 있는 장점을 가지지만 ㅁ의 관리 영역 밖에 존재하기에 static영역에 있는 멤버들은 프로그램의 종료시까지 메모리가 할당된 채로 존재하게 된다. 그렇기에 static을 너무 남발하게 되면 만들고자 하는 시스템 성능에 악영향을 줄 수 있다.</p>
+<h2 id="정적-멤버-선언"><a href="#정적-멤버-선언" class="headerlink" title="정적 멤버 선언"></a>정적 멤버 선언</h2><p>필드나 메소드를 생성 시 인스턴스로 생성할 것인지 정적으로 생성할 것인지에 대한 판단 기준은 공용으로 사용하느냐 아니냐로 내리면 된다. 그냥 생성한다면 자동으로 인스턴스로 생성되며 정적으로 생성하려면 메소드 선언시 static이라는 키워드를 추가적으로 붙이면 된다. </p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/31/Java/Java%2015.%20Static/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/31/Java/Java%2014.%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/"
+                            aria-label=": Java 14. 객체지향 프로그래밍"
+                        >
+                            Java 14. 객체지향 프로그래밍
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-31T00:43:48+09:00">
+	
+		    Jan 31, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="객체지향-프로그래밍"><a href="#객체지향-프로그래밍" class="headerlink" title="객체지향 프로그래밍"></a>객체지향 프로그래밍</h1><p>객체지향 프로그래밍(Object Oriented Programming)은 좀 더 나은 프로그램을 만들기 위한 프로그래밍 패러다임으로 조직을 상태와 행위로 이루어진 객체로 만드는 것이다.</p>
+<h2 id="문법과-설계"><a href="#문법과-설계" class="headerlink" title="문법과 설계"></a>문법과 설계</h2><h3 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h3><p>하나는 객체지향을 편하게 할 수 있도록 언어가 제공하는 기능을 익히는 것이다. 이러한 기능들은 if,for문처럼 문법적인 구성을 가지고 있다. 이 문법을 이해라고 숙지해야 객체를 만들 수 있다. 객체를 만드는 법에 대한 학습이라고 할 수 있다.</p>
+<h3 id="설계"><a href="#설계" class="headerlink" title="설계"></a>설계</h3><p>복잡한 현실을 추상화하는 것이 설계라고 할 수 있다.</p>
+<h2 id="부품화"><a href="#부품화" class="headerlink" title="부품화"></a>부품화</h2><p>메소드는 부품화의 예라고 할 수 있다. 메소드를 사용하는 기본 취지는 연관되어 있는 로직들을 결합해서 메소드라는 완제품을 만드는 것이다. 메소드를 사용하면 코드의 양을 극적으로 줄일 수 있고, 메소드 별로 기능이 분류되어 있기 때문에 필요한 코드를 찾기도 쉽고 문제의 진단도 빨라진다.</p>
+<p>그런데 프로그램 성능이 높아지면서 메소드의 양이 늘어나, 다시 이전의 메소드가 없던 시절로 돌아가게 되었다. 그래서 나온 것이 객체지향 프로그래밍이다.</p>
+<h2 id="은닉화-캡슐화"><a href="#은닉화-캡슐화" class="headerlink" title="은닉화, 캡슐화"></a>은닉화, 캡슐화</h2><p>제대로된 부품이라면 그것이 어떻게 만들어졌는지 모르는 사람도 그 부품을 사용하는 방법만 알면 쓸 수 있어야 한다. 내부의 동작 방법을 단단한 베이스 안으로 숨기고 사용자에게는 그 부품의 사용방법만을 노출하고 있는 것이다.<br>이러한 컨셉을 정보의 은닉화, 캡슐화라고 부른다.</p>
+<h2 id="인터페이스"><a href="#인터페이스" class="headerlink" title="인터페이스"></a>인터페이스</h2><p>잘 만들어진 부품이라면 부품과 부품을 서로 교환 할 수 있어야 한다. </p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/31/Java/Java%2014.%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/28/Java/Java%2013.%20%EC%9E%85%EB%A0%A5%EA%B3%BC%20%EC%B6%9C%EB%A0%A5/"
+                            aria-label=": Java 13. 입력과 출력"
+                        >
+                            Java 13. 입력과 출력
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-28T23:06:48+09:00">
+	
+		    Jan 28, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="입력과-출력"><a href="#입력과-출력" class="headerlink" title="입력과 출력"></a>입력과 출력</h1><h2 id="string-args"><a href="#string-args" class="headerlink" title="string[ ] args"></a>string[ ] args</h2><pre><code>package living.coding; 
+
+public class A8 &#123;
+
+    public static void main(String[] args) &#123;
+        System.out.println(args.length);
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>main 메소드는 자바에서 특별한 의미를 가진 메소드이다. main메소드의 내용을 구현하면 자바 애플리케이션을 실행할 때 main메소드가 호출되면서 프로그램이 구동하게 되는 것이다. 이때 String [ ] args는 입력 값의 파라미터로 동작한다.</p>
+<h2 id="사용자의-입력을-받기"><a href="#사용자의-입력을-받기" class="headerlink" title="사용자의 입력을 받기"></a>사용자의 입력을 받기</h2><pre><code>package living.coding;
+
+import java.util.Scanner;
+
+public class A9 &#123;
+
+    public static void main(String[] args) &#123;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int i = sc.nextInt();
+        System.out.println(i);
+        sc.close();
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>Rnu을 하게 되면 main메소드안의 Scanner라는 객체를 새로 만들 때 사용자가 입력한 값을 입력받아 생성한다. sc라는 객체는 nextInt라는 메소드를 통해 입력이 된다. nextInt는 정수 값만 입력이 가능하다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/28/Java/Java%2013.%20%EC%9E%85%EB%A0%A5%EA%B3%BC%20%EC%B6%9C%EB%A0%A5/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/27/Java/Java%2012.%20Method/"
+                            aria-label=": Java 12. Method"
+                        >
+                            Java 12. Method
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-27T22:23:48+09:00">
+	
+		    Jan 27, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><pre><code>public static void main(String[ ] args) &#123;
+
+&#125;
+</code></pre>
+<p>이것은 main이라는 이름의 메소드이다.</p>
+<h2 id="메소드의-정의와-호출"><a href="#메소드의-정의와-호출" class="headerlink" title="메소드의 정의와 호출"></a>메소드의 정의와 호출</h2><pre><code>package living.coding;
+
+public class A5 &#123;
+    public static void numbering() &#123; // 정의
+        int i = 0;
+        while (i&lt;10) &#123;
+            System.out.println(i);
+            i++;
+        &#125; 
+    &#125;
+
+    public static void main(String[] args) &#123; // 호출
+        numbering();
+    &#125;
+
+&#125;
+</code></pre>
+<p>메소드를 호출하게 되면 메소드를 정의한 부분이 실행되게 된다.<br>호출은 메소드의 이름 뒤 세미콜론을 적는 것으로 호출을 하고, 정의는 메소드의 이름 뒤 중괄호가 온다.<br>위 코드를 실행시키면 0123456789가 출력이 된다.</p>
+<h2 id="입력값"><a href="#입력값" class="headerlink" title="입력값"></a>입력값</h2><pre><code>package living.coding;
+
+public class A6 &#123;
+    public static void numbering(int limit) &#123;
+        int i = 0;
+        while (i &lt; limit) &#123;
+            System.out.println(i);
+            i++;
+        &#125;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        numbering(5);
+    &#125;
+
+&#125;
+</code></pre>
+<p>입력값에 5를 넣흐면 limit변수에 5값이 들어가게 되고 실행값은 01234가 출력된다.<br>int limit은 매개변수라(parameter)하고 5는 인자(argument)라 한다.</p>
+<h2 id="출력값"><a href="#출력값" class="headerlink" title="출력값"></a>출력값</h2><h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><pre><code>package living.coding;
+
+public class A7 &#123;
+    public static String numbering(int init, int limit) &#123;
+        int i = init;
+        
+        String output = &quot;&quot;;
+        while (i &lt; limit) &#123;
+            output += i;
+            i++;
+        &#125;
+    
+        return output;
+    &#125;
+    
+    public static void main(String [] args) &#123;
+        String result = numbering(1, 5);
+        System.out.println(result);
+    &#125;
+&#125;
+</code></pre>
+<p>값은 1234를 출력하게 된다.<br>return뒤의 값은 그 메소드 밖에 배치하게 되고 실행중 이던 메소드는 중지된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/27/Java/Java%2012.%20Method/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/27/Java/Java%2011.%20Selection%20Sort/"
+                            aria-label=": Java 11. Selection Sort"
+                        >
+                            Java 11. Selection Sort
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-27T20:51:40+09:00">
+	
+		    Jan 27, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Selection-Sort"><a href="#Selection-Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h1><p>Selection Sort는 말그대로 선택정렬이다.<br>오름차순 또는 내림차순으로 정렬하는 것이다.</p>
+<pre><code>package living.coding;
+
+public class A3 &#123;
+
+    public static void main(String[] args) &#123;
+        
+          int [] num = &#123;2,1,5,3,4&#125;;
+          int i,j,temp;
+
+         for (i=0;i&lt;num.length-1;i++) &#123;//1
+            for (j=i+1;j&lt;num.length;j++) &#123;//2
+                if (num[i]&lt;num[j]) &#123;//3
+                    temp=num[i];
+                    num[i]=num[j];
+                    num[j]=temp;
+
+                &#125;
+            &#125;
+        &#125;   
+    for (i=0;i&lt;num.length;i++) &#123;
+        System.out.println(num[i]);
+    &#125;
+&#125;
+</code></pre>
+<ol>
+<li>비교할 시작점을 정해준다.</li>
+<li>비교할 시작점 다음 index를 정해준다.</li>
+<li>두개의 index를 비교한 후 서로 자리를 바꾸어 준다.</li>
+</ol>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/27/Java/Java%2011.%20Selection%20Sort/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/26/Java/Java%2010.%20%EB%B0%B0%EC%97%B4/"
+                            aria-label=": Java 10. 배열"
+                        >
+                            Java 10. 배열
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-26T22:48:46+09:00">
+	
+		    Jan 26, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h1><h2 id="정의"><a href="#정의" class="headerlink" title="정의"></a>정의</h2><p>연관된 데이터를 모아서 관리하기 위해 사용하는 데이터 타입.</p>
+<h2 id="배열의-생성"><a href="#배열의-생성" class="headerlink" title="배열의 생성"></a>배열의 생성</h2><pre><code>변수의 데이터타입[] 변수 = &#123;&#125;;
+</code></pre>
+<h2 id="제어"><a href="#제어" class="headerlink" title="제어"></a>제어</h2><p><img src="https://user-images.githubusercontent.com/77277946/105854889-c9796080-602a-11eb-967e-e9b294a60eac.jpg" alt="배열제어"><br>temp안의 각각의 값은 원소라 한다. 배열의 제어를 할 때는 index를 사용한다. index번호는 0부터 시작한다. 그러므로 temp[5]는 존재하지 않는다.<br>원소를 적지 않고 배열을 먼저 생성할 수도 있다.</p>
+<pre><code>변수의 데이터타입[] 변수 = new 변수의 데이터타입[index수];
+</code></pre>
+<p>변수의 크기</p>
+<pre><code>System.out.println(변수.length);
+</code></pre>
+<h2 id="for-each"><a href="#for-each" class="headerlink" title="for-each"></a>for-each</h2><p><img src="https://user-images.githubusercontent.com/77277946/105857428-a13f3100-602d-11eb-862b-599358dd7b88.jpg" alt="for each"><br>이렇게 배열과 반복문을 같이 사용할 수도 있다. </p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/26/Java/Java%2010.%20%EB%B0%B0%EC%97%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+          <li class="pagination-prev">
+            <a
+                class="btn btn--default btn--small"
+                href="/page/7/"
+                aria-label="NEWER POSTS"
+            >
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a
+                class="btn btn--default btn--small"
+                href="/page/9/"
+                aria-label="OLDER POSTS"
+            >
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+        <li class="pagination-number">page 8 of 10</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: hashtable - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/hashtable/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2046.%20hashtable/"
+                            aria-label=": Java 46. hashtable"
+                        >
+                            Java 46. hashtable
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:50+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="hashtable"><a href="#hashtable" class="headerlink" title="hashtable"></a>hashtable</h1><p>hashtable은 Map을 상속받아 key,value 형태를 가지게 된다.<br>key,value는 한쌍으로 사용되며 key로 식별용 값, value는 사용할 값을 넣는 식이다.</p>
+<p>HashMap과 상당히 비슷한데 완전 똑같은 것은 아니므로 비교해 보자면</p>
+<ol>
+<li><p>HashTable은 동기화가 되어 있으나, HashMap은 동기화 되어있지 않다.</p>
+</li>
+<li><p>HashTable은 key, value에 null값을 허용하지 않지만 HashMap은 허용한다.</p>
+<pre><code> Hashtable 안에 값 넣기
+ Hashtable.put(key, value);
+
+ Hashtable 안의 값 가져오기
+ Hashtable.get(key);
+
+ Hashtable 안의 값 바꾸기
+ Hashtable.replace(key, value);
+
+ Hashtable 안의 내용 삭제하기
+ Hashtable.remove(key);
+
+ Hashtable의 크기 0인지 확인하기
+ Hashtable.isEmpty();
+ 
+ Hashtable 사이즈 확인하기
+ Hashtable.size();
+ 
+ Hashtable 안에 특정 Key, Value 들었는지 확인하기
+ Hashtable.containsKey(key);
+ Hashtable.containsValue(value);
+
+ Hashtable 안에 들어있는 전체 Key 확인하기
+ Hashtable.keySet();
+ import java.util.Hashtable;
+</code></pre>
+</li>
+</ol>
+<p>예제</p>
+<pre><code>public class HashTableExample &#123;
+
+    public static void main(String[] args) &#123;
+        Hashtable&lt;Integer, String&gt; ht = new Hashtable&lt;Integer, String&gt;();
+        ht.put(0, &quot;철수&quot;);
+        ht.put(1, &quot;영희&quot;);
+        ht.put(2, &quot;영수&quot;); // Hashtable에 값 삽입
+        ht.replace(2, &quot;수철&quot;); // Hashtable 값 바꾸기
+        ht.remove(2); // Hashtable 값 삭제
+
+        for(int i = 0; i&lt;ht.size(); i++) &#123;
+            System.out.println(ht.get(i)); // Hashtable 값 출력
+        &#125;
+        
+        System.out.println(&quot;Hashtable 크기 : &quot; + ht.size());
+        System.out.println(&quot;Hashtable key 확인 : &quot; + ht.containsKey(2));
+        System.out.println(&quot;Hashtable value 확인 : &quot; + ht.containsValue(&quot;수철&quot;));
+        System.out.println(&quot;Hashtable 크기 0인지 확인 : &quot; + ht.isEmpty());
+        System.out.println(&quot;Hashtable 전체 Key 확인 : &quot; + ht.keySet());
+        
+    &#125;
+
+&#125;
+결과값
+철수
+영희
+Hashtable 크기 : 2
+Hashtable key 확인 : false
+Hashtable value 확인 : false
+Hashtable 크기 0인지 확인 : false
+Hashtable 전체 key 확인 : [1, 0]    
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2046.%20hashtable/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

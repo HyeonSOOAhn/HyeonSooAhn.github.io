@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: Call by value - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/Call-by-value/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2022.%20Call%20by%20value%EC%99%80%20Call%20by%20reference/"
+                            aria-label=": Java 22. Call by value와 Call by reference"
+                        >
+                            Java 22. Call by value와 Call by reference
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:22+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Call-by-value"><a href="#Call-by-value" class="headerlink" title="Call by value"></a>Call by value</h1><p>값에 의한 호출.</p>
+<pre><code>Class CallByValue&#123;
+
+public static void swap(int x, int y) &#123;
+
+int temp = x;
+
+x = y;
+y = temp;
+
+&#125;
+
+public static void main(String[] args) &#123;
+
+int a = 10;
+int b = 20;
+
+System.out.println(&quot;swap() 호출 전 : a = &quot; + a + &quot;, b = &quot; + b);
+
+swap(a, b);
+
+System.out.println(&quot;swap() 호출 후 : a = &quot; + a + &quot;, b = &quot; + b);
+     &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>swap() 호출 전 : a = 10, b = 20
+
+swap() 호출 후 : a = 10, b = 20
+</code></pre>
+<p> 할당 된 메모리 변수에는 각각 10과 20의 값이 저장된다. 이후,<br>swap() 메서드 호출 시에 사용한 인자 a와 b는 할당 된 메모리<br>주소가 아닌 메모리에 담겨져 있던 값만이 복사되어 swap() 메서드<br>내부의 매개변수 x와 y의 메모리 주소에 담겨지게 된다.<br>당연하게도 swap() 메서드가 수행하는 동안 사용되는 변수들은 main<br>()에 존재하는 a와 b가 아닌 swap() 내부에 새로 생성 된 x와<br>y이기 때문에 메서드 수행 후에도 결과 값에 변화가 없습니다.</p>
+<p>Call by value는 메서드 호출 시에 사용되는 인자의 메모리에 저장되어 있는 값(value)을 복사하여 보낸다.</p>
+<h1 id="Call-by-reference"><a href="#Call-by-reference" class="headerlink" title="Call by reference"></a>Call by reference</h1><p>참조에 의한 호출.</p>
+<pre><code>Class CallByReference&#123;
+int value;
+
+CallByReference(int value) &#123;
+this.value = value;
+&#125;
+
+public static void swap(CallByReference x, CallByReference y) &#123;
+
+int temp = x.value;
+
+x.value = y.value;
+y.value = temp;
+
+&#125;
+public static void main(String[] args) &#123;
+
+CallByReference a = new CallByReference(10);
+CallByReference b = new CallByReference(20);
+
+System.out.println(&quot;swap() 호출 전 : a = &quot; + a.value + &quot;, b = &quot; + b.value);
+
+swap(a, b);
+
+System.out.println(&quot;swap() 호출 전 : a = &quot; + a.value + &quot;, b = &quot; + b.value);
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>swap() 호출 전 : a = 10, b = 20
+
+swap() 호출 후 : a = 20, b = 10
+</code></pre>
+<p>main()에서 선언 된 CallByReference 타입의 변수 a와 b는 각각 객체를 생성하여 10과 20의 주소 값을 저장하게 된다. 이후, swap() 메서드 호출 시에 인자 a와 b는 메모리에 저장 된 주소 값을 복사하여 매개변수 x와 y의 메모리에 저장합니다. 결국 swap() 메서드는 10과 20이 저장 된 주소를 참조하여 연산하기 때문에, 연산 결과에 따라 원본 데이터가 변하게 된다.</p>
+<p>Call by reference는 메서드 호출 시 사용되는 인자 값의 메모리에 저장되어있는 주소(Address)를 복사하여 보낸다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2022.%20Call%20by%20value%EC%99%80%20Call%20by%20reference/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

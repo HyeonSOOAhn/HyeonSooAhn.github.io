@@ -1,0 +1,1082 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: Java - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/Java/page/2/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2044.%20VO(Value%20Object)/"
+                            aria-label=": Java 44. VO(Value Object)"
+                        >
+                            Java 44. VO(Value Object)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:48+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="VO-Value-Object"><a href="#VO-Value-Object" class="headerlink" title="VO(Value Object)"></a>VO(Value Object)</h1><ul>
+<li>불변성 - 수정자(Setter)가 없다.</li>
+<li>값 동등성 - 내부 값 동등성 검사</li>
+<li>자가 유효성 검사 - 생성자에서 validate</li>
+</ul>
+<h2 id="불변성"><a href="#불변성" class="headerlink" title="불변성"></a>불변성</h2><p>Value Object는 불변이다.<br>불변이라는 뜻은 한번 생성되면 이후 내부 값을 바꿀 수 없음을 의미한다. 즉 setter를 허용하지 않는다는 말이다.</p>
+<p>Value Object는 코드의 다른 부분에서 수정되지 않기 때문에 Reference로 공유할 수 있다. 이것은 코드의 복잡성과 부하를 극적으로 감소시킨다. 또한 Multi-thread환경에서 그 이점이 뚜렷해진다.</p>
+<pre><code># 생성된 이후에는, 수정자(setter)를 통해 수정되지 않습니다. 
+final class Number&#123;
+
+        private int number;
+        
+        public Number(int number)&#123;
+                this.number = number;
+        &#125;
+&#125;
+</code></pre>
+<h2 id="값-동등성"><a href="#값-동등성" class="headerlink" title="값 동등성"></a>값 동등성</h2><p>‘동일성’ 식별자를 기반으로 객체가 같은지를 판단할 수 있는 성질<br>‘동등성’ 상태를 이용해 두 값이 같은지 판단할 수 있는 성질</p>
+<h2 id="자가-유효성-검사"><a href="#자가-유효성-검사" class="headerlink" title="자가 유효성 검사"></a>자가 유효성 검사</h2><p>생성자가 주입될 때 값의 유효성을 확인해야 한다. 유효하지 않으면 의미있는 에러를 표출한다. 이는 객체의 인스턴스에 더이상 if가 없음을 의미한다. 모든 유효성 검사는 생성 시간에 이루어진다.</p>
+<p>이러한 강제 유효성 검사는 의미 있고 명시적인 방법으로 도메인 제약 조건을 표현하는데도 유용하다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2044.%20VO(Value%20Object)/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2043.%20List%20%EC%BB%AC%EB%A0%89%EC%85%98/"
+                            aria-label=": Java 43. List 컬렉션"
+                        >
+                            Java 43. List 컬렉션
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:47+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="List-컬렉션"><a href="#List-컬렉션" class="headerlink" title="List 컬렉션"></a>List 컬렉션</h1><p>List 컬렉션은 배열과 비슷하게 객체를 인덱스로 관리한다. 배열과의 차이점은 저장용량이 자동으로 증가하며, 객체를 저장할 때 자동 인데그삭 부여된다는 것이다. 그리고 추가, 삭제, 검색을 위한 다양한 메소드들이 제공된다.</p>
+<p>List 컬렉션은 객체 자체를 저장하는 것이 아니라 객체의 번지를 참조한다. 그렇기 때문에 동일한 객체를 중복 저장할 수 있는데, 이 경우 동일한 번지가 참조된다. null도 저장이 가능하며, 이 경우 해당 인덱스는 객체를 참조하지 않는다.</p>
+<h2 id="ArrayList-클래스"><a href="#ArrayList-클래스" class="headerlink" title="ArrayList 클래스"></a>ArrayList<E> 클래스</h2><p>ArrayList클래스는 가장 많이 사용되는 컬렉션 클래스 중 하나이다.<br>내부적으로 배열을 이용하여 요소를 저장한다.</p>
+<p>ArrayList클래스는 배열을 이용하기 때문에 인덱스를 이용해 배열요소에 빠르게 접근할 수 있다.<br>하지만 배열은 크기를 변경할 수 없는 인스턴스이므로, 크기를 늘리기 위해서는 새로운 배열을 생성하고 기존의 요소들을 옮겨야 하는 복잡한 과정을 거쳐야 한다.<br>물론 이 과정은 자동으로 수행되지만, 요소의 추가 및 삭제 작업에 걸리는 시간이 매우 길어지는 단점을 가지게 된다.</p>
+<pre><code>ArrayList&lt;Integer&gt; arrList = new ArrayList&lt;Integer&gt;();
+
+// add() 메소드를 이용한 요소의 저장
+arrList.add(40);
+arrList.add(20);
+arrList.add(30);
+arrList.add(10);
+
+// for 문과 get() 메소드를 이용한 요소의 출력
+for (int i = 0; i &lt; arrList.size(); i++) &#123;
+    System.out.print(arrList.get(i) + &quot; &quot;);
+&#125;
+
+// remove() 메소드를 이용한 요소의 제거
+arrList.remove(1);
+
+// Enhanced for 문과 get() 메소드를 이용한 요소의 출력
+for (int e : arrList) &#123;
+    System.out.print(e + &quot; &quot;);
+&#125;
+
+// Collections.sort() 메소드를 이용한 요소의 정렬
+Collections.sort(arrList);
+
+// iterator() 메소드와 get() 메소드를 이용한 요소의 출력
+Iterator&lt;Integer&gt; iter = arrList.iterator();
+while (iter.hasNext()) &#123;
+    System.out.print(iter.next() + &quot; &quot;);
+&#125;
+
+// set() 메소드를 이용한 요소의 변경
+arrList.set(0, 20);
+
+for (int e : arrList) &#123;
+    System.out.print(e + &quot; &quot;);
+&#125;
+
+// size() 메소드를 이용한 요소의 총 개수
+System.out.println(&quot;리스트의 크기 : &quot; + arrList.size());
+</code></pre>
+<p>결과값</p>
+<pre><code>40 20 30 10 
+40 30 10
+10 30 40 
+20 30 40
+리스트의 크기 : 3
+</code></pre>
+<h2 id="LinkedList-클래스"><a href="#LinkedList-클래스" class="headerlink" title="LinkedList 클래스"></a>LinkedList<E> 클래스</h2><p>LinkedList클래스는 ArrayList클래스가 배열을 이용하여 요소를 저장함으로써 발생하는 단점을 극복하기 위해 고안되었다.<br>LinkedList클래스는 내부적으로 연결리스트를 통해 요소를 저장한다.</p>
+<p>배열은 저장된 요소가 순차적으로 저장된다.<br>하지만 연결리스트는 저장된 요소가 비순차적으로 분포되며, 이러한 요소들 사이를 링크로 연결하여 구성한다.<br>다음 요소를 가리키는 참조만을 가지는 연결 리스트를 단일 연결리스트라고한다.</p>
+<p>이러한 단일 연결리스트는 요소의 저장과 삭제 작업이 다음요소를 가리키는 참조만 변경하면 되므로, 아주 빠르게 처리된다.<br>하지만 단일 연결리스트는 현재 요소에서 이전요소로 접근하기가 매우 어렵다.</p>
+<p>따라서 이전 요소를 가리키는 참조도 가지는 이중 연결 리스트가 좀더 많이 사용된다.</p>
+<p>LinkedList클래스도 이중 연결 리스트를 내부적으로 구현한 것이다.<br>또한, LinkedList클래스 역시 List인터페이스를 구현하므로, ArrayList클래스와 사용할 수 있는 메소드가 거의 같다.</p>
+<pre><code>LinkedList&lt;String&gt; lnkList = new LinkedList&lt;String&gt;();
+
+// add() 메소드를 이용한 요소의 저장
+lnkList.add(&quot;넷&quot;);
+lnkList.add(&quot;둘&quot;);
+lnkList.add(&quot;셋&quot;);
+lnkList.add(&quot;하나&quot;);
+
+// for 문과 get() 메소드를 이용한 요소의 출력
+for (int i = 0; i &lt; lnkList.size(); i++) &#123;
+    System.out.print(lnkList.get(i) + &quot; &quot;);
+&#125;
+
+// remove() 메소드를 이용한 요소의 제거
+lnkList.remove(1);
+
+// Enhanced for 문과 get() 메소드를 이용한 요소의 출력
+for (String e : lnkList) &#123;
+    System.out.print(e + &quot; &quot;);
+&#125;
+
+// set() 메소드를 이용한 요소의 변경
+lnkList.set(2, &quot;둘&quot;);
+
+for (String e : lnkList) &#123;
+    System.out.print(e + &quot; &quot;);
+&#125;
+
+// size() 메소드를 이용한 요소의 총 개수
+System.out.println(&quot;리스트의 크기 : &quot; + lnkList.size());
+</code></pre>
+<p>결과값<br>    넷 둘 셋 하나<br>    넷 셋 하나<br>    넷 셋 둘<br>    리스트의 크기 : 3</p>
+<h2 id="Vector-클래스"><a href="#Vector-클래스" class="headerlink" title="Vector 클래스"></a>Vector<E> 클래스</h2><p>Vector 클래스는 ArrayList클래스와 같은 동작을 수행하는 클래스이다. 현재의 Vector클래스는 ArrayList클래스와 마찬가지로 List인터페이스를 상속받는다.<br>따라서 Vector클래스에서 사용할 수 있는 메소드는 ArrayList클래스에서 사용할 수 있는 메소드와 거의 같다.<br>하지만 현재 기존 코드와의 호환성을 위해서 남아있으므로, Vector클래스보다는 ArrayList클래스를 사용하는 것이 좋다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2043.%20List%20%EC%BB%AC%EB%A0%89%EC%85%98/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2042.%20%EC%BB%AC%EB%A0%89%EC%85%98%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/"
+                            aria-label=": Java 42. 컬렉션 프레임워크"
+                        >
+                            Java 42. 컬렉션 프레임워크
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:46+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Collection-Framwork"><a href="#Collection-Framwork" class="headerlink" title="Collection Framwork"></a>Collection Framwork</h1><p>자바에서 컬렉션 프레임워크란, 다수의 데이터를 쉽고 효과적으로 처리할 수 있는 표준화된 방법을 제공하는 클래스의 집합을 의미한다. 다시말해 데이터를 저장하는 자료 구조와 데이터를 처리하는 알고리즘을 구조화하여 클래스로 구현해 놓은 것이다.</p>
+<p>이러한 컬렉션 프레임워크는 자바의 인터페이스를 사용하여 구현된다.</p>
+<h2 id="컬렉션-프레임워크긔-핵심-인터페이스"><a href="#컬렉션-프레임워크긔-핵심-인터페이스" class="headerlink" title="컬렉션 프레임워크긔 핵심 인터페이스"></a>컬렉션 프레임워크긔 핵심 인터페이스</h2><p>크게 3가지 타입으로 나누어 핵심이 되는 주요 인터페이스를 정의했다.</p>
+<ol>
+<li>List</li>
+<li>Set</li>
+<li>Map</li>
+</ol>
+<p>여기서 List와 Set 인터페이스의 공통점을 뽑아내어 새로운 인터페이스인 Collection을 추가로 정의하였다. Map 인터페이스는 구조상의 차이로 인해 별도로 정의된다.<br><img src="https://user-images.githubusercontent.com/77277946/108180508-32478a80-714a-11eb-8c0a-9123dbba4dc9.jpg" alt="콜렉션 기본구조"></p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2042.%20%EC%BB%AC%EB%A0%89%EC%85%98%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2041.%20%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%B6%94%EC%83%81%EB%A9%94%EC%86%8C%EB%93%9C/"
+                            aria-label=": Java 41. 추상클래스와 추상메소드"
+                        >
+                            Java 41. 추상클래스와 추상메소드
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:45+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="추상클래스"><a href="#추상클래스" class="headerlink" title="추상클래스"></a>추상클래스</h1><p>제어자 중에서 abstract라는 것이 있다. 이 제어자가 클래스 앞에 붙으면 추상클래스가 된다.</p>
+<p>클래스를 설계도에 비유한다면 추상클래스는 미완성 설계도에 비유할 수 있다. 단어 뜻 그대로 완성되지 못한 채로 남겨진 설계도를 말한다. 미완성 메소드를 포함하고 있다는 의미이다. 추상메소드를 포함하고 있다는 것을 제외하고는 일반 클래스와 전혀 다르지 않다.</p>
+<p>추상클래스는 그 자체로 클래스 역할을 다 하지 못하지만, 새로운 클래스를 작성하는데 있어서 바탕이 되는 조상클래스로서의 중요한 역할을 한다.</p>
+<h2 id="추상메서드"><a href="#추상메서드" class="headerlink" title="추상메서드"></a>추상메서드</h2><p>메소드는 선언부와 구현부로 구성되어 있다.<br>추상메소드란 서언부만 작성하고 구현부는 작성하지 않은 채로 남겨 둔 것이 추상메소드이다. 실제 내용은 상속받는 클래스에서 구현하도록 비워둔 것이다. 추상메소드 역시 키워드 ‘abstract’를 앞에 붙혀주고, 구현부가 위치할 {}대신 마침을 의미하는 ;을 작성한다.</p>
+<h1 id="추상클래스-사용이유"><a href="#추상클래스-사용이유" class="headerlink" title="추상클래스 사용이유"></a>추상클래스 사용이유</h1><p>자손 클래스에서 추상메소드를 반드시 구현하도록 강요하기 위해서 이다. 상속받은 자손클래스에서는 메소드들이 완전히 구현된 것으로 인식하고 오버라이딩을 하지 않을 수 있기 때문이다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2041.%20%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%B6%94%EC%83%81%EB%A9%94%EC%86%8C%EB%93%9C/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/"
+                            aria-label=": Java 40. Boxing과 UnBoxing"
+                        >
+                            Java 40. Boxing과 UnBoxing
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:44+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Boxing과-UnBoxing"><a href="#Boxing과-UnBoxing" class="headerlink" title="Boxing과 UnBoxing"></a>Boxing과 UnBoxing</h1><p>기본 타입의 값을 포장 객체로 만드는 과정을 박싱이라고 하고 반대로 포장객체에서 기본 타입의 값을 얻어내는 과정을 언박싱이라고 한다.</p>
+<pre><code>public class Wrapper_Ex &#123;
+    public static void main(String[] args)  &#123;
+        Integer num = new Integer(17); // 박싱
+        int n = num.intValue(); //언박싱
+        System.out.println(n);
+    &#125;
+&#125;
+</code></pre>
+<h1 id="자동박싱과-자동언박싱"><a href="#자동박싱과-자동언박싱" class="headerlink" title="자동박싱과 자동언박싱"></a>자동박싱과 자동언박싱</h1><p>기본 타입 값을 직접 방싱, 언박싱하지 않아도 자동적을 박싱과 언박싱이 일어나는 경우가 있다. 자동박싱의 포장클래스 타입에 기본값이 대입될 경우에 발생한다.예를 들어 int타입의 값을 Integer클래스 변수에 대입하면 자동 박싱이 일어나 힙 영역에 Integer객체가 생성된다.</p>
+<pre><code>public class Wrapper_Ex &#123;
+    public static void main(String[] args)  &#123;
+        Integer num = 17; // 자동 박싱
+        int n = num; //자동 언박싱
+        System.out.println(n);
+    &#125;
+&#125;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/"
+                            aria-label=": Java 39. Wrapper Class"
+                        >
+                            Java 39. Wrapper Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:43+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Wrapper-Class"><a href="#Wrapper-Class" class="headerlink" title="Wrapper Class"></a>Wrapper Class</h1><p>자바의 자료형은 기본타입(primitive type)과 참조타입(reference type)으로 나누어진다. 기본타입은 char, int, float, double, boolean 등이 있고, 참조타입은 class, interface등이 있는데 프로그래밍을 하다 보면 기본 타입의 데이터를 객체로 표현해야하는 경우가 있다.<br>이럴 때 기본자료타입을 객체로 다루기 위해서 사용하는 클래스들을 래퍼클래스라고 한다.<br>자바의 모든 기본타입은 값을 갖는 객체를 생성할 수 있다. 이런 객체를 포장객체라고도 하는데, 그 이유는 기본타입의 값을 내부에 두고 포장하기 때문이다. 래퍼 클래스로 감싸고 있는 기본타입 값은 외부에서 변경할 수 없다. 만약 값을 변경하고 싶다면 새로운 포장 객체를 만들어야 한다.</p>
+<h2 id="래퍼클래스의-종류"><a href="#래퍼클래스의-종류" class="headerlink" title="래퍼클래스의 종류"></a>래퍼클래스의 종류</h2><table>
+<thead>
+<tr>
+<th>기본타입</th>
+<th>래퍼클래스</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>래퍼 클래스는 java.lang 패키지에 포함되어 있는데, 다음과 같이 기본 타입에 대응되는 래퍼 클래스들이 있다. char타입과 int타입이 각각 Character와 Integer의 래퍼 클래스를 가지고 있고 나머지는 기본 타입의 첫 글자를 대문자로 바꾼 이름을 가지고 있다.</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://user-images.githubusercontent.com/77277946/107933542-35177380-6fc2-11eb-87e6-6476b5af9612.jpg" alt="래퍼클래스"><br>모든 래퍼클래스의 부모는 Object이고, 내부적으로 숫자를 다루는 래퍼클래스의 부모 클래스는 Number클래스이다. 모든 래퍼클래스는 최종 클래스로 정의된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2038.%20%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85,%20%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85/"
+                            aria-label=": Java 38. 업캐스팅, 다운캐스팅"
+                        >
+                            Java 38. 업캐스팅, 다운캐스팅
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:42+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="업캐스팅"><a href="#업캐스팅" class="headerlink" title="업캐스팅"></a>업캐스팅</h1><p>서브클래스는 슈퍼클래스의 모든 특성을 상속받는다. 따라서 서브 클래스는 슈퍼클래스가 될 수 있다.<br>즉, 서브 클래스가 슈퍼 클래스가 되는 것을 업 캐스팅이라고 한다.</p>
+<pre><code>class Person&#123;
+    String name;
+    String id;
+
+    public Person(String name)&#123;
+        this.name = name;
+    &#125;
+&#125;
+
+class Student extends Person&#123;
+    String grade;
+    String department;
+
+    public Student(String name)&#123;
+        super(name);
+    &#125;
+&#125;
+
+public class UpcastingEx&#123;
+    public static void main(String[] args)&#123;
+        Person p;
+        Student s = new Student(&quot;이재문&quot;);
+        p = s; //업 캐스팅 발생
+
+        System.out.println(p.name); //정상 컴파일
+        Ststem.out.println(p.grade); //컴파일 오류
+    &#125;
+&#125;
+</code></pre>
+<p>Student로 인스턴스를 생성하고 Person 레퍼런스 타입으로 담았다.<br>다시 말해서 Person클래스의 멤버만 접근이 가능하고 Student의 멤버는 접근이 불가능하다.</p>
+<h1 id="다운캐스팅"><a href="#다운캐스팅" class="headerlink" title="다운캐스팅"></a>다운캐스팅</h1><p>서브 클래스가 슈퍼 클래스로 변했을 때 서브 클래스의 인스턴스는 잠시 가려져 있을 뿐 사라지지 않는다.<br>서브 클래스의 원래 특성으로 돌려 놓는게 다운 캐스팅이다.<br>다운 캐스팅은 업 캐스팅과 달리 명시적으로 타입을 지정해야 한다.<br>UpcastingEx클래스 부분만 수정한다.</p>
+<pre><code>public class DowncastingEx&#123;
+    public static void main(String[] args)&#123;
+        Person p = new Student(&quot;이재문&quot;); //업 캐스팅 발생
+        Student s;
+
+        s = (Student)p; //다운 캐스팅
+
+        System.out.println(s.name); //정상 작동
+        s.grade = &quot;A&quot;; //컴파일 오류
+    &#125;
+&#125;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2038.%20%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85,%20%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2037.%20getter,%20setter/"
+                            aria-label=": Java 37. getter, setter"
+                        >
+                            Java 37. getter, setter
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:41+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="getter-setter"><a href="#getter-setter" class="headerlink" title="getter, setter"></a>getter, setter</h1><p>private 변수를 외부에서 접근하게 하려면 public메소드를 제공한다.<br>값을 얻는 get()메소드를 getter, 값을 지정하는 set()메소드를 setter라고 한다.<br>외부 클래스에서 private멤버 변수에 직접 접근할 수 없지만,<br>public 메소드인 setter를 활용하여 값을 대입할 수 있다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2037.%20getter,%20setter/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2036.%20InnerClass/"
+                            aria-label=": Java 36. InnerClass"
+                        >
+                            Java 36. InnerClass
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:40+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="InnerClass"><a href="#InnerClass" class="headerlink" title="InnerClass"></a>InnerClass</h1><ul>
+<li><p>클래스가 다른 클래스를 포함하는 경우, 내부에 포함된 클래스의 명칭</p>
+</li>
+<li><p>파일 크기의 최소화, 보안, 성능 향상, 이벤트 처리 등을 쉽게 하기 위해 사용</p>
+</li>
+<li><p>자바 클래스 구조를 더 조직화하고, 소스코드를 구현시 효율을 높일 수 있음</p>
+</li>
+<li><p>내부 클래스가 생성되기 위해 외부 클래스의 객체가 반드시 필요</p>
+</li>
+<li><p>내부 클래스는 정의되는 위치에 따라 멤버 클래스와 지역 클래스로 나뉨</p>
+</li>
+<li><p>멤버클래스</p>
+<ul>
+<li>멤버 변수와 동일한 위치에 선언된 내부 클래스</li>
+<li>static예약어가 붙은 static 멤버와 instance 멤버로 나뉨</li>
+<li>동일한 클래스 뿐아니라 다른 클래스에서도 활용 가능</li>
+<li>클래스의 멤버 변수와 성격이 비슷</li>
+</ul>
+</li>
+<li><p>지역클래스</p>
+<ul>
+<li>메서드 내에 클래스가 정의되어 있는 경우</li>
+<li>지역클래스와 무명클래스로 나뉨</li>
+<li>활용 범위가 메서드 블록 내부로 제한되는 특징을 갖는 등 지역 변수와 성격이 비슷</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2036.%20InnerClass/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2035.%20LocalDate,%20LocalTime,%20LocalDateTime/"
+                            aria-label=": Java 35. LocalDate, LocalTime, LocalDateTime"
+                        >
+                            Java 35. LocalDate, LocalTime, LocalDateTime
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:39+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="LocalDate"><a href="#LocalDate" class="headerlink" title="LocalDate"></a>LocalDate</h1><dl><dt>로컬 날짜 클래스로 날짜 정보만 필요할 때 사용한다.<br>LocalDate currentDate = LocalDate.now();<br>: 컴퓨터 현재의 날짜 정보를 저장한다.<br>LocalDate targetDate = LocalDate.of(int year, int month, int dayOfMonth);</dt><dd>파라미터로 주어진 날짜 값을 저장한다.<br>|리턴타입|메소드(매개변수)|설명<br>|-|-|-|<br>|int|getYear()|년|<br>|Month|getMonth()|Month 열거 값(JANUARY, FEBRUARY, MARCH ..)|<br>|int|getMonthValue()|월(1, 2, 3 ..)|<br>|int|getDayOfYear()|일년의 몇 번째 일|<br>|int|getDayOfMonth()|월의 몇 번째 일|<br>|DayOfWeek|getDayOfWeek()|요일(MONDAY, TUESDAY, WEDNESDAY..)|<br>|boolean|isLeapYear()|윤년여부|</dd></dl><h1 id="LocalTime"><a href="#LocalTime" class="headerlink" title="LocalTime"></a>LocalTime</h1><dl><dt>로컬 시간 클래스로 시간 정보만 필요할 때 사용하면 된다.<br>LocalTime currentTime = LocalTime.now();<br>: 컴퓨터의 현재 시간정보<br>LocalTime targetTime = LocalTime.of(int hour, int minute, int second, int nanoOfSecond)</dt><dd>파라미터로 주어진 시간 값을 저장한다.<br>|리턴타입|메소드(매개변수)|설명<br>|-|-|-|<br>|int|getHour()|시간|<br>|int|getMinute()|분|<br>|int|getSecond()|초|<br>|int|getNano()|나노초|</dd></dl><h1 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h1><dl><dt>날짜와 시간 정보가 모두 필요할 때 사용하면 된다.<br>LocalDateTime currentDateTime = LocalDateTime.now();<br>: 컴퓨터의 현재 날짜와 시간 정보<br>LocalDateTime targetDateTime = LocalDateTime.of(int year, int month, int dayOfMonth, int hour, int minute, int second, int nanoOfSecond);</dt><dd>파라미터로 주어진 날짜와 시간값을 저장한다.</dd></dl><h1 id="ZonedDateTime"><a href="#ZonedDateTime" class="headerlink" title="ZonedDateTime"></a>ZonedDateTime</h1><dl><dt>ISO-8601 달력 시스템에서 정의하고 있는 타임존의 날짜와 시간을 저장하는 클래스이다. 결과는 2016-04-01T16:54:05.739+09:00[Asia/Seoul]와 같고, 맨 뒤에 +09:00[Asia/Seoul] 협정세계시와의 시차(+9시간)와 ZoneId(Asia/Seoul) 정보가 붙는다.<br>ZonedDateTime utcDateTime = ZonedDateTime.now(ZoneId.of(“UTC”));</dt><dd>UTC기준 현재 시각을 표시해준다.<br>ZonedDateTime seoulDateTime = ZonedDateTime.now(ZoneId.of(“Asia/Seoul”));<br>|리턴타입|메소드(매개변수)|설명<br>|-|-|-|<br>|ZoneId|getZone()|ZoneId를 리턴(Asia/Seoul)|<br>|ZoneOffset|getOffset()|UTC와의 시차를 리턴(+09:00)|</dd></dl>
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2035.%20LocalDate,%20LocalTime,%20LocalDateTime/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+          <li class="pagination-prev">
+            <a
+                class="btn btn--default btn--small"
+                href="/tags/Java/"
+                aria-label="NEWER POSTS"
+            >
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a
+                class="btn btn--default btn--small"
+                href="/tags/Java/page/3/"
+                aria-label="OLDER POSTS"
+            >
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+        <li class="pagination-number">page 2 of 6</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

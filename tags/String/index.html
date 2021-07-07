@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: String - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/String/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                            aria-label=": Java 32. String, StringBuffer, StringBuilder"
+                        >
+                            Java 32. String, StringBuffer, StringBuilder
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:36+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="String-VS-StringBuffer-StringBuilder"><a href="#String-VS-StringBuffer-StringBuilder" class="headerlink" title="String VS StringBuffer/StringBuilder"></a>String VS StringBuffer/StringBuilder</h1><p>String과 StrungBuffer/StrungBuilder 클래스의 가장 큰 차이점은 String은 불변의 속성을 갖는다는 점이다.<br>그렇기 때문에 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용해 주면 좋은 성능을 기대할 수 있다. 그러나 문자열 추가, 수정, 삭제 등의 연산이 빈번하게 발생하는 알고리즘에 String클래스를 사용하면 힙메모리에 많은 가비지가 생성되어 힙메모리 부족으로 어플리케이션 성능에 치명적인 영향을 끼치게 된다.</p>
+<p>이를 해결하기 위해 가변성을 가지는 StringBuffer/StringBuilder클래스를 도입했다.</p>
+<h1 id="StringBuffer-VS-StringBuilder"><a href="#StringBuffer-VS-StringBuilder" class="headerlink" title="StringBuffer VS StringBuilder"></a>StringBuffer VS StringBuilder</h1><p>이 두클래스의 큰 차이점은 동기화의 유무이다. StringBuffer는 동기화 키워드를 지원하여 멀티쓰레드 환경에서 안전하다는 점이다. 참고로 String도 불변성을 가지기 때문에 마찬가지로 멀티쓰레드 환경에서의 안정성을 가지고 있다.</p>
+<p>반대로 StringBuilder는 동기화를 지원하지 않기 때문에 멀티쓰레드 환경에서 사용하는 것은 적합하지 않지만 동기화를 고려하지 않는 만큼 단일쓰레드에서의 성능은 StringBuffer보다 뛰어나다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2030.%20String%20Class/"
+                            aria-label=": Java 30. String Class"
+                        >
+                            Java 30. String Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:34+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h1><p>String 객체가 하나 생성되면, 그 값은 길어지거나 줄어들 수 없으며 그 문자들 중 어떤 것도 바뀔 수 없다.<br>그래서 String 객체는 변경불능이라고 한다.</p>
+<p>String클래스의 자주 사용하는 함수이다.<br>|함수|반환형|설명<br>|—|—|—<br>|CharAt(int index)|char|index로 지정된 첨자 위치에 있는 문자를 반환한다.<br>|compareTo(String str)|int|이 String이 String str보다 사전적 순서에서 앞서면 음수값, 같으면 0값, 뒤에 있으면 0값이다.<br>|Concat(String str)|String|이 String과 str을 접합하여 구성되는 새로운 String을 반환한다.<br>|equals(String str)|boolean|이 String이 str과 같은 문자열이면 (대소문자 구분) True, 그렇지 않으면 False 반환<br>|equalslgnoreCase(String str)|boolean|이 String이 str과 같은 문자열이면(대소문자 미 구분) True, 그렇지 않으면 False 반환<br>|length()|int|이 String의 문자 개수를 반환한다.<br>|replace(char oldChar, char newChar)|String|String에 나타나는 oldChar를 모두 new Char로 변경한다.<br>|substring(int offset, int endIndex)|String|이 String의 offset 위치에서부터 endIndex-1까지에 걸친 문자열을 반환한다.<br>|toLowerCase()|String|모든 대문자를 소문자로 변환한다.<br>|toUpperCase()|String|모든 소문자를 대문자로 변환한다. </p>
+<p>예제</p>
+<pre><code>public class StringClass &#123;
+    
+    public static void main(String[] args)&#123;
+        
+        String text = &quot;First String V&quot;;
+        String concat, upperCase, replace, subString;
+        
+        System.out.println(&quot;기본 String : &quot;+ text);
+        System.out.println(&quot;기본 String 길이 : &quot;+text.length());    // 문자열 길이 출력
+        
+        concat = text.concat(&quot;, Second String V&quot;);    // 문자열 연결
+        
+        upperCase = concat.toUpperCase();        // 문자열 대문자로 변환
+        
+        replace = upperCase.replace(&#39;V&#39;, &#39;K&#39;);    //  문자 V를 K로 변환
+        
+        subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기
+        
+        
+        System.out.println(&quot;Concat String : &quot; + concat);
+        System.out.println(&quot;upperCase String : &quot; + upperCase);
+        System.out.println(&quot;replace String : &quot; + replace);
+        System.out.println(&quot;subString String : &quot; + subString);
+        
+        
+    &#125;
+
+&#125;
+</code></pre>
+<p>System.out.println(“기본 String 길이 : “+text.length());    // 문자열 길이 출력</p>
+<p>text인 “First String V” 의 문자열 길이를 반환한다.</p>
+<p>-&gt; 14</p>
+<p>concat = text.concat(“, Second String V”);    // 문자열 연결</p>
+<p>text인 “First String V” 뒤에 concat 메소드로 “, Second String V” 를 연결했다.</p>
+<p>-&gt;  First String V, Second String V</p>
+<p>upperCase = concat.toUpperCase();        // 문자열 대문자로 변환</p>
+<p>concat인 “First String V, Second String V” 의 문자열을 대문자로 변환한다</p>
+<p>-&gt; FIRST STRING V, SECOND STRING V</p>
+<p>replace = upperCase.replace(‘V’, ‘K’);    //  문자 V를 K로 변환</p>
+<p>upperCase인 “FIRST STRING V, SECOND STRING V” 문자열 중 ‘V’ 문자를 ‘K’ 문자로 변환 한다.</p>
+<p>-&gt; FIRST STRING K, SECOND STRING K</p>
+<p>subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기</p>
+<p>replace 인 “FIRST STRING K, SECOND STRING K” 문자열의 3번째 부터 9번째 문자열까지 잘라낸다 (0부터 시작)</p>
+<p>-&gt; ST STRI</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2030.%20String%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/26/Java/Java%2009.%20char,%20String/"
+                            aria-label=": Java 09. char, String"
+                        >
+                            Java 09. char, String
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-26T18:12:38+09:00">
+	
+		    Jan 26, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="char-String"><a href="#char-String" class="headerlink" title="char, String"></a>char, String</h1><p>자바에서는 char배열이 아닌 String클래슬를 이용해서 문자열을 처리하는 이유는 무엇일까?<br>String클래스는 char배열에 기능(메서드)을 추가한 것이다.<br>char배열과 String클래스의 한 가지 중요한 차이가 있는데, String객체(문자열)는 읽을 수만 있을 뿐 내용을 변경할 수 없다는 것이다. </p>
+<pre><code>public static void main(String[] args) &#123;
+    
+    String str = &quot;java&quot;;
+    str = &quot;8&quot;;
+    System.out.println(str); // java8
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>위처럼 String값이 바뀌는 것 같지만 새로운 문자열이 생겨 str이 새로운 주소값을 가르키는 것이다. </p>
+<p>그리고 String문자열에서 하나의 문자만 꺼내오고 싶을 때 charAt이라는 메소드를 사용한다.<br>배열에서 “배열이름[index]”로 index에 위치한 값을 가져오는 것과 같다고 생각하면 된다.</p>
+<pre><code>public class Test &#123;
+public static void main(String[] args) &#123;
+    String str = &quot;Hello&quot;;
+    char ch = str.charAt(1);  // e
+    &#125;
+&#125;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/26/Java/Java%2009.%20char,%20String/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

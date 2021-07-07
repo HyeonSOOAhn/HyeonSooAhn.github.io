@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 17. 변수 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"변수데이터 타입에 따른 분류기본형 변수와 참조변수로 나뉜다.기본형변수는 자료의 실제값을 저장한다.\n\n\n\n\n종류\n\n\n\n논리형\nboolean\n\n\n문자형\nchar\n\n\n정수형\nbyte, short, int, long\n\n\n실수형\nfloat, double\n\n\n참조변수는 값이 저장되어 있는 주소값을 값으로 갖는다.\n\n\n\n기본형 변수를 제외한 나머지 타입이며, 대표적으로 String이 있다.\n\n\n\n\n\n\n\n선언 위치에 따른 분류크게 멤버변수와 지역변수로 나뉘며멤버변수는 클래스변수와 인스턴스변수를 통틀어서 부르는 용어이다.클래스 영역에서 선언된 변수를 멤버변수, 그중 앞에 static이 붙은 변수를 클래스 변수라고 한다.\n멤버변수인스턴스 변수클래스 영역에 선언되고 인스턴스 생성시 만들어 진다. 각각의 인스턴스마다 다른 값을 가질 수 있다. 그러므로 인스턴스 생성이 필수이며 각 인스턴스마다 다른 값을 가져야 할 때 사용된다.\n클래스 변수인스턴스변수 앞에 static을 붙이기만 하면 된다. 인스턴스변수가 각각의 인스턴스마다 다른값을 가질 수 있는 것과는 달리 값을 공유하는 변수이다.클래스이름.변수이름 이렇게 인스턴스 생성 필요없이 바로 쓸 수 있다.\n지역변수메소드 내에 선언되며 메소드 호출시 생성되고 메소드가 종료되면 사라진다.\n매개변수흔히 파라미터라고 불린다. 메소드에서 입력값을 받을 때가 있는데, 그때 사용되는 변수를 매개변수라고 한다.매개변수도 매소드 내에 선언된 것으로 간주되므로 지역변수이다.\npublic class Variable &#123;\n    int a;\n    static String b;\n    void m(int c)&#123;\n        int d=c;\n    &#125;\n    public static void main(String args[]) &#123;\n        int e=0;\n        Variable v = new Variable();\n        v.m(e);\n    &#125;\n&#125;\n\n2번줄     a는 기본형변수이면서 멤버변수의 인스턴스변수3번줄     b는 참조변수이면서 멤버변수의 클래스변수4번줄     c는 기본형변수이면서 매개변수 이면서 지역변수5번줄     d는 기본형변수이면서 지역변수7번줄     args는 참조변수이면서 매개변수 이면서 지역변수8번줄     e는 기본형변수이면서 지역변수9번줄     v는 참조변수이면서 지역변수10번줄   e는 인자값으로 값0이 매개변수에 복사되어 넣어진다.\n","dateCreated":"2021-02-04T21:37:53+09:00","dateModified":"2021-03-04T17:50:59+09:00","datePublished":"2021-02-04T21:37:53+09:00","description":"","headline":"Java 17. 변수","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/","keywords":"Java, Eclipse, 변수"}</script>
+    <meta name="description" content="변수데이터 타입에 따른 분류기본형 변수와 참조변수로 나뉜다.기본형변수는 자료의 실제값을 저장한다.     종류    논리형 boolean   문자형 char   정수형 byte, short, int, long   실수형 float, double   참조변수는 값이 저장되어 있는 주소값을 값으로 갖는다.    기본형 변수를 제외한 나머지 타입이며, 대표적으로">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 17. 변수">
+<meta property="og:url" content="http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="변수데이터 타입에 따른 분류기본형 변수와 참조변수로 나뉜다.기본형변수는 자료의 실제값을 저장한다.     종류    논리형 boolean   문자형 char   정수형 byte, short, int, long   실수형 float, double   참조변수는 값이 저장되어 있는 주소값을 값으로 갖는다.    기본형 변수를 제외한 나머지 타입이며, 대표적으로">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-04T12:37:53.000Z">
+<meta property="article:modified_time" content="2021-03-04T08:50:59.080Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="변수">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 17. 변수
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-04T21:37:53+09:00">
+	
+		    Feb 04, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h1><h2 id="데이터-타입에-따른-분류"><a href="#데이터-타입에-따른-분류" class="headerlink" title="데이터 타입에 따른 분류"></a>데이터 타입에 따른 분류</h2><p>기본형 변수와 참조변수로 나뉜다.<br>기본형변수는 자료의 실제값을 저장한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">종류</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>논리형</td>
+<td align="center">boolean</td>
+</tr>
+<tr>
+<td>문자형</td>
+<td align="center">char</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td align="center">byte, short, int, long</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td align="center">float, double</td>
+</tr>
+<tr>
+<td>참조변수는 값이 저장되어 있는 주소값을 값으로 갖는다.</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>기본형 변수를 제외한 나머지 타입이며, 대표적으로 String이 있다.</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="선언-위치에-따른-분류"><a href="#선언-위치에-따른-분류" class="headerlink" title="선언 위치에 따른 분류"></a>선언 위치에 따른 분류</h2><p>크게 멤버변수와 지역변수로 나뉘며<br>멤버변수는 클래스변수와 인스턴스변수를 통틀어서 부르는 용어이다.<br>클래스 영역에서 선언된 변수를 멤버변수, 그중 앞에 static이 붙은 변수를 클래스 변수라고 한다.</p>
+<h3 id="멤버변수"><a href="#멤버변수" class="headerlink" title="멤버변수"></a>멤버변수</h3><h4 id="인스턴스-변수"><a href="#인스턴스-변수" class="headerlink" title="인스턴스 변수"></a>인스턴스 변수</h4><p>클래스 영역에 선언되고 인스턴스 생성시 만들어 진다. 각각의 인스턴스마다 다른 값을 가질 수 있다. 그러므로 인스턴스 생성이 필수이며 각 인스턴스마다 다른 값을 가져야 할 때 사용된다.</p>
+<h4 id="클래스-변수"><a href="#클래스-변수" class="headerlink" title="클래스 변수"></a>클래스 변수</h4><p>인스턴스변수 앞에 static을 붙이기만 하면 된다. 인스턴스변수가 각각의 인스턴스마다 다른값을 가질 수 있는 것과는 달리 값을 공유하는 변수이다.<br>클래스이름.변수이름 이렇게 인스턴스 생성 필요없이 바로 쓸 수 있다.</p>
+<h3 id="지역변수"><a href="#지역변수" class="headerlink" title="지역변수"></a>지역변수</h3><p>메소드 내에 선언되며 메소드 호출시 생성되고 메소드가 종료되면 사라진다.</p>
+<h4 id="매개변수"><a href="#매개변수" class="headerlink" title="매개변수"></a>매개변수</h4><p>흔히 파라미터라고 불린다. 메소드에서 입력값을 받을 때가 있는데, 그때 사용되는 변수를 매개변수라고 한다.<br>매개변수도 매소드 내에 선언된 것으로 간주되므로 지역변수이다.</p>
+<pre><code>public class Variable &#123;
+    int a;
+    static String b;
+    void m(int c)&#123;
+        int d=c;
+    &#125;
+    public static void main(String args[]) &#123;
+        int e=0;
+        Variable v = new Variable();
+        v.m(e);
+    &#125;
+&#125;
+</code></pre>
+<p>2번줄     a는 기본형변수이면서 멤버변수의 인스턴스변수<br>3번줄     b는 참조변수이면서 멤버변수의 클래스변수<br>4번줄     c는 기본형변수이면서 매개변수 이면서 지역변수<br>5번줄     d는 기본형변수이면서 지역변수<br>7번줄     args는 참조변수이면서 매개변수 이면서 지역변수<br>8번줄     e는 기본형변수이면서 지역변수<br>9번줄     v는 참조변수이면서 지역변수<br>10번줄   e는 인자값으로 값0이 매개변수에 복사되어 넣어진다.</p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/%EB%B3%80%EC%88%98/" rel="tag">변수</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    data-tooltip="Java 18. 생성자"
+                    aria-label="PREVIOUS: Java 18. 생성자"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/03/Java/Java%2016.%20%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%99%80%20%EA%B0%9D%EC%B2%B4/"
+                    data-tooltip="Java 16. 인스턴스와 객체"
+                    aria-label="NEXT: Java 16. 인스턴스와 객체"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    data-tooltip="Java 18. 생성자"
+                    aria-label="PREVIOUS: Java 18. 생성자"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/03/Java/Java%2016.%20%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%99%80%20%EA%B0%9D%EC%B2%B4/"
+                    data-tooltip="Java 16. 인스턴스와 객체"
+                    aria-label="NEXT: Java 16. 인스턴스와 객체"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

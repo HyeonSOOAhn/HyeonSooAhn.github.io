@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 18. 생성자 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"생성자우리는 프로그램을 만들 때 변수를 선언하고 반드시 초기화를 해주어야 한다고 알고있다. 만약 초기화를 하지 않으면 해당 변수에는 쓰레기값이 들어가게 되고 심한 경우에는 초기화 오류가 발생하기 때문이다.\n이와같이 변수의 초기화를 진행하는 프로세스를 클래스에 대입한 개념으로, 객체를 호출할 때 클래스는 생성자를 통해 객체를 초기화 하게 되는데 구현 방법에 따라 기본생성자, 묵시적 생성자, 명시적 생성자로 나뉘게 된다.\n여기서 객체의 초기화란 클래스가 객체를 생성/호출하였을 때, 객체의 필드를 초기화 하거나 메소드를 호출해서 객체가 사용할 준비를 하는 것으로 일련의 준비단계라고 생각하면 쉽다.\n생성자 : 클래스로부터 객체를 생성할 때 수행되어 객체의 초기화를 담당하는 것.\n\n\n생성자는 리턴타입을 갖지 않는다.\n생성자는 클래스 이름과 동일해야 한다.\n모든 클래스는 생성자가 반드시 존재하며, 하나 이상을 가질 수 있다.\n클래스 내부에 생성자를 선언하지 않으면 자동으로 기본 생성자가 선언된다.\n클래스 내부에 파라미터가 없는 생성자를 선언하는 경우 이를 묵시적 생성자라 한다.\n클래스 내부에 파라미터가 있는 생성자를 선언하는 경우 이를 명시적 생성자라 한다.\n\n기본 생성자public class Sub1 &#123;\n// public Sub1() &#123;&#125;\n    public int iNum1 = 0; \n\n// 생성자가 명시되어있지 않으므로 기본 생성자가 선언된다.\n&#125;\n\n기본 생성자는 클래스 내부에 어떠한 생성자도 없을 시 객체 생성 과정에서 컴파일러가 자동으로 추가하는 생성자다.\n왜 굳이 의미도 없는 기본 생성자를 선언해주느냐 함은 클래스에서 생성자가 없으면 객체에 접근 자체를 하지 못한다.\n메모리 구조상 new 연산자가 생성자를 정상적으로 실행시키면 힙(heap)영역에 객체가 생성되고, 생성된 객체의 주소가 클래스 타입 변수에 리턴되어 객체에 접근할 수 있게 되는데 생성자가 실행되지 않으면 힙 영역에 객체가 생성되지 않으니 객체의 주소도 리턴받을 수 없다.\n따라서 객체를 사용하기 위해서는 반드시 생성자가 필요하고 생성자를 명시하지 않았을 때는 자동으로 기본생성자가 선언된다. \n기본 생성자 + 메소드public class Sub &#123;\n// public Sub()&#123;&#125; \n    public int Sum(int iNum1, int iNum2)&#123;\n    // 생성자 없이 메소드만 구현되어 있으므로 기본 생성자로 선언된다.\n        int sum = iNum1 + iNum2;\n        return sum;\n&#125;\n&#125;\n\n위와같이 생성자 없이 메소드만 구현되어있는 경우에도 컴파일러가 기본 생성자를 추가하므로 정상적인 프로그램 구동이 가능하다.\n묵시적 생성자public class Sub2 &#123;\n    public Sub2()&#123;\n    // 파라미터가 없는 묵시적 생성자\n        System.out.println(&quot;묵시적 생성자&quot;);\n    &#125;\n&#125;\n\n묵시적 생성자는 파라미터를 갖지않는 생성자다. 기본 생성자와의 차이점은 보다 원하는 방식으로 초기화를 할 수 있다는 점이다.하지만 파라미터를 받지 않으므로 초기화의 개념이 명시적 생성자 보다 상대적으로 떨어진다.\n명시적 생성자public class Sub3 &#123;\n    public Sub3(String s)&#123;\n    // 파라미터 값을 받는다.\n        System.out.println(s);\n    &#125;\n&#125;\n\n명시적 생성자는 객체 생성시 초기화를 위한 파라미터를 받으며 객체가 실행될 때 받은 값으로 초기화가 진행된다.\nSub3 sub3 = new Sub3(&quot;명시적 생성자&quot;); // 명시적 생성자\n\n//객체를 생성할 때 String 변수에 파라미터를 줌으로써 String s는 &quot;명시적 생성자&quot;로 초기화된다.\n\n명시적 생성자를 만드는 이유생성자 내부에는 어떠한 작업을 하는 코드는 쓸 수 있다.즉, 인스턴스가 만들어지는 그 순간에 생성자 내부에 작성한 어떠한 작업을 해줄 수 있는 것이다.그래서 명시적으로 생성자를 만드는 이유는,인스턴스 변수를 초기화 할때, 0,false,null이 아닌 값으로 설정하기 위해서 이거나매개변수로 값을 넘겨받아 객체를 다양하게 초기화 하기 위해서 이거나인스턴스가 생성될 때 수행되어야하는 작업이 있기 때문이다.즉, 필드에 초기값을 저장 하거나 메소드를 호출하여 객체 사용 전에 필요한 준비를 한다고 보면 된다.\n","dateCreated":"2021-02-05T22:58:51+09:00","dateModified":"2021-03-04T17:50:59+09:00","datePublished":"2021-02-05T22:58:51+09:00","description":"","headline":"Java 18. 생성자","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/","keywords":"Java, Eclipse, 생성자"}</script>
+    <meta name="description" content="생성자우리는 프로그램을 만들 때 변수를 선언하고 반드시 초기화를 해주어야 한다고 알고있다. 만약 초기화를 하지 않으면 해당 변수에는 쓰레기값이 들어가게 되고 심한 경우에는 초기화 오류가 발생하기 때문이다. 이와같이 변수의 초기화를 진행하는 프로세스를 클래스에 대입한 개념으로, 객체를 호출할 때 클래스는 생성자를 통해 객체를 초기화 하게 되는데 구현 방법에">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 18. 생성자">
+<meta property="og:url" content="http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="생성자우리는 프로그램을 만들 때 변수를 선언하고 반드시 초기화를 해주어야 한다고 알고있다. 만약 초기화를 하지 않으면 해당 변수에는 쓰레기값이 들어가게 되고 심한 경우에는 초기화 오류가 발생하기 때문이다. 이와같이 변수의 초기화를 진행하는 프로세스를 클래스에 대입한 개념으로, 객체를 호출할 때 클래스는 생성자를 통해 객체를 초기화 하게 되는데 구현 방법에">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-05T13:58:51.000Z">
+<meta property="article:modified_time" content="2021-03-04T08:50:59.336Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="생성자">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 18. 생성자
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-05T22:58:51+09:00">
+	
+		    Feb 05, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h1><p>우리는 프로그램을 만들 때 변수를 선언하고 반드시 초기화를 해주어야 한다고 알고있다. 만약 초기화를 하지 않으면 해당 변수에는 쓰레기값이 들어가게 되고 심한 경우에는 초기화 오류가 발생하기 때문이다.</p>
+<p>이와같이 변수의 초기화를 진행하는 프로세스를 클래스에 대입한 개념으로, 객체를 호출할 때 클래스는 생성자를 통해 객체를 초기화 하게 되는데 구현 방법에 따라 기본생성자, 묵시적 생성자, 명시적 생성자로 나뉘게 된다.</p>
+<p>여기서 객체의 초기화란 클래스가 객체를 생성/호출하였을 때, 객체의 필드를 초기화 하거나 메소드를 호출해서 객체가 사용할 준비를 하는 것으로 일련의 준비단계라고 생각하면 쉽다.</p>
+<pre><code>생성자 : 클래스로부터 객체를 생성할 때 수행되어 객체의 초기화를 담당하는 것.
+</code></pre>
+<ol>
+<li>생성자는 리턴타입을 갖지 않는다.</li>
+<li>생성자는 클래스 이름과 동일해야 한다.</li>
+<li>모든 클래스는 생성자가 반드시 존재하며, 하나 이상을 가질 수 있다.</li>
+<li>클래스 내부에 생성자를 선언하지 않으면 자동으로 기본 생성자가 선언된다.</li>
+<li>클래스 내부에 파라미터가 없는 생성자를 선언하는 경우 이를 묵시적 생성자라 한다.</li>
+<li>클래스 내부에 파라미터가 있는 생성자를 선언하는 경우 이를 명시적 생성자라 한다.</li>
+</ol>
+<h2 id="기본-생성자"><a href="#기본-생성자" class="headerlink" title="기본 생성자"></a>기본 생성자</h2><pre><code>public class Sub1 &#123;
+// public Sub1() &#123;&#125;
+    public int iNum1 = 0; 
+
+// 생성자가 명시되어있지 않으므로 기본 생성자가 선언된다.
+&#125;
+</code></pre>
+<p>기본 생성자는 클래스 내부에 어떠한 생성자도 없을 시 객체 생성 과정에서 컴파일러가 자동으로 추가하는 생성자다.</p>
+<p>왜 굳이 의미도 없는 기본 생성자를 선언해주느냐 함은 클래스에서 생성자가 없으면 객체에 접근 자체를 하지 못한다.</p>
+<p>메모리 구조상 new 연산자가 생성자를 정상적으로 실행시키면 힙(heap)영역에 객체가 생성되고, 생성된 객체의 주소가 클래스 타입 변수에 리턴되어 객체에 접근할 수 있게 되는데 생성자가 실행되지 않으면 힙 영역에 객체가 생성되지 않으니 객체의 주소도 리턴받을 수 없다.</p>
+<p>따라서 객체를 사용하기 위해서는 반드시 생성자가 필요하고 생성자를 명시하지 않았을 때는 자동으로 기본생성자가 선언된다. </p>
+<h3 id="기본-생성자-메소드"><a href="#기본-생성자-메소드" class="headerlink" title="기본 생성자 + 메소드"></a>기본 생성자 + 메소드</h3><pre><code>public class Sub &#123;
+// public Sub()&#123;&#125; 
+    public int Sum(int iNum1, int iNum2)&#123;
+    // 생성자 없이 메소드만 구현되어 있으므로 기본 생성자로 선언된다.
+        int sum = iNum1 + iNum2;
+        return sum;
+&#125;
+&#125;
+</code></pre>
+<p>위와같이 생성자 없이 메소드만 구현되어있는 경우에도 컴파일러가 기본 생성자를 추가하므로 정상적인 프로그램 구동이 가능하다.</p>
+<h2 id="묵시적-생성자"><a href="#묵시적-생성자" class="headerlink" title="묵시적 생성자"></a>묵시적 생성자</h2><pre><code>public class Sub2 &#123;
+    public Sub2()&#123;
+    // 파라미터가 없는 묵시적 생성자
+        System.out.println(&quot;묵시적 생성자&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>묵시적 생성자는 파라미터를 갖지않는 생성자다. 기본 생성자와의 차이점은 보다 원하는 방식으로 초기화를 할 수 있다는 점이다.<br>하지만 파라미터를 받지 않으므로 초기화의 개념이 명시적 생성자 보다 상대적으로 떨어진다.</p>
+<h2 id="명시적-생성자"><a href="#명시적-생성자" class="headerlink" title="명시적 생성자"></a>명시적 생성자</h2><pre><code>public class Sub3 &#123;
+    public Sub3(String s)&#123;
+    // 파라미터 값을 받는다.
+        System.out.println(s);
+    &#125;
+&#125;
+</code></pre>
+<p>명시적 생성자는 객체 생성시 초기화를 위한 파라미터를 받으며 객체가 실행될 때 받은 값으로 초기화가 진행된다.</p>
+<pre><code>Sub3 sub3 = new Sub3(&quot;명시적 생성자&quot;); // 명시적 생성자
+
+//객체를 생성할 때 String 변수에 파라미터를 줌으로써 String s는 &quot;명시적 생성자&quot;로 초기화된다.
+</code></pre>
+<h3 id="명시적-생성자를-만드는-이유"><a href="#명시적-생성자를-만드는-이유" class="headerlink" title="명시적 생성자를 만드는 이유"></a>명시적 생성자를 만드는 이유</h3><p>생성자 내부에는 어떠한 작업을 하는 코드는 쓸 수 있다.<br>즉, 인스턴스가 만들어지는 그 순간에 생성자 내부에 작성한 어떠한 작업을 해줄 수 있는 것이다.<br>그래서 명시적으로 생성자를 만드는 이유는,<br>인스턴스 변수를 초기화 할때, 0,false,null이 아닌 값으로 설정하기 위해서 이거나<br>매개변수로 값을 넘겨받아 객체를 다양하게 초기화 하기 위해서 이거나<br>인스턴스가 생성될 때 수행되어야하는 작업이 있기 때문이다.<br>즉, 필드에 초기값을 저장 하거나 메소드를 호출하여 객체 사용 전에 필요한 준비를 한다고 보면 된다.</p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/%EC%83%9D%EC%84%B1%EC%9E%90/" rel="tag">생성자</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/06/Java/Java%2019.%20%EC%83%9D%EC%84%B1%EC%9E%90%EC%99%80%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20this/"
+                    data-tooltip="Java 19. 생성자와 오버로딩 그리고 this"
+                    aria-label="PREVIOUS: Java 19. 생성자와 오버로딩 그리고 this"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    data-tooltip="Java 17. 변수"
+                    aria-label="NEXT: Java 17. 변수"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/06/Java/Java%2019.%20%EC%83%9D%EC%84%B1%EC%9E%90%EC%99%80%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20this/"
+                    data-tooltip="Java 19. 생성자와 오버로딩 그리고 this"
+                    aria-label="PREVIOUS: Java 19. 생성자와 오버로딩 그리고 this"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/04/Java/Java%2017.%20%EB%B3%80%EC%88%98/"
+                    data-tooltip="Java 17. 변수"
+                    aria-label="NEXT: Java 17. 변수"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/05/Java/Java%2018.%20%EC%83%9D%EC%84%B1%EC%9E%90/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

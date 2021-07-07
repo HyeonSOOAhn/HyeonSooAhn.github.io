@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Oracle Database 24. Join - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Join\n두개 이상의 테이블에 있는 컬럼의 값을 한번에 가져오기 위해 사용하는 것이 조인이다.\nselect 컬럼명 from 테이블1, 테이블2;\n두개 이상의 테이블을 조인하게 되면 다 대 다의 관계로 가져오기 때문에 테이블1의 로우의수X테이블2의 로우의 수 만큼 로우를 가져오게 된다.\n두개 이상의 테이블에서 가져온 결과중에 정확한 결과만 가져오기 위해 공통 부분을 이용한 조건문이 반드시 필요하다.\n\nex)\n-- 사원테이블(emp)과 부서테이블(dept)을 join한다.\nselect * from emp;\n-- 14행\nselect * from dept;\n-- 4행\n\nselect * from emp a1, dept a2\n-- 56행\nwhere a1.deptno = a2.deptno;\n\nex)\n-- 사원의 사원번호, 이름, 근무부서 이름을 가져온다.\nselect a1.empno, a1.ename, a2.dname\nfrom emp a1,dept a2\nwhere a1.deptno = a2.deptno;\n\nex)\n-- 사원의 사원번호, 이름, 근무지역을 가져온다.\nselect a1.empno, a1.ename, a2.loc\nfrom emp a1,dept a2\nwhere a1.deptno = a2.deptno;\n\nex)\n-- DALLAS에 근무하고 있는 사원들의 사원번호, 이름, 직무를 가져온다.\nselect a1.empno, a1.ename, a1.job\nfrom emp a1, dept a2\nwhere a1.deptno = a2.deptno and a2.loc = &#39;DALLAS&#39;;\n\nex)\n-- SALES 부서에 근무하고 있는 사원들의 급여 평균을 가져온다.\nselect avg(a1.sal)\nfrom emp a1, dept a2\nwhere a1.deptno = a2.deptno and a2.dname = &#39;SALES&#39;;\n\nex)\n-- 1982년 입사한 사원들의 사원번호, 이름, 입사일, 근무부서이름을 가져온다.\nselect a1.empno, a1.ename, a1.hiredate, a2.dname\nfrom emp a1, dept a2\nwhere a1.deptno = a2.deptno and a1.hiredate between &#39;1982/01/01&#39; and &#39;1982/12/31&#39;;\n\nex)\n-- 각 사원들의 사원번호, 이름, 급여, 급여등급을 가져온다.\nselect a1.empno, a1.ename, a1.sal, a1.sal, a2.grade\nfrom emp a1, salgrade a2\nwhere a1.sal between a2.losal and a2.hisal;\n\nex)\n-- SALES 부서에 근무하고 있는 사원의 사원번호, 이름, 급여등급을 가져온다.\nselect a1.empno, a1.ename, a2.grade\nfrom emp a1, salgrade a2, dept a3\nwhere a1.sal between a2.losal and a2.hisal and a1.deptno = a3.deptno\n    and a3.dname = &#39;SALES&#39;;\n\nex)\n-- 각 급여 등급별 급여의 총합과 평균, 사원의수, 최대급여, 최소급여를 가져온다.\nselect sum(a1.sal), trunc(avg(a1.sal)), count(a1.sal), max(a1.sal), min(a1.sal)\nfrom emp a1, salgrade a2\nwhere a1.sal between a2.losal and a2.hisal\ngroup by a2.grade;\n\nex)\n-- 급여등급이 4등급인 사원들의 사원번호, 이름, 급여, 근무부서이름, 근무지역을 가져온다.\nselect a2.empno, a2.ename, a2.sal, a3.deptno, a3.loc\nfrom salgrade a1, emp a2, dept a3\nwhere a2.sal between a1.losal and a1.hisal and a2.deptno = a3.deptno and a1.grade = 4;\n\n","dateCreated":"2021-02-20T16:52:58+09:00","dateModified":"2021-03-22T18:07:37+09:00","datePublished":"2021-02-20T16:52:58+09:00","description":"","headline":"Oracle Database 24. Join","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/","keywords":"Oracle, SQLPLUS, Database, Join"}</script>
+    <meta name="description" content="Join 두개 이상의 테이블에 있는 컬럼의 값을 한번에 가져오기 위해 사용하는 것이 조인이다. select 컬럼명 from 테이블1, 테이블2; 두개 이상의 테이블을 조인하게 되면 다 대 다의 관계로 가져오기 때문에 테이블1의 로우의수X테이블2의 로우의 수 만큼 로우를 가져오게 된다. 두개 이상의 테이블에서 가져온 결과중에 정확한 결과만 가져오기 위해 공통">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Oracle Database 24. Join">
+<meta property="og:url" content="http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="Join 두개 이상의 테이블에 있는 컬럼의 값을 한번에 가져오기 위해 사용하는 것이 조인이다. select 컬럼명 from 테이블1, 테이블2; 두개 이상의 테이블을 조인하게 되면 다 대 다의 관계로 가져오기 때문에 테이블1의 로우의수X테이블2의 로우의 수 만큼 로우를 가져오게 된다. 두개 이상의 테이블에서 가져온 결과중에 정확한 결과만 가져오기 위해 공통">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-20T07:52:58.000Z">
+<meta property="article:modified_time" content="2021-03-22T09:07:37.311Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="SQLPLUS">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="Join">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Oracle Database 24. Join
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-20T16:52:58+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h1><ul>
+<li>두개 이상의 테이블에 있는 컬럼의 값을 한번에 가져오기 위해 사용하는 것이 조인이다.</li>
+<li>select 컬럼명 from 테이블1, 테이블2;</li>
+<li>두개 이상의 테이블을 조인하게 되면 다 대 다의 관계로 가져오기 때문에 테이블1의 로우의수X테이블2의 로우의 수 만큼 로우를 가져오게 된다.</li>
+<li>두개 이상의 테이블에서 가져온 결과중에 정확한 결과만 가져오기 위해 공통 부분을 이용한 조건문이 반드시 필요하다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 사원테이블(emp)과 부서테이블(dept)을 join한다.
+select * from emp;
+-- 14행
+select * from dept;
+-- 4행
+
+select * from emp a1, dept a2
+-- 56행
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원의 사원번호, 이름, 근무부서 이름을 가져온다.
+select a1.empno, a1.ename, a2.dname
+from emp a1,dept a2
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원의 사원번호, 이름, 근무지역을 가져온다.
+select a1.empno, a1.ename, a2.loc
+from emp a1,dept a2
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- DALLAS에 근무하고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a1.empno, a1.ename, a1.job
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a2.loc = &#39;DALLAS&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하고 있는 사원들의 급여 평균을 가져온다.
+select avg(a1.sal)
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a2.dname = &#39;SALES&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 1982년 입사한 사원들의 사원번호, 이름, 입사일, 근무부서이름을 가져온다.
+select a1.empno, a1.ename, a1.hiredate, a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.hiredate between &#39;1982/01/01&#39; and &#39;1982/12/31&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원들의 사원번호, 이름, 급여, 급여등급을 가져온다.
+select a1.empno, a1.ename, a1.sal, a1.sal, a2.grade
+from emp a1, salgrade a2
+where a1.sal between a2.losal and a2.hisal;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하고 있는 사원의 사원번호, 이름, 급여등급을 가져온다.
+select a1.empno, a1.ename, a2.grade
+from emp a1, salgrade a2, dept a3
+where a1.sal between a2.losal and a2.hisal and a1.deptno = a3.deptno
+    and a3.dname = &#39;SALES&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 급여 등급별 급여의 총합과 평균, 사원의수, 최대급여, 최소급여를 가져온다.
+select sum(a1.sal), trunc(avg(a1.sal)), count(a1.sal), max(a1.sal), min(a1.sal)
+from emp a1, salgrade a2
+where a1.sal between a2.losal and a2.hisal
+group by a2.grade;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여등급이 4등급인 사원들의 사원번호, 이름, 급여, 근무부서이름, 근무지역을 가져온다.
+select a2.empno, a2.ename, a2.sal, a3.deptno, a3.loc
+from salgrade a1, emp a2, dept a3
+where a2.sal between a1.losal and a1.hisal and a2.deptno = a3.deptno and a1.grade = 4;
+</code></pre>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Database/" rel="tag">Database</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Join/" rel="tag">Join</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Oracle/" rel="tag">Oracle</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/SQLPLUS/" rel="tag">SQLPLUS</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2025.%20Self%20Join,%20Outer%20Join/"
+                    data-tooltip="Oracle Database 25. Self Join, Outer Join"
+                    aria-label="PREVIOUS: Oracle Database 25. Self Join, Outer Join"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2023.%20Having/"
+                    data-tooltip="Oracle Database 23. Having"
+                    aria-label="NEXT: Oracle Database 23. Having"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2025.%20Self%20Join,%20Outer%20Join/"
+                    data-tooltip="Oracle Database 25. Self Join, Outer Join"
+                    aria-label="PREVIOUS: Oracle Database 25. Self Join, Outer Join"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/20/Oracle%20Database/Oracle%20Database%2023.%20Having/"
+                    data-tooltip="Oracle Database 23. Having"
+                    aria-label="NEXT: Oracle Database 23. Having"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

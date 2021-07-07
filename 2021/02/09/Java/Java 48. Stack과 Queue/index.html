@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 48. Stack과 Queue - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Stack과 QueueStack은 LIFO(Last in first out) Queue는 FIFO(First in first out)으로 되어있다. \nStack의 메서드\n\n\n메서드\n설명\n\n\n\nboolean empty( )\nStack 이 비어있는지 알려줌\n\n\nObject peek( )\nStack 의 맨 위에 저장된 객체를 반환pop( ) 과 달리  Stack 에서 객체를 꺼내지 않음(비었을 때는  EmptyStackException 발생)\n\n\nObject pop( )\nStack 의 맨 위에 저장된 객체를 꺼냄(비었을 때는  EmptyStackException 발생)\n\n\nObject push(Object item)\nStack 에 객체( item )를 저장\n\n\nint search(Object o)\nStack 에서 주어진 객체( o )를 찾아서 그 위치를 반환, 못 찾으면  -1 을 반환(배열과 달리 위치가 1부터 시작)\n\n\nQueue의 메서드\n\n\n메서드\n설  명\n\n\n\nboolean add(Object o)\n지정된 객체를  Queue 에 추가 성공하면 true를 반환, 저장공간이 부족하면  IllegalStateException 발생\n\n\nObject remove( )\nQueue 에서 객체를 꺼내 반환. 비어있으면  NoSuchElementException 발생\n\n\nObject element( )\n삭제없이 요소를 읽어옴 peek 와 달리  Queue 가 비었을때  NoSuchElementException 발생\n\n\nboolean offer(Object o)\nQueue 에 객체를 저장 성공하면 true, 실패하면 false를 반환\n\n\nObject poll( )\nQueue 에서 객체를 꺼내서 반환. 비어있으면 null을 반환\n\n\nObject peek( )\n삭제없이 요소를 읽어온다. Queue가 비어있으면 null을 반환\n\n\n예제\n\n\n\npackage Example;\n\nimport java.util.*;\n\npublic class Example &#123;\n    public static void main(String[] args) &#123;\n        Stack st = new Stack();\n        Queue q = new LinkedList();    //Queue의 인터페이스 구현체인 LinkedList를 사용\n        \n        st.push(&quot;0&quot;);\n        st.push(&quot;1&quot;);\n        st.push(&quot;2&quot;);\n        \n        q.offer(&quot;0&quot;);\n        q.offer(&quot;1&quot;);\n        q.offer(&quot;2&quot;);\n        \n        System.out.println(&quot;=== Stack ===&quot;);\n        while(!st.isEmpty()) &#123;\n            System.out.println(st.pop());\n        &#125;\n        \n        System.out.println(&quot;=== Queue ===&quot;);\n        while(!q.isEmpty()) &#123;\n            System.out.println(q.poll());\n        &#125;\n    &#125;\n&#125;\n\n결과값\n===Stack===\n2\n1\n0\n===Queue===\n0\n1\n2\n\n자베에서는 스택을 Stack클래스로 구현하여 제공하지만 큐는 Queue인터페이스만 있고 별도의 클래스가 없다. 그래서 Queue인터페이스를 구현한 클래스들을 사용해야 한다.\n","dateCreated":"2021-02-09T23:37:52+09:00","dateModified":"2021-03-04T17:51:05+09:00","datePublished":"2021-02-09T23:37:52+09:00","description":"","headline":"Java 48. Stack과 Queue","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/","keywords":"Java, Eclipse, Stack, Queue"}</script>
+    <meta name="description" content="Stack과 QueueStack은 LIFO(Last in first out) Queue는 FIFO(First in first out)으로 되어있다.  Stack의 메서드   메서드 설명    boolean empty( ) Stack 이 비어있는지 알려줌   Object peek( ) Stack 의 맨 위에 저장된 객체를 반환pop( ) 과 달리  Stack">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 48. Stack과 Queue">
+<meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="Stack과 QueueStack은 LIFO(Last in first out) Queue는 FIFO(First in first out)으로 되어있다.  Stack의 메서드   메서드 설명    boolean empty( ) Stack 이 비어있는지 알려줌   Object peek( ) Stack 의 맨 위에 저장된 객체를 반환pop( ) 과 달리  Stack">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-09T14:37:52.000Z">
+<meta property="article:modified_time" content="2021-03-04T08:51:05.821Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="Stack">
+<meta property="article:tag" content="Queue">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 48. Stack과 Queue
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-09T23:37:52+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="Stack과-Queue"><a href="#Stack과-Queue" class="headerlink" title="Stack과 Queue"></a>Stack과 Queue</h1><p>Stack은 LIFO(Last in first out) Queue는 FIFO(First in first out)으로 되어있다. </p>
+<h2 id="Stack의-메서드"><a href="#Stack의-메서드" class="headerlink" title="Stack의 메서드"></a>Stack의 메서드</h2><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean empty( )</td>
+<td>Stack 이 비어있는지 알려줌</td>
+</tr>
+<tr>
+<td>Object peek( )</td>
+<td>Stack 의 맨 위에 저장된 객체를 반환pop( ) 과 달리  Stack 에서 객체를 꺼내지 않음(비었을 때는  EmptyStackException 발생)</td>
+</tr>
+<tr>
+<td>Object pop( )</td>
+<td>Stack 의 맨 위에 저장된 객체를 꺼냄(비었을 때는  EmptyStackException 발생)</td>
+</tr>
+<tr>
+<td>Object push(Object item)</td>
+<td>Stack 에 객체( item )를 저장</td>
+</tr>
+<tr>
+<td>int search(Object o)</td>
+<td>Stack 에서 주어진 객체( o )를 찾아서 그 위치를 반환, 못 찾으면  -1 을 반환(배열과 달리 위치가 1부터 시작)</td>
+</tr>
+</tbody></table>
+<h2 id="Queue의-메서드"><a href="#Queue의-메서드" class="headerlink" title="Queue의 메서드"></a>Queue의 메서드</h2><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설  명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean add(Object o)</td>
+<td>지정된 객체를  Queue 에 추가 성공하면 true를 반환, 저장공간이 부족하면  IllegalStateException 발생</td>
+</tr>
+<tr>
+<td>Object remove( )</td>
+<td>Queue 에서 객체를 꺼내 반환. 비어있으면  NoSuchElementException 발생</td>
+</tr>
+<tr>
+<td>Object element( )</td>
+<td>삭제없이 요소를 읽어옴 peek 와 달리  Queue 가 비었을때  NoSuchElementException 발생</td>
+</tr>
+<tr>
+<td>boolean offer(Object o)</td>
+<td>Queue 에 객체를 저장 성공하면 true, 실패하면 false를 반환</td>
+</tr>
+<tr>
+<td>Object poll( )</td>
+<td>Queue 에서 객체를 꺼내서 반환. 비어있으면 null을 반환</td>
+</tr>
+<tr>
+<td>Object peek( )</td>
+<td>삭제없이 요소를 읽어온다. Queue가 비어있으면 null을 반환</td>
+</tr>
+<tr>
+<td>예제</td>
+<td></td>
+</tr>
+</tbody></table>
+<pre><code>package Example;
+
+import java.util.*;
+
+public class Example &#123;
+    public static void main(String[] args) &#123;
+        Stack st = new Stack();
+        Queue q = new LinkedList();    //Queue의 인터페이스 구현체인 LinkedList를 사용
+        
+        st.push(&quot;0&quot;);
+        st.push(&quot;1&quot;);
+        st.push(&quot;2&quot;);
+        
+        q.offer(&quot;0&quot;);
+        q.offer(&quot;1&quot;);
+        q.offer(&quot;2&quot;);
+        
+        System.out.println(&quot;=== Stack ===&quot;);
+        while(!st.isEmpty()) &#123;
+            System.out.println(st.pop());
+        &#125;
+        
+        System.out.println(&quot;=== Queue ===&quot;);
+        while(!q.isEmpty()) &#123;
+            System.out.println(q.poll());
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>===Stack===
+2
+1
+0
+===Queue===
+0
+1
+2
+</code></pre>
+<p>자베에서는 스택을 Stack클래스로 구현하여 제공하지만 큐는 Queue인터페이스만 있고 별도의 클래스가 없다. 그래서 Queue인터페이스를 구현한 클래스들을 사용해야 한다.</p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Queue/" rel="tag">Queue</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Stack/" rel="tag">Stack</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/"
+                    data-tooltip="Java 50. 오름차순, 내림차순 정렬"
+                    aria-label="PREVIOUS: Java 50. 오름차순, 내림차순 정렬"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2047.%20hashmap/"
+                    data-tooltip="Java 47. hashmap"
+                    aria-label="NEXT: Java 47. hashmap"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/"
+                    data-tooltip="Java 50. 오름차순, 내림차순 정렬"
+                    aria-label="PREVIOUS: Java 50. 오름차순, 내림차순 정렬"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2047.%20hashmap/"
+                    data-tooltip="Java 47. hashmap"
+                    aria-label="NEXT: Java 47. hashmap"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

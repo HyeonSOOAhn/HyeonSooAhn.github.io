@@ -1,0 +1,1480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Category: 개발이론 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/page/2/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2030.%20update/"
+                            aria-label=": Oracle Database 30. update"
+                        >
+                            Oracle Database 30. update
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:03+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="update"><a href="#update" class="headerlink" title="update"></a>update</h1><ul>
+<li>로우내의 컬럼 값을 수정하는 구문이다.</li>
+<li>update 테이블 명<br>set 컬럼 = 값, 컬럼 = 값…<br>where 조건문</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 사원들의 부서 번호를 40번으로 변경한다.
+update emp01
+set deptno=40;
+
+select * from emp01;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 입사일을 오늘로 변경한다.
+update emp01
+set hiredate = sysdate;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 직무를 개발자로 변경한다.
+update emp01
+set job = &#39;개발자&#39;;
+</code></pre>
+<h2 id="여러컬럼-업데이트"><a href="#여러컬럼-업데이트" class="headerlink" title="여러컬럼 업데이트"></a>여러컬럼 업데이트</h2><p>ex)</p>
+<pre><code>-- 사원들의 부서번호를 40, 입사일을 오늘, 직무를 개발자로 변경한다.
+update emp01
+set deptno = 40, hiredate = sysdate, job = &#39;개발자&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 10번 부서에 근무하고 있는 사원들을 40번 부서로 수정한다.
+update emp01
+set deptno = 40
+where deptno = 10;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALESMAN들의 입사일을 오늘, COMM을 2000으로 수정한다.
+update emp01
+set hiredate = sysdate, comm = 2000
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 전체 사원의 평균 급여보다 낮은 사원들의 급여를 50% 인상한다.
+update emp01
+set sal = sal *1.5
+where sal &lt; (select avg(sal)
+            from emp01);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- MANAGER 사원들의 직무를 Developer로 변경한다.
+update emp01
+set job = &#39;Developer&#39;
+where job = &#39;MANAGER&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 30번 부서에 근무하고 있는 사원들의 급여를 전체 평균 급여로 설정한다.
+update emp01
+set sal = (select avg(sal)
+          from emp01)
+where deptno = 30;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- BLAKE 밑에서 근무하고 있는 사원들의 부서를 DALLAS지역의 부서번호로 변경
+update emp01
+set deptno = (select deptno 
+              from dept
+              where loc = &#39;DALLAS&#39;)
+where mgr = (select empno
+            from emp
+            where ename = &#39;BLAKE&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 20번 부서에 근무하고 있는 사원들의 직속상관을 KING으로 하고 급여를 전체급여의 최고액으로 설정
+update emp01
+set mgr = (select empno
+          from emp01
+          where ename = &#39;KING&#39;),
+    sal = (select max(sal)
+          from emp01)
+where deptno = 20;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 CLERK인 사원들의 직무와 급여액을 20번 부서에 근무하고 있는 사원중
+-- 급여 최고액을 받는 사원의 직무와 급여액으로 변경한다.
+update emp01
+set (job, sal) = (select job, sal
+                  from emp01
+                  where sal = (select max(sal)
+                              from emp01))
+where job = &#39;CLERK&#39;;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2030.%20update/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2029.%20insert/"
+                            aria-label=": Oracle Database 29. insert"
+                        >
+                            Oracle Database 29. insert
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:02+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h1><ul>
+<li>테이블에 새로운 로우를 추가하는 구문이다.</li>
+<li>insert into 테이블 명 (컬럼명.)</li>
+<li>values(값…)</li>
+</ul>
+<p>ex)</p>
+<pre><code>create table emp01
+as
+select empno, ename, job from emp where 1=0;
+-- 무조건 거짓이므로 로우를 가져오지 못한다. 그러나 구조를 가져올 수 있다.
+-- emp01테이블에 emp테이블의 구조만 가져오겠다는 것이 된다.
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 다음과 같은 사원 정보를 추가한다.
+-- 1111 홍길동 인사
+-- 2222 김길동 개발
+-- 3333 최길동 인사
+-- 4444 박길동 생산
+insert into emp01 (empno, ename, job) -- 컬럼목록
+values (1111, &#39;홍길동&#39;, &#39;인사&#39;); -- 값을 1대1매칭으로 입력한다.
+
+insert into emp01 (empno, ename, job) -- 컬럼목록
+values (2222, &#39;김길동&#39;, &#39;개발&#39;); -- 값을 1대1매칭으로 입력한다.
+
+insert into emp01 (empno, ename, job) -- 컬럼목록
+values (3333, &#39;최길동&#39;, &#39;인사&#39;); -- 값을 1대1매칭으로 입력한다.
+
+insert into emp01 (empno, ename, job) -- 컬럼목록
+values (4444, &#39;박길동&#39;, &#39;생산&#39;); -- 값을 1대1매칭으로 입력한다.
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 컬럼 목록을 생략하는 경우
+-- 모든 값을 입력할 경우에만 사용가능하고 순서대로 1대1 매칭된다.
+insert into emp01
+values (5555, &#39;황길동&#39;, &#39;생산&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 컬럼 목록에 모든 컬럼이 있지 않을 경우
+-- 이경우 job에는 null값을 저장한다.
+insert into emp01 (empno, ename)
+values (6666, &#39;이길동&#39;);
+
+-- null을 명시적으로 저장
+insert into emp01 (empno, ename, job)
+values (7777, &#39;박보검&#39;, null);
+</code></pre>
+<h2 id="서브쿼리로-데이터-저장하기"><a href="#서브쿼리로-데이터-저장하기" class="headerlink" title="서브쿼리로 데이터 저장하기"></a>서브쿼리로 데이터 저장하기</h2><ul>
+<li>insert info 테이블명<br>서브쿼리</li>
+<li>insert all<br>into 테이블명 (컬럼명) values(컬럼명)<br>서브쿼리</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 서브쿼리로 데이터 저장하기
+create table emp02
+as
+select empno, ename, job from emp where 1=0;
+
+insert into emp02(empno,ename, job)
+select empno, ename, job from emp;
+
+insert into emp02
+select empno, ename,job from emp;
+
+select * from emp02;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- insert all
+create table emp03
+as
+select empno, ename, job from emp where 0=1;
+
+create table emp04
+as
+select empno, ename, hiredate from emp where 1=0;
+
+insert all
+into emp03(empno, ename, job) values (empno, ename, job)
+into emp04(empno, ename, hiredate) values (empno, ename, hiredate)
+select empno, ename, job, hiredate from emp;
+
+select * from emp03;
+select * from emp04;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원번호 이름 급여를 저장할 수 있는 빈 테이블을 만들고
+-- 급여가 1500이상인 사원들의 사원번호, 이름, 급여를 저장한다.
+create table emp05
+as
+select empno, ename, sal from emp where 1=0;
+
+insert into emp05(empno, ename, sal)
+select empno, ename, sal from emp where sal&gt;=1500;
+
+select * from emp05;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2029.%20insert/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2028.%20Set/"
+                            aria-label=": Oracle Database 28. Set"
+                        >
+                            Oracle Database 28. Set
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:01+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><ul>
+<li>두 select문을 통해 얻어온 결과에 대해 집합 연산을 할 수 있는 명령문이다.</li>
+<li>두 select문을 통해 가져온 컬럼의 형태가 완전히 일치해야 한다.</li>
+<li>UNION : 합집합</li>
+<li>UNIONALL : 합집합, 중복된 데이터를 모두 가져온다.</li>
+<li>INTERSECT : 교집합</li>
+<li>MINUS : 차집합</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- UNION : 합집합(중복없음)
+select empno, ename, job, deptno
+from emp
+where deptno = 10
+union
+select empno, ename, job, deptno
+from emp
+where job = &#39;CLERK&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- UNION ALL : 합집합(중복있음)
+select empno, ename, job, deptno
+from emp
+where deptno = 10
+union all
+select empno, ename, job, deptno
+from emp
+where job = &#39;CLERK&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- INTERSECT : 교집합
+select empno, ename, job, deptno
+from emp
+where deptno = 10
+intersect
+select empno, ename, job, deptno
+from emp
+where job = &#39;CLERK&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- MINUS : 차집합
+select empno, ename, job, deptno
+from emp
+where deptno = 10
+minus
+select empno, ename, job, deptno
+from emp
+where job = &#39;CLERK&#39;;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2028.%20Set/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                            aria-label=": Oracle Database 27. 결과가 하나 이상인 서브 쿼리"
+                        >
+                            Oracle Database 27. 결과가 하나 이상인 서브 쿼리
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:54:00+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="결과가-하나-이상인-서브쿼리"><a href="#결과가-하나-이상인-서브쿼리" class="headerlink" title="결과가 하나 이상인 서브쿼리"></a>결과가 하나 이상인 서브쿼리</h1><p>– 서브쿼리를 통해 가져온 결과가 하나이상인 경우 결과를 모두 만족하거나 결과 중 하나만 만족하거나 해야하는 경우가 있다.</p>
+<ul>
+<li>이때 다음과 같은 연산자를 사용하면 된다.</li>
+<li>IN : 서브쿼리의 결과 중 하나라도 일치하면 조건은 참이 된다.</li>
+<li>ANY, SOME : 서브쿼리의 결과와 하나이상 일치하면 조건은 참이된다.<br>IN과는 달리 조건을 자유롭게 줄 수 있다.</li>
+<li>ALL : 서브쿼리의 결과와 모두 일치해야 조건은 참이된다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 3000이상의 급여를 받는 사원들과 같은 부서에 근무하고 있는 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where deptno in (select deptno
+                from emp
+                where sal&gt;=3000);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 CLERK인 사원과 동일한 부서에 근무하고 있는 사원들의 사원번호, 이름, 입사일을 가져온다.
+select empno, ename, hiredate
+from emp
+where deptno in (select deptno
+                from emp
+                where job = &#39;CLERK&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- KING을 직속상관으로 가지고 있는 사원들이 근무하고 있는 근무 부서명, 지역을 가지고 온다.
+select dname,loc
+from dept
+where deptno in (select deptno
+                from emp
+                where mgr = (select empno
+                            from emp
+                            where ename = &#39;KING&#39;));
+</code></pre>
+<p>ex)</p>
+<pre><code>-- CLERK들의 직속상관의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where empno in (select mgr
+                from emp
+                where job = &#39;CLERK&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 평균보다 더 많이 받는 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; all (select avg(sal)
+                from emp
+                group by deptno);
+
+select empno, ename, sal
+from emp
+where sal &gt; (select max(avg(sal))
+            from emp
+            group by deptno);
+</code></pre>
+<p>all을 사용하는 경우 대부분 max함수를 사용하여 대치가 가능하다.</p>
+<p>ex)</p>
+<pre><code>-- 각 부서별 급여 최저치보다 더 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; all (select min(sal)
+                from emp
+                group by deptno);
+
+select empno, ename, sal
+from emp
+where sal &gt; (select max(min(sal))
+                from emp
+                group by deptno);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALESMAN보다 급여를 적게 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &lt; all (select sal
+                from emp
+                where job = &#39;SALESMAN&#39;);
+
+select empno, ename, sal
+from emp
+where sal &lt;  (select min(sal)
+            from emp
+            where job = &#39;SALESMAN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서별 최저 급여 액수 보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal&gt; any (select min(sal)
+                from emp
+                group by deptno);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2027.%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%98%EB%82%98%20%EC%9D%B4%EC%83%81%EC%9D%B8%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2026.%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/"
+                            aria-label=": Oracle Database 26. 서브쿼리"
+                        >
+                            Oracle Database 26. 서브쿼리
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:53:00+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="서브쿼리"><a href="#서브쿼리" class="headerlink" title="서브쿼리"></a>서브쿼리</h1><ul>
+<li>쿼리문 안에 들어가는 쿼리문을 서브쿼리라고 한다.</li>
+<li>쿼리문 작성시 사용되는 값을 다른 쿼리문을 통해 구해야 할 경우 사용한다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- SCOTT사원이 근무하고 있는 부서의 이름을 가져온다.
+select dname
+from dept
+where deptno = (select deptno
+                from emp
+                where ename = &#39;SCOTT&#39;);
+                
+-- join으로도 가능하다.
+select a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.ename = &#39;SCOTT&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SMITH와 같은 부서에 근무하고 있는 사원들의 사원번호, 이름, 급여액, 부서이름을 가져온다.
+select a1.empno, a1.ename, a1.sal, a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.deptno = (select deptno
+                                            from emp
+                                            where ename = &#39;SMITH&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- MARTIN과 같은 직무를 가지고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select empno, ename, job
+from emp
+where job = (select job
+            from emp
+            where ename = &#39;MARTIN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- ALLEN과 같은 직속상관을 가진 사원들의 사원번호, 이름, 직속상관이름을 가져온다.
+-- a : 사원의 정보
+-- b : 직속상관 정보
+select a.empno, a.ename, b.ename
+from emp a, emp b
+where a.mgr = b.empno and a.mgr = (select mgr
+                                from emp
+                                where ename = &#39;ALLEN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- WARD와 같은 부서에 근무하고 있는 사원들의 사원번호, 이름, 부서번호를 가져온다.
+select a.empno, a.ename, b.deptno
+from emp a, dept b
+where a.deptno = b.deptno and a.deptno = (select deptno
+                                        from emp
+                                        where ename = &#39;WARD&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALESMAN의 평균 급여보다 많이 받는 사원들의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt; (select avg(sal)
+            from emp
+            where job = &#39;SALESMAN&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- DALLAS 지역에 근무하는 사원들의 평균급여를 가져온다.
+select trunc(avg(sal))
+from emp a, dept b
+where a.deptno = b.deptno and b.loc = (select loc
+                                    from dept
+                                    where loc = &#39;DALLAS&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하는 사원들의 사원번호, 이름, 근무지역을 가져온다.
+select a1.empno, a1.ename, a2.loc
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.deptno = (select deptno
+                                            from dept
+                                            where dname = &#39;SALES&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- CHICAGO 지역에 근무하는 사원들 중 BLAKE가 직속상관인 사원들의 사원번호, 이름, 직무를 가져온다.
+select empno, ename, job
+from emp
+where deptno = (select deptno
+                from dept
+                where loc = &#39;CHICAGO&#39;)
+                and mgr = (select empno
+                        from emp
+                        where ename = &#39;BLAKE&#39;);
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2026.%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2025.%20Self%20Join,%20Outer%20Join/"
+                            aria-label=": Oracle Database 25. Self Join, Outer Join"
+                        >
+                            Oracle Database 25. Self Join, Outer Join
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:59+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Self-Join"><a href="#Self-Join" class="headerlink" title="Self Join"></a>Self Join</h1><ul>
+<li>같은 테이블을 두번 이상 조인하는 것을 의미한다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- SMITH 사원의 사원번호, 이름, 직속상관의 이름을 가져온다.
+select a1.empno, a1.ename, a2.ename
+from emp a1, emp a2
+where a1.mgr = a2.empno and a1.ename = &#39;SMITH&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- FORD사원 밑에서 일하는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a1.empno, a1.ename, a1.job
+from emp a1, emp a2
+where a1.mgr = a2.empno and a2.ename = &#39;FORD&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SMITH 사원의 직속상관과 동일한 직무를 가지고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a3.empno, a3.ename, a3.job
+from emp a1, emp a2, emp a3
+where a1.mgr = a2.empno and a2.job = a3.job and a1.ename = &#39;SMITH&#39;;
+</code></pre>
+<h1 id="Outer-join"><a href="#Outer-join" class="headerlink" title="Outer join"></a>Outer join</h1><ul>
+<li>조인 조건에 해당하지 않기 떄문에 결과에 포함되지 않는 로우까지 가져오는 조인이다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 각 사원의 이름, 사원번호, 직장상사 이름을 가져온다. 단 직속상관이 없는 사원도 가져온다.
+select a1.ename, a1.empno, a2.ename
+from emp a1, emp a2
+where a1.mgr = a2.empno(+);
+</code></pre>
+<p>null이 있는 쪽에 (+)한다.</p>
+<p>ex)</p>
+<pre><code>-- 모든 부서의 소속 사원의 근무부서명, 사원번호, 사원이름, 급여를 가져온다.
+select b.dname,a.ename,a.empno,a.sal
+from emp a, dept b
+where a.deptno(+) = b.deptno;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2025.%20Self%20Join,%20Outer%20Join/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/"
+                            aria-label=": Oracle Database 24. Join"
+                        >
+                            Oracle Database 24. Join
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:58+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h1><ul>
+<li>두개 이상의 테이블에 있는 컬럼의 값을 한번에 가져오기 위해 사용하는 것이 조인이다.</li>
+<li>select 컬럼명 from 테이블1, 테이블2;</li>
+<li>두개 이상의 테이블을 조인하게 되면 다 대 다의 관계로 가져오기 때문에 테이블1의 로우의수X테이블2의 로우의 수 만큼 로우를 가져오게 된다.</li>
+<li>두개 이상의 테이블에서 가져온 결과중에 정확한 결과만 가져오기 위해 공통 부분을 이용한 조건문이 반드시 필요하다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 사원테이블(emp)과 부서테이블(dept)을 join한다.
+select * from emp;
+-- 14행
+select * from dept;
+-- 4행
+
+select * from emp a1, dept a2
+-- 56행
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원의 사원번호, 이름, 근무부서 이름을 가져온다.
+select a1.empno, a1.ename, a2.dname
+from emp a1,dept a2
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원의 사원번호, 이름, 근무지역을 가져온다.
+select a1.empno, a1.ename, a2.loc
+from emp a1,dept a2
+where a1.deptno = a2.deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- DALLAS에 근무하고 있는 사원들의 사원번호, 이름, 직무를 가져온다.
+select a1.empno, a1.ename, a1.job
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a2.loc = &#39;DALLAS&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하고 있는 사원들의 급여 평균을 가져온다.
+select avg(a1.sal)
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a2.dname = &#39;SALES&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 1982년 입사한 사원들의 사원번호, 이름, 입사일, 근무부서이름을 가져온다.
+select a1.empno, a1.ename, a1.hiredate, a2.dname
+from emp a1, dept a2
+where a1.deptno = a2.deptno and a1.hiredate between &#39;1982/01/01&#39; and &#39;1982/12/31&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원들의 사원번호, 이름, 급여, 급여등급을 가져온다.
+select a1.empno, a1.ename, a1.sal, a1.sal, a2.grade
+from emp a1, salgrade a2
+where a1.sal between a2.losal and a2.hisal;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- SALES 부서에 근무하고 있는 사원의 사원번호, 이름, 급여등급을 가져온다.
+select a1.empno, a1.ename, a2.grade
+from emp a1, salgrade a2, dept a3
+where a1.sal between a2.losal and a2.hisal and a1.deptno = a3.deptno
+    and a3.dname = &#39;SALES&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 급여 등급별 급여의 총합과 평균, 사원의수, 최대급여, 최소급여를 가져온다.
+select sum(a1.sal), trunc(avg(a1.sal)), count(a1.sal), max(a1.sal), min(a1.sal)
+from emp a1, salgrade a2
+where a1.sal between a2.losal and a2.hisal
+group by a2.grade;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여등급이 4등급인 사원들의 사원번호, 이름, 급여, 근무부서이름, 근무지역을 가져온다.
+select a2.empno, a2.ename, a2.sal, a3.deptno, a3.loc
+from salgrade a1, emp a2, dept a3
+where a2.sal between a1.losal and a1.hisal and a2.deptno = a3.deptno and a1.grade = 4;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2024.%20Join/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2023.%20Having/"
+                            aria-label=": Oracle Database 23. Having"
+                        >
+                            Oracle Database 23. Having
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:57+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Having"><a href="#Having" class="headerlink" title="Having"></a>Having</h1><ul>
+<li>Group By로 묶인 각 그룹들 중에 실제 가져올 그룹을 선택할 조건을 having 절에 작성한다.</li>
+<li>Having은 Group By절의 조건이 된다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 부서별 평균 급여가 2000이상인 급여 평균을 가져온다.
+select avg(sal)
+from emp
+group by deptno
+having avg(sal) &gt;= 2000;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 부서별 최대 급여액이 3000이하인 부서의 급여 총합을 가져온다.
+select sum(sal)
+from emp
+group by deptno
+having max(sal) &lt;= 3000;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 부서별 최소 급여액이 1000이하인 부서에서 직무가 CLERK인 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where job = &#39;CLERK&#39;
+group by deptno
+having min(sal) &lt;= 1000;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 부서의 급여 최소가 900이상 최대가 10000이하인 부서의 사원들 중 1500이상의
+-- 급여를 받는 사원들의 평균 급여액을 가져온다.
+select avg(sal)
+from emp
+where sal &gt;= 1500
+group by deptno
+having min(sal) &gt;= 900 and max(sal) &lt;= 10000;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2023.%20Having/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2022.%20Group%20By/"
+                            aria-label=": Oracle Database 22. Group By"
+                        >
+                            Oracle Database 22. Group By
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:56+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Group-By"><a href="#Group-By" class="headerlink" title="Group By"></a>Group By</h1><ul>
+<li>그룹함수를 사용할 경우 select<del>from</del>where 절 까지 모두 수행하여 가져온 결과를 하나의 그룹으로 묶어 총합, 평균 등을 구할 수 있다.</li>
+<li>Group By절을 사용하면 select문을 수행하여 가져온 하나의 결과를 여러 그룹으로 나눠 그룹 각각의 총합과 평균 등을 구할 수 있다.</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 각 부서별 사원들의 급여 평균을 구한다.
+select deptno, AVG(sal)
+from emp
+group by deptno;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 직무별 사원들의 급여 총합을 구한다.
+select job, sum(sal)
+from emp
+group by job;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 1500이상 급여를 받는 사원들의 부서별 급여 평균을 구한다.
+select deptno, avg(sal)
+from emp
+where sal &gt;= 1500
+group by deptno;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2022.%20Group%20By/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2021.%20%EA%B7%B8%EB%A3%B9%ED%95%A8%EC%88%98/"
+                            aria-label=": Oracle Database 21. 그룹함수"
+                        >
+                            Oracle Database 21. 그룹함수
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:55+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="그룹함수"><a href="#그룹함수" class="headerlink" title="그룹함수"></a>그룹함수</h1><p>ex)</p>
+<pre><code>-- 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 커미션을 가져온다.
+select sum(comm)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여가 1500이상인 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where sal &gt;= 1500;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 20번 부서에 근무하고 있는 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where deptno = 20;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 SALESMAN인 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 전사원의 급여 평균을 구한다.
+select trunc(avg(sal))
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 커미션을 받는 사원들의 커미션 평균을 구한다.
+select avg(comm)
+from emp;
+</code></pre>
+<p>그룹함수의 경우 null값은 제외하고 계산한다.</p>
+<p>ex)</p>
+<pre><code>-- 전 사원의 커미션 평균을 구한다.(nvl : null값을 0으로 바꿔준다.)
+select trunc(avg(nvl(comm, 0)))
+from emp;
+</code></pre>
+<p>nvl(,0)컬럼에 null값은 0으로 바꾼다.</p>
+<p>ex)</p>
+<pre><code>-- 커미션을 받는 사원들의 급여 평균을 구한다.
+select trunc(avg(sal))
+from emp
+where comm is not null;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 30번 부서에 근무하고 있는 사원들의 급여 평균을 구한다.
+select trunc(avg(sal))
+from emp
+where deptno = 30;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 SALESMAN인 사원들의 급여 + 커미션 평균을 구한다.
+select avg(sal + comm)
+from emp
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 총 수를 가져온다.
+select count(empno)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 그룹함수를 계산할 때는 무조건 null값은 제외하고 계산하다.
+-- 그러므로 이런식으로 하는 것이 최선의 방법이다.
+-- 사원들의 총 수를 가져온다.
+select count(*)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 급여 최대, 최소값을 가져온다.
+select max(sal), min(sal)
+from emp;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2021.%20%EA%B7%B8%EB%A3%B9%ED%95%A8%EC%88%98/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+          <li class="pagination-prev">
+            <a
+                class="btn btn--default btn--small"
+                href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/"
+                aria-label="NEWER POSTS"
+            >
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a
+                class="btn btn--default btn--small"
+                href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/page/3/"
+                aria-label="OLDER POSTS"
+            >
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+        <li class="pagination-number">page 2 of 10</li>
+    </ul>
+</div>
+
+</section>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

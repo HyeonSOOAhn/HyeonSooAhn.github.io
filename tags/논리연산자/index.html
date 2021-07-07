@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: 논리연산자 - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%EC%9E%90/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2013.%20%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%EC%9E%90/"
+                            aria-label=": Oracle Database 13. 논리연산자"
+                        >
+                            Oracle Database 13. 논리연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:48+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="논리-연산자"><a href="#논리-연산자" class="headerlink" title="논리 연산자"></a>논리 연산자</h1><ul>
+<li>논리 연산자를 사용하면 여러 조건식을 묶어 하나의 조건식으로 만들 수 있다.</li>
+<li>and : 좌우 조건식이 모두 참일 경우 참</li>
+<li>or : 좌우 조건식이 모두 거짓일 경우 거짓</li>
+<li>not : 조건식의 결과를 부정</li>
+<li>between and : 범위 조건</li>
+<li>in : 항목 조건</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 10번 부서에서 근무하고 있는 직무가 MANAGER인 사원의 사원번호, 이름, 근무부서, 직무를 가져온다.
+select empno, ename, deptno, job
+from emp
+where deptno = 10 and job = &#39;MANAGER&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 1982년 1월 1일 이후에 입사한 사원의 사원번호, 이름, 입사일을가져온다.
+select empno, ename, hiredate
+from emp
+where hiredate &gt;= &#39;1982/01/01&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 10번 부서에서 근무하고 있는 직무가 MANAGER인 사원의 사원번호, 이름, 근무부서, 직무를 가져온다.
+select empno, ename, deptno, job
+from emp
+where deptno = 10 and job = &#39;MANAGER&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 입사년도가 1981년인 사원중에 급여가 1500이상인 사원의 사원번호, 이름, 급여, 입사일을 가져온다.
+select empno, ename, sal, hiredate
+from emp
+where hiredate &gt;= &#39;1981/01/01&#39; and hiredate &lt;= &#39;1981/12/31&#39; and sal &gt;=1500;
+
+select empno, ename, sal, hiredate
+from emp
+where hiredate between &#39;1981/01/01&#39; and &#39;1981/12/31&#39; and sal &gt;=1500;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 20번 부서에 근무하고 있는 사원 중에 급여가 1500 이상인 사원의 사원번호, 이름, 부서번호, 급여를 가져온다.
+select empno, ename, deptno, sal
+from emp
+where deptno = 20 and sal &gt;= 1500;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직속상관 사원 번호가 7698번인 사원중에 직무가 CLERK인 사원의 사원번호, 이름, 직속상관번호, 직무를 가져온다.
+select empno, ename, mgr, job
+from emp
+where mgr = 7698 and job = &#39;CLERK&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여가 2000보다 크거나 1000보다 작은 사원의 사원번호, 이름, 급여를 가져온다.
+select empno, ename, sal
+from emp
+where sal &gt;2000 or sal &lt;1000;
+
+select empno, ename, sal
+from emp
+where not(sal &gt;=1000 and sal &lt;=2000);
+
+select empno, ename, sal
+from emp
+where not(sal between 1000 and 2000);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 부서번호가 20이거나 30인 사원의 사원번호, 이름, 부서번호를 가져온다.
+select empno, ename, deptno
+from emp
+where deptno = 20 or deptno = 30;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 CLERK, SALESMAN, ANALYST인 사원의 사원번호, 이름, 직무를 가져온다.
+select empno, ename, job
+from emp
+where job = &#39;CLERK&#39; or job = &#39;SALESMAN&#39; or job = &#39;ANALYST&#39;;
+
+select empno, ename, job
+from emp
+where job in (&#39;CLERK&#39;,&#39;SALESMAN&#39;,&#39;ANALYST&#39;);
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원 번호가 7499, 7566, 7839가 아닌 사원들의 사원번호, 이름을 가져온다.
+select empno, ename
+from emp
+where empno &lt;&gt; 7499 and empno &lt;&gt; 7566 and empno &lt;&gt; 7839;
+
+select empno, ename
+from emp
+where not (empno = 7499 and empno = 7566 and empno = 7839);
+
+select empno, ename
+from emp
+where not (empno in(7499,7566,7839));
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2013.%20%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/25/Java/Java%2006.%20%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%EC%9E%90/"
+                            aria-label=": Java 06. 논리연산자"
+                        >
+                            Java 06. 논리연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-25T23:18:43+09:00">
+	
+		    Jan 25, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="논리연산자"><a href="#논리연산자" class="headerlink" title="논리연산자"></a>논리연산자</h1><h2 id="and"><a href="#and" class="headerlink" title="and"></a>and</h2><p>&amp;&amp;는 좌항과 우항의 값이 모두 참일 때 참이 된다.<br><img src="https://user-images.githubusercontent.com/77277946/105718839-0418c580-5f65-11eb-8419-bfcfbcdc674c.jpg" alt="논리연산자1"></p>
+<h2 id="or"><a href="#or" class="headerlink" title="or"></a>or</h2><p>||는 좌우항중 하나라도 참이라면 참이 된다.<br><img src="https://user-images.githubusercontent.com/77277946/105719426-9ae58200-5f65-11eb-9ba5-5630865b2dc2.jpg" alt="논리연산자2"></p>
+<h2 id="not"><a href="#not" class="headerlink" title="not"></a>not</h2><p>!는 부정의 의미로 boolean의 값을 역전시킨다.</p>
+<p>대입연산자, char string, 버퍼드리더랑 스캐너, 자바의 출력문, 배열, 만년달력</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/25/Java/Java%2006.%20%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>

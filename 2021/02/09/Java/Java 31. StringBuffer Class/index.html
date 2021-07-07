@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Java 31. StringBuffer Class - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"StringBuffer ClassStringBuffer Class는 변하는 문자열을 다룰 때 사용한다. 객체 생성시 크기를 정하지 않으면 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가진다.\nString클래스의 객체는 한 번생성이 되면 내용이 변하지 않는 반면에 StringBuffer클래스의 객체는 문자열의 내용을 변경할 수 있다. StringBuffer 클래스의 메소드는 문자열 처리 후의 결과를 원래의 StringBuffer 객체에 반영하고, 메소드 리턴 타입은 void 이다.\n생성자StringBuffer()초기 문자열이 없고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. StringBuffer(String str)str의 초기 문자열을 가지고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다.StringBuffer(int length)초기 문자열이 없고 length개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. 메소드append()append()메소드는 이수로 전달된 값을 문자열로 변한한 후, 해당 문자열의 마지막에 추가한다.이 메소드는 String클래스의 concat() 메소드와 같은 결과를 반환하지만, 내부적인 처리 속도가 훨씬 빠르다.예제\nStringBuffer str = new StringBuffer(&quot;Java&quot;);\nSystem.out.println(&quot;원본 문자열 : &quot; + str);\n\nSystem.out.println(str.append(&quot;수업&quot;));\nSystem.out.println(&quot;append() 메소드 호출 후 원본 문자열 : &quot; + str);\n\n결과\n원본 문자열 : Java\nJava수업\nappend() 메소드 호출 후 원본 문자열 : Java수업\n\ncapacity()capacity()메소드는 StringBuffer 인스턴스의 현재 버퍼 크기를 반환한다.예제\nStringBuffer str01 = new StringBuffer();\nStringBuffer str02 = new StringBuffer(&quot;Java&quot;);\n\nSystem.out.println(str01.capacity());\nSystem.out.println(str02.capacity());\n\n결과\n16\n20\n\n위의 예제처럼 길이가 4인 문자열로 StringBuffer 인스턴스를 생성하면, 기본적으로 생성되는 여유 버퍼 크기인 16에 문자의 길이인 4를 더한 총 20개의 문자를 저장할 수 있는 버퍼가 생성된다.\ndelete()delete()메소드는 전달된 인덱스에 해당하는 부분 문자열을 해당 문자열에서 제거한다. 또한, deleteCharAt() 메소드를 사용하면 특정 위치의 문자 한 개만을 제거할 수도 있다.예제\nStringBuffer str = new StringBuffer(&quot;Java Oracle&quot;);\nSystem.out.println(&quot;원본 문자열 : &quot; + str);\n\n① System.out.println(str.delete(4, 8));\nSystem.out.println(str.deleteCharAt(1));\nSystem.out.println(&quot;deleteCharAt() 메소드 호출 후 원본 문자열 : &quot; + str);\n\n결과\n원본 문자열 : Java Oracle\nJavacle\nJvacle\ndeleteCharAt() 메소드 호출 후 원본 문자열 : Jvacle\n\n위 예제의 ①번 라인에서는 delete() 메소드를 사용하여 해당 문자열에서 인덱스가 4인 위치의 문자부터 7인 위치의 문자까지를 삭제한다.\n이처럼 delete() 메소드는 첫 번째 매개변수로 전달된 인덱스부터 두 번째 매개변수로 전달된 인덱스 바로 앞의 문자까지를 삭제하는 메소드이다.\ninsert()insert()메소드는 인수로 전달된 값을 문자로 변환한 후, 해당 문자열의 지정된 인덱스 위치에 추가한다. 이때 전달된 인덱스가 해당 문자열의 길이와 같으면, append()메소드와 같은 결과를 반환한다.예제\nStringBuffer str = new StringBuffer(&quot;Java 만세!!&quot;);\nSystem.out.println(&quot;원본 문자열 : &quot; + str);\n\n① System.out.println(str.insert(4, &quot;Script&quot;));\nSystem.out.println(&quot;insert() 메소드 호출 후 원본 문자열 : &quot; + str);\n\n결과\n원본 문자열 : Java 만세!!\nJavaScript 만세!!\ninsert() 메소드 호출 후 원본 문자열 : JavaScript 만세!!\n\n","dateCreated":"2021-02-09T23:37:35+09:00","dateModified":"2021-03-04T17:51:02+09:00","datePublished":"2021-02-09T23:37:35+09:00","description":"","headline":"Java 31. StringBuffer Class","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/","keywords":"Java, Eclipse, StringBuffer"}</script>
+    <meta name="description" content="StringBuffer ClassStringBuffer Class는 변하는 문자열을 다룰 때 사용한다. 객체 생성시 크기를 정하지 않으면 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가진다. String클래스의 객체는 한 번생성이 되면 내용이 변하지 않는 반면에 StringBuffer클래스의 객체는 문자열의 내용을 변경할 수 있다. StringB">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java 31. StringBuffer Class">
+<meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:description" content="StringBuffer ClassStringBuffer Class는 변하는 문자열을 다룰 때 사용한다. 객체 생성시 크기를 정하지 않으면 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가진다. String클래스의 객체는 한 번생성이 되면 내용이 변하지 않는 반면에 StringBuffer클래스의 객체는 문자열의 내용을 변경할 수 있다. StringB">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-09T14:37:35.000Z">
+<meta property="article:modified_time" content="2021-03-04T08:51:02.030Z">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="StringBuffer">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java 31. StringBuffer Class
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2021-02-09T23:37:35+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h1 id="StringBuffer-Class"><a href="#StringBuffer-Class" class="headerlink" title="StringBuffer Class"></a>StringBuffer Class</h1><p>StringBuffer Class는 변하는 문자열을 다룰 때 사용한다. 객체 생성시 크기를 정하지 않으면 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가진다.</p>
+<p>String클래스의 객체는 한 번생성이 되면 내용이 변하지 않는 반면에 StringBuffer클래스의 객체는 문자열의 내용을 변경할 수 있다. StringBuffer 클래스의 메소드는 문자열 처리 후의 결과를 원래의 StringBuffer 객체에 반영하고, 메소드 리턴 타입은 void 이다.</p>
+<h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><dl><dt>StringBuffer()</dt><dd>초기 문자열이 없고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. </dd></dl><dl><dt>StringBuffer(String str)</dt><dd>str의 초기 문자열을 가지고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다.</dd></dl><dl><dt>StringBuffer(int length)</dt><dd>초기 문자열이 없고 length개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. </dd></dl><h2 id="메소드"><a href="#메소드" class="headerlink" title="메소드"></a>메소드</h2><h3 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h3><p>append()메소드는 이수로 전달된 값을 문자열로 변한한 후, 해당 문자열의 마지막에 추가한다.<br>이 메소드는 String클래스의 concat() 메소드와 같은 결과를 반환하지만, 내부적인 처리 속도가 훨씬 빠르다.<br>예제</p>
+<pre><code>StringBuffer str = new StringBuffer(&quot;Java&quot;);
+System.out.println(&quot;원본 문자열 : &quot; + str);
+
+System.out.println(str.append(&quot;수업&quot;));
+System.out.println(&quot;append() 메소드 호출 후 원본 문자열 : &quot; + str);
+</code></pre>
+<p>결과</p>
+<pre><code>원본 문자열 : Java
+Java수업
+append() 메소드 호출 후 원본 문자열 : Java수업
+</code></pre>
+<h3 id="capacity"><a href="#capacity" class="headerlink" title="capacity()"></a>capacity()</h3><p>capacity()메소드는 StringBuffer 인스턴스의 현재 버퍼 크기를 반환한다.<br>예제</p>
+<pre><code>StringBuffer str01 = new StringBuffer();
+StringBuffer str02 = new StringBuffer(&quot;Java&quot;);
+
+System.out.println(str01.capacity());
+System.out.println(str02.capacity());
+</code></pre>
+<p>결과</p>
+<pre><code>16
+20
+</code></pre>
+<p>위의 예제처럼 길이가 4인 문자열로 StringBuffer 인스턴스를 생성하면, 기본적으로 생성되는 여유 버퍼 크기인 16에 문자의 길이인 4를 더한 총 20개의 문자를 저장할 수 있는 버퍼가 생성된다.</p>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete()"></a>delete()</h3><p>delete()메소드는 전달된 인덱스에 해당하는 부분 문자열을 해당 문자열에서 제거한다. 또한, deleteCharAt() 메소드를 사용하면 특정 위치의 문자 한 개만을 제거할 수도 있다.<br>예제</p>
+<pre><code>StringBuffer str = new StringBuffer(&quot;Java Oracle&quot;);
+System.out.println(&quot;원본 문자열 : &quot; + str);
+
+① System.out.println(str.delete(4, 8));
+System.out.println(str.deleteCharAt(1));
+System.out.println(&quot;deleteCharAt() 메소드 호출 후 원본 문자열 : &quot; + str);
+</code></pre>
+<p>결과</p>
+<pre><code>원본 문자열 : Java Oracle
+Javacle
+Jvacle
+deleteCharAt() 메소드 호출 후 원본 문자열 : Jvacle
+</code></pre>
+<p>위 예제의 ①번 라인에서는 delete() 메소드를 사용하여 해당 문자열에서 인덱스가 4인 위치의 문자부터 7인 위치의 문자까지를 삭제한다.</p>
+<p>이처럼 delete() 메소드는 첫 번째 매개변수로 전달된 인덱스부터 두 번째 매개변수로 전달된 인덱스 바로 앞의 문자까지를 삭제하는 메소드이다.</p>
+<h3 id="insert"><a href="#insert" class="headerlink" title="insert()"></a>insert()</h3><p>insert()메소드는 인수로 전달된 값을 문자로 변환한 후, 해당 문자열의 지정된 인덱스 위치에 추가한다. 이때 전달된 인덱스가 해당 문자열의 길이와 같으면, append()메소드와 같은 결과를 반환한다.<br>예제</p>
+<pre><code>StringBuffer str = new StringBuffer(&quot;Java 만세!!&quot;);
+System.out.println(&quot;원본 문자열 : &quot; + str);
+
+① System.out.println(str.insert(4, &quot;Script&quot;));
+System.out.println(&quot;insert() 메소드 호출 후 원본 문자열 : &quot; + str);
+</code></pre>
+<p>결과</p>
+<pre><code>원본 문자열 : Java 만세!!
+JavaScript 만세!!
+insert() 메소드 호출 후 원본 문자열 : JavaScript 만세!!
+</code></pre>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Eclipse/" rel="tag">Eclipse</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/StringBuffer/" rel="tag">StringBuffer</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    data-tooltip="Java 32. String, StringBuffer, StringBuilder"
+                    aria-label="PREVIOUS: Java 32. String, StringBuffer, StringBuilder"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2030.%20String%20Class/"
+                    data-tooltip="Java 30. String Class"
+                    aria-label="NEXT: Java 30. String Class"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2032.%20String,%20StringBuffer,%20StringBuilder/"
+                    data-tooltip="Java 32. String, StringBuffer, StringBuilder"
+                    aria-label="PREVIOUS: Java 32. String, StringBuffer, StringBuilder"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2021/02/09/Java/Java%2030.%20String%20Class/"
+                    data-tooltip="Java 30. String Class"
+                    aria-label="NEXT: Java 30. String Class"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>

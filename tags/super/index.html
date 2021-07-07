@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="안현수">
+    <title>Tag: super() - 안현수</title>
+    <meta name="author" content="Hyeon Soo Ahn">
+    
+    
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="안현수">
+<meta property="og:url" content="http://example.com/tags/super/index.html">
+<meta property="og:site_name" content="안현수">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hyeon Soo Ahn">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            안현수
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/HyeonSOOAhn"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2024.%20super%20&%20super()/"
+                            aria-label=": Java 24. super &amp; super()"
+                        >
+                            Java 24. super &amp; super()
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:28+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="super"><a href="#super" class="headerlink" title="super"></a>super</h1><p>super는 자식 클래스가 부모 클래스로 부터 상속받은 멤버를 참조할 때 사용하는 참조 변수이다. 클래스 내의 멤버변수와 지역변수의 이름이 같은 경우 구분을 위해 this를 사용하듯 부모 클래스와 자식 클래스의 멤버의 이름이 같을 경우 super를 사용한다. this와 super는 인스턴스의 주소값을 저장하는데 static메소드(클래스 메소드)와는 무관하게 사용된다.</p>
+<pre><code>class JavaApp &#123;
+    public static void main(String[] args) &#123;
+        Child child = new Child();
+        child.childMethod();
+    &#125;
+&#125;
+
+class Parent &#123;
+    int x = 10;
+&#125;
+
+class Child extends Parent &#123;
+    int x = 20;
+
+    void childMethod() &#123;
+        System.out.println(&quot;x=&quot; + x);
+        System.out.println(&quot;this.x=&quot; + this.x);
+        System.out.println(&quot;super.x=&quot; + super.x);
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>x=20
+this.x=20
+super.x=10
+</code></pre>
+<h1 id="super-1"><a href="#super-1" class="headerlink" title="super()"></a>super()</h1><p>super()는 부모 클래스의 생성자를 호출하는 메서드이다. 상속받은 자식 클래스가 부모 클래스의 멤버를 사용할 경우가 있을 수도 있으므로 부모 클래스를 우선적으로 초기화해줘야 한다. 부모 클래스의 생성자는 자식 클래스의 생성자 첫줄에서 호출해준다. 이러한 부모 클래스에 대한 생성자 호출은 상속관계에 따라 Object 클래스까지 올라가서 마무리된다.</p>
+<p>정리하면, Object 클래스를 제외한 모든 클래스의 생성자의 첫줄에는 반드시 자신의 클래스의 또다른 생성자, this() 또는 부모 클래스의 생성자, super()를 호출해줘야 한다. 이렇게 하지 않으면 컴파일러가 자동으로 super()를 생성자의 첫줄에 호출한다.</p>
+<pre><code>class JavaApp &#123;
+    public static void main(String[] args) &#123;
+        Point3D point3d = new Point3D();    // Point3D() 생성자로 초기화 및 인스턴스 생성
+        System.out.println(&quot;point3d.x=&quot; + point3d.x);
+        System.out.println(&quot;point3d.y=&quot; + point3d.y);
+        System.out.println(&quot;point3d.z=&quot; + point3d.z);
+    &#125;
+&#125;
+
+class Point &#123;
+    int x = 10;
+    int y = 20;
+
+    Point(int x, int y) &#123;
+        // 생성자의 첫줄에 다른 생성자를 호출하지 않았기 때문에,
+        // 컴파일러가 이 부분에 super()를 호출한다.
+        // 부모 클래스이므로 Object 클래스의 super()가 호출된다.
+        this.x = x;
+        this.y = y;
+    &#125;
+&#125;
+
+class Point3D extends Point &#123;
+    int z = 30;
+
+    Point3D() &#123;
+        this(100, 200, 300);    // 자신의 클래스의 또다른 생성자 호출
+    &#125;
+
+    Point3D(int x, int y, int z) &#123;
+        super(x, y);    // 부모 클래스 생성자 호출
+        this.z = z;
+    &#125;  
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>point3d.x=100
+point3d.y=200
+point3d.z=300
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2024.%20super%20&%20super()/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Hyeon Soo Ahn. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">Hyeon Soo Ahn</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>
