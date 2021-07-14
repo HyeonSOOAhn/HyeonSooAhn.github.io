@@ -168,6 +168,170 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2030.%20String%20Class/"
+                            aria-label=": Java 30. String Class"
+                        >
+                            Java 30. String Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:34+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h1><p>String 객체가 하나 생성되면, 그 값은 길어지거나 줄어들 수 없으며 그 문자들 중 어떤 것도 바뀔 수 없다.<br>그래서 String 객체는 변경불능이라고 한다.</p>
+<p>String클래스의 자주 사용하는 함수이다.<br>|함수|반환형|설명<br>|—|—|—<br>|CharAt(int index)|char|index로 지정된 첨자 위치에 있는 문자를 반환한다.<br>|compareTo(String str)|int|이 String이 String str보다 사전적 순서에서 앞서면 음수값, 같으면 0값, 뒤에 있으면 0값이다.<br>|Concat(String str)|String|이 String과 str을 접합하여 구성되는 새로운 String을 반환한다.<br>|equals(String str)|boolean|이 String이 str과 같은 문자열이면 (대소문자 구분) True, 그렇지 않으면 False 반환<br>|equalslgnoreCase(String str)|boolean|이 String이 str과 같은 문자열이면(대소문자 미 구분) True, 그렇지 않으면 False 반환<br>|length()|int|이 String의 문자 개수를 반환한다.<br>|replace(char oldChar, char newChar)|String|String에 나타나는 oldChar를 모두 new Char로 변경한다.<br>|substring(int offset, int endIndex)|String|이 String의 offset 위치에서부터 endIndex-1까지에 걸친 문자열을 반환한다.<br>|toLowerCase()|String|모든 대문자를 소문자로 변환한다.<br>|toUpperCase()|String|모든 소문자를 대문자로 변환한다. </p>
+<p>예제</p>
+<pre><code>public class StringClass &#123;
+    
+    public static void main(String[] args)&#123;
+        
+        String text = &quot;First String V&quot;;
+        String concat, upperCase, replace, subString;
+        
+        System.out.println(&quot;기본 String : &quot;+ text);
+        System.out.println(&quot;기본 String 길이 : &quot;+text.length());    // 문자열 길이 출력
+        
+        concat = text.concat(&quot;, Second String V&quot;);    // 문자열 연결
+        
+        upperCase = concat.toUpperCase();        // 문자열 대문자로 변환
+        
+        replace = upperCase.replace(&#39;V&#39;, &#39;K&#39;);    //  문자 V를 K로 변환
+        
+        subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기
+        
+        
+        System.out.println(&quot;Concat String : &quot; + concat);
+        System.out.println(&quot;upperCase String : &quot; + upperCase);
+        System.out.println(&quot;replace String : &quot; + replace);
+        System.out.println(&quot;subString String : &quot; + subString);
+        
+        
+    &#125;
+
+&#125;
+</code></pre>
+<p>System.out.println(“기본 String 길이 : “+text.length());    // 문자열 길이 출력</p>
+<p>text인 “First String V” 의 문자열 길이를 반환한다.</p>
+<p>-&gt; 14</p>
+<p>concat = text.concat(“, Second String V”);    // 문자열 연결</p>
+<p>text인 “First String V” 뒤에 concat 메소드로 “, Second String V” 를 연결했다.</p>
+<p>-&gt;  First String V, Second String V</p>
+<p>upperCase = concat.toUpperCase();        // 문자열 대문자로 변환</p>
+<p>concat인 “First String V, Second String V” 의 문자열을 대문자로 변환한다</p>
+<p>-&gt; FIRST STRING V, SECOND STRING V</p>
+<p>replace = upperCase.replace(‘V’, ‘K’);    //  문자 V를 K로 변환</p>
+<p>upperCase인 “FIRST STRING V, SECOND STRING V” 문자열 중 ‘V’ 문자를 ‘K’ 문자로 변환 한다.</p>
+<p>-&gt; FIRST STRING K, SECOND STRING K</p>
+<p>subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기</p>
+<p>replace 인 “FIRST STRING K, SECOND STRING K” 문자열의 3번째 부터 9번째 문자열까지 잘라낸다 (0부터 시작)</p>
+<p>-&gt; ST STRI</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2030.%20String%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/"
+                            aria-label=": Java 29. Garbage Collector"
+                        >
+                            Java 29. Garbage Collector
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:33+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="JVM과-메모리"><a href="#JVM과-메모리" class="headerlink" title="JVM과 메모리"></a>JVM과 메모리</h1><p>메모리는 OS가 관리하는데, 모든 프로그램들은 OS위에서 돌아간다.<br>프로그램이 돌아가려면 메모리가 있어야된다.<br>JVM도 메모리가 필요하면 OS에게 메모리 요청을 한다.<br>그런데 OS가 처음부터 자기가 가진 메모리를 전부 다 줘버리면, 다른 프로그램들에게 줄 메모리가 없게 된다.<br>때문에 각 프로그램에게 메모리의 일정부분만 빌려주는 방식으로 관리가 된다.</p>
+<p>JVM을 실행하다가 메모리가 부족하면 OS에게 메모리를  더 달라고 요청한다. 그러면 OS가 또 JVM에게 메모리를 더 빌려준다.<br>JVM은 OS로 부터 받은 메모리들 중, 어디에다가 저장할지 그 주소를 할당하야 한다.<br>이 때, JVM은 자기가 받은 메모리 안에서, 절대주소가 아니라 거기에 대한 상대주소를 할당한다. 이걸 offset주소라고 한다.</p>
+<h1 id="Garbage-Collector"><a href="#Garbage-Collector" class="headerlink" title="Garbage Collector"></a>Garbage Collector</h1><p>프로그램을 실행하다보면 가비지가 발생하게 된다.<br>가비지는 정리되지 않은 메모리, 유효하지 않은 메모리 주소를 말한다.<br>가비지 컬렉터는 메모리가 부족할 때 가비지를 정리해주는 프로그램을 말한다.<br>때문에 JVM의 가비지 컬렉터는 메모리를 다른 용도로 사용할 수 있게 ‘메모리 해제’를 시키는 프로그램이다.<br>참고로 가비지 컬렉터는 JVM이 OS에게 추가로 메모리를 더 요청할 때 실행된다.<br>또, 서버 프로그램인 경우에는 24시간 내내 돌아가는데, 이때에는 JVM이 한가할 때 가비지 컬렉터가 실행된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2028.%20%EB%A9%94%EB%AA%A8%EB%A6%AC(RAM)/"
                             aria-label=": Java 28. 메모리(RAM)"
                         >
@@ -937,143 +1101,6 @@ swap() 호출 후 : a = 20, b = 10
                         <p>
                             <a
                                 href="/2021/02/08/Java/Java%2021.%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EA%B3%BC%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/07/Java/Java%2020.%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80%20%EC%9D%B8%EC%9E%90/"
-                            aria-label=": Java 20. 매개변수와 인자"
-                        >
-                            Java 20. 매개변수와 인자
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-07T23:37:22+09:00">
-	
-		    Feb 07, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="매개변수"><a href="#매개변수" class="headerlink" title="매개변수"></a>매개변수</h1><p>매개 : 둘 사이에서 양편의 관계를 맺어 줌<br>변수 : 어떤 상황의 가변적 요인, 어떤 관계나 범위 안에서 여러 가지 값으로 변할 수 있는 수<br>즉, 매개변수란 둘 사이에서 양편의 관계를 맺어주면서, 어떤 관계나 범위 안에서 여러가지 값으로 변할 수 있는 가변적 요소이다.</p>
-<h1 id="인자"><a href="#인자" class="headerlink" title="인자"></a>인자</h1><p>어떤 사물의 원인이 되는 낱낱의 요소나 물질.<br>인수는 함수가 호출 될 때 함수에 전달되는 값이다. 프로그램 실행 중에 함수가 호풀 될 때마다 함수와 함께 일부 값이 전달된다. 이러한 값을 인수라고 한다. 함수와 함께 전달 될 때 인수는 함수 정의 중에 사용 된 변수로 대체되고 함수는 이 값으로 실행된다.</p>
-<h1 id="매개변수와-인수"><a href="#매개변수와-인수" class="headerlink" title="매개변수와 인수"></a>매개변수와 인수</h1><p>매개변수는 메소드, 또는 생성자를 선언할 때, 괄호 안에 적으며, 어떤 입력 값이 들어올지 값의 형태를 정의해준다.<br>인자는 메소드, 또는 생성자를 호출할 때, 괄호 안에 적으며, 미리 선언해 두었던 매개변수에 값을 대입해 준다.</p>
-<p>매개변수는 실제로 값이 존재하지는 않고, 어떤 형태로 입력값이 들어올 것인지를 정의해 준다.<br>인자는 매개변수에 대입되는 실제로 메모리에 할당되어 있는 변수이다.<br>즉, 매개변수와 인자의 차이는 실제로 메모리에 할당되어 있느냐, 없느냐의 차이이다.</p>
-<p>숫자 두 개를 입력받아, 두 숫자의 합을 리턴하는 메소드를 만든다고 생각해보자.</p>
-<pre><code>public int sum(int a, int b) &#123;
-
-return a+b;
-
-&#125;
-</code></pre>
-<p>이렇게 메소드를 선언할때 int형 변수 두 개를 받겠다고 괄호 안에 적은 int a와 int b가 매개변수이다.<br>그럼, 이 메소드를 호출해서 숫자 3과 숫자 5를 더해보자.<br>sum(3, 5)<br>이렇게 메소드를 호출하여, 매개변수에 각각의 값을 대입했다.<br>이 3과 5가 바로 인자이다.</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/07/Java/Java%2020.%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80%20%EC%9D%B8%EC%9E%90/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/06/Java/Java%2019.%20%EC%83%9D%EC%84%B1%EC%9E%90%EC%99%80%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20this/"
-                            aria-label=": Java 19. 생성자와 오버로딩 그리고 this"
-                        >
-                            Java 19. 생성자와 오버로딩 그리고 this
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-06T22:52:24+09:00">
-	
-		    Feb 06, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="생성자와-오버로딩-그리고-this"><a href="#생성자와-오버로딩-그리고-this" class="headerlink" title="생성자와 오버로딩 그리고 this"></a>생성자와 오버로딩 그리고 this</h1><h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><p>객체가 생성될 ‘때마다’ 호출되는 것</p>
-<pre><code>클래스이름() &#123;&#125;
-</code></pre>
-<p>클래스에 아무런 생성자가 없다면 컴파일러가 기본 생성자는 넣어준다.<br>기본 생성자는 매개 변수도 없고, 구현부에서 아무런 일도 하지 않는다.</p>
-<pre><code>클래스이름(자료형 매개변수) &#123;
-    this.멤버변수 = 매개변수
-&#125;
-</code></pre>
-<p>명시적 생성자가 하는 일은 Field Initialization(필드 초기화). 명시적 생성자가 있으면 컴파일러에서 디폴트 생성자를 제공하지 않는다. 디폴트 생성자를 사용하려면 개발자가 디폴트 생성자를 추가로 직접 구현해야 한다.</p>
-<h2 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h2><p>매개변수가 다른 생성자를 두 개 이상 구현하거나, 매개변수의 개수 또는 타입이 다른 같은 이름을 가진 메소드를 정의하는 것.</p>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>자신의 메모리를 가리킨다.<br>생성자에서 다른 생성자를 호출할 수 있다.<br>인스턴스 자신의 주소를 반환한다.<br>this를 사용하면, 메서드의 인수나 변수에 필드와 같은 이름을 붙여도 그것들을 구분하여 사용할 수 있다.<br>this는 주로 생성자와 메소드의 매개변수 이름이 필드와 동일한 경우, 인스턴스 멤버인 필드임을 명시하고자 할때 사용된다.</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/06/Java/Java%2019.%20%EC%83%9D%EC%84%B1%EC%9E%90%EC%99%80%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20this/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

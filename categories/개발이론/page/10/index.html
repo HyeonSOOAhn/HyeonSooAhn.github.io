@@ -168,6 +168,145 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/"
+                            aria-label=": Oracle Database 06. 행 수정 &amp; 삭제"
+                        >
+                            Oracle Database 06. 행 수정 &amp; 삭제
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-19T17:24:25+09:00">
+	
+		    Jan 19, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="행-수정-amp-삭제"><a href="#행-수정-amp-삭제" class="headerlink" title="행 수정 &amp; 삭제"></a>행 수정 &amp; 삭제</h1><h2 id="행-수정"><a href="#행-수정" class="headerlink" title="행 수정"></a>행 수정</h2><dl><dt><img src="https://user-images.githubusercontent.com/77277946/105009008-4e89d600-5a7d-11eb-90ef-3eef49c10650.jpg" alt="행 수정"><br>UPDATE topic<br>: topic 테이블을 수정한다.<br>SET<br>description = ‘MSSQL is …’<br>: description 행을 ‘MSSQL is …’으로 수정한다.<br>WHERE<br>: 어디에(수정 또는 삭제를 할 때 WHERE문이 없다면 모든 행열에 해당하므로 특별한 경우를 제외하고는 무조건 있어야 한다.)<br>id = 1;</dt><dd>id가 1인 행에</dd></dl><h2 id="행-삭제"><a href="#행-삭제" class="headerlink" title="행 삭제"></a>행 삭제</h2><pre><code>DELETE FROM topic WHERE id = 1;
+1행을 삭제합니다.
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/18/Oracle%20Database/Oracle%20Database%2005.%20Select%EB%AC%B8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D/"
+                            aria-label=": Oracle Database 05. Select문의 기본 형식"
+                        >
+                            Oracle Database 05. Select문의 기본 형식
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-18T18:55:03+09:00">
+	
+		    Jan 18, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Select문의-기본-형식"><a href="#Select문의-기본-형식" class="headerlink" title="Select문의 기본 형식"></a>Select문의 기본 형식</h1><h2 id="행-읽기"><a href="#행-읽기" class="headerlink" title="행 읽기"></a>행 읽기</h2><p>SELECT * FROM topic;: topic테이블의 모든 행열을 가져옵니다.<br><img src="https://user-images.githubusercontent.com/77277946/104901118-4a4bb300-59c0-11eb-872e-d4fdf9dddc70.jpg" alt="토픽의 모든 행을 불러오기"></p>
+<h2 id="행과-칼럼-제외하기"><a href="#행과-칼럼-제외하기" class="headerlink" title="행과 칼럼 제외하기"></a>행과 칼럼 제외하기</h2><pre><code>SELECT id, title, created FROM topic;
+: topic테이블에서 id, title, created행만 보기
+SELECT * FROM topic WHERE id = 1;
+: topic테이블에서 id가 1인 행만보기
+SELECT * FROM topic WHERE id &gt; 1;
+: topic테이블에서 id가 1보다 큰 행만보기
+SELECT id, title, created FROM topic WHERE id = 1;
+: topic테이블에서 id가 1인 id, title, created행만 보기
+</code></pre>
+<h2 id="정렬과-페이징"><a href="#정렬과-페이징" class="headerlink" title="정렬과 페이징"></a>정렬과 페이징</h2><h3 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h3><pre><code>SELECT * FROM topic ORDER BY id DESC;
+: topic테이블에서 id가 큰 순서대로 정렬
+SELECT * FROM topic ORDER BY title ASD;
+: topic테이블에서 tile이 abc순으로 정렬
+</code></pre>
+<h3 id="페이징"><a href="#페이징" class="headerlink" title="페이징"></a>페이징</h3><pre><code>SELECT * FROM topic
+: topic테이블에서 모든 행을 불러온다.
+OFFSET 1 ROWS
+: 0번째 부터시작하여 1이후의 행을 불러온다.
+FETCH NEXT 2 ROWS ONLY;
+: OFFSET 1 ROWS 이후 2번째 까지의 행을 불러온다.
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/18/Oracle%20Database/Oracle%20Database%2005.%20Select%EB%AC%B8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/01/17/Oracle%20Database/Oracle%20Database%2004.%20SQL%EC%9D%B4%EB%9E%80/"
                             aria-label=": Oracle Database 04. SQL이란"
                         >

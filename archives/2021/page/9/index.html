@@ -168,6 +168,160 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/01/27/Java/Java%2011.%20Selection%20Sort/"
+                            aria-label=": Java 11. Selection Sort"
+                        >
+                            Java 11. Selection Sort
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-27T20:51:40+09:00">
+	
+		    Jan 27, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Selection-Sort"><a href="#Selection-Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h1><p>Selection Sort는 말그대로 선택정렬이다.<br>오름차순 또는 내림차순으로 정렬하는 것이다.</p>
+<pre><code>package living.coding;
+
+public class A3 &#123;
+
+    public static void main(String[] args) &#123;
+        
+          int [] num = &#123;2,1,5,3,4&#125;;
+          int i,j,temp;
+
+         for (i=0;i&lt;num.length-1;i++) &#123;//1
+            for (j=i+1;j&lt;num.length;j++) &#123;//2
+                if (num[i]&lt;num[j]) &#123;//3
+                    temp=num[i];
+                    num[i]=num[j];
+                    num[j]=temp;
+
+                &#125;
+            &#125;
+        &#125;   
+    for (i=0;i&lt;num.length;i++) &#123;
+        System.out.println(num[i]);
+    &#125;
+&#125;
+</code></pre>
+<ol>
+<li>비교할 시작점을 정해준다.</li>
+<li>비교할 시작점 다음 index를 정해준다.</li>
+<li>두개의 index를 비교한 후 서로 자리를 바꾸어 준다.</li>
+</ol>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/27/Java/Java%2011.%20Selection%20Sort/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/26/Java/Java%2010.%20%EB%B0%B0%EC%97%B4/"
+                            aria-label=": Java 10. 배열"
+                        >
+                            Java 10. 배열
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-26T22:48:46+09:00">
+	
+		    Jan 26, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h1><h2 id="정의"><a href="#정의" class="headerlink" title="정의"></a>정의</h2><p>연관된 데이터를 모아서 관리하기 위해 사용하는 데이터 타입.</p>
+<h2 id="배열의-생성"><a href="#배열의-생성" class="headerlink" title="배열의 생성"></a>배열의 생성</h2><pre><code>변수의 데이터타입[] 변수 = &#123;&#125;;
+</code></pre>
+<h2 id="제어"><a href="#제어" class="headerlink" title="제어"></a>제어</h2><p><img src="https://user-images.githubusercontent.com/77277946/105854889-c9796080-602a-11eb-967e-e9b294a60eac.jpg" alt="배열제어"><br>temp안의 각각의 값은 원소라 한다. 배열의 제어를 할 때는 index를 사용한다. index번호는 0부터 시작한다. 그러므로 temp[5]는 존재하지 않는다.<br>원소를 적지 않고 배열을 먼저 생성할 수도 있다.</p>
+<pre><code>변수의 데이터타입[] 변수 = new 변수의 데이터타입[index수];
+</code></pre>
+<p>변수의 크기</p>
+<pre><code>System.out.println(변수.length);
+</code></pre>
+<h2 id="for-each"><a href="#for-each" class="headerlink" title="for-each"></a>for-each</h2><p><img src="https://user-images.githubusercontent.com/77277946/105857428-a13f3100-602d-11eb-862b-599358dd7b88.jpg" alt="for each"><br>이렇게 배열과 반복문을 같이 사용할 수도 있다. </p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/26/Java/Java%2010.%20%EB%B0%B0%EC%97%B4/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/01/26/Java/Java%2009.%20char,%20String/"
                             aria-label=": Java 09. char, String"
                         >
@@ -697,125 +851,6 @@ byte, short, char, int, enum, string, Character, Byte, Short, Integer
                         <p>
                             <a
                                 href="/2021/01/21/Java/Java%2002.%20%EC%8B%A4%ED%96%89/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/01/21/Java/Java%2001.%20Project/"
-                            aria-label=": Java 01. Project"
-                        >
-                            Java 01. Project
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-01-21T20:41:30+09:00">
-	
-		    Jan 21, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><p>Project안에 Package 그리고 그안에 Class가 있다.</p>
-<h2 id="Project-생성"><a href="#Project-생성" class="headerlink" title="Project 생성"></a>Project 생성</h2><p>File &gt; New &gt; Project<br><img src="https://user-images.githubusercontent.com/77277946/105350202-2392b400-5c2e-11eb-971c-02c0cd8cbd6e.jpg" alt="프로젝트 생성"></p>
-<h2 id="Package-생성"><a href="#Package-생성" class="headerlink" title="Package 생성"></a>Package 생성</h2><p>File &gt; New &gt; Package<br><img src="https://user-images.githubusercontent.com/77277946/105350323-5177f880-5c2e-11eb-9938-51549edf94ef.jpg" alt="패키지 생성"></p>
-<h2 id="Class-생성"><a href="#Class-생성" class="headerlink" title="Class 생성"></a>Class 생성</h2><p>File &gt; New &gt; Class<br><img src="https://user-images.githubusercontent.com/77277946/105350384-69e81300-5c2e-11eb-8409-83eb1d0ea4cb.jpg" alt="클래스 생성"> </p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/01/21/Java/Java%2001.%20Project/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/"
-                            aria-label=": Oracle Database 07. Primary key"
-                        >
-                            Oracle Database 07. Primary key
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-01-20T16:52:41+09:00">
-	
-		    Jan 20, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Primary-key"><a href="#Primary-key" class="headerlink" title="Primary key"></a>Primary key</h1><p>예를 들어 학번 같이 중복이 되면 안되는 그런 데이터를 입력할 때<br>즉, 고유의 번호를 부여할 때 쓰인다.<br>값이 중복될 경우 입력이 되지 않고, 없다면 입력이 된다.<br>Primary key를 지정한 것과 하지 않는 것의 속도차이는 어마어마하게 차이가 크다.<br>그러므로 테이블을 만들 때 특별한 경우가 아니면 무조껀 하는 것이 좋다.<br><img src="https://user-images.githubusercontent.com/77277946/105163825-bca2cb80-5b57-11eb-82d4-4575863992a6.jpg" alt="프라이머리 키"><br>CREATE TABLE topic(<br>id NUMBER NOT NULL,<br>title VARCHAR2(50) NOT NULL,<br>describtion VARCHAR2(4000),<br>created DATE NOT NULL,<br>CONSTRAINT PK_TOPIC PRIMARY KEY(id)<br>);</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

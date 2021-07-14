@@ -6,22 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="안현수">
-    <title>Java 57. Thread - 안현수</title>
+    <title>Java 56. Thread - 안현수</title>
     <meta name="author" content="Hyeon Soo Ahn">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Thread\n메모리를 할당받아 실행 중인 프로그램을 프로세스라고 한다.\n프로세스 내의 명령어 블록으로 시작점과 종료점을 가진다.\n실행중에 멈출 수 있으며 동시에 수행 가능하다.\n어떠한 프로그램내에서 특히 프로세스 내에서 실행되는 흐름의 단위.\n\n멀티스레딩여러 스레드를 동시에 실행시키는 응용프로그램을 작성하는 기법.장점\n\n메모리 공유로 인한 시스템 자원 소모가 줄어든다.\n동시에 두가지 이상의 활동을 하는 것이 가능해진다.단점\n서로 자원을 소모하다가 충돌이 일어날 가능성이 존재\n코딩이 난해해져 버그생성확률이 높아진다.\n\n스레드의 생명주기\n\nRunnable(준비단계)스레드가 실행되기 위한 준비단계이다. CPU를 점유하고 있지 않으며, 실행을 하기 위해 대기하고 있는 상태이다. 코딩 상에서 start()메소드를 호출하면 run()메소드에 설정된 스레드가 Runnable상태로 진입한다.\n\nRunning(실행상태)CPU를 점유하여 실행하고 있는 상태이며, run()메소드는 JVM만이 호출가능하다. Runnable에 있는 여러 스레드 중 우선 순위를 가진 스레드가 결정되면 JVM이 자동으로 run()메소드를 호출하여 스레드가 Running 상태로 진입한다.\n\nDead(종료상태)Runnig상태에서 스레드가 모두 실행되고 난 후 완료 상태입니다. “Done”상태라고도 한다.\n\nBlocked(지연상태)CPU점유권을 상실한 상태이다. 후에 특정 메소드를 실행시켜 Runable로 전환한다.wait() 메소드에 의해 Blocked 상태가 된 스레드는 nofify() 메소드가 호출되면 Runnable 상태로 간다. sleep(시간) 메소드에 의해 Blocked상태가 된 스레드는 지정된 시간이 지나면 Runnable상태로 간다.\n\n\n쓰레드 구현과 실행쓰레드를 구현하는 방법은 두가지가 있다.\n\nThread클래스를 상속\nRunnable인터페이스를 구현Runnable을 사용하는 것이 낫다.그 이유는 Thread클래스를 상속받으면 다른 클래스를 상속 받지 못하기 때문이다Runnable을 구현하는 방법은 재사용성이 높고 코드의 일관성을 유지 할 수 있다는 장점이 있기 때문에 보다 객체지향적인 방법이라 할 수 있다.\n\n예제","dateCreated":"2021-02-09T23:38:01+09:00","dateModified":"2021-03-29T15:42:15+09:00","datePublished":"2021-02-09T23:38:01+09:00","description":"","headline":"Java 57. Thread","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2056.%20Thread/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2056.%20Thread/","keywords":"Java, Eclipse, Thread"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Thread\n메모리를 할당받아 실행 중인 프로그램을 프로세스라고 한다.\n프로세스 내의 명령어 블록으로 시작점과 종료점을 가진다.\n실행중에 멈출 수 있으며 동시에 수행 가능하다.\n어떠한 프로그램내에서 특히 프로세스 내에서 실행되는 흐름의 단위.\n\n멀티스레딩여러 스레드를 동시에 실행시키는 응용프로그램을 작성하는 기법.장점\n\n메모리 공유로 인한 시스템 자원 소모가 줄어든다.\n동시에 두가지 이상의 활동을 하는 것이 가능해진다.단점\n서로 자원을 소모하다가 충돌이 일어날 가능성이 존재\n코딩이 난해해져 버그생성확률이 높아진다.\n\n스레드의 생명주기\n\nRunnable(준비단계)스레드가 실행되기 위한 준비단계이다. CPU를 점유하고 있지 않으며, 실행을 하기 위해 대기하고 있는 상태이다. 코딩 상에서 start()메소드를 호출하면 run()메소드에 설정된 스레드가 Runnable상태로 진입한다.\n\nRunning(실행상태)CPU를 점유하여 실행하고 있는 상태이며, run()메소드는 JVM만이 호출가능하다. Runnable에 있는 여러 스레드 중 우선 순위를 가진 스레드가 결정되면 JVM이 자동으로 run()메소드를 호출하여 스레드가 Running 상태로 진입한다.\n\nDead(종료상태)Runnig상태에서 스레드가 모두 실행되고 난 후 완료 상태입니다. “Done”상태라고도 한다.\n\nBlocked(지연상태)CPU점유권을 상실한 상태이다. 후에 특정 메소드를 실행시켜 Runable로 전환한다.wait() 메소드에 의해 Blocked 상태가 된 스레드는 nofify() 메소드가 호출되면 Runnable 상태로 간다. sleep(시간) 메소드에 의해 Blocked상태가 된 스레드는 지정된 시간이 지나면 Runnable상태로 간다.\n\n\n쓰레드 구현과 실행쓰레드를 구현하는 방법은 두가지가 있다.\n\nThread클래스를 상속\nRunnable인터페이스를 구현Runnable을 사용하는 것이 낫다.그 이유는 Thread클래스를 상속받으면 다른 클래스를 상속 받지 못하기 때문이다Runnable을 구현하는 방법은 재사용성이 높고 코드의 일관성을 유지 할 수 있다는 장점이 있기 때문에 보다 객체지향적인 방법이라 할 수 있다.\n\n","dateCreated":"2021-02-09T23:38:01+09:00","dateModified":"2021-07-14T18:50:45+09:00","datePublished":"2021-02-09T23:38:01+09:00","description":"","headline":"Java 56. Thread","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2056.%20Thread/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2056.%20Thread/","keywords":"Java, Eclipse, Thread"}</script>
     <meta name="description" content="Thread 메모리를 할당받아 실행 중인 프로그램을 프로세스라고 한다. 프로세스 내의 명령어 블록으로 시작점과 종료점을 가진다. 실행중에 멈출 수 있으며 동시에 수행 가능하다. 어떠한 프로그램내에서 특히 프로세스 내에서 실행되는 흐름의 단위.  멀티스레딩여러 스레드를 동시에 실행시키는 응용프로그램을 작성하는 기법.장점  메모리 공유로 인한 시스템 자원 소모">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Java 57. Thread">
+<meta property="og:title" content="Java 56. Thread">
 <meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2056.%20Thread/index.html">
 <meta property="og:site_name" content="안현수">
 <meta property="og:description" content="Thread 메모리를 할당받아 실행 중인 프로그램을 프로세스라고 한다. 프로세스 내의 명령어 블록으로 시작점과 종료점을 가진다. 실행중에 멈출 수 있으며 동시에 수행 가능하다. 어떠한 프로그램내에서 특히 프로세스 내에서 실행되는 흐름의 단위.  멀티스레딩여러 스레드를 동시에 실행시키는 응용프로그램을 작성하는 기법.장점  메모리 공유로 인한 시스템 자원 소모">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://user-images.githubusercontent.com/77277946/108838279-c74cf680-7616-11eb-9338-04f8f24f36c2.jpg">
 <meta property="article:published_time" content="2021-02-09T14:38:01.000Z">
-<meta property="article:modified_time" content="2021-03-29T06:42:15.227Z">
+<meta property="article:modified_time" content="2021-07-14T09:50:45.512Z">
 <meta property="article:author" content="Hyeon Soo Ahn">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Eclipse">
@@ -174,7 +174,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Java 57. Thread
+            Java 56. Thread
         </h1>
     
     
@@ -228,7 +228,7 @@
 <li>Thread클래스를 상속</li>
 <li>Runnable인터페이스를 구현<br>Runnable을 사용하는 것이 낫다.<br>그 이유는 Thread클래스를 상속받으면 다른 클래스를 상속 받지 못하기 때문이다<br>Runnable을 구현하는 방법은 재사용성이 높고 코드의 일관성을 유지 할 수 있다는 장점이 있기 때문에 보다 객체지향적인 방법이라 할 수 있다.</li>
 </ul>
-<h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2>
+
             
 
 
@@ -252,9 +252,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/19/Java/Java%2051.%20set/"
-                    data-tooltip="post"
-                    aria-label="PREVIOUS: post"
+                    href="/2021/02/09/Java/Java%2057.%20Stream/"
+                    data-tooltip="Java 57. Stream"
+                    aria-label="PREVIOUS: Java 57. Stream"
                 >
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -267,8 +267,8 @@
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
                     href="/2021/02/09/Java/Java%2055.%20serializable/"
-                    data-tooltip="Java 56. serializable"
-                    aria-label="NEXT: Java 56. serializable"
+                    data-tooltip="Java 55. serializable"
+                    aria-label="NEXT: Java 55. serializable"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -367,9 +367,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/19/Java/Java%2051.%20set/"
-                    data-tooltip="post"
-                    aria-label="PREVIOUS: post"
+                    href="/2021/02/09/Java/Java%2057.%20Stream/"
+                    data-tooltip="Java 57. Stream"
+                    aria-label="PREVIOUS: Java 57. Stream"
                 >
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -382,8 +382,8 @@
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
                     href="/2021/02/09/Java/Java%2055.%20serializable/"
-                    data-tooltip="Java 56. serializable"
-                    aria-label="NEXT: Java 56. serializable"
+                    data-tooltip="Java 55. serializable"
+                    aria-label="NEXT: Java 55. serializable"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>

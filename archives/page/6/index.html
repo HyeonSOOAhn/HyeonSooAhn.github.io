@@ -168,6 +168,184 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/"
+                            aria-label=": Java 40. Boxing과 UnBoxing"
+                        >
+                            Java 40. Boxing과 UnBoxing
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:44+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Boxing과-UnBoxing"><a href="#Boxing과-UnBoxing" class="headerlink" title="Boxing과 UnBoxing"></a>Boxing과 UnBoxing</h1><p>기본 타입의 값을 포장 객체로 만드는 과정을 박싱이라고 하고 반대로 포장객체에서 기본 타입의 값을 얻어내는 과정을 언박싱이라고 한다.</p>
+<pre><code>public class Wrapper_Ex &#123;
+    public static void main(String[] args)  &#123;
+        Integer num = new Integer(17); // 박싱
+        int n = num.intValue(); //언박싱
+        System.out.println(n);
+    &#125;
+&#125;
+</code></pre>
+<h1 id="자동박싱과-자동언박싱"><a href="#자동박싱과-자동언박싱" class="headerlink" title="자동박싱과 자동언박싱"></a>자동박싱과 자동언박싱</h1><p>기본 타입 값을 직접 방싱, 언박싱하지 않아도 자동적을 박싱과 언박싱이 일어나는 경우가 있다. 자동박싱의 포장클래스 타입에 기본값이 대입될 경우에 발생한다.예를 들어 int타입의 값을 Integer클래스 변수에 대입하면 자동 박싱이 일어나 힙 영역에 Integer객체가 생성된다.</p>
+<pre><code>public class Wrapper_Ex &#123;
+    public static void main(String[] args)  &#123;
+        Integer num = 17; // 자동 박싱
+        int n = num; //자동 언박싱
+        System.out.println(n);
+    &#125;
+&#125;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/"
+                            aria-label=": Java 39. Wrapper Class"
+                        >
+                            Java 39. Wrapper Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:43+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Wrapper-Class"><a href="#Wrapper-Class" class="headerlink" title="Wrapper Class"></a>Wrapper Class</h1><p>자바의 자료형은 기본타입(primitive type)과 참조타입(reference type)으로 나누어진다. 기본타입은 char, int, float, double, boolean 등이 있고, 참조타입은 class, interface등이 있는데 프로그래밍을 하다 보면 기본 타입의 데이터를 객체로 표현해야하는 경우가 있다.<br>이럴 때 기본자료타입을 객체로 다루기 위해서 사용하는 클래스들을 래퍼클래스라고 한다.<br>자바의 모든 기본타입은 값을 갖는 객체를 생성할 수 있다. 이런 객체를 포장객체라고도 하는데, 그 이유는 기본타입의 값을 내부에 두고 포장하기 때문이다. 래퍼 클래스로 감싸고 있는 기본타입 값은 외부에서 변경할 수 없다. 만약 값을 변경하고 싶다면 새로운 포장 객체를 만들어야 한다.</p>
+<h2 id="래퍼클래스의-종류"><a href="#래퍼클래스의-종류" class="headerlink" title="래퍼클래스의 종류"></a>래퍼클래스의 종류</h2><table>
+<thead>
+<tr>
+<th>기본타입</th>
+<th>래퍼클래스</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>래퍼 클래스는 java.lang 패키지에 포함되어 있는데, 다음과 같이 기본 타입에 대응되는 래퍼 클래스들이 있다. char타입과 int타입이 각각 Character와 Integer의 래퍼 클래스를 가지고 있고 나머지는 기본 타입의 첫 글자를 대문자로 바꾼 이름을 가지고 있다.</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://user-images.githubusercontent.com/77277946/107933542-35177380-6fc2-11eb-87e6-6476b5af9612.jpg" alt="래퍼클래스"><br>모든 래퍼클래스의 부모는 Object이고, 내부적으로 숫자를 다루는 래퍼클래스의 부모 클래스는 Number클래스이다. 모든 래퍼클래스는 최종 클래스로 정의된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2038.%20%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85,%20%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85/"
                             aria-label=": Java 38. 업캐스팅, 다운캐스팅"
                         >
@@ -789,170 +967,6 @@ insert() 메소드 호출 후 원본 문자열 : JavaScript 만세!!
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2030.%20String%20Class/"
-                            aria-label=": Java 30. String Class"
-                        >
-                            Java 30. String Class
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:34+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h1><p>String 객체가 하나 생성되면, 그 값은 길어지거나 줄어들 수 없으며 그 문자들 중 어떤 것도 바뀔 수 없다.<br>그래서 String 객체는 변경불능이라고 한다.</p>
-<p>String클래스의 자주 사용하는 함수이다.<br>|함수|반환형|설명<br>|—|—|—<br>|CharAt(int index)|char|index로 지정된 첨자 위치에 있는 문자를 반환한다.<br>|compareTo(String str)|int|이 String이 String str보다 사전적 순서에서 앞서면 음수값, 같으면 0값, 뒤에 있으면 0값이다.<br>|Concat(String str)|String|이 String과 str을 접합하여 구성되는 새로운 String을 반환한다.<br>|equals(String str)|boolean|이 String이 str과 같은 문자열이면 (대소문자 구분) True, 그렇지 않으면 False 반환<br>|equalslgnoreCase(String str)|boolean|이 String이 str과 같은 문자열이면(대소문자 미 구분) True, 그렇지 않으면 False 반환<br>|length()|int|이 String의 문자 개수를 반환한다.<br>|replace(char oldChar, char newChar)|String|String에 나타나는 oldChar를 모두 new Char로 변경한다.<br>|substring(int offset, int endIndex)|String|이 String의 offset 위치에서부터 endIndex-1까지에 걸친 문자열을 반환한다.<br>|toLowerCase()|String|모든 대문자를 소문자로 변환한다.<br>|toUpperCase()|String|모든 소문자를 대문자로 변환한다. </p>
-<p>예제</p>
-<pre><code>public class StringClass &#123;
-    
-    public static void main(String[] args)&#123;
-        
-        String text = &quot;First String V&quot;;
-        String concat, upperCase, replace, subString;
-        
-        System.out.println(&quot;기본 String : &quot;+ text);
-        System.out.println(&quot;기본 String 길이 : &quot;+text.length());    // 문자열 길이 출력
-        
-        concat = text.concat(&quot;, Second String V&quot;);    // 문자열 연결
-        
-        upperCase = concat.toUpperCase();        // 문자열 대문자로 변환
-        
-        replace = upperCase.replace(&#39;V&#39;, &#39;K&#39;);    //  문자 V를 K로 변환
-        
-        subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기
-        
-        
-        System.out.println(&quot;Concat String : &quot; + concat);
-        System.out.println(&quot;upperCase String : &quot; + upperCase);
-        System.out.println(&quot;replace String : &quot; + replace);
-        System.out.println(&quot;subString String : &quot; + subString);
-        
-        
-    &#125;
-
-&#125;
-</code></pre>
-<p>System.out.println(“기본 String 길이 : “+text.length());    // 문자열 길이 출력</p>
-<p>text인 “First String V” 의 문자열 길이를 반환한다.</p>
-<p>-&gt; 14</p>
-<p>concat = text.concat(“, Second String V”);    // 문자열 연결</p>
-<p>text인 “First String V” 뒤에 concat 메소드로 “, Second String V” 를 연결했다.</p>
-<p>-&gt;  First String V, Second String V</p>
-<p>upperCase = concat.toUpperCase();        // 문자열 대문자로 변환</p>
-<p>concat인 “First String V, Second String V” 의 문자열을 대문자로 변환한다</p>
-<p>-&gt; FIRST STRING V, SECOND STRING V</p>
-<p>replace = upperCase.replace(‘V’, ‘K’);    //  문자 V를 K로 변환</p>
-<p>upperCase인 “FIRST STRING V, SECOND STRING V” 문자열 중 ‘V’ 문자를 ‘K’ 문자로 변환 한다.</p>
-<p>-&gt; FIRST STRING K, SECOND STRING K</p>
-<p>subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기</p>
-<p>replace 인 “FIRST STRING K, SECOND STRING K” 문자열의 3번째 부터 9번째 문자열까지 잘라낸다 (0부터 시작)</p>
-<p>-&gt; ST STRI</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2030.%20String%20Class/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/"
-                            aria-label=": Java 29. Garbage Collector"
-                        >
-                            Java 29. Garbage Collector
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:33+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="JVM과-메모리"><a href="#JVM과-메모리" class="headerlink" title="JVM과 메모리"></a>JVM과 메모리</h1><p>메모리는 OS가 관리하는데, 모든 프로그램들은 OS위에서 돌아간다.<br>프로그램이 돌아가려면 메모리가 있어야된다.<br>JVM도 메모리가 필요하면 OS에게 메모리 요청을 한다.<br>그런데 OS가 처음부터 자기가 가진 메모리를 전부 다 줘버리면, 다른 프로그램들에게 줄 메모리가 없게 된다.<br>때문에 각 프로그램에게 메모리의 일정부분만 빌려주는 방식으로 관리가 된다.</p>
-<p>JVM을 실행하다가 메모리가 부족하면 OS에게 메모리를  더 달라고 요청한다. 그러면 OS가 또 JVM에게 메모리를 더 빌려준다.<br>JVM은 OS로 부터 받은 메모리들 중, 어디에다가 저장할지 그 주소를 할당하야 한다.<br>이 때, JVM은 자기가 받은 메모리 안에서, 절대주소가 아니라 거기에 대한 상대주소를 할당한다. 이걸 offset주소라고 한다.</p>
-<h1 id="Garbage-Collector"><a href="#Garbage-Collector" class="headerlink" title="Garbage Collector"></a>Garbage Collector</h1><p>프로그램을 실행하다보면 가비지가 발생하게 된다.<br>가비지는 정리되지 않은 메모리, 유효하지 않은 메모리 주소를 말한다.<br>가비지 컬렉터는 메모리가 부족할 때 가비지를 정리해주는 프로그램을 말한다.<br>때문에 JVM의 가비지 컬렉터는 메모리를 다른 용도로 사용할 수 있게 ‘메모리 해제’를 시키는 프로그램이다.<br>참고로 가비지 컬렉터는 JVM이 OS에게 추가로 메모리를 더 요청할 때 실행된다.<br>또, 서버 프로그램인 경우에는 24시간 내내 돌아가는데, 이때에는 JVM이 한가할 때 가비지 컬렉터가 실행된다.</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

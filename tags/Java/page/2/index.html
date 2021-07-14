@@ -168,6 +168,193 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2046.%20hashtable/"
+                            aria-label=": Java 46. hashtable"
+                        >
+                            Java 46. hashtable
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:50+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="hashtable"><a href="#hashtable" class="headerlink" title="hashtable"></a>hashtable</h1><p>hashtable은 Map을 상속받아 key,value 형태를 가지게 된다.<br>key,value는 한쌍으로 사용되며 key로 식별용 값, value는 사용할 값을 넣는 식이다.</p>
+<p>HashMap과 상당히 비슷한데 완전 똑같은 것은 아니므로 비교해 보자면</p>
+<ol>
+<li><p>HashTable은 동기화가 되어 있으나, HashMap은 동기화 되어있지 않다.</p>
+</li>
+<li><p>HashTable은 key, value에 null값을 허용하지 않지만 HashMap은 허용한다.</p>
+<pre><code> Hashtable 안에 값 넣기
+ Hashtable.put(key, value);
+
+ Hashtable 안의 값 가져오기
+ Hashtable.get(key);
+
+ Hashtable 안의 값 바꾸기
+ Hashtable.replace(key, value);
+
+ Hashtable 안의 내용 삭제하기
+ Hashtable.remove(key);
+
+ Hashtable의 크기 0인지 확인하기
+ Hashtable.isEmpty();
+ 
+ Hashtable 사이즈 확인하기
+ Hashtable.size();
+ 
+ Hashtable 안에 특정 Key, Value 들었는지 확인하기
+ Hashtable.containsKey(key);
+ Hashtable.containsValue(value);
+
+ Hashtable 안에 들어있는 전체 Key 확인하기
+ Hashtable.keySet();
+ import java.util.Hashtable;
+</code></pre>
+</li>
+</ol>
+<p>예제</p>
+<pre><code>public class HashTableExample &#123;
+
+    public static void main(String[] args) &#123;
+        Hashtable&lt;Integer, String&gt; ht = new Hashtable&lt;Integer, String&gt;();
+        ht.put(0, &quot;철수&quot;);
+        ht.put(1, &quot;영희&quot;);
+        ht.put(2, &quot;영수&quot;); // Hashtable에 값 삽입
+        ht.replace(2, &quot;수철&quot;); // Hashtable 값 바꾸기
+        ht.remove(2); // Hashtable 값 삭제
+
+        for(int i = 0; i&lt;ht.size(); i++) &#123;
+            System.out.println(ht.get(i)); // Hashtable 값 출력
+        &#125;
+        
+        System.out.println(&quot;Hashtable 크기 : &quot; + ht.size());
+        System.out.println(&quot;Hashtable key 확인 : &quot; + ht.containsKey(2));
+        System.out.println(&quot;Hashtable value 확인 : &quot; + ht.containsValue(&quot;수철&quot;));
+        System.out.println(&quot;Hashtable 크기 0인지 확인 : &quot; + ht.isEmpty());
+        System.out.println(&quot;Hashtable 전체 Key 확인 : &quot; + ht.keySet());
+        
+    &#125;
+
+&#125;
+결과값
+철수
+영희
+Hashtable 크기 : 2
+Hashtable key 확인 : false
+Hashtable value 확인 : false
+Hashtable 크기 0인지 확인 : false
+Hashtable 전체 key 확인 : [1, 0]    
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2046.%20hashtable/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2045.%20new%20%EC%97%B0%EC%82%B0%EC%9E%90/"
+                            aria-label=": Java 45. new 연산자"
+                        >
+                            Java 45. new 연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:49+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="new-연산자"><a href="#new-연산자" class="headerlink" title="new 연산자"></a>new 연산자</h1><pre><code>클래스 객체변수 = new 클래스();
+</code></pre>
+<p>인스턴스를 생성할 때 사용하는 코드이며 객체 변수가 실제 데이터가 아닌 참조 값을 갖는다는 내용이 포함되어 있다.<br>new는 클래스 타입의 인스턴스를 생성해주는 역할을 담당한다.<br>new연산자를 통해 메모리(Heap 영역)에 데이터를 저장할 공간을 할당받고 그 공간의 참조값을 객체에게 반환하여 주고 이어서 생성자를 호출하게 된다. 인스턴스를 핸들하기 위해서는 new 연산자를 통해 참조값을 저장한 객체로만 접근이 가능하다.</p>
+<pre><code>클래스      객체변수    =    new        클래스();
+자료형      참조값저장     메모리할당   생성자호출
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2045.%20new%20%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2044.%20VO(Value%20Object)/"
                             aria-label=": Java 44. VO(Value Object)"
                         >
@@ -834,147 +1021,6 @@ public class UpcastingEx&#123;
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2037.%20getter,%20setter/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2036.%20InnerClass/"
-                            aria-label=": Java 36. InnerClass"
-                        >
-                            Java 36. InnerClass
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:40+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="InnerClass"><a href="#InnerClass" class="headerlink" title="InnerClass"></a>InnerClass</h1><ul>
-<li><p>클래스가 다른 클래스를 포함하는 경우, 내부에 포함된 클래스의 명칭</p>
-</li>
-<li><p>파일 크기의 최소화, 보안, 성능 향상, 이벤트 처리 등을 쉽게 하기 위해 사용</p>
-</li>
-<li><p>자바 클래스 구조를 더 조직화하고, 소스코드를 구현시 효율을 높일 수 있음</p>
-</li>
-<li><p>내부 클래스가 생성되기 위해 외부 클래스의 객체가 반드시 필요</p>
-</li>
-<li><p>내부 클래스는 정의되는 위치에 따라 멤버 클래스와 지역 클래스로 나뉨</p>
-</li>
-<li><p>멤버클래스</p>
-<ul>
-<li>멤버 변수와 동일한 위치에 선언된 내부 클래스</li>
-<li>static예약어가 붙은 static 멤버와 instance 멤버로 나뉨</li>
-<li>동일한 클래스 뿐아니라 다른 클래스에서도 활용 가능</li>
-<li>클래스의 멤버 변수와 성격이 비슷</li>
-</ul>
-</li>
-<li><p>지역클래스</p>
-<ul>
-<li>메서드 내에 클래스가 정의되어 있는 경우</li>
-<li>지역클래스와 무명클래스로 나뉨</li>
-<li>활용 범위가 메서드 블록 내부로 제한되는 특징을 갖는 등 지역 변수와 성격이 비슷</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2036.%20InnerClass/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2035.%20LocalDate,%20LocalTime,%20LocalDateTime/"
-                            aria-label=": Java 35. LocalDate, LocalTime, LocalDateTime"
-                        >
-                            Java 35. LocalDate, LocalTime, LocalDateTime
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:39+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="LocalDate"><a href="#LocalDate" class="headerlink" title="LocalDate"></a>LocalDate</h1><dl><dt>로컬 날짜 클래스로 날짜 정보만 필요할 때 사용한다.<br>LocalDate currentDate = LocalDate.now();<br>: 컴퓨터 현재의 날짜 정보를 저장한다.<br>LocalDate targetDate = LocalDate.of(int year, int month, int dayOfMonth);</dt><dd>파라미터로 주어진 날짜 값을 저장한다.<br>|리턴타입|메소드(매개변수)|설명<br>|-|-|-|<br>|int|getYear()|년|<br>|Month|getMonth()|Month 열거 값(JANUARY, FEBRUARY, MARCH ..)|<br>|int|getMonthValue()|월(1, 2, 3 ..)|<br>|int|getDayOfYear()|일년의 몇 번째 일|<br>|int|getDayOfMonth()|월의 몇 번째 일|<br>|DayOfWeek|getDayOfWeek()|요일(MONDAY, TUESDAY, WEDNESDAY..)|<br>|boolean|isLeapYear()|윤년여부|</dd></dl><h1 id="LocalTime"><a href="#LocalTime" class="headerlink" title="LocalTime"></a>LocalTime</h1><dl><dt>로컬 시간 클래스로 시간 정보만 필요할 때 사용하면 된다.<br>LocalTime currentTime = LocalTime.now();<br>: 컴퓨터의 현재 시간정보<br>LocalTime targetTime = LocalTime.of(int hour, int minute, int second, int nanoOfSecond)</dt><dd>파라미터로 주어진 시간 값을 저장한다.<br>|리턴타입|메소드(매개변수)|설명<br>|-|-|-|<br>|int|getHour()|시간|<br>|int|getMinute()|분|<br>|int|getSecond()|초|<br>|int|getNano()|나노초|</dd></dl><h1 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h1><dl><dt>날짜와 시간 정보가 모두 필요할 때 사용하면 된다.<br>LocalDateTime currentDateTime = LocalDateTime.now();<br>: 컴퓨터의 현재 날짜와 시간 정보<br>LocalDateTime targetDateTime = LocalDateTime.of(int year, int month, int dayOfMonth, int hour, int minute, int second, int nanoOfSecond);</dt><dd>파라미터로 주어진 날짜와 시간값을 저장한다.</dd></dl><h1 id="ZonedDateTime"><a href="#ZonedDateTime" class="headerlink" title="ZonedDateTime"></a>ZonedDateTime</h1><dl><dt>ISO-8601 달력 시스템에서 정의하고 있는 타임존의 날짜와 시간을 저장하는 클래스이다. 결과는 2016-04-01T16:54:05.739+09:00[Asia/Seoul]와 같고, 맨 뒤에 +09:00[Asia/Seoul] 협정세계시와의 시차(+9시간)와 ZoneId(Asia/Seoul) 정보가 붙는다.<br>ZonedDateTime utcDateTime = ZonedDateTime.now(ZoneId.of(“UTC”));</dt><dd>UTC기준 현재 시각을 표시해준다.<br>ZonedDateTime seoulDateTime = ZonedDateTime.now(ZoneId.of(“Asia/Seoul”));<br>|리턴타입|메소드(매개변수)|설명<br>|-|-|-|<br>|ZoneId|getZone()|ZoneId를 리턴(Asia/Seoul)|<br>|ZoneOffset|getOffset()|UTC와의 시차를 리턴(+09:00)|</dd></dl>
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2035.%20LocalDate,%20LocalTime,%20LocalDateTime/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

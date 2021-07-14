@@ -168,6 +168,193 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2052.%20ListIterator/"
+                            aria-label=": Java 52. ListIterator"
+                        >
+                            Java 52. ListIterator
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:56+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h1><p>ListIterator인터페이스는 Iterator인터페이스를 상속받아 여러 기능을 추가한 인터페이스이다.<br>Iterator인터페이스는 컬렉션의 요소에 접근할 때 한 방향으로만 이동할 수 있다.<br>Listiterator 인터페이스는 컬렉션 요소의 대체, 추가 그리고 인덱스 검색 등을 위한 작업에서 양방향으로 이동하는 것을 지원한다.<br>단, Listeriterator인터페이스는 List인터페이스를 구현한 List컬렉션 클래스에서만 Listiterator()메소드를 통해 사용할 수 있다.<br>예제</p>
+<pre><code>LinkedList&lt;Integer&gt; lnkList = new LinkedList&lt;Integer&gt;();
+
+lnkList.add(4);
+lnkList.add(2);
+lnkList.add(3);
+lnkList.add(1);
+
+ListIterator&lt;Integer&gt; iter = lnkList.listIterator();
+while (iter.hasNext()) &#123;
+    System.out.print(iter.next() + &quot; &quot;);
+&#125;
+
+while (iter.hasPrevious()) &#123;
+    System.out.print(iter.previous() + &quot; &quot;);
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>4 3 2 1
+1 3 2 4
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2052.%20ListIterator/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/"
+                            aria-label=": Java 50. 오름차순, 내림차순 정렬"
+                        >
+                            Java 50. 오름차순, 내림차순 정렬
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:54+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="오름차순-정렬"><a href="#오름차순-정렬" class="headerlink" title="오름차순 정렬"></a>오름차순 정렬</h1><p>Arrays.sort()메서드의 매개값으로 기본 타입 배열이나 String배열을 지정해주면 자동으로 오름차순 정렬이 된다.<br>예제</p>
+<pre><code>import java.util.Arrays;
+
+public class Sort&#123;
+    public static void main(String[] args)  &#123;
+        int arr[] = &#123;4,23,33,15,17,19&#125;;
+        Arrays.sort(arr);
+        
+        for (int i : arr) &#123;
+            System.out.print(&quot;[&quot;+i+&quot;]&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>[4][15][17][19][23][33]
+</code></pre>
+<h1 id="내림차순-정렬"><a href="#내림차순-정렬" class="headerlink" title="내림차순 정렬"></a>내림차순 정렬</h1><p>배열을 내림차순으로 정렬할 때는 Collections 클래스의 reverseOrder() 함수를 사용하면 된다. 만약 기본 타입 배열을 내림차순으로 정렬하고 싶다면 기본 타입의 배열을 래퍼클래스로 만들어 Comparator를 두번째 인자에 넣어주어야 역순으로 정렬할 수 있다.</p>
+<pre><code>import java.util.Arrays;
+
+public class Sort&#123;
+    public static void main(String[] args)  &#123;
+        Integer arr[] = &#123;4,23,33,15,17,19&#125;;
+        Arrays.sort(arr,Collections.reverseOrder());
+        
+        for (int i : arr) &#123;
+            System.out.print(&quot;[&quot;+i+&quot;]&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>[33][23][19][17][15][4]
+</code></pre>
+<h1 id="배열-일부분만-정렬"><a href="#배열-일부분만-정렬" class="headerlink" title="배열 일부분만 정렬"></a>배열 일부분만 정렬</h1><p>Arrays.sort()메서드의 매개값으로 배열, 시작 index, 끝 index를 넣어주면 일부분만 정렬할 수 있다.</p>
+<pre><code>import java.util.Arrays;
+
+public class Main&#123;
+public static void main(String[] args)  &#123;
+        int arr[] = &#123;4,23,33,15,17,19&#125;;
+
+        Arrays.sort(arr, 0, 4); // 0,1,2,3 요소만 정렬
+        
+        for (int i : arr) &#123;
+            System.out.print(&quot;[&quot;+i+&quot;]&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>[4][15][23][33][17][19]
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
                             aria-label=": Java 48. Stack과 Queue"
                         >
@@ -910,184 +1097,6 @@ System.out.println(&quot;리스트의 크기 : &quot; + lnkList.size());
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2041.%20%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%B6%94%EC%83%81%EB%A9%94%EC%86%8C%EB%93%9C/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/"
-                            aria-label=": Java 40. Boxing과 UnBoxing"
-                        >
-                            Java 40. Boxing과 UnBoxing
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:44+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Boxing과-UnBoxing"><a href="#Boxing과-UnBoxing" class="headerlink" title="Boxing과 UnBoxing"></a>Boxing과 UnBoxing</h1><p>기본 타입의 값을 포장 객체로 만드는 과정을 박싱이라고 하고 반대로 포장객체에서 기본 타입의 값을 얻어내는 과정을 언박싱이라고 한다.</p>
-<pre><code>public class Wrapper_Ex &#123;
-    public static void main(String[] args)  &#123;
-        Integer num = new Integer(17); // 박싱
-        int n = num.intValue(); //언박싱
-        System.out.println(n);
-    &#125;
-&#125;
-</code></pre>
-<h1 id="자동박싱과-자동언박싱"><a href="#자동박싱과-자동언박싱" class="headerlink" title="자동박싱과 자동언박싱"></a>자동박싱과 자동언박싱</h1><p>기본 타입 값을 직접 방싱, 언박싱하지 않아도 자동적을 박싱과 언박싱이 일어나는 경우가 있다. 자동박싱의 포장클래스 타입에 기본값이 대입될 경우에 발생한다.예를 들어 int타입의 값을 Integer클래스 변수에 대입하면 자동 박싱이 일어나 힙 영역에 Integer객체가 생성된다.</p>
-<pre><code>public class Wrapper_Ex &#123;
-    public static void main(String[] args)  &#123;
-        Integer num = 17; // 자동 박싱
-        int n = num; //자동 언박싱
-        System.out.println(n);
-    &#125;
-&#125;
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/"
-                            aria-label=": Java 39. Wrapper Class"
-                        >
-                            Java 39. Wrapper Class
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:43+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Wrapper-Class"><a href="#Wrapper-Class" class="headerlink" title="Wrapper Class"></a>Wrapper Class</h1><p>자바의 자료형은 기본타입(primitive type)과 참조타입(reference type)으로 나누어진다. 기본타입은 char, int, float, double, boolean 등이 있고, 참조타입은 class, interface등이 있는데 프로그래밍을 하다 보면 기본 타입의 데이터를 객체로 표현해야하는 경우가 있다.<br>이럴 때 기본자료타입을 객체로 다루기 위해서 사용하는 클래스들을 래퍼클래스라고 한다.<br>자바의 모든 기본타입은 값을 갖는 객체를 생성할 수 있다. 이런 객체를 포장객체라고도 하는데, 그 이유는 기본타입의 값을 내부에 두고 포장하기 때문이다. 래퍼 클래스로 감싸고 있는 기본타입 값은 외부에서 변경할 수 없다. 만약 값을 변경하고 싶다면 새로운 포장 객체를 만들어야 한다.</p>
-<h2 id="래퍼클래스의-종류"><a href="#래퍼클래스의-종류" class="headerlink" title="래퍼클래스의 종류"></a>래퍼클래스의 종류</h2><table>
-<thead>
-<tr>
-<th>기본타입</th>
-<th>래퍼클래스</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>byte</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>char</td>
-<td>Character</td>
-</tr>
-<tr>
-<td>int</td>
-<td>Integer</td>
-</tr>
-<tr>
-<td>float</td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>Double</td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>long</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>short</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>래퍼 클래스는 java.lang 패키지에 포함되어 있는데, 다음과 같이 기본 타입에 대응되는 래퍼 클래스들이 있다. char타입과 int타입이 각각 Character와 Integer의 래퍼 클래스를 가지고 있고 나머지는 기본 타입의 첫 글자를 대문자로 바꾼 이름을 가지고 있다.</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><img src="https://user-images.githubusercontent.com/77277946/107933542-35177380-6fc2-11eb-87e6-6476b5af9612.jpg" alt="래퍼클래스"><br>모든 래퍼클래스의 부모는 Object이고, 내부적으로 숫자를 다루는 래퍼클래스의 부모 클래스는 Number클래스이다. 모든 래퍼클래스는 최종 클래스로 정의된다.</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

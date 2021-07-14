@@ -168,6 +168,146 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/01/26/Java/Java%2009.%20char,%20String/"
+                            aria-label=": Java 09. char, String"
+                        >
+                            Java 09. char, String
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-26T18:12:38+09:00">
+	
+		    Jan 26, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="char-String"><a href="#char-String" class="headerlink" title="char, String"></a>char, String</h1><p>자바에서는 char배열이 아닌 String클래슬를 이용해서 문자열을 처리하는 이유는 무엇일까?<br>String클래스는 char배열에 기능(메서드)을 추가한 것이다.<br>char배열과 String클래스의 한 가지 중요한 차이가 있는데, String객체(문자열)는 읽을 수만 있을 뿐 내용을 변경할 수 없다는 것이다. </p>
+<pre><code>public static void main(String[] args) &#123;
+    
+    String str = &quot;java&quot;;
+    str = &quot;8&quot;;
+    System.out.println(str); // java8
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>위처럼 String값이 바뀌는 것 같지만 새로운 문자열이 생겨 str이 새로운 주소값을 가르키는 것이다. </p>
+<p>그리고 String문자열에서 하나의 문자만 꺼내오고 싶을 때 charAt이라는 메소드를 사용한다.<br>배열에서 “배열이름[index]”로 index에 위치한 값을 가져오는 것과 같다고 생각하면 된다.</p>
+<pre><code>public class Test &#123;
+public static void main(String[] args) &#123;
+    String str = &quot;Hello&quot;;
+    char ch = str.charAt(1);  // e
+    &#125;
+&#125;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/26/Java/Java%2009.%20char,%20String/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/01/26/Java/Java%2008.%20%EB%B3%B5%ED%95%A9%20%EB%8C%80%EC%9E%85%EC%97%B0%EC%82%B0%EC%9E%90/"
+                            aria-label=": Java 08. 복합 대입연산자"
+                        >
+                            Java 08. 복합 대입연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-26T17:43:28+09:00">
+	
+		    Jan 26, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="복합-대입연산자"><a href="#복합-대입연산자" class="headerlink" title="복합 대입연산자"></a>복합 대입연산자</h1><p>대입연산자와 다른 연산자가 함께 사용 되는 연산자로 변수를 중복해서 사용하는 것을 줄여주는 역할을 한다.(누적)<br>| 연산자 | 기능 |<br>|—|:—:|<br>| += | 두 항의 값을 더해서 왼쪽 항에 대입한다. |<br>| -= | 왼쪽 항에서 오른쪽 항을 뺴서 그 값을 왼쪽 항에 대입한다. |<br>| *= | 두 항의 값을 곱해서 왼쪽 항에 대입한다. |<br>| /= | 왼쪽 항을 오른쪽 항으로 나누어 그 몫을 왼쪽 항에 대입한다. |<br>| %= | 왼쪽 항을 오른쪽 항으로 나누어 그 나머지를 왼쪽 항에 대입한다. |</p>
+<h2 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h2><h3 id=""><a href="#" class="headerlink" title="+="></a>+=</h3><p><img src="https://user-images.githubusercontent.com/77277946/105824175-5c050a00-6001-11eb-86eb-24fa74fefc84.jpg" alt="복합대입연산자1"></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="-="></a>-=</h3><p><img src="https://user-images.githubusercontent.com/77277946/105824331-8bb41200-6001-11eb-9e6d-87f8c055d075.jpg" alt="복합대입연산자2"></p>
+<h3 id="-2"><a href="#-2" class="headerlink" title="*="></a>*=</h3><p><img src="https://user-images.githubusercontent.com/77277946/105824414-a6868680-6001-11eb-829a-560b47b17482.jpg" alt="복합대입연산자3"></p>
+<h3 id="-3"><a href="#-3" class="headerlink" title="/="></a>/=</h3><p><img src="https://user-images.githubusercontent.com/77277946/105824570-dfbef680-6001-11eb-9783-4b8587e31d88.jpg" alt="복합대입연산자4"></p>
+<h3 id="-4"><a href="#-4" class="headerlink" title="%="></a>%=</h3><p><img src="https://user-images.githubusercontent.com/77277946/105824640-f9603e00-6001-11eb-9adc-f900d4fd848f.jpg" alt="복합대입연산자5"></p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/26/Java/Java%2008.%20%EB%B3%B5%ED%95%A9%20%EB%8C%80%EC%9E%85%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/01/25/Java/Java%2007.%20%EB%B0%98%EB%B3%B5%EB%AC%B8/"
                             aria-label=": Java 07. 반복문"
                         >
@@ -676,145 +816,6 @@ byte, short, char, int, enum, string, Character, Byte, Short, Integer
                         <p>
                             <a
                                 href="/2021/01/20/Oracle%20Database/Oracle%20Database%2007.%20Primary%20key/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/"
-                            aria-label=": Oracle Database 06. 행 수정 &amp; 삭제"
-                        >
-                            Oracle Database 06. 행 수정 &amp; 삭제
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-01-19T17:24:25+09:00">
-	
-		    Jan 19, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="행-수정-amp-삭제"><a href="#행-수정-amp-삭제" class="headerlink" title="행 수정 &amp; 삭제"></a>행 수정 &amp; 삭제</h1><h2 id="행-수정"><a href="#행-수정" class="headerlink" title="행 수정"></a>행 수정</h2><dl><dt><img src="https://user-images.githubusercontent.com/77277946/105009008-4e89d600-5a7d-11eb-90ef-3eef49c10650.jpg" alt="행 수정"><br>UPDATE topic<br>: topic 테이블을 수정한다.<br>SET<br>description = ‘MSSQL is …’<br>: description 행을 ‘MSSQL is …’으로 수정한다.<br>WHERE<br>: 어디에(수정 또는 삭제를 할 때 WHERE문이 없다면 모든 행열에 해당하므로 특별한 경우를 제외하고는 무조건 있어야 한다.)<br>id = 1;</dt><dd>id가 1인 행에</dd></dl><h2 id="행-삭제"><a href="#행-삭제" class="headerlink" title="행 삭제"></a>행 삭제</h2><pre><code>DELETE FROM topic WHERE id = 1;
-1행을 삭제합니다.
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/01/19/Oracle%20Database/Oracle%20Database%2006.%20%ED%96%89%20%EC%88%98%EC%A0%95%20&%20%EC%82%AD%EC%A0%9C/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/01/18/Oracle%20Database/Oracle%20Database%2005.%20Select%EB%AC%B8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D/"
-                            aria-label=": Oracle Database 05. Select문의 기본 형식"
-                        >
-                            Oracle Database 05. Select문의 기본 형식
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-01-18T18:55:03+09:00">
-	
-		    Jan 18, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Select문의-기본-형식"><a href="#Select문의-기본-형식" class="headerlink" title="Select문의 기본 형식"></a>Select문의 기본 형식</h1><h2 id="행-읽기"><a href="#행-읽기" class="headerlink" title="행 읽기"></a>행 읽기</h2><p>SELECT * FROM topic;: topic테이블의 모든 행열을 가져옵니다.<br><img src="https://user-images.githubusercontent.com/77277946/104901118-4a4bb300-59c0-11eb-872e-d4fdf9dddc70.jpg" alt="토픽의 모든 행을 불러오기"></p>
-<h2 id="행과-칼럼-제외하기"><a href="#행과-칼럼-제외하기" class="headerlink" title="행과 칼럼 제외하기"></a>행과 칼럼 제외하기</h2><pre><code>SELECT id, title, created FROM topic;
-: topic테이블에서 id, title, created행만 보기
-SELECT * FROM topic WHERE id = 1;
-: topic테이블에서 id가 1인 행만보기
-SELECT * FROM topic WHERE id &gt; 1;
-: topic테이블에서 id가 1보다 큰 행만보기
-SELECT id, title, created FROM topic WHERE id = 1;
-: topic테이블에서 id가 1인 id, title, created행만 보기
-</code></pre>
-<h2 id="정렬과-페이징"><a href="#정렬과-페이징" class="headerlink" title="정렬과 페이징"></a>정렬과 페이징</h2><h3 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h3><pre><code>SELECT * FROM topic ORDER BY id DESC;
-: topic테이블에서 id가 큰 순서대로 정렬
-SELECT * FROM topic ORDER BY title ASD;
-: topic테이블에서 tile이 abc순으로 정렬
-</code></pre>
-<h3 id="페이징"><a href="#페이징" class="headerlink" title="페이징"></a>페이징</h3><pre><code>SELECT * FROM topic
-: topic테이블에서 모든 행을 불러온다.
-OFFSET 1 ROWS
-: 0번째 부터시작하여 1이후의 행을 불러온다.
-FETCH NEXT 2 ROWS ONLY;
-: OFFSET 1 ROWS 이후 2번째 까지의 행을 불러온다.
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/01/18/Oracle%20Database/Oracle%20Database%2005.%20Select%EB%AC%B8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

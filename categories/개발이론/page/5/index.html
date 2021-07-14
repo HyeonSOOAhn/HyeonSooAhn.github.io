@@ -168,6 +168,277 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/"
+                            aria-label=": Java 50. 오름차순, 내림차순 정렬"
+                        >
+                            Java 50. 오름차순, 내림차순 정렬
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:54+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="오름차순-정렬"><a href="#오름차순-정렬" class="headerlink" title="오름차순 정렬"></a>오름차순 정렬</h1><p>Arrays.sort()메서드의 매개값으로 기본 타입 배열이나 String배열을 지정해주면 자동으로 오름차순 정렬이 된다.<br>예제</p>
+<pre><code>import java.util.Arrays;
+
+public class Sort&#123;
+    public static void main(String[] args)  &#123;
+        int arr[] = &#123;4,23,33,15,17,19&#125;;
+        Arrays.sort(arr);
+        
+        for (int i : arr) &#123;
+            System.out.print(&quot;[&quot;+i+&quot;]&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>[4][15][17][19][23][33]
+</code></pre>
+<h1 id="내림차순-정렬"><a href="#내림차순-정렬" class="headerlink" title="내림차순 정렬"></a>내림차순 정렬</h1><p>배열을 내림차순으로 정렬할 때는 Collections 클래스의 reverseOrder() 함수를 사용하면 된다. 만약 기본 타입 배열을 내림차순으로 정렬하고 싶다면 기본 타입의 배열을 래퍼클래스로 만들어 Comparator를 두번째 인자에 넣어주어야 역순으로 정렬할 수 있다.</p>
+<pre><code>import java.util.Arrays;
+
+public class Sort&#123;
+    public static void main(String[] args)  &#123;
+        Integer arr[] = &#123;4,23,33,15,17,19&#125;;
+        Arrays.sort(arr,Collections.reverseOrder());
+        
+        for (int i : arr) &#123;
+            System.out.print(&quot;[&quot;+i+&quot;]&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>[33][23][19][17][15][4]
+</code></pre>
+<h1 id="배열-일부분만-정렬"><a href="#배열-일부분만-정렬" class="headerlink" title="배열 일부분만 정렬"></a>배열 일부분만 정렬</h1><p>Arrays.sort()메서드의 매개값으로 배열, 시작 index, 끝 index를 넣어주면 일부분만 정렬할 수 있다.</p>
+<pre><code>import java.util.Arrays;
+
+public class Main&#123;
+public static void main(String[] args)  &#123;
+        int arr[] = &#123;4,23,33,15,17,19&#125;;
+
+        Arrays.sort(arr, 0, 4); // 0,1,2,3 요소만 정렬
+        
+        for (int i : arr) &#123;
+            System.out.print(&quot;[&quot;+i+&quot;]&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>[4][15][23][33][17][19]
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/"
+                            aria-label=": Java 48. Stack과 Queue"
+                        >
+                            Java 48. Stack과 Queue
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:52+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Stack과-Queue"><a href="#Stack과-Queue" class="headerlink" title="Stack과 Queue"></a>Stack과 Queue</h1><p>Stack은 LIFO(Last in first out) Queue는 FIFO(First in first out)으로 되어있다. </p>
+<h2 id="Stack의-메서드"><a href="#Stack의-메서드" class="headerlink" title="Stack의 메서드"></a>Stack의 메서드</h2><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean empty( )</td>
+<td>Stack 이 비어있는지 알려줌</td>
+</tr>
+<tr>
+<td>Object peek( )</td>
+<td>Stack 의 맨 위에 저장된 객체를 반환pop( ) 과 달리  Stack 에서 객체를 꺼내지 않음(비었을 때는  EmptyStackException 발생)</td>
+</tr>
+<tr>
+<td>Object pop( )</td>
+<td>Stack 의 맨 위에 저장된 객체를 꺼냄(비었을 때는  EmptyStackException 발생)</td>
+</tr>
+<tr>
+<td>Object push(Object item)</td>
+<td>Stack 에 객체( item )를 저장</td>
+</tr>
+<tr>
+<td>int search(Object o)</td>
+<td>Stack 에서 주어진 객체( o )를 찾아서 그 위치를 반환, 못 찾으면  -1 을 반환(배열과 달리 위치가 1부터 시작)</td>
+</tr>
+</tbody></table>
+<h2 id="Queue의-메서드"><a href="#Queue의-메서드" class="headerlink" title="Queue의 메서드"></a>Queue의 메서드</h2><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설  명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean add(Object o)</td>
+<td>지정된 객체를  Queue 에 추가 성공하면 true를 반환, 저장공간이 부족하면  IllegalStateException 발생</td>
+</tr>
+<tr>
+<td>Object remove( )</td>
+<td>Queue 에서 객체를 꺼내 반환. 비어있으면  NoSuchElementException 발생</td>
+</tr>
+<tr>
+<td>Object element( )</td>
+<td>삭제없이 요소를 읽어옴 peek 와 달리  Queue 가 비었을때  NoSuchElementException 발생</td>
+</tr>
+<tr>
+<td>boolean offer(Object o)</td>
+<td>Queue 에 객체를 저장 성공하면 true, 실패하면 false를 반환</td>
+</tr>
+<tr>
+<td>Object poll( )</td>
+<td>Queue 에서 객체를 꺼내서 반환. 비어있으면 null을 반환</td>
+</tr>
+<tr>
+<td>Object peek( )</td>
+<td>삭제없이 요소를 읽어온다. Queue가 비어있으면 null을 반환</td>
+</tr>
+<tr>
+<td>예제</td>
+<td></td>
+</tr>
+</tbody></table>
+<pre><code>package Example;
+
+import java.util.*;
+
+public class Example &#123;
+    public static void main(String[] args) &#123;
+        Stack st = new Stack();
+        Queue q = new LinkedList();    //Queue의 인터페이스 구현체인 LinkedList를 사용
+        
+        st.push(&quot;0&quot;);
+        st.push(&quot;1&quot;);
+        st.push(&quot;2&quot;);
+        
+        q.offer(&quot;0&quot;);
+        q.offer(&quot;1&quot;);
+        q.offer(&quot;2&quot;);
+        
+        System.out.println(&quot;=== Stack ===&quot;);
+        while(!st.isEmpty()) &#123;
+            System.out.println(st.pop());
+        &#125;
+        
+        System.out.println(&quot;=== Queue ===&quot;);
+        while(!q.isEmpty()) &#123;
+            System.out.println(q.poll());
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>===Stack===
+2
+1
+0
+===Queue===
+0
+1
+2
+</code></pre>
+<p>자베에서는 스택을 Stack클래스로 구현하여 제공하지만 큐는 Queue인터페이스만 있고 별도의 클래스가 없다. 그래서 Queue인터페이스를 구현한 클래스들을 사용해야 한다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2048.%20Stack%EA%B3%BC%20Queue/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2047.%20hashmap/"
                             aria-label=": Java 47. hashmap"
                         >
@@ -823,210 +1094,6 @@ System.out.println(&quot;리스트의 크기 : &quot; + lnkList.size());
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/"
-                            aria-label=": Java 39. Wrapper Class"
-                        >
-                            Java 39. Wrapper Class
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:43+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Wrapper-Class"><a href="#Wrapper-Class" class="headerlink" title="Wrapper Class"></a>Wrapper Class</h1><p>자바의 자료형은 기본타입(primitive type)과 참조타입(reference type)으로 나누어진다. 기본타입은 char, int, float, double, boolean 등이 있고, 참조타입은 class, interface등이 있는데 프로그래밍을 하다 보면 기본 타입의 데이터를 객체로 표현해야하는 경우가 있다.<br>이럴 때 기본자료타입을 객체로 다루기 위해서 사용하는 클래스들을 래퍼클래스라고 한다.<br>자바의 모든 기본타입은 값을 갖는 객체를 생성할 수 있다. 이런 객체를 포장객체라고도 하는데, 그 이유는 기본타입의 값을 내부에 두고 포장하기 때문이다. 래퍼 클래스로 감싸고 있는 기본타입 값은 외부에서 변경할 수 없다. 만약 값을 변경하고 싶다면 새로운 포장 객체를 만들어야 한다.</p>
-<h2 id="래퍼클래스의-종류"><a href="#래퍼클래스의-종류" class="headerlink" title="래퍼클래스의 종류"></a>래퍼클래스의 종류</h2><table>
-<thead>
-<tr>
-<th>기본타입</th>
-<th>래퍼클래스</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>byte</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>char</td>
-<td>Character</td>
-</tr>
-<tr>
-<td>int</td>
-<td>Integer</td>
-</tr>
-<tr>
-<td>float</td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>Double</td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>long</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>short</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>래퍼 클래스는 java.lang 패키지에 포함되어 있는데, 다음과 같이 기본 타입에 대응되는 래퍼 클래스들이 있다. char타입과 int타입이 각각 Character와 Integer의 래퍼 클래스를 가지고 있고 나머지는 기본 타입의 첫 글자를 대문자로 바꾼 이름을 가지고 있다.</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><img src="https://user-images.githubusercontent.com/77277946/107933542-35177380-6fc2-11eb-87e6-6476b5af9612.jpg" alt="래퍼클래스"><br>모든 래퍼클래스의 부모는 Object이고, 내부적으로 숫자를 다루는 래퍼클래스의 부모 클래스는 Number클래스이다. 모든 래퍼클래스는 최종 클래스로 정의된다.</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2039.%20Wrapper%20Class/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2038.%20%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85,%20%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85/"
-                            aria-label=": Java 38. 업캐스팅, 다운캐스팅"
-                        >
-                            Java 38. 업캐스팅, 다운캐스팅
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:42+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="업캐스팅"><a href="#업캐스팅" class="headerlink" title="업캐스팅"></a>업캐스팅</h1><p>서브클래스는 슈퍼클래스의 모든 특성을 상속받는다. 따라서 서브 클래스는 슈퍼클래스가 될 수 있다.<br>즉, 서브 클래스가 슈퍼 클래스가 되는 것을 업 캐스팅이라고 한다.</p>
-<pre><code>class Person&#123;
-    String name;
-    String id;
-
-    public Person(String name)&#123;
-        this.name = name;
-    &#125;
-&#125;
-
-class Student extends Person&#123;
-    String grade;
-    String department;
-
-    public Student(String name)&#123;
-        super(name);
-    &#125;
-&#125;
-
-public class UpcastingEx&#123;
-    public static void main(String[] args)&#123;
-        Person p;
-        Student s = new Student(&quot;이재문&quot;);
-        p = s; //업 캐스팅 발생
-
-        System.out.println(p.name); //정상 컴파일
-        Ststem.out.println(p.grade); //컴파일 오류
-    &#125;
-&#125;
-</code></pre>
-<p>Student로 인스턴스를 생성하고 Person 레퍼런스 타입으로 담았다.<br>다시 말해서 Person클래스의 멤버만 접근이 가능하고 Student의 멤버는 접근이 불가능하다.</p>
-<h1 id="다운캐스팅"><a href="#다운캐스팅" class="headerlink" title="다운캐스팅"></a>다운캐스팅</h1><p>서브 클래스가 슈퍼 클래스로 변했을 때 서브 클래스의 인스턴스는 잠시 가려져 있을 뿐 사라지지 않는다.<br>서브 클래스의 원래 특성으로 돌려 놓는게 다운 캐스팅이다.<br>다운 캐스팅은 업 캐스팅과 달리 명시적으로 타입을 지정해야 한다.<br>UpcastingEx클래스 부분만 수정한다.</p>
-<pre><code>public class DowncastingEx&#123;
-    public static void main(String[] args)&#123;
-        Person p = new Student(&quot;이재문&quot;); //업 캐스팅 발생
-        Student s;
-
-        s = (Student)p; //다운 캐스팅
-
-        System.out.println(s.name); //정상 작동
-        s.grade = &quot;A&quot;; //컴파일 오류
-    &#125;
-&#125;
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2038.%20%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85,%20%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

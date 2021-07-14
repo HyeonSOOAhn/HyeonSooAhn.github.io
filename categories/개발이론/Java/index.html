@@ -168,10 +168,186 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2056.%20Thread/"
-                            aria-label=": Java 57. Thread"
+                            href="/2021/02/09/Java/Java%2058.%20Lamda/"
+                            aria-label=": Java 58. Lamda"
                         >
-                            Java 57. Thread
+                            Java 58. Lamda
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:38:03+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Lamda"><a href="#Lamda" class="headerlink" title="Lamda"></a>Lamda</h1><ul>
+<li>람다 함수는 익명함수이다.</li>
+<li>그러므로 이름을 가질필요가 없다.</li>
+<li>두 개 이상의 입력이 있는 함수는 최종적으로 1개의 입력만 받는 람다 대수로 단순화 될 수 있다.(커링)</li>
+</ul>
+<h2 id="익명함수"><a href="#익명함수" class="headerlink" title="익명함수"></a>익명함수</h2><ul>
+<li>일급객체이다. : 연산을 모두 지원하는 객체이다.</li>
+</ul>
+<h2 id="람다의-장단점"><a href="#람다의-장단점" class="headerlink" title="람다의 장단점"></a>람다의 장단점</h2><ul>
+<li>장점</li>
+</ul>
+<ol>
+<li>코드의 간결성 : 람다를 사용하면 불필요한 반복문의 삭제가 가능하며 복잡한 식을 단순하게 표현할 수 있다.</li>
+<li>지연연산 수행 : 람다는 지연연산을 수행 함으로써 불필요한 연산을 최소화 할 수 있다.</li>
+<li>병렬처리 - 멀티쓰레드를 활용하여 병렬처리를 사용할 수 있다.</li>
+</ol>
+<ul>
+<li>단점</li>
+</ul>
+<ol>
+<li>람다식의 호출이 까다롭다.</li>
+<li>람다 Stream사용 시 단순 for문 혹은 while문 사용 시 성능이 떨어진다.</li>
+<li>불필요하게 너무 사용하게 되면 오히려 가독성을 떨어 뜨릴 수 있다.</li>
+</ol>
+<h2 id="람다표현식"><a href="#람다표현식" class="headerlink" title="람다표현식"></a>람다표현식</h2><ol>
+<li><p>람다는 매개변수 화살표(-&gt;) 함수몸체로 이용하여 사용할 수있다.</p>
+</li>
+<li><p>함수몸체가 단일 실행문이면 괄호를 생략할 수 있다.</p>
+</li>
+<li><p>함수몸체가 return문으로만 구성되어 있는 경우 괄호를 생략할 수 없다.</p>
+<pre><code> //정상적인 유형
+ () -&gt; &#123;&#125;
+ () -&gt; 1
+ () -&gt; &#123; return 1; &#125;
+
+ (int x) -&gt; x+1
+ (x) -&gt; x+1
+ x -&gt; x+1
+ (int x) -&gt; &#123; return x+1; &#125;
+ x -&gt; &#123; return x+1; &#125;
+
+ (int x, int y) -&gt; x+y
+ (x, y) -&gt; x+y
+ (x, y) -&gt; &#123; return x+y; &#125;
+
+ (String lam) -&gt; lam.length()
+ lam -&gt; lam.length()
+ (Thread lamT) -&gt; &#123; lamT.start(); &#125;
+ lamT -&gt; &#123; lamT.start(); &#125;
+</code></pre>
+</li>
+</ol>
+<pre><code>    //잘못된 유형 선언된 type과 선언되지 않은 type을 같이 사용 할 수 없다.
+    (x, int y) -&gt; x+y
+    (x, final y) -&gt; x+y 
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2058.%20Lamda/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2057.%20Stream/"
+                            aria-label=": Java 57. Stream"
+                        >
+                            Java 57. Stream
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:38:02+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><ul>
+<li>스트림은 데이터의 흐름이다.</li>
+<li>배열 또는 컬렉션 인스턴스에 함수 여러개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다.</li>
+<li>람다를 이용해서 코드의 양을 줄이고 간결하게 표현할 수 있다.</li>
+<li>병렬처리, 즉 쓰레드를 이용해서 빠르게 처리할 수 있다.</li>
+</ul>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2057.%20Stream/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2056.%20Thread/"
+                            aria-label=": Java 56. Thread"
+                        >
+                            Java 56. Thread
                         </a>
                     
                 </h1>
@@ -222,7 +398,7 @@
 <li>Thread클래스를 상속</li>
 <li>Runnable인터페이스를 구현<br>Runnable을 사용하는 것이 낫다.<br>그 이유는 Thread클래스를 상속받으면 다른 클래스를 상속 받지 못하기 때문이다<br>Runnable을 구현하는 방법은 재사용성이 높고 코드의 일관성을 유지 할 수 있다는 장점이 있기 때문에 보다 객체지향적인 방법이라 할 수 있다.</li>
 </ul>
-<h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2>
+
                     
                         
 
@@ -255,9 +431,9 @@
                         <a
                             class="link-unstyled"
                             href="/2021/02/09/Java/Java%2055.%20serializable/"
-                            aria-label=": Java 56. serializable"
+                            aria-label=": Java 55. serializable"
                         >
-                            Java 56. serializable
+                            Java 55. serializable
                         </a>
                     
                 </h1>
@@ -885,193 +1061,6 @@ public class Example &#123;
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2047.%20hashmap/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2046.%20hashtable/"
-                            aria-label=": Java 46. hashtable"
-                        >
-                            Java 46. hashtable
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:50+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="hashtable"><a href="#hashtable" class="headerlink" title="hashtable"></a>hashtable</h1><p>hashtable은 Map을 상속받아 key,value 형태를 가지게 된다.<br>key,value는 한쌍으로 사용되며 key로 식별용 값, value는 사용할 값을 넣는 식이다.</p>
-<p>HashMap과 상당히 비슷한데 완전 똑같은 것은 아니므로 비교해 보자면</p>
-<ol>
-<li><p>HashTable은 동기화가 되어 있으나, HashMap은 동기화 되어있지 않다.</p>
-</li>
-<li><p>HashTable은 key, value에 null값을 허용하지 않지만 HashMap은 허용한다.</p>
-<pre><code> Hashtable 안에 값 넣기
- Hashtable.put(key, value);
-
- Hashtable 안의 값 가져오기
- Hashtable.get(key);
-
- Hashtable 안의 값 바꾸기
- Hashtable.replace(key, value);
-
- Hashtable 안의 내용 삭제하기
- Hashtable.remove(key);
-
- Hashtable의 크기 0인지 확인하기
- Hashtable.isEmpty();
- 
- Hashtable 사이즈 확인하기
- Hashtable.size();
- 
- Hashtable 안에 특정 Key, Value 들었는지 확인하기
- Hashtable.containsKey(key);
- Hashtable.containsValue(value);
-
- Hashtable 안에 들어있는 전체 Key 확인하기
- Hashtable.keySet();
- import java.util.Hashtable;
-</code></pre>
-</li>
-</ol>
-<p>예제</p>
-<pre><code>public class HashTableExample &#123;
-
-    public static void main(String[] args) &#123;
-        Hashtable&lt;Integer, String&gt; ht = new Hashtable&lt;Integer, String&gt;();
-        ht.put(0, &quot;철수&quot;);
-        ht.put(1, &quot;영희&quot;);
-        ht.put(2, &quot;영수&quot;); // Hashtable에 값 삽입
-        ht.replace(2, &quot;수철&quot;); // Hashtable 값 바꾸기
-        ht.remove(2); // Hashtable 값 삭제
-
-        for(int i = 0; i&lt;ht.size(); i++) &#123;
-            System.out.println(ht.get(i)); // Hashtable 값 출력
-        &#125;
-        
-        System.out.println(&quot;Hashtable 크기 : &quot; + ht.size());
-        System.out.println(&quot;Hashtable key 확인 : &quot; + ht.containsKey(2));
-        System.out.println(&quot;Hashtable value 확인 : &quot; + ht.containsValue(&quot;수철&quot;));
-        System.out.println(&quot;Hashtable 크기 0인지 확인 : &quot; + ht.isEmpty());
-        System.out.println(&quot;Hashtable 전체 Key 확인 : &quot; + ht.keySet());
-        
-    &#125;
-
-&#125;
-결과값
-철수
-영희
-Hashtable 크기 : 2
-Hashtable key 확인 : false
-Hashtable value 확인 : false
-Hashtable 크기 0인지 확인 : false
-Hashtable 전체 key 확인 : [1, 0]    
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2046.%20hashtable/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2045.%20new%20%EC%97%B0%EC%82%B0%EC%9E%90/"
-                            aria-label=": Java 45. new 연산자"
-                        >
-                            Java 45. new 연산자
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:49+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="new-연산자"><a href="#new-연산자" class="headerlink" title="new 연산자"></a>new 연산자</h1><pre><code>클래스 객체변수 = new 클래스();
-</code></pre>
-<p>인스턴스를 생성할 때 사용하는 코드이며 객체 변수가 실제 데이터가 아닌 참조 값을 갖는다는 내용이 포함되어 있다.<br>new는 클래스 타입의 인스턴스를 생성해주는 역할을 담당한다.<br>new연산자를 통해 메모리(Heap 영역)에 데이터를 저장할 공간을 할당받고 그 공간의 참조값을 객체에게 반환하여 주고 이어서 생성자를 호출하게 된다. 인스턴스를 핸들하기 위해서는 new 연산자를 통해 참조값을 저장한 객체로만 접근이 가능하다.</p>
-<pre><code>클래스      객체변수    =    new        클래스();
-자료형      참조값저장     메모리할당   생성자호출
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2045.%20new%20%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >
