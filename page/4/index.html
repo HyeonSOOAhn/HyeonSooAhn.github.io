@@ -167,6 +167,101 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2011.%20DML%20-%20%EC%97%B0%EC%82%B0%EC%9E%90/"
+                            aria-label=": Oracle Database 11. DML - 연산자"
+                        >
+                            Oracle Database 11. DML - 연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:46+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h1><pre><code>+ : 더하기
+- : 빼기
+* : 곱하기
+/ : 나누기
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원들의 급여액과 급여액에서 1000을 더한 값, 200을 뺀 값, 2를 곱한 값, 2로 나눈 값을 가져온다.
+select sal,sal+1000,sal-200,sal*2,sal/2
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 각 사원의 급여액, 커미션, 급여 + 커미션을 가져온다.
+
+select sal, nvl(comm,0), sal + nvl(comm,0)
+from emp;
+</code></pre>
+<p>해당 컬럼의 값이 null 값인 경우 특정값으로 출력하고 싶으면 NVL 함수를 사용하고,<br>null 값이 아닐경우 특정값으로 출력하고 싶으면 NVL2 함수를 사용하면 된다.</p>
+<h1 id="Concat"><a href="#Concat" class="headerlink" title="Concat"></a>Concat</h1><ul>
+<li>문자열을 합치는 연산자이다.</li>
+<li>문자열 ||컬럼||문자열||컬럼</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 사원들의 이름과 직무를 다음 양식으로 가져온다.
+-- 000 사원의 담당 직무는 xxx입니다.
+
+select ename || &#39;사원의 담당 직무는 &#39; || job||&#39;입니다.&#39;
+from emp;
+</code></pre>
+<p>||는 CONCAT과 같은 기능을 보여준다.<br>하지만 세개이상의 문자열을 합칠때는 더 편하게 사용 할 수 있다.</p>
+<h1 id="Distinct"><a href="#Distinct" class="headerlink" title="Distinct"></a>Distinct</h1><ul>
+<li>select문을 통해 가져온 모든 로우 중에서 중복된 로우를 제거하는 키워드</li>
+<li>select distinct 컬럼명 from 테이블명</li>
+</ul>
+<p>ex)</p>
+<pre><code>-- 사원들이 근무하고 있는 근무 부서의 번호를 가져온다.
+select DISTINCT deptno
+from emp;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2011.%20DML%20-%20%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/20/Oracle%20Database/Oracle%20Database%2010.%20DML%20-%20Select/"
                             aria-label=": Oracle Database 10. DML - Select"
                         >
@@ -841,109 +936,6 @@ from dept;
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2053.%20Generic/"
-                            aria-label=": Java 53. Generic"
-                        >
-                            Java 53. Generic
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:57+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="제네릭"><a href="#제네릭" class="headerlink" title="제네릭"></a>제네릭</h1><p>제네릭은 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법을 의미한다.<br>제네릭스는 다양한 타입의 객체들을 다루는 메서드나 컬렉션 클래스에 컴파일시의 타입체크를 해주는 기능이다.</p>
-<h2 id="사용해야-하는-이유"><a href="#사용해야-하는-이유" class="headerlink" title="사용해야 하는 이유"></a>사용해야 하는 이유</h2><p>잘못된 타입이 될 수 있는 문제를 컴파일 과정에서 제거할수 있다. 자바 컴파일러는 코드에서 잘못 사용된 타입 때문에 발생하는 문제점을 제거하기 위해 제네릭 코드에 대한 강한 타입 체크를 한다.<br>실행 시 타입에러가 나는 것보다는 컴파일 시에 미리 타입을 강하게 체크해서 에러를 사전에 방지하는 것이 좋다. 또 제네릭 코드를 사용하면 타입을 국한하기 때문에 요소를 찾아올 때 타입 변환을 할 필요가 없어 프로그램 성능이 향상되는 효과를 얻을 수 있다.<br>예시</p>
-<pre><code>ArrayList list = new ArrayList(); //제네릭을 사용하지 않을경우
-list.add(&quot;test&quot;);
-String temp = (String) list.get(0); //타입변환이 필요함
-        
-ArrayList&lt;String&gt; list2 = new ArrayList(); //제네릭을 사용할 경우
-list2.add(&quot;test&quot;);
-temp = list2.get(0); //타입변환이 필요없음
-</code></pre>
-<h2 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h2><p>제네릭 타입은 타입을 파라미터로 가지는 클래스와 인터페이스이다. 제네릭 타입은 클래스 또는 인터페이스 이름 뒤에 &lt; &gt;를 쓰고 사이에 타입 파라미터가 위치한다.</p>
-<pre><code>public class 클래스명&lt;T&gt; &#123;...&#125;
-public interface 인터페이스명&lt;T&gt; &#123;...&#125;
-</code></pre>
-<h2 id="타입인자"><a href="#타입인자" class="headerlink" title="타입인자"></a>타입인자</h2><table>
-<thead>
-<tr>
-<th>타입인자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>T</td>
-<td>Type</td>
-</tr>
-<tr>
-<td>E</td>
-<td>Element</td>
-</tr>
-<tr>
-<td>K</td>
-<td>Key</td>
-</tr>
-<tr>
-<td>N</td>
-<td>Number</td>
-</tr>
-<tr>
-<td>V</td>
-<td>Value</td>
-</tr>
-<tr>
-<td>R</td>
-<td>Result</td>
-</tr>
-</tbody></table>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2053.%20Generic/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -970,7 +962,7 @@ public interface 인터페이스명&lt;T&gt; &#123;...&#125;
             </a>
           </li>
         
-        <li class="pagination-number">page 4 of 10</li>
+        <li class="pagination-number">page 4 of 11</li>
     </ul>
 </div>
 

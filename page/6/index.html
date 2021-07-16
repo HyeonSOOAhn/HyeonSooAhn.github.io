@@ -167,6 +167,68 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2041.%20%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%B6%94%EC%83%81%EB%A9%94%EC%86%8C%EB%93%9C/"
+                            aria-label=": Java 41. 추상클래스와 추상메소드"
+                        >
+                            Java 41. 추상클래스와 추상메소드
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:45+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="추상클래스"><a href="#추상클래스" class="headerlink" title="추상클래스"></a>추상클래스</h1><p>제어자 중에서 abstract라는 것이 있다. 이 제어자가 클래스 앞에 붙으면 추상클래스가 된다.</p>
+<p>클래스를 설계도에 비유한다면 추상클래스는 미완성 설계도에 비유할 수 있다. 단어 뜻 그대로 완성되지 못한 채로 남겨진 설계도를 말한다. 미완성 메소드를 포함하고 있다는 의미이다. 추상메소드를 포함하고 있다는 것을 제외하고는 일반 클래스와 전혀 다르지 않다.</p>
+<p>추상클래스는 그 자체로 클래스 역할을 다 하지 못하지만, 새로운 클래스를 작성하는데 있어서 바탕이 되는 조상클래스로서의 중요한 역할을 한다.</p>
+<h2 id="추상메서드"><a href="#추상메서드" class="headerlink" title="추상메서드"></a>추상메서드</h2><p>메소드는 선언부와 구현부로 구성되어 있다.<br>추상메소드란 서언부만 작성하고 구현부는 작성하지 않은 채로 남겨 둔 것이 추상메소드이다. 실제 내용은 상속받는 클래스에서 구현하도록 비워둔 것이다. 추상메소드 역시 키워드 ‘abstract’를 앞에 붙혀주고, 구현부가 위치할 {}대신 마침을 의미하는 ;을 작성한다.</p>
+<h1 id="추상클래스-사용이유"><a href="#추상클래스-사용이유" class="headerlink" title="추상클래스 사용이유"></a>추상클래스 사용이유</h1><p>자손 클래스에서 추상메소드를 반드시 구현하도록 강요하기 위해서 이다. 상속받은 자손클래스에서는 메소드들이 완전히 구현된 것으로 인식하고 오버라이딩을 하지 않을 수 있기 때문이다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2041.%20%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%B6%94%EC%83%81%EB%A9%94%EC%86%8C%EB%93%9C/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/"
                             aria-label=": Java 40. Boxing과 UnBoxing"
                         >
@@ -868,117 +930,6 @@ public class UpcastingEx&#123;
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/"
-                            aria-label=": Java 31. StringBuffer Class"
-                        >
-                            Java 31. StringBuffer Class
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:35+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="StringBuffer-Class"><a href="#StringBuffer-Class" class="headerlink" title="StringBuffer Class"></a>StringBuffer Class</h1><p>StringBuffer Class는 변하는 문자열을 다룰 때 사용한다. 객체 생성시 크기를 정하지 않으면 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가진다.</p>
-<p>String클래스의 객체는 한 번생성이 되면 내용이 변하지 않는 반면에 StringBuffer클래스의 객체는 문자열의 내용을 변경할 수 있다. StringBuffer 클래스의 메소드는 문자열 처리 후의 결과를 원래의 StringBuffer 객체에 반영하고, 메소드 리턴 타입은 void 이다.</p>
-<h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><dl><dt>StringBuffer()</dt><dd>초기 문자열이 없고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. </dd></dl><dl><dt>StringBuffer(String str)</dt><dd>str의 초기 문자열을 가지고 16개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다.</dd></dl><dl><dt>StringBuffer(int length)</dt><dd>초기 문자열이 없고 length개의 문자를 저장할 수 있는 버퍼를 가진 객체를 생성한다. </dd></dl><h2 id="메소드"><a href="#메소드" class="headerlink" title="메소드"></a>메소드</h2><h3 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h3><p>append()메소드는 이수로 전달된 값을 문자열로 변한한 후, 해당 문자열의 마지막에 추가한다.<br>이 메소드는 String클래스의 concat() 메소드와 같은 결과를 반환하지만, 내부적인 처리 속도가 훨씬 빠르다.<br>예제</p>
-<pre><code>StringBuffer str = new StringBuffer(&quot;Java&quot;);
-System.out.println(&quot;원본 문자열 : &quot; + str);
-
-System.out.println(str.append(&quot;수업&quot;));
-System.out.println(&quot;append() 메소드 호출 후 원본 문자열 : &quot; + str);
-</code></pre>
-<p>결과</p>
-<pre><code>원본 문자열 : Java
-Java수업
-append() 메소드 호출 후 원본 문자열 : Java수업
-</code></pre>
-<h3 id="capacity"><a href="#capacity" class="headerlink" title="capacity()"></a>capacity()</h3><p>capacity()메소드는 StringBuffer 인스턴스의 현재 버퍼 크기를 반환한다.<br>예제</p>
-<pre><code>StringBuffer str01 = new StringBuffer();
-StringBuffer str02 = new StringBuffer(&quot;Java&quot;);
-
-System.out.println(str01.capacity());
-System.out.println(str02.capacity());
-</code></pre>
-<p>결과</p>
-<pre><code>16
-20
-</code></pre>
-<p>위의 예제처럼 길이가 4인 문자열로 StringBuffer 인스턴스를 생성하면, 기본적으로 생성되는 여유 버퍼 크기인 16에 문자의 길이인 4를 더한 총 20개의 문자를 저장할 수 있는 버퍼가 생성된다.</p>
-<h3 id="delete"><a href="#delete" class="headerlink" title="delete()"></a>delete()</h3><p>delete()메소드는 전달된 인덱스에 해당하는 부분 문자열을 해당 문자열에서 제거한다. 또한, deleteCharAt() 메소드를 사용하면 특정 위치의 문자 한 개만을 제거할 수도 있다.<br>예제</p>
-<pre><code>StringBuffer str = new StringBuffer(&quot;Java Oracle&quot;);
-System.out.println(&quot;원본 문자열 : &quot; + str);
-
-① System.out.println(str.delete(4, 8));
-System.out.println(str.deleteCharAt(1));
-System.out.println(&quot;deleteCharAt() 메소드 호출 후 원본 문자열 : &quot; + str);
-</code></pre>
-<p>결과</p>
-<pre><code>원본 문자열 : Java Oracle
-Javacle
-Jvacle
-deleteCharAt() 메소드 호출 후 원본 문자열 : Jvacle
-</code></pre>
-<p>위 예제의 ①번 라인에서는 delete() 메소드를 사용하여 해당 문자열에서 인덱스가 4인 위치의 문자부터 7인 위치의 문자까지를 삭제한다.</p>
-<p>이처럼 delete() 메소드는 첫 번째 매개변수로 전달된 인덱스부터 두 번째 매개변수로 전달된 인덱스 바로 앞의 문자까지를 삭제하는 메소드이다.</p>
-<h3 id="insert"><a href="#insert" class="headerlink" title="insert()"></a>insert()</h3><p>insert()메소드는 인수로 전달된 값을 문자로 변환한 후, 해당 문자열의 지정된 인덱스 위치에 추가한다. 이때 전달된 인덱스가 해당 문자열의 길이와 같으면, append()메소드와 같은 결과를 반환한다.<br>예제</p>
-<pre><code>StringBuffer str = new StringBuffer(&quot;Java 만세!!&quot;);
-System.out.println(&quot;원본 문자열 : &quot; + str);
-
-① System.out.println(str.insert(4, &quot;Script&quot;));
-System.out.println(&quot;insert() 메소드 호출 후 원본 문자열 : &quot; + str);
-</code></pre>
-<p>결과</p>
-<pre><code>원본 문자열 : Java 만세!!
-JavaScript 만세!!
-insert() 메소드 호출 후 원본 문자열 : JavaScript 만세!!
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2031.%20StringBuffer%20Class/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -1005,7 +956,7 @@ insert() 메소드 호출 후 원본 문자열 : JavaScript 만세!!
             </a>
           </li>
         
-        <li class="pagination-number">page 6 of 10</li>
+        <li class="pagination-number">page 6 of 11</li>
     </ul>
 </div>
 

@@ -168,6 +168,126 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/01/27/Java/Java%2012.%20Method/"
+                            aria-label=": Java 12. Method"
+                        >
+                            Java 12. Method
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-27T22:23:48+09:00">
+	
+		    Jan 27, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><pre><code>public static void main(String[ ] args) &#123;
+
+&#125;
+</code></pre>
+<p>이것은 main이라는 이름의 메소드이다.</p>
+<h2 id="메소드의-정의와-호출"><a href="#메소드의-정의와-호출" class="headerlink" title="메소드의 정의와 호출"></a>메소드의 정의와 호출</h2><pre><code>package living.coding;
+
+public class A5 &#123;
+    public static void numbering() &#123; // 정의
+        int i = 0;
+        while (i&lt;10) &#123;
+            System.out.println(i);
+            i++;
+        &#125; 
+    &#125;
+
+    public static void main(String[] args) &#123; // 호출
+        numbering();
+    &#125;
+
+&#125;
+</code></pre>
+<p>메소드를 호출하게 되면 메소드를 정의한 부분이 실행되게 된다.<br>호출은 메소드의 이름 뒤 세미콜론을 적는 것으로 호출을 하고, 정의는 메소드의 이름 뒤 중괄호가 온다.<br>위 코드를 실행시키면 0123456789가 출력이 된다.</p>
+<h2 id="입력값"><a href="#입력값" class="headerlink" title="입력값"></a>입력값</h2><pre><code>package living.coding;
+
+public class A6 &#123;
+    public static void numbering(int limit) &#123;
+        int i = 0;
+        while (i &lt; limit) &#123;
+            System.out.println(i);
+            i++;
+        &#125;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        numbering(5);
+    &#125;
+
+&#125;
+</code></pre>
+<p>입력값에 5를 넣흐면 limit변수에 5값이 들어가게 되고 실행값은 01234가 출력된다.<br>int limit은 매개변수라(parameter)하고 5는 인자(argument)라 한다.</p>
+<h2 id="출력값"><a href="#출력값" class="headerlink" title="출력값"></a>출력값</h2><h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><pre><code>package living.coding;
+
+public class A7 &#123;
+    public static String numbering(int init, int limit) &#123;
+        int i = init;
+        
+        String output = &quot;&quot;;
+        while (i &lt; limit) &#123;
+            output += i;
+            i++;
+        &#125;
+    
+        return output;
+    &#125;
+    
+    public static void main(String [] args) &#123;
+        String result = numbering(1, 5);
+        System.out.println(result);
+    &#125;
+&#125;
+</code></pre>
+<p>값은 1234를 출력하게 된다.<br>return뒤의 값은 그 메소드 밖에 배치하게 되고 실행중 이던 메소드는 중지된다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/27/Java/Java%2012.%20Method/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/01/27/Java/Java%2011.%20Selection%20Sort/"
                             aria-label=": Java 11. Selection Sort"
                         >
@@ -807,63 +927,6 @@ byte, short, char, int, enum, string, Character, Byte, Short, Integer
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/01/21/Java/Java%2002.%20%EC%8B%A4%ED%96%89/"
-                            aria-label=": Java 02. 실행"
-                        >
-                            Java 02. 실행
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-01-21T21:20:46+09:00">
-	
-		    Jan 21, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h1><dl><dt>System out print(“”)<br>: 문자를 쓸 때는 “”을 쓴다.<br>System out println(“”)</dt><dd>ln은 줄바꿈의 의미이다.<br><img src="https://user-images.githubusercontent.com/77277946/105350660-d7943f00-5c2e-11eb-848e-3477c8187fe1.jpg" alt="새 비트맵 이미지"></dd></dl>
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/01/21/Java/Java%2002.%20%EC%8B%A4%ED%96%89/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -890,7 +953,7 @@ byte, short, char, int, enum, string, Character, Byte, Short, Integer
             </a>
           </li>
         
-        <li class="pagination-number">page 9 of 10</li>
+        <li class="pagination-number">page 9 of 11</li>
     </ul>
 </div>
 

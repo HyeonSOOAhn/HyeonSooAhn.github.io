@@ -167,6 +167,99 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/07/16/Algorism/Algorism01.%20%EB%B0%B1%EC%A4%805585/"
+                            aria-label=": Algorism01. 백준5585"
+                        >
+                            Algorism01. 백준5585
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-07-16T20:41:31+09:00">
+	
+		    Jul 16, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a>, <a class="category-link" href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Algorism/">Algorism</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>문제<br>타로는 자주 JOI잡화점에서 물건을 산다. JOI잡화점에는 잔돈으로 500엔, 100엔, 50엔, 10엔, 5엔, 1엔이 충분히 있고, 언제나 거스름돈 개수가 가장 적게 잔돈을 준다. 타로가 JOI잡화점에서 물건을 사고 카운터에서 1000엔 지폐를 한장 냈을 때, 받을 잔돈에 포함된 잔돈의 개수를 구하는 프로그램을 작성하시오.</p>
+<p>입력<br>입력은 한줄로 이루어져있고, 타로가 지불할 돈(1 이상 1000미만의 정수) 1개가 쓰여져있다.</p>
+<p>출력<br>제출할 출력 파일은 1행으로만 되어 있다. 잔돈에 포함된 매수를 출력하시오.</p>
+<p>예제 입력 1<br>380<br>예제 출력 1<br>4<br>예제 입력 2<br>1<br>예제 출력 2<br>15</p>
+<pre><code>    package com.company;
+
+
+    import java.util.ArrayList;
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.Scanner;
+
+    public class Main &#123;
+
+        public static void main(String[] args) &#123;
+            Scanner sc = new Scanner(System.in);
+
+            int[] en = &#123;500,100,50,10,5,1&#125;;
+            int money = 1000 - sc.nextInt();
+
+            int coin = 0;
+            int idx = 0;
+            while(money != 0)&#123;
+
+                int change = money/en[idx];
+                money -= change * en[idx++];
+                coin += change;
+
+            &#125;
+
+            System.out.println(coin);
+
+
+        &#125;
+    &#125;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/07/16/Algorism/Algorism01.%20%EB%B0%B1%EC%A4%805585/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/20/Oracle%20Database/Oracle%20Database%2040.%20%EB%B7%B0/"
                             aria-label=": Oracle Database 40. 뷰"
                         >
@@ -1257,85 +1350,6 @@ group by deptno;
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2031.%20delete/"
-                            aria-label=": Oracle Database 31. delete"
-                        >
-                            Oracle Database 31. delete
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-20T16:54:04+09:00">
-	
-		    Feb 20, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h1><ul>
-<li>테이블 내의 로우를 삭제하는 구문이다.</li>
-<li>delete from 테이블명<br>where 조건문</li>
-</ul>
-<p>ex)</p>
-<pre><code>-- 사원번호가 7499인 사원의 정보를 삭제한다.
-delete from emp01
-where empno = 7499;
-</code></pre>
-<p>ex)</p>
-<pre><code>-- 사원의 급여가 평균급여 이하인 사원의 정보를 삭제한다.
-delete from emp01
-where sal &lt;= (select avg(sal)
-            from emp01);
-            
-select * from emp01;
-</code></pre>
-<p>ex)</p>
-<pre><code>-- 커미션을 받지 않는 사원들의 정보를 삭제한다.
-delete from emp01
-where comm is null;
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2031.%20delete/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -1351,7 +1365,7 @@ where comm is null;
             </a>
           </li>
         
-        <li class="pagination-number">page 1 of 10</li>
+        <li class="pagination-number">page 1 of 11</li>
     </ul>
 </div>
 

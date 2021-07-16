@@ -167,6 +167,143 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2021.%20%EA%B7%B8%EB%A3%B9%ED%95%A8%EC%88%98/"
+                            aria-label=": Oracle Database 21. 그룹함수"
+                        >
+                            Oracle Database 21. 그룹함수
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-20T16:52:55+09:00">
+	
+		    Feb 20, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="그룹함수"><a href="#그룹함수" class="headerlink" title="그룹함수"></a>그룹함수</h1><p>ex)</p>
+<pre><code>-- 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 커미션을 가져온다.
+select sum(comm)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 급여가 1500이상인 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where sal &gt;= 1500;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 20번 부서에 근무하고 있는 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where deptno = 20;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 SALESMAN인 사원들의 급여 총합을 구한다.
+select sum(sal)
+from emp
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 전사원의 급여 평균을 구한다.
+select trunc(avg(sal))
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 커미션을 받는 사원들의 커미션 평균을 구한다.
+select avg(comm)
+from emp;
+</code></pre>
+<p>그룹함수의 경우 null값은 제외하고 계산한다.</p>
+<p>ex)</p>
+<pre><code>-- 전 사원의 커미션 평균을 구한다.(nvl : null값을 0으로 바꿔준다.)
+select trunc(avg(nvl(comm, 0)))
+from emp;
+</code></pre>
+<p>nvl(,0)컬럼에 null값은 0으로 바꾼다.</p>
+<p>ex)</p>
+<pre><code>-- 커미션을 받는 사원들의 급여 평균을 구한다.
+select trunc(avg(sal))
+from emp
+where comm is not null;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 30번 부서에 근무하고 있는 사원들의 급여 평균을 구한다.
+select trunc(avg(sal))
+from emp
+where deptno = 30;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 직무가 SALESMAN인 사원들의 급여 + 커미션 평균을 구한다.
+select avg(sal + comm)
+from emp
+where job = &#39;SALESMAN&#39;;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 총 수를 가져온다.
+select count(empno)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 그룹함수를 계산할 때는 무조건 null값은 제외하고 계산하다.
+-- 그러므로 이런식으로 하는 것이 최선의 방법이다.
+-- 사원들의 총 수를 가져온다.
+select count(*)
+from emp;
+</code></pre>
+<p>ex)</p>
+<pre><code>-- 사원들의 급여 최대, 최소값을 가져온다.
+select max(sal), min(sal)
+from emp;
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2021.%20%EA%B7%B8%EB%A3%B9%ED%95%A8%EC%88%98/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/20/Oracle%20Database/Oracle%20Database%2020.%20DECODE,%20CASE/"
                             aria-label=": Oracle Database 20. DECODE, CASE"
                         >
@@ -1286,101 +1423,6 @@ where job &lt;&gt; &#39;CLERK&#39;;
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/20/Oracle%20Database/Oracle%20Database%2011.%20DML%20-%20%EC%97%B0%EC%82%B0%EC%9E%90/"
-                            aria-label=": Oracle Database 11. DML - 연산자"
-                        >
-                            Oracle Database 11. DML - 연산자
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-20T16:52:46+09:00">
-	
-		    Feb 20, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Database/">Database</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h1><pre><code>+ : 더하기
-- : 빼기
-* : 곱하기
-/ : 나누기
-</code></pre>
-<p>ex)</p>
-<pre><code>-- 각 사원들의 급여액과 급여액에서 1000을 더한 값, 200을 뺀 값, 2를 곱한 값, 2로 나눈 값을 가져온다.
-select sal,sal+1000,sal-200,sal*2,sal/2
-from emp;
-</code></pre>
-<p>ex)</p>
-<pre><code>-- 각 사원의 급여액, 커미션, 급여 + 커미션을 가져온다.
-
-select sal, nvl(comm,0), sal + nvl(comm,0)
-from emp;
-</code></pre>
-<p>해당 컬럼의 값이 null 값인 경우 특정값으로 출력하고 싶으면 NVL 함수를 사용하고,<br>null 값이 아닐경우 특정값으로 출력하고 싶으면 NVL2 함수를 사용하면 된다.</p>
-<h1 id="Concat"><a href="#Concat" class="headerlink" title="Concat"></a>Concat</h1><ul>
-<li>문자열을 합치는 연산자이다.</li>
-<li>문자열 ||컬럼||문자열||컬럼</li>
-</ul>
-<p>ex)</p>
-<pre><code>-- 사원들의 이름과 직무를 다음 양식으로 가져온다.
--- 000 사원의 담당 직무는 xxx입니다.
-
-select ename || &#39;사원의 담당 직무는 &#39; || job||&#39;입니다.&#39;
-from emp;
-</code></pre>
-<p>||는 CONCAT과 같은 기능을 보여준다.<br>하지만 세개이상의 문자열을 합칠때는 더 편하게 사용 할 수 있다.</p>
-<h1 id="Distinct"><a href="#Distinct" class="headerlink" title="Distinct"></a>Distinct</h1><ul>
-<li>select문을 통해 가져온 모든 로우 중에서 중복된 로우를 제거하는 키워드</li>
-<li>select distinct 컬럼명 from 테이블명</li>
-</ul>
-<p>ex)</p>
-<pre><code>-- 사원들이 근무하고 있는 근무 부서의 번호를 가져온다.
-select DISTINCT deptno
-from emp;
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/20/Oracle%20Database/Oracle%20Database%2011.%20DML%20-%20%EC%97%B0%EC%82%B0%EC%9E%90/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -1407,7 +1449,7 @@ from emp;
             </a>
           </li>
         
-        <li class="pagination-number">page 3 of 10</li>
+        <li class="pagination-number">page 3 of 11</li>
     </ul>
 </div>
 
