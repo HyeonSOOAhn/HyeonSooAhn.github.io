@@ -6,24 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="안현수">
-    <title>Java 57. Stream - 안현수</title>
+    <title>Spring 02. DI, IOC - 안현수</title>
     <meta name="author" content="Hyeon Soo Ahn">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Stream\n스트림은 데이터의 흐름이다.\n배열 또는 컬렉션 인스턴스에 함수 여러개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다.\n람다를 이용해서 코드의 양을 줄이고 간결하게 표현할 수 있다.\n병렬처리, 즉 쓰레드를 이용해서 빠르게 처리할 수 있다.\n\n","dateCreated":"2021-02-09T23:38:02+09:00","dateModified":"2021-07-14T19:25:29+09:00","datePublished":"2021-02-09T23:38:02+09:00","description":"","headline":"Java 57. Stream","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2057.%20Stream/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2057.%20Stream/","keywords":"Java, Stream"}</script>
-    <meta name="description" content="Stream 스트림은 데이터의 흐름이다. 배열 또는 컬렉션 인스턴스에 함수 여러개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다. 람다를 이용해서 코드의 양을 줄이고 간결하게 표현할 수 있다. 병렬처리, 즉 쓰레드를 이용해서 빠르게 처리할 수 있다.">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"IOC\n일반적인 의존성에 대한 제어권은 개발자가 직접 의존성을 만들지만 Spring은 외부에서 의존성을 가져온다.\n\n즉 밖에서 나에게 의존성을 주입해주는 것을 DI라고 하는데 이것은 IOC의 일종이다.\n  public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;\n          this.owners = clinicService;\n          this.visits = visits;\n  &#125;\n\n\n\n스프링에서 의존성을 주입하는 방법스프링에서 의존성을 주입하는 방법은 세가지이다.@Autowired 어노테이션은 field, 생성자, setter메소드 등에 붙여서 사용할 수 있다.\n    public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;\n            this.owners = clinicService;\n            this.visits = visits;\n        &#125;\n\n스프링 레퍼선스에서는 생성자를 통해 주입하는 것을 권장하고 있다.그 이유는 필수적으로 사용해야 하는 레퍼런스 없이는 인스턴스를 만들지 못하도록 강제하는 역할을 할 수 있기 떄문이다.\n","dateCreated":"2021-02-09T23:38:03+09:00","dateModified":"2021-07-23T00:19:57+09:00","datePublished":"2021-02-09T23:38:03+09:00","description":"","headline":"Spring 02. DI, IOC","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/","keywords":"DI, IOC"}</script>
+    <meta name="description" content="IOC 일반적인 의존성에 대한 제어권은 개발자가 직접 의존성을 만들지만 Spring은 외부에서 의존성을 가져온다.  즉 밖에서 나에게 의존성을 주입해주는 것을 DI라고 하는데 이것은 IOC의 일종이다.   public OwnerController(OwnerRepository clinicService, VisitRepository visits) &amp;#123;">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Java 57. Stream">
-<meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2057.%20Stream/index.html">
+<meta property="og:title" content="Spring 02. DI, IOC">
+<meta property="og:url" content="http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/index.html">
 <meta property="og:site_name" content="안현수">
-<meta property="og:description" content="Stream 스트림은 데이터의 흐름이다. 배열 또는 컬렉션 인스턴스에 함수 여러개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다. 람다를 이용해서 코드의 양을 줄이고 간결하게 표현할 수 있다. 병렬처리, 즉 쓰레드를 이용해서 빠르게 처리할 수 있다.">
+<meta property="og:description" content="IOC 일반적인 의존성에 대한 제어권은 개발자가 직접 의존성을 만들지만 Spring은 외부에서 의존성을 가져온다.  즉 밖에서 나에게 의존성을 주입해주는 것을 DI라고 하는데 이것은 IOC의 일종이다.   public OwnerController(OwnerRepository clinicService, VisitRepository visits) &amp;#123;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-09T14:38:02.000Z">
-<meta property="article:modified_time" content="2021-07-14T10:25:29.731Z">
+<meta property="article:published_time" content="2021-02-09T14:38:03.000Z">
+<meta property="article:modified_time" content="2021-07-22T15:19:57.668Z">
 <meta property="article:author" content="Hyeon Soo Ahn">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Stream">
+<meta property="article:tag" content="DI">
+<meta property="article:tag" content="IOC">
 <meta name="twitter:card" content="summary">
     
     
@@ -171,12 +171,12 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Java 57. Stream
+            Spring 02. DI, IOC
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2021-02-09T23:38:02+09:00">
+    <time datetime="2021-02-09T23:38:03+09:00">
 	
 		    Feb 09, 2021
     	
@@ -184,7 +184,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Spring/">Spring</a>
 
 
     
@@ -196,12 +196,24 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><ul>
-<li>스트림은 데이터의 흐름이다.</li>
-<li>배열 또는 컬렉션 인스턴스에 함수 여러개를 조합해서 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있다.</li>
-<li>람다를 이용해서 코드의 양을 줄이고 간결하게 표현할 수 있다.</li>
-<li>병렬처리, 즉 쓰레드를 이용해서 빠르게 처리할 수 있다.</li>
+            <h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><ul>
+<li><p>일반적인 의존성에 대한 제어권은 개발자가 직접 의존성을 만들지만 Spring은 외부에서 의존성을 가져온다.</p>
+</li>
+<li><p>즉 밖에서 나에게 의존성을 주입해주는 것을 DI라고 하는데 이것은 IOC의 일종이다.</p>
+<pre><code>  public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;
+          this.owners = clinicService;
+          this.visits = visits;
+  &#125;
+</code></pre>
+</li>
 </ul>
+<h2 id="스프링에서-의존성을-주입하는-방법"><a href="#스프링에서-의존성을-주입하는-방법" class="headerlink" title="스프링에서 의존성을 주입하는 방법"></a>스프링에서 의존성을 주입하는 방법</h2><p>스프링에서 의존성을 주입하는 방법은 세가지이다.<br>@Autowired 어노테이션은 field, 생성자, setter메소드 등에 붙여서 사용할 수 있다.</p>
+<pre><code>    public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;
+            this.owners = clinicService;
+            this.visits = visits;
+        &#125;
+</code></pre>
+<p>스프링 레퍼선스에서는 생성자를 통해 주입하는 것을 권장하고 있다.<br>그 이유는 필수적으로 사용해야 하는 레퍼런스 없이는 인스턴스를 만들지 못하도록 강제하는 역할을 할 수 있기 떄문이다.</p>
 
             
 
@@ -213,7 +225,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Stream/" rel="tag">Stream</a>
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/DI/" rel="tag">DI</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/IOC/" rel="tag">IOC</a>
 
             </div>
         
@@ -226,9 +238,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
-                    data-tooltip="Spring 02. DI, IOC"
-                    aria-label="PREVIOUS: Spring 02. DI, IOC"
+                    href="/2021/02/09/Spring/Spring%2001.%20Lamda/"
+                    data-tooltip="Spring 01. Spring"
+                    aria-label="PREVIOUS: Spring 01. Spring"
                 >
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -240,9 +252,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/09/Java/Java%2056.%20Thread/"
-                    data-tooltip="Java 56. Thread"
-                    aria-label="NEXT: Java 56. Thread"
+                    href="/2021/02/09/Java/Java%2057.%20Stream/"
+                    data-tooltip="Java 57. Stream"
+                    aria-label="NEXT: Java 57. Stream"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -267,7 +279,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -280,7 +292,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -293,7 +305,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -341,9 +353,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
-                    data-tooltip="Spring 02. DI, IOC"
-                    aria-label="PREVIOUS: Spring 02. DI, IOC"
+                    href="/2021/02/09/Spring/Spring%2001.%20Lamda/"
+                    data-tooltip="Spring 01. Spring"
+                    aria-label="PREVIOUS: Spring 01. Spring"
                 >
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -355,9 +367,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/09/Java/Java%2056.%20Thread/"
-                    data-tooltip="Java 56. Thread"
-                    aria-label="NEXT: Java 56. Thread"
+                    href="/2021/02/09/Java/Java%2057.%20Stream/"
+                    data-tooltip="Java 57. Stream"
+                    aria-label="NEXT: Java 57. Stream"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -382,7 +394,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -395,7 +407,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -408,7 +420,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -442,7 +454,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                         aria-label="Share on Facebook"
                     >
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
@@ -455,7 +467,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                         aria-label="Share on Twitter"
                     >
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
@@ -468,7 +480,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2057.%20Stream/"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
                         aria-label="Share on Google+"
                     >
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>

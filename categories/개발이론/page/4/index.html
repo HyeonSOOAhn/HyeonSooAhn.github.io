@@ -514,7 +514,7 @@ from dept;
                     
                         <a
                             class="link-unstyled"
-                            href="/2021/02/09/Spring/Java%2058.%20Lamda/"
+                            href="/2021/02/09/Spring/Spring%2001.%20Lamda/"
                             aria-label=": Spring 01. Spring"
                         >
                             Spring 01. Spring
@@ -553,7 +553,82 @@ from dept;
                     
                         <p>
                             <a
-                                href="/2021/02/09/Spring/Java%2058.%20Lamda/#post-footer"
+                                href="/2021/02/09/Spring/Spring%2001.%20Lamda/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
+                            href="/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
+                            aria-label=": Spring 02. DI, IOC"
+                        >
+                            Spring 02. DI, IOC
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:38:03+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Spring/">Spring</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><ul>
+<li><p>일반적인 의존성에 대한 제어권은 개발자가 직접 의존성을 만들지만 Spring은 외부에서 의존성을 가져온다.</p>
+</li>
+<li><p>즉 밖에서 나에게 의존성을 주입해주는 것을 DI라고 하는데 이것은 IOC의 일종이다.</p>
+<pre><code>  public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;
+          this.owners = clinicService;
+          this.visits = visits;
+  &#125;
+</code></pre>
+</li>
+</ul>
+<h2 id="스프링에서-의존성을-주입하는-방법"><a href="#스프링에서-의존성을-주입하는-방법" class="headerlink" title="스프링에서 의존성을 주입하는 방법"></a>스프링에서 의존성을 주입하는 방법</h2><p>스프링에서 의존성을 주입하는 방법은 세가지이다.<br>@Autowired 어노테이션은 field, 생성자, setter메소드 등에 붙여서 사용할 수 있다.</p>
+<pre><code>    public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;
+            this.owners = clinicService;
+            this.visits = visits;
+        &#125;
+</code></pre>
+<p>스프링 레퍼선스에서는 생성자를 통해 주입하는 것을 권장하고 있다.<br>그 이유는 필수적으로 사용해야 하는 레퍼런스 없이는 인스턴스를 만들지 못하도록 강제하는 역할을 할 수 있기 떄문이다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >
@@ -840,109 +915,6 @@ from dept;
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2054.%20Exception/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2053.%20Generic/"
-                            aria-label=": Java 53. Generic"
-                        >
-                            Java 53. Generic
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:57+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="제네릭"><a href="#제네릭" class="headerlink" title="제네릭"></a>제네릭</h1><p>제네릭은 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법을 의미한다.<br>제네릭스는 다양한 타입의 객체들을 다루는 메서드나 컬렉션 클래스에 컴파일시의 타입체크를 해주는 기능이다.</p>
-<h2 id="사용해야-하는-이유"><a href="#사용해야-하는-이유" class="headerlink" title="사용해야 하는 이유"></a>사용해야 하는 이유</h2><p>잘못된 타입이 될 수 있는 문제를 컴파일 과정에서 제거할수 있다. 자바 컴파일러는 코드에서 잘못 사용된 타입 때문에 발생하는 문제점을 제거하기 위해 제네릭 코드에 대한 강한 타입 체크를 한다.<br>실행 시 타입에러가 나는 것보다는 컴파일 시에 미리 타입을 강하게 체크해서 에러를 사전에 방지하는 것이 좋다. 또 제네릭 코드를 사용하면 타입을 국한하기 때문에 요소를 찾아올 때 타입 변환을 할 필요가 없어 프로그램 성능이 향상되는 효과를 얻을 수 있다.<br>예시</p>
-<pre><code>ArrayList list = new ArrayList(); //제네릭을 사용하지 않을경우
-list.add(&quot;test&quot;);
-String temp = (String) list.get(0); //타입변환이 필요함
-        
-ArrayList&lt;String&gt; list2 = new ArrayList(); //제네릭을 사용할 경우
-list2.add(&quot;test&quot;);
-temp = list2.get(0); //타입변환이 필요없음
-</code></pre>
-<h2 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h2><p>제네릭 타입은 타입을 파라미터로 가지는 클래스와 인터페이스이다. 제네릭 타입은 클래스 또는 인터페이스 이름 뒤에 &lt; &gt;를 쓰고 사이에 타입 파라미터가 위치한다.</p>
-<pre><code>public class 클래스명&lt;T&gt; &#123;...&#125;
-public interface 인터페이스명&lt;T&gt; &#123;...&#125;
-</code></pre>
-<h2 id="타입인자"><a href="#타입인자" class="headerlink" title="타입인자"></a>타입인자</h2><table>
-<thead>
-<tr>
-<th>타입인자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>T</td>
-<td>Type</td>
-</tr>
-<tr>
-<td>E</td>
-<td>Element</td>
-</tr>
-<tr>
-<td>K</td>
-<td>Key</td>
-</tr>
-<tr>
-<td>N</td>
-<td>Number</td>
-</tr>
-<tr>
-<td>V</td>
-<td>Value</td>
-</tr>
-<tr>
-<td>R</td>
-<td>Result</td>
-</tr>
-</tbody></table>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2053.%20Generic/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

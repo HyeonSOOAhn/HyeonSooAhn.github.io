@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="안현수">
-    <title>Tag: Spring - 안현수</title>
+    <title>Tag: DI - 안현수</title>
     <meta name="author" content="Hyeon Soo Ahn">
     
     
@@ -14,7 +14,7 @@
     <script type="application/ld+json">{}</script>
     <meta property="og:type" content="blog">
 <meta property="og:title" content="안현수">
-<meta property="og:url" content="http://example.com/tags/Spring/index.html">
+<meta property="og:url" content="http://example.com/tags/DI/index.html">
 <meta property="og:site_name" content="안현수">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Hyeon Soo Ahn">
@@ -168,10 +168,10 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2021/02/09/Spring/Spring%2001.%20Lamda/"
-                            aria-label=": Spring 01. Spring"
+                            href="/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/"
+                            aria-label=": Spring 02. DI, IOC"
                         >
-                            Spring 01. Spring
+                            Spring 02. DI, IOC
                         </a>
                     
                 </h1>
@@ -193,11 +193,24 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><ul>
-<li>자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크</li>
-<li>종속 객체를 생성해주고, 조립할 수 있는 프레임워크</li>
-<li>자바 SE로 된 자바객체(POJO)를 자바 EE에 의존적이지 않게 연결해 준다.</li>
+                    <h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><ul>
+<li><p>일반적인 의존성에 대한 제어권은 개발자가 직접 의존성을 만들지만 Spring은 외부에서 의존성을 가져온다.</p>
+</li>
+<li><p>즉 밖에서 나에게 의존성을 주입해주는 것을 DI라고 하는데 이것은 IOC의 일종이다.</p>
+<pre><code>  public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;
+          this.owners = clinicService;
+          this.visits = visits;
+  &#125;
+</code></pre>
+</li>
 </ul>
+<h2 id="스프링에서-의존성을-주입하는-방법"><a href="#스프링에서-의존성을-주입하는-방법" class="headerlink" title="스프링에서 의존성을 주입하는 방법"></a>스프링에서 의존성을 주입하는 방법</h2><p>스프링에서 의존성을 주입하는 방법은 세가지이다.<br>@Autowired 어노테이션은 field, 생성자, setter메소드 등에 붙여서 사용할 수 있다.</p>
+<pre><code>    public OwnerController(OwnerRepository clinicService, VisitRepository visits) &#123;
+            this.owners = clinicService;
+            this.visits = visits;
+        &#125;
+</code></pre>
+<p>스프링 레퍼선스에서는 생성자를 통해 주입하는 것을 권장하고 있다.<br>그 이유는 필수적으로 사용해야 하는 레퍼런스 없이는 인스턴스를 만들지 못하도록 강제하는 역할을 할 수 있기 떄문이다.</p>
 
                     
                         
@@ -207,7 +220,7 @@
                     
                         <p>
                             <a
-                                href="/2021/02/09/Spring/Spring%2001.%20Lamda/#post-footer"
+                                href="/2021/02/09/Spring/Spring%2002.%20DI,%20IOC/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >
