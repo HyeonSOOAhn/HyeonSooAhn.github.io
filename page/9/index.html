@@ -167,6 +167,94 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/01/28/Java/Java%2013.%20%EC%9E%85%EB%A0%A5%EA%B3%BC%20%EC%B6%9C%EB%A0%A5/"
+                            aria-label=": Java 13. 입력과 출력"
+                        >
+                            Java 13. 입력과 출력
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-01-28T23:06:48+09:00">
+	
+		    Jan 28, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="입력과-출력"><a href="#입력과-출력" class="headerlink" title="입력과 출력"></a>입력과 출력</h1><h2 id="string-args"><a href="#string-args" class="headerlink" title="string[ ] args"></a>string[ ] args</h2><pre><code>package living.coding; 
+
+public class A8 &#123;
+
+    public static void main(String[] args) &#123;
+        System.out.println(args.length);
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>main 메소드는 자바에서 특별한 의미를 가진 메소드이다. main메소드의 내용을 구현하면 자바 애플리케이션을 실행할 때 main메소드가 호출되면서 프로그램이 구동하게 되는 것이다. 이때 String [ ] args는 입력 값의 파라미터로 동작한다.</p>
+<h2 id="사용자의-입력을-받기"><a href="#사용자의-입력을-받기" class="headerlink" title="사용자의 입력을 받기"></a>사용자의 입력을 받기</h2><pre><code>package living.coding;
+
+import java.util.Scanner;
+
+public class A9 &#123;
+
+    public static void main(String[] args) &#123;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int i = sc.nextInt();
+        System.out.println(i);
+        sc.close();
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>Rnu을 하게 되면 main메소드안의 Scanner라는 객체를 새로 만들 때 사용자가 입력한 값을 입력받아 생성한다. sc라는 객체는 nextInt라는 메소드를 통해 입력이 된다. nextInt는 정수 값만 입력이 가능하다.</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/01/28/Java/Java%2013.%20%EC%9E%85%EB%A0%A5%EA%B3%BC%20%EC%B6%9C%EB%A0%A5/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/01/27/Java/Java%2012.%20Method/"
                             aria-label=": Java 12. Method"
                         >
@@ -845,74 +933,6 @@ byte, short, char, int, enum, string, Character, Byte, Short, Integer
                         <p>
                             <a
                                 href="/2021/01/23/Java/Java%2004.%20%EB%B9%84%EA%B5%90%EC%99%80%20boolean/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/01/22/Java/Java%2003.%20%EC%9E%90%EB%A3%8C%ED%98%95/"
-                            aria-label=": Java 03. 자료형"
-                        >
-                            Java 03. 자료형
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-01-22T17:33:22+09:00">
-	
-		    Jan 22, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="자료형"><a href="#자료형" class="headerlink" title="자료형"></a>자료형</h1><p><img src="https://user-images.githubusercontent.com/77277946/105466985-61e4ad80-5cd8-11eb-95fa-1391a752f052.jpg" alt="자료형 종류"></p>
-<h2 id="실수형-Real-number"><a href="#실수형-Real-number" class="headerlink" title="실수형(Real number)"></a>실수형(Real number)</h2><p>실수형 자료형은 float와 double이있다.<br>정수도 실수에 포함되기 때문에 정수데이터도 입력가능하다. 그러나<br> 저장되는 방식이 다르다.<br>ex) float a = 1; &gt; 1.0</p>
-<h3 id="float"><a href="#float" class="headerlink" title="float"></a>float</h3><p><img src="https://user-images.githubusercontent.com/77277946/105470670-2f897f00-5cdd-11eb-9c65-ffb553502412.jpg" alt="float"><br>float는 실수 데이터형이다. 컴퓨터는 실수 데이터를 무조껀 Double로 받기 때문에 float변수를 초기화 할 때 float변수로 받는 다는 것을 표현해주어야 한다.</p>
-<h3 id="double"><a href="#double" class="headerlink" title="double"></a>double</h3><p><img src="https://user-images.githubusercontent.com/77277946/105470993-9a3aba80-5cdd-11eb-9747-79c922e770af.jpg" alt="double"><br>double은 컴퓨터가 자동으로 double형 데이터로 인식하기 때문에 float와 달리 변수 초기화시 표현을 해줄 필요가 없다.</p>
-<h2 id="정수형"><a href="#정수형" class="headerlink" title="정수형"></a>정수형</h2><p>정수형은 int를 주로 사용한다. 그보다 값이 크면 long으로 변수를 선언해 주면된다.</p>
-<h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p><img src="https://user-images.githubusercontent.com/77277946/105472821-b8a1b580-5cdf-11eb-9da8-fedfd2f64da7.jpg" alt="int"><br>정수형 이므로 실수 값을 입력할 수 없다.</p>
-<h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2><pre><code>밑변과 높이를 입력 받아 삼각형의 넓이 구하기
-밑변? 10
-높이? 10
-넓이: xxx
-</code></pre>
-<dl><dt><img src="https://user-images.githubusercontent.com/77277946/105490875-cc0d4a80-5cf8-11eb-85bf-279cc8d1efc5.jpg" alt="예제1"><br>import java.io.BufferedReader;<br>import java.io.IOException;<br>import java.io.InputStreamReader;<br>: 이 세가지는 사용자가 입력값을 넣었을 때 입력값이 이상하면 던져버리겠다는 의미의 코드이다. 입력값을 넣을때 이 세가지의 코드는 세트이다.<br>public static void main(String[] args) throws IOException {<br>BufferedReader br = new BufferedReader(new InputStreamReader(System.in));<br>: import로 불러온 코드를 사용하는 것이다. 이것 또한 거의 세트이나 마찬가지이다. 문자열을 입력할 수 있게 된다. 문자열을 제외한 다른 입력값은 던져버린다. 구체적으로는 다음과 같다.<br>system.in : 키보드로 입력한 1byte문자<br>InputstreamReader : 1byte 문자를 2byte로 변환<br>BufferedReader : 메모리에 저장공간을 만들어 입출력 속도를 빠르게 함.<br><img src="https://user-images.githubusercontent.com/77277946/105493962-696a7d80-5cfd-11eb-82a5-50a5df295b9b.jpg" alt="예제2"><br>int hei,wid;<br>double area;<br>: hei와 wid는 10으로 정수 값이므로 int를 사용했고, area는 float이나 double값 둘다 사용할 수 있으나 여기서는 double로 선언하였다.<br>hei = Integer.parseInt(br.readLine());<br>wid = Integer.parseInt(br.readLine());</dt><dd>받아온 문자열을 정수값으로 변환해 준다.</dd></dl>
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/01/22/Java/Java%2003.%20%EC%9E%90%EB%A3%8C%ED%98%95/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

@@ -168,6 +168,84 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2052.%20ListIterator/"
+                            aria-label=": Java 52. ListIterator"
+                        >
+                            Java 52. ListIterator
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:56+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h1><p>ListIterator인터페이스는 Iterator인터페이스를 상속받아 여러 기능을 추가한 인터페이스이다.<br>Iterator인터페이스는 컬렉션의 요소에 접근할 때 한 방향으로만 이동할 수 있다.<br>Listiterator 인터페이스는 컬렉션 요소의 대체, 추가 그리고 인덱스 검색 등을 위한 작업에서 양방향으로 이동하는 것을 지원한다.<br>단, Listeriterator인터페이스는 List인터페이스를 구현한 List컬렉션 클래스에서만 Listiterator()메소드를 통해 사용할 수 있다.<br>예제</p>
+<pre><code>LinkedList&lt;Integer&gt; lnkList = new LinkedList&lt;Integer&gt;();
+
+lnkList.add(4);
+lnkList.add(2);
+lnkList.add(3);
+lnkList.add(1);
+
+ListIterator&lt;Integer&gt; iter = lnkList.listIterator();
+while (iter.hasNext()) &#123;
+    System.out.print(iter.next() + &quot; &quot;);
+&#125;
+
+while (iter.hasPrevious()) &#123;
+    System.out.print(iter.previous() + &quot; &quot;);
+&#125;
+</code></pre>
+<p>결과값</p>
+<pre><code>4 3 2 1
+1 3 2 4
+</code></pre>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2052.%20ListIterator/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2050.%20%EC%98%A4%EB%A6%84%EC%B0%A8%EC%88%9C,%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%20%EC%A0%95%EB%A0%AC/"
                             aria-label=": Java 50. 오름차순, 내림차순 정렬"
                         >
@@ -1019,81 +1097,6 @@ System.out.println(&quot;리스트의 크기 : &quot; + lnkList.size());
                         <p>
                             <a
                                 href="/2021/02/09/Java/Java%2041.%20%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%B6%94%EC%83%81%EB%A9%94%EC%86%8C%EB%93%9C/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/"
-                            aria-label=": Java 40. Boxing과 UnBoxing"
-                        >
-                            Java 40. Boxing과 UnBoxing
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-09T23:37:44+09:00">
-	
-		    Feb 09, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="Boxing과-UnBoxing"><a href="#Boxing과-UnBoxing" class="headerlink" title="Boxing과 UnBoxing"></a>Boxing과 UnBoxing</h1><p>기본 타입의 값을 포장 객체로 만드는 과정을 박싱이라고 하고 반대로 포장객체에서 기본 타입의 값을 얻어내는 과정을 언박싱이라고 한다.</p>
-<pre><code>public class Wrapper_Ex &#123;
-    public static void main(String[] args)  &#123;
-        Integer num = new Integer(17); // 박싱
-        int n = num.intValue(); //언박싱
-        System.out.println(n);
-    &#125;
-&#125;
-</code></pre>
-<h1 id="자동박싱과-자동언박싱"><a href="#자동박싱과-자동언박싱" class="headerlink" title="자동박싱과 자동언박싱"></a>자동박싱과 자동언박싱</h1><p>기본 타입 값을 직접 방싱, 언박싱하지 않아도 자동적을 박싱과 언박싱이 일어나는 경우가 있다. 자동박싱의 포장클래스 타입에 기본값이 대입될 경우에 발생한다.예를 들어 int타입의 값을 Integer클래스 변수에 대입하면 자동 박싱이 일어나 힙 영역에 Integer객체가 생성된다.</p>
-<pre><code>public class Wrapper_Ex &#123;
-    public static void main(String[] args)  &#123;
-        Integer num = 17; // 자동 박싱
-        int n = num; //자동 언박싱
-        System.out.println(n);
-    &#125;
-&#125;
-</code></pre>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/09/Java/Java%2040.%20Boxing%EA%B3%BC%20UnBoxing/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

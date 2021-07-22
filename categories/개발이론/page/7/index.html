@@ -168,6 +168,110 @@
                     
                         <a
                             class="link-unstyled"
+                            href="/2021/02/09/Java/Java%2030.%20String%20Class/"
+                            aria-label=": Java 30. String Class"
+                        >
+                            Java 30. String Class
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2021-02-09T23:37:34+09:00">
+	
+		    Feb 09, 2021
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h1><p>String 객체가 하나 생성되면, 그 값은 길어지거나 줄어들 수 없으며 그 문자들 중 어떤 것도 바뀔 수 없다.<br>그래서 String 객체는 변경불능이라고 한다.</p>
+<p>String클래스의 자주 사용하는 함수이다.<br>|함수|반환형|설명<br>|—|—|—<br>|CharAt(int index)|char|index로 지정된 첨자 위치에 있는 문자를 반환한다.<br>|compareTo(String str)|int|이 String이 String str보다 사전적 순서에서 앞서면 음수값, 같으면 0값, 뒤에 있으면 0값이다.<br>|Concat(String str)|String|이 String과 str을 접합하여 구성되는 새로운 String을 반환한다.<br>|equals(String str)|boolean|이 String이 str과 같은 문자열이면 (대소문자 구분) True, 그렇지 않으면 False 반환<br>|equalslgnoreCase(String str)|boolean|이 String이 str과 같은 문자열이면(대소문자 미 구분) True, 그렇지 않으면 False 반환<br>|length()|int|이 String의 문자 개수를 반환한다.<br>|replace(char oldChar, char newChar)|String|String에 나타나는 oldChar를 모두 new Char로 변경한다.<br>|substring(int offset, int endIndex)|String|이 String의 offset 위치에서부터 endIndex-1까지에 걸친 문자열을 반환한다.<br>|toLowerCase()|String|모든 대문자를 소문자로 변환한다.<br>|toUpperCase()|String|모든 소문자를 대문자로 변환한다. </p>
+<p>예제</p>
+<pre><code>public class StringClass &#123;
+    
+    public static void main(String[] args)&#123;
+        
+        String text = &quot;First String V&quot;;
+        String concat, upperCase, replace, subString;
+        
+        System.out.println(&quot;기본 String : &quot;+ text);
+        System.out.println(&quot;기본 String 길이 : &quot;+text.length());    // 문자열 길이 출력
+        
+        concat = text.concat(&quot;, Second String V&quot;);    // 문자열 연결
+        
+        upperCase = concat.toUpperCase();        // 문자열 대문자로 변환
+        
+        replace = upperCase.replace(&#39;V&#39;, &#39;K&#39;);    //  문자 V를 K로 변환
+        
+        subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기
+        
+        
+        System.out.println(&quot;Concat String : &quot; + concat);
+        System.out.println(&quot;upperCase String : &quot; + upperCase);
+        System.out.println(&quot;replace String : &quot; + replace);
+        System.out.println(&quot;subString String : &quot; + subString);
+        
+        
+    &#125;
+
+&#125;
+</code></pre>
+<p>System.out.println(“기본 String 길이 : “+text.length());    // 문자열 길이 출력</p>
+<p>text인 “First String V” 의 문자열 길이를 반환한다.</p>
+<p>-&gt; 14</p>
+<p>concat = text.concat(“, Second String V”);    // 문자열 연결</p>
+<p>text인 “First String V” 뒤에 concat 메소드로 “, Second String V” 를 연결했다.</p>
+<p>-&gt;  First String V, Second String V</p>
+<p>upperCase = concat.toUpperCase();        // 문자열 대문자로 변환</p>
+<p>concat인 “First String V, Second String V” 의 문자열을 대문자로 변환한다</p>
+<p>-&gt; FIRST STRING V, SECOND STRING V</p>
+<p>replace = upperCase.replace(‘V’, ‘K’);    //  문자 V를 K로 변환</p>
+<p>upperCase인 “FIRST STRING V, SECOND STRING V” 문자열 중 ‘V’ 문자를 ‘K’ 문자로 변환 한다.</p>
+<p>-&gt; FIRST STRING K, SECOND STRING K</p>
+<p>subString = replace.substring(3, 10);    // 3~9 문자열 잘라내기</p>
+<p>replace 인 “FIRST STRING K, SECOND STRING K” 문자열의 3번째 부터 9번째 문자열까지 잘라낸다 (0부터 시작)</p>
+<p>-&gt; ST STRI</p>
+
+                    
+                        
+
+
+                    
+                    
+                        <p>
+                            <a
+                                href="/2021/02/09/Java/Java%2030.%20String%20Class/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a
+                            class="link-unstyled"
                             href="/2021/02/09/Java/Java%2029.%20Garbage%20Collector/"
                             aria-label=": Java 29. Garbage Collector"
                         >
@@ -997,75 +1101,6 @@ swap() 호출 후 : a = 20, b = 10
                         <p>
                             <a
                                 href="/2021/02/08/Java/Java%2021.%20%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EA%B3%BC%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/#post-footer"
-                                class="postShorten-excerpt_link link"
-                                aria-label=""
-                            >
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2021/02/07/Java/Java%2020.%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80%20%EC%9D%B8%EC%9E%90/"
-                            aria-label=": Java 20. 매개변수와 인자"
-                        >
-                            Java 20. 매개변수와 인자
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2021-02-07T23:37:22+09:00">
-	
-		    Feb 07, 2021
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h1 id="매개변수"><a href="#매개변수" class="headerlink" title="매개변수"></a>매개변수</h1><p>매개 : 둘 사이에서 양편의 관계를 맺어 줌<br>변수 : 어떤 상황의 가변적 요인, 어떤 관계나 범위 안에서 여러 가지 값으로 변할 수 있는 수<br>즉, 매개변수란 둘 사이에서 양편의 관계를 맺어주면서, 어떤 관계나 범위 안에서 여러가지 값으로 변할 수 있는 가변적 요소이다.</p>
-<h1 id="인자"><a href="#인자" class="headerlink" title="인자"></a>인자</h1><p>어떤 사물의 원인이 되는 낱낱의 요소나 물질.<br>인수는 함수가 호출 될 때 함수에 전달되는 값이다. 프로그램 실행 중에 함수가 호풀 될 때마다 함수와 함께 일부 값이 전달된다. 이러한 값을 인수라고 한다. 함수와 함께 전달 될 때 인수는 함수 정의 중에 사용 된 변수로 대체되고 함수는 이 값으로 실행된다.</p>
-<h1 id="매개변수와-인수"><a href="#매개변수와-인수" class="headerlink" title="매개변수와 인수"></a>매개변수와 인수</h1><p>매개변수는 메소드, 또는 생성자를 선언할 때, 괄호 안에 적으며, 어떤 입력 값이 들어올지 값의 형태를 정의해준다.<br>인자는 메소드, 또는 생성자를 호출할 때, 괄호 안에 적으며, 미리 선언해 두었던 매개변수에 값을 대입해 준다.</p>
-<p>매개변수는 실제로 값이 존재하지는 않고, 어떤 형태로 입력값이 들어올 것인지를 정의해 준다.<br>인자는 매개변수에 대입되는 실제로 메모리에 할당되어 있는 변수이다.<br>즉, 매개변수와 인자의 차이는 실제로 메모리에 할당되어 있느냐, 없느냐의 차이이다.</p>
-<p>숫자 두 개를 입력받아, 두 숫자의 합을 리턴하는 메소드를 만든다고 생각해보자.</p>
-<pre><code>public int sum(int a, int b) &#123;
-
-return a+b;
-
-&#125;
-</code></pre>
-<p>이렇게 메소드를 선언할때 int형 변수 두 개를 받겠다고 괄호 안에 적은 int a와 int b가 매개변수이다.<br>그럼, 이 메소드를 호출해서 숫자 3과 숫자 5를 더해보자.<br>sum(3, 5)<br>이렇게 메소드를 호출하여, 매개변수에 각각의 값을 대입했다.<br>이 3과 5가 바로 인자이다.</p>
-
-                    
-                        
-
-
-                    
-                    
-                        <p>
-                            <a
-                                href="/2021/02/07/Java/Java%2020.%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80%20%EC%9D%B8%EC%9E%90/#post-footer"
                                 class="postShorten-excerpt_link link"
                                 aria-label=""
                             >

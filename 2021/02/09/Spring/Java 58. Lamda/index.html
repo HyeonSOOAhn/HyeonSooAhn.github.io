@@ -6,24 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="안현수">
-    <title>Java 58. Lamda - 안현수</title>
+    <title>Spring 01. Spring - 안현수</title>
     <meta name="author" content="Hyeon Soo Ahn">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Lamda\n람다 함수는 익명함수이다.\n그러므로 이름을 가질필요가 없다.\n두 개 이상의 입력이 있는 함수는 최종적으로 1개의 입력만 받는 람다 대수로 단순화 될 수 있다.(커링)\n\n익명함수\n일급객체이다. : 연산을 모두 지원하는 객체이다.\n\n람다의 장단점\n장점\n\n\n코드의 간결성 : 람다를 사용하면 불필요한 반복문의 삭제가 가능하며 복잡한 식을 단순하게 표현할 수 있다.\n지연연산 수행 : 람다는 지연연산을 수행 함으로써 불필요한 연산을 최소화 할 수 있다.\n병렬처리 - 멀티쓰레드를 활용하여 병렬처리를 사용할 수 있다.\n\n\n단점\n\n\n람다식의 호출이 까다롭다.\n람다 Stream사용 시 단순 for문 혹은 while문 사용 시 성능이 떨어진다.\n불필요하게 너무 사용하게 되면 오히려 가독성을 떨어 뜨릴 수 있다.\n\n람다표현식\n람다는 매개변수 화살표(-&gt;) 함수몸체로 이용하여 사용할 수있다.\n\n함수몸체가 단일 실행문이면 괄호를 생략할 수 있다.\n\n함수몸체가 return문으로만 구성되어 있는 경우 괄호를 생략할 수 없다.\n //정상적인 유형\n () -&gt; &#123;&#125;\n () -&gt; 1\n () -&gt; &#123; return 1; &#125;\n\n (int x) -&gt; x+1\n (x) -&gt; x+1\n x -&gt; x+1\n (int x) -&gt; &#123; return x+1; &#125;\n x -&gt; &#123; return x+1; &#125;\n\n (int x, int y) -&gt; x+y\n (x, y) -&gt; x+y\n (x, y) -&gt; &#123; return x+y; &#125;\n\n (String lam) -&gt; lam.length()\n lam -&gt; lam.length()\n (Thread lamT) -&gt; &#123; lamT.start(); &#125;\n lamT -&gt; &#123; lamT.start(); &#125;\n\n\n\n    //잘못된 유형 선언된 type과 선언되지 않은 type을 같이 사용 할 수 없다.\n    (x, int y) -&gt; x+y\n    (x, final y) -&gt; x+y \n\n","dateCreated":"2021-02-09T23:38:03+09:00","dateModified":"2021-07-14T19:34:00+09:00","datePublished":"2021-02-09T23:38:03+09:00","description":"","headline":"Java 58. Lamda","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Java/Java%2058.%20Lamda/","keywords":"Java, Lamda"}</script>
-    <meta name="description" content="Lamda 람다 함수는 익명함수이다. 그러므로 이름을 가질필요가 없다. 두 개 이상의 입력이 있는 함수는 최종적으로 1개의 입력만 받는 람다 대수로 단순화 될 수 있다.(커링)  익명함수 일급객체이다. : 연산을 모두 지원하는 객체이다.  람다의 장단점 장점   코드의 간결성 : 람다를 사용하면 불필요한 반복문의 삭제가 가능하며 복잡한 식을 단순하게 표현할">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyeon Soo Ahn","sameAs":[]},"articleBody":"Spring\n자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크\n종속 객체를 생성해주고, 조립할 수 있는 프레임워크\n자바 SE로 된 자바객체(POJO)를 자바 EE에 의존적이지 않게 연결해 준다.\n\n","dateCreated":"2021-02-09T23:38:03+09:00","dateModified":"2021-07-22T23:43:40+09:00","datePublished":"2021-02-09T23:38:03+09:00","description":"","headline":"Spring 01. Spring","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"},"publisher":{"@type":"Organization","name":"Hyeon Soo Ahn","sameAs":[]},"url":"http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/","keywords":"Spring"}</script>
+    <meta name="description" content="Spring 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크 종속 객체를 생성해주고, 조립할 수 있는 프레임워크 자바 SE로 된 자바객체(POJO)를 자바 EE에 의존적이지 않게 연결해 준다.">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Java 58. Lamda">
-<meta property="og:url" content="http://example.com/2021/02/09/Java/Java%2058.%20Lamda/index.html">
+<meta property="og:title" content="Spring 01. Spring">
+<meta property="og:url" content="http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/index.html">
 <meta property="og:site_name" content="안현수">
-<meta property="og:description" content="Lamda 람다 함수는 익명함수이다. 그러므로 이름을 가질필요가 없다. 두 개 이상의 입력이 있는 함수는 최종적으로 1개의 입력만 받는 람다 대수로 단순화 될 수 있다.(커링)  익명함수 일급객체이다. : 연산을 모두 지원하는 객체이다.  람다의 장단점 장점   코드의 간결성 : 람다를 사용하면 불필요한 반복문의 삭제가 가능하며 복잡한 식을 단순하게 표현할">
+<meta property="og:description" content="Spring 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크 종속 객체를 생성해주고, 조립할 수 있는 프레임워크 자바 SE로 된 자바객체(POJO)를 자바 EE에 의존적이지 않게 연결해 준다.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-09T14:38:03.000Z">
-<meta property="article:modified_time" content="2021-07-14T10:34:00.559Z">
+<meta property="article:modified_time" content="2021-07-22T14:43:40.203Z">
 <meta property="article:author" content="Hyeon Soo Ahn">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Lamda">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
     
     
@@ -171,7 +170,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Java 58. Lamda
+            Spring 01. Spring
         </h1>
     
     
@@ -184,7 +183,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Java/">Java</a>
+    <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/">개발이론</a>, <a class="category-link" href="/categories/%EA%B0%9C%EB%B0%9C%EC%9D%B4%EB%A1%A0/Spring/">Spring</a>
 
 
     
@@ -196,62 +195,11 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h1 id="Lamda"><a href="#Lamda" class="headerlink" title="Lamda"></a>Lamda</h1><ul>
-<li>람다 함수는 익명함수이다.</li>
-<li>그러므로 이름을 가질필요가 없다.</li>
-<li>두 개 이상의 입력이 있는 함수는 최종적으로 1개의 입력만 받는 람다 대수로 단순화 될 수 있다.(커링)</li>
+            <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><ul>
+<li>자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크</li>
+<li>종속 객체를 생성해주고, 조립할 수 있는 프레임워크</li>
+<li>자바 SE로 된 자바객체(POJO)를 자바 EE에 의존적이지 않게 연결해 준다.</li>
 </ul>
-<h2 id="익명함수"><a href="#익명함수" class="headerlink" title="익명함수"></a>익명함수</h2><ul>
-<li>일급객체이다. : 연산을 모두 지원하는 객체이다.</li>
-</ul>
-<h2 id="람다의-장단점"><a href="#람다의-장단점" class="headerlink" title="람다의 장단점"></a>람다의 장단점</h2><ul>
-<li>장점</li>
-</ul>
-<ol>
-<li>코드의 간결성 : 람다를 사용하면 불필요한 반복문의 삭제가 가능하며 복잡한 식을 단순하게 표현할 수 있다.</li>
-<li>지연연산 수행 : 람다는 지연연산을 수행 함으로써 불필요한 연산을 최소화 할 수 있다.</li>
-<li>병렬처리 - 멀티쓰레드를 활용하여 병렬처리를 사용할 수 있다.</li>
-</ol>
-<ul>
-<li>단점</li>
-</ul>
-<ol>
-<li>람다식의 호출이 까다롭다.</li>
-<li>람다 Stream사용 시 단순 for문 혹은 while문 사용 시 성능이 떨어진다.</li>
-<li>불필요하게 너무 사용하게 되면 오히려 가독성을 떨어 뜨릴 수 있다.</li>
-</ol>
-<h2 id="람다표현식"><a href="#람다표현식" class="headerlink" title="람다표현식"></a>람다표현식</h2><ol>
-<li><p>람다는 매개변수 화살표(-&gt;) 함수몸체로 이용하여 사용할 수있다.</p>
-</li>
-<li><p>함수몸체가 단일 실행문이면 괄호를 생략할 수 있다.</p>
-</li>
-<li><p>함수몸체가 return문으로만 구성되어 있는 경우 괄호를 생략할 수 없다.</p>
-<pre><code> //정상적인 유형
- () -&gt; &#123;&#125;
- () -&gt; 1
- () -&gt; &#123; return 1; &#125;
-
- (int x) -&gt; x+1
- (x) -&gt; x+1
- x -&gt; x+1
- (int x) -&gt; &#123; return x+1; &#125;
- x -&gt; &#123; return x+1; &#125;
-
- (int x, int y) -&gt; x+y
- (x, y) -&gt; x+y
- (x, y) -&gt; &#123; return x+y; &#125;
-
- (String lam) -&gt; lam.length()
- lam -&gt; lam.length()
- (Thread lamT) -&gt; &#123; lamT.start(); &#125;
- lamT -&gt; &#123; lamT.start(); &#125;
-</code></pre>
-</li>
-</ol>
-<pre><code>    //잘못된 유형 선언된 type과 선언되지 않은 type을 같이 사용 할 수 없다.
-    (x, int y) -&gt; x+y
-    (x, final y) -&gt; x+y 
-</code></pre>
 
             
 
@@ -263,7 +211,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-none-link" href="/tags/Java/" rel="tag">Java</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Lamda/" rel="tag">Lamda</a>
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Spring/" rel="tag">Spring</a>
 
             </div>
         
@@ -276,9 +224,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/19/Java/Java%2051.%20set/"
-                    data-tooltip="post"
-                    aria-label="PREVIOUS: post"
+                    href="/2021/02/09/Java/Java%2058.%20Lamda/"
+                    data-tooltip="Java 58. Lamda"
+                    aria-label="PREVIOUS: Java 58. Lamda"
                 >
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -290,9 +238,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/09/Spring/Java%2058.%20Lamda/"
-                    data-tooltip="Spring 01. Spring"
-                    aria-label="NEXT: Spring 01. Spring"
+                    href="/2021/02/09/Java/Java%2057.%20Stream/"
+                    data-tooltip="Java 57. Stream"
+                    aria-label="NEXT: Java 57. Stream"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -317,7 +265,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -330,7 +278,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -343,7 +291,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -391,9 +339,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/19/Java/Java%2051.%20set/"
-                    data-tooltip="post"
-                    aria-label="PREVIOUS: post"
+                    href="/2021/02/09/Java/Java%2058.%20Lamda/"
+                    data-tooltip="Java 58. Lamda"
+                    aria-label="PREVIOUS: Java 58. Lamda"
                 >
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -405,9 +353,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2021/02/09/Spring/Java%2058.%20Lamda/"
-                    data-tooltip="Spring 01. Spring"
-                    aria-label="NEXT: Spring 01. Spring"
+                    href="/2021/02/09/Java/Java%2057.%20Stream/"
+                    data-tooltip="Java 57. Stream"
+                    aria-label="NEXT: Java 57. Stream"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -432,7 +380,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -445,7 +393,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                    target="new" href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -458,7 +406,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                    target="new" href="https://plus.google.com/share?url=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -492,7 +440,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                         aria-label="Share on Facebook"
                     >
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
@@ -505,7 +453,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                        href="https://twitter.com/intent/tweet?text=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                         aria-label="Share on Twitter"
                     >
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
@@ -518,7 +466,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Java/Java%2058.%20Lamda/"
+                        href="https://plus.google.com/share?url=http://example.com/2021/02/09/Spring/Java%2058.%20Lamda/"
                         aria-label="Share on Google+"
                     >
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
